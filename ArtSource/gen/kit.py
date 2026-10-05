@@ -49,7 +49,7 @@ def obj_from(verts, faces, matname, smooth=False, ao=None, name='part', sharp_an
     else:
         me.shade_flat()
     ob = bpy.data.objects.new(name, me)
-    COLL.objects.link(ob)
+    bpy.context.scene.collection.objects.link(ob)
     a = np.ones(len(me.vertices), np.float32) if ao is None else np.asarray(ao, np.float32)
     ca = me.color_attributes.new('Col', 'FLOAT_COLOR', 'POINT')
     c = np.repeat(a[:, None], 4, 1); c[:, 3] = 1

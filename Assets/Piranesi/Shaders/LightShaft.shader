@@ -9,6 +9,7 @@ Shader "Piranesi/LightShaft"
         _UseFacing ("Window (only lit when light enters)", Float) = 0
         _Spread ("Spread", Float) = 0.25
         _Tint ("Tint", Color) = (1, 0.97, 0.9, 1)
+        _Vertical ("Force vertical (spotlit shafts)", Float) = 0
     }
     SubShader
     {
@@ -24,7 +25,7 @@ Shader "Piranesi/LightShaft"
             #pragma multi_compile_instancing
             #include "UnityCG.cginc"
             #include "PiranesiCommon.cginc"
-            sampler2D _NoiseTex; float _Intensity, _UseFacing, _Spread; float4 _Tint;
+            sampler2D _NoiseTex; float _Intensity, _UseFacing, _Spread, _Vertical; float4 _Tint;
             struct appdata { float4 vertex : POSITION; UNITY_VERTEX_INPUT_INSTANCE_ID };
             struct v2f { float4 pos : SV_POSITION; float3 wp : TEXCOORD0; float3 nw : TEXCOORD1; float t : TEXCOORD2; float facing : TEXCOORD3; UNITY_VERTEX_OUTPUT_STEREO };
             v2f vert (appdata v)
@@ -36,7 +37,7 @@ Shader "Piranesi/LightShaft"
                 float3 fwd = normalize(unity_ObjectToWorld._m02_m12_m22);
                 float3 travel = -normalize(_UdonLightDir.xyz + float3(0, 1e-4, 0));
                 travel.y = min(travel.y, -0.3);
-                travel = normalize(travel);
+                travel = normalize(lerp(normalize(travel), float3(0, -1, 0), _Vertical));
                 float t = saturate(-v.vertex.y);
                 float len = height / -travel.y;
                 float3 ring = float3(v.vertex.x, 0, v.vertex.z);

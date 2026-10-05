@@ -50,7 +50,7 @@ public class HouseFootsteps : UdonSharpBehaviour
         else
         {
             RaycastHit hit;
-            if (Physics.Raycast(feet + Vector3.up * 0.4f, Vector3.down, out hit, 1.2f, groundMask.value))
+            if (Physics.Raycast(feet + Vector3.up * 0.4f, Vector3.down, out hit, 1.2f, groundMask.value, QueryTriggerInteraction.Ignore))
             {
                 if (hit.collider != null && hit.collider.gameObject.name.StartsWith("Sand")) { set = sand; vol *= 0.8f; }
             }

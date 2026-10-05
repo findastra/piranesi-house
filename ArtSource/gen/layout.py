@@ -12,6 +12,7 @@ R = random.Random(9)
 G = 60.0
 
 objects, lights, shafts, emitters, probes, reverbs, statues, sounds = [], [], [], [], [], [], [], []
+seats = []          # v2: window seats etc. {p, r, kind, text, exit}
 
 def rot_y(x, z, deg):
     a = math.radians(deg)
@@ -76,7 +77,12 @@ def neighbor(n, d):
     return (n[0] + dx, n[1] + dz)
 
 SEA_GATE = ((0, 1), 'W')
-CASCADE = ((2, 2), 'N')
+EAST_GATE = ((2, 1), 'E')       # v2: second water stair, facing the ruin isle
+CASCADE = ((2, 2), 'N')         # fed by the aqueduct from the pump isle
+TOWER = ((1, 0), 'S')           # v2: stair tower to the water slide
+COLOSSUS_HALL = (1, 2)
+VEST_WIN_SEATS = [-2.6, -0.9, 0.9, 2.6]
+occupied_corners = {}
 
 for n in nodes:
     o = vpos(n)
@@ -93,39 +99,61 @@ for n in nodes:
         nb = neighbor(n, d)
         e = tuple(sorted([n, nb]))
         has_gallery = e in chosen
-        is_gate = (n, d) == SEA_GATE
-        side = 'Vest_SideOpen' if (has_gallery or is_gate) else 'Vest_SideBlind'
+        outer = not (0 <= nb[0] < 3 and 0 <= nb[1] < 3)
+        is_gate = (n, d) in (SEA_GATE, EAST_GATE)
+        is_tower = (n, d) == TOWER
+        is_window = outer and not has_gallery and not is_gate and not is_tower and (n, d) != CASCADE
+        side = 'Vest_SideOpen' if (has_gallery or is_gate or is_tower) else ('Vest_SideWindow' if is_window else 'Vest_SideBlind')
         place(side, o, ry, name=f'{vname}_{d}')
         # lunette light shaft (angled light through the round window)
         shafts.append(dict(p=local(o, ry, 0, 18.2, 10.6), radius=1.9, height=18.0, kind='window', face=ry + 180))
         if is_gate:
-            place('SeaGate', o, ry, name='SeaGate')
-            statue('Statue_Horse', local(o, ry, -9.2, 1.3, 23.8), ry + 90, 1.5, 'Horse of the Sea Gate')
-            statue('Statue_Dragon', local(o, ry, 9.2, 1.3, 23.8), ry - 90, 1.4, 'Guardian beast of the Sea Gate')
+            place('SeaGate', o, ry, name='SeaGate' if (n, d) == SEA_GATE else 'EastGate')
+            if (n, d) == SEA_GATE:
+                statue('Statue_Horse', local(o, ry, -9.2, 1.3, 23.8), ry + 90, 1.5, 'Horse of the Sea Gate')
+                statue('Statue_Dragon', local(o, ry, 9.2, 1.3, 23.8), ry - 90, 1.4, 'Guardian beast of the Sea Gate')
+            else:
+                R.choice(['Statue_WingedFigure', 'Statue_SeatedSage', 'Statue_Beast'])      # keep the v1 random sequence
+                statue('Statue_Beast', local(o, ry, -9.2, 1.3, 23.8), ry + 90, 1.3, 'Gorilla stand-in (East Water Stair)')
+                statue('Statue_WingedFigure', local(o, ry, 9.2, 1.3, 23.8), ry - 90, 1.2, 'Winged figure of the East Water Stair')
             sounds.append(dict(clip='Ocean_Near_Loop', p=local(o, ry, 0, 0, 30), vol=1.0, minD=6, maxD=140, spatial=1))
             emitters.append(dict(kind='season', p=local(o, ry, 0, 30, 30), size=[60, 1, 40], fall=34))
             emitters.append(dict(kind='spray', p=local(o, ry, 0, -0.2, 30), size=[16, 0.2, 1]))
-            # invisible barrier at the foot of the stairs (no swimming in the deep sea)
-            objects.append(dict(name='SeaBarrier', mesh='', p=local(o, ry, 0, -1.0, 27.0), r=ry, s=[22, 4, 0.5], col='box', stat=True, tag='invisible'))
-            objects.append(dict(name='SeaBarrier', mesh='', p=local(o, ry, -11.3, 1.0, 17.0), r=ry, s=[0.5, 4, 12], col='box', stat=True, tag='invisible'))
-            objects.append(dict(name='SeaBarrier', mesh='', p=local(o, ry, 11.3, 1.0, 17.0), r=ry, s=[0.5, 4, 12], col='box', stat=True, tag='invisible'))
+        elif is_tower:
+            R.choice(['Statue_WingedFigure', 'Statue_SeatedSage', 'Statue_Beast'])
+            place('StairTower', local(o, ry, 0, 0, 12.0), ry, name='StairTower')
+            sounds.append(dict(clip='Ocean_Far_Loop', p=local(o, ry, 0, 6, 13), vol=0.45, minD=5, maxD=40, spatial=1))
         elif not has_gallery:
             if (n, d) == CASCADE:
                 place('Cascade', local(o, ry, 0, 0, 10.0), ry + 180, col='none', name='Cascade', static=False)
                 emitters.append(dict(kind='splash', p=local(o, ry, 0, 0.3, 7.4), size=[3.5, 0.3, 1.0]))
                 sounds.append(dict(clip='Cascade_Loop', p=local(o, ry, 0, 2, 7.5), vol=0.9, minD=3, maxD=50, spatial=1))
+            elif is_window:
+                big = R.choice(['Statue_WingedFigure', 'Statue_SeatedSage', 'Statue_Beast'])
+                # the colossal statue moves to the corner on the window's left, facing the centre of the hall
+                place('Pedestal_Colossal', local(o, ry, -6.9, 0, 6.9), ry + 135, col='box', name='Colossus_Pedestal')
+                statue(big, local(o, ry, -6.9, 1.75, 6.9), ry + 135, 2.3 if big != 'Statue_SeatedSage' else 2.6)
+                cw = local(o, ry, -6.9, 0, 6.9); occupied_corners.setdefault(n, []).append((cw[0] - o[0], cw[2] - o[2]))
+                # the big arched window: light, and four window seats in the deep bay
+                shafts.append(dict(p=local(o, ry, 0, 11.6, 11.2), radius=3.4, height=11.6, kind='window', face=ry + 180, dim=0.3))
+                for sx in VEST_WIN_SEATS:
+                    seats.append(dict(p=local(o, ry, sx, 0.55, 10.55), r=ry, kind='window', text='Sit in the window',
+                                      exit=local(o, ry, sx, 0.05, 8.9), size=[0.8, 0.5, 1.2]))
             else:
                 place('Pedestal_Colossal', local(o, ry, 0, 0, 9.6), ry + 180, col='box', name='Colossus_Pedestal')
                 big = R.choice(['Statue_WingedFigure', 'Statue_SeatedSage', 'Statue_Beast'])
                 statue(big, local(o, ry, 0, 1.75, 9.6), ry + 180, 2.3 if big != 'Statue_SeatedSage' else 2.6)
             # outer-boundary blind sides hear the distant sea
-            if not (0 <= nb[0] < 3 and 0 <= nb[1] < 3):
+            if outer:
                 sounds.append(dict(clip='Ocean_Far_Loop', p=local(o, ry, 0, 6, 13), vol=0.45, minD=5, maxD=40, spatial=1))
     # sand drifted into two corners of some vestibules
     if R.random() < 0.6:
         for k in range(R.choice([1, 2])):
             cx, cz = R.choice([(-8, -8), (8, -8), (-8, 8), (8, 8)])
-            place('SandDrift', [o[0] + cx, 0, o[2] + cz], R.uniform(0, 360), (R.uniform(0.6, 0.9), R.uniform(0.6, 1.1), R.uniform(0.6, 0.9)), name='SandDrift')
+            ang, sc = R.uniform(0, 360), (R.uniform(0.6, 0.9), R.uniform(0.6, 1.1), R.uniform(0.6, 0.9))
+            if any(abs(cx - a) < 3 and abs(cz - b) < 3 for a, b in occupied_corners.get(n, [])): continue
+            if n == COLOSSUS_HALL and cx > 0: continue          # keep the Colossus' pedestal clear
+            place('SandDrift', [o[0] + cx, 0, o[2] + cz], ang, sc, name='SandDrift')
 
 # ---------------------------------------------------------------- galleries
 for e in sorted(chosen):
@@ -136,7 +164,11 @@ for e in sorted(chosen):
     ry = 90 if along_x else 0
     kind = 'Nave' if e in naves else 'Arcade'
     gname = f'{kind}_{a[0]}{a[1]}_{b[0]}{b[1]}'
-    place(kind, c, ry, name=gname)
+    perim = kind == 'Arcade' and ((along_x and abs(c[2]) > 50) or (not along_x and abs(c[0]) > 50))
+    if perim:   # turn the arcade so its window wall (local +x) faces out to sea
+        ox, oz = (0.0, math.copysign(1, c[2])) if along_x else (math.copysign(1, c[0]), 0.0)
+        ry = round(math.degrees(math.atan2(-oz, ox))) % 360
+    place('Arcade_Win' if perim else kind, c, ry, name=gname)
     probes.append(dict(p=[c[0], 7, c[2]], size=[36, 22, 20] if along_x else [20, 22, 36], name=gname))
     reverbs.append(dict(p=[c[0], 5, c[2]], minD=10, maxD=20, preset='Auditorium' if kind == 'Nave' else 'StoneCorridor'))
     emitters.append(dict(kind='dust', p=local(c, ry, 0, 7, 0), size=[10, 12, 34] if kind == 'Nave' else [8, 10, 34], rot=ry))
@@ -168,7 +200,11 @@ for e in sorted(chosen):
                 if pick < 0.75:
                     st = R.choice(FULL + ['Statue_Queen'])
                     sc = {'Statue_Dragon': 0.7, 'Statue_Horse': 0.7, 'Statue_Queen': 1.6, 'Statue_SeatedSage': 1.0}.get(st, 1.0)
-                    statue(st, local(c, ry, 5.45 * sx, 0.9, z), ry - 90 * sx, sc)
+                    if not (perim and sx > 0):
+                        statue(st, local(c, ry, 5.45 * sx, 0.9, z), ry - 90 * sx, sc)
+                if perim and sx > 0:      # window bay with a seat instead of a statue niche
+                    seats.append(dict(p=local(c, ry, 5.6, 1.0, z), r=ry + 90, kind='window', text='Sit in the window',
+                                      exit=local(c, ry, 3.9, 0.05, z), size=[1.2, 0.5, 0.9]))
                 # free-standing statues on stepped plinths along the corridor (every other bay, staggered)
                 if (k + (sx > 0)) % 2 == 0:
                     zz = z + 2.25
@@ -199,10 +235,9 @@ for e in sorted(chosen):
 
 # ---------------------------------------------------------------- distant wings of the House across the sea
 for k, (dist, ang, w) in enumerate([(380, 200, 'Wing_1'), (520, 250, 'Wing_2'), (450, 300, 'Wing_3'), (650, 160, 'Wing_1'), (700, 320, 'Wing_2'), (600, 20, 'Wing_3'), (560, 110, 'Wing_2')]):
-    a = math.radians(ang)
-    place(w, [math.sin(a) * dist, -2, math.cos(a) * dist], ang + 90 + R.uniform(-20, 20), (1.6, 1.6, 1.6), col='none', name='DistantWing')
+    R.uniform(-20, 20)            # v2: the distant 'show' wings became the islands (keep the random sequence)
 
-place('Seabed', [0, 0, 0], 0, col='mesh', name='Seabed_Sand')
+place('Seabed2', [0, 0, 0], 0, col='mesh', name='Sand_Seabed')
 
 # global sounds
 sounds.append(dict(clip='House_Drone_Loop', p=[0, 0, 0], vol=0.18, spatial=0))
@@ -210,7 +245,9 @@ sounds.append(dict(clip='Ocean_Far_Loop', p=[0, 0, 0], vol=0.12, spatial=0))
 
 spawn = dict(p=[vpos((1, 1))[0] - 2.0, 0.1, vpos((1, 1))[2]], r=270)
 layout = dict(objects=objects, statues=statues, lights=lights, shafts=shafts, emitters=emitters, probes=probes,
-              reverbs=reverbs, sounds=sounds, spawn=spawn, registry=REG,
+              reverbs=reverbs, sounds=sounds, spawn=spawn, registry=REG, seats=seats,
               house_bounds=[-75, -75, 75, 75])
+import world2                      # v2: Colossus, islands, boats, slide, reefs, ivy, creatures
+world2.build(layout, vpos, local)
 json.dump(layout, open(os.path.join(OUT, 'HouseLayout.json'), 'w'), indent=1)
 print(f'objects {len(objects)}, statues {len(statues)}, lights {len(lights)}, shafts {len(shafts)}, emitters {len(emitters)}, probes {len(probes)}')

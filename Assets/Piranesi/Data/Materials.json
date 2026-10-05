@@ -1,0 +1,3634 @@
+{
+ "Fruit_Apple": [
+  {
+   "albedo": "Fruit_Apple_0_Albedo.png",
+   "normal": "Fruit_Apple_0_Normal.png",
+   "mask": "Fruit_Apple_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Fruit_Apple_0",
+   "shader": "prop"
+  }
+ ],
+ "Plant_Anthurium": [
+  {
+   "albedo": "Plant_Anthurium_0_Albedo.png",
+   "normal": "Plant_Anthurium_0_Normal.png",
+   "mask": "Plant_Anthurium_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Anthurium_0",
+   "shader": "foliage"
+  }
+ ],
+ "Coral_Brain": [
+  {
+   "albedo": "Coral_Brain_0_Albedo.png",
+   "normal": "Coral_Brain_0_Normal.png",
+   "mask": "Coral_Brain_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Brain_0",
+   "shader": "coral"
+  }
+ ],
+ "Crab_Blue": [
+  {
+   "normal": "Crab_Blue_0_Normal.png",
+   "albedo": "Crab_Blue_0_Albedo.png",
+   "mask": "Crab_Blue_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Crab_Blue_0",
+   "shader": "coral",
+   "dir": "Crab_Blue",
+   "base": [
+    0.82,
+    0.8,
+    0.72
+   ],
+   "tip": [
+    0.33,
+    0.36,
+    0.22
+   ],
+   "height": 0.12,
+   "detail": 0.9,
+   "glow": 0.0
+  }
+ ],
+ "Fruit_Lime": [
+  {
+   "albedo": "Fruit_Lime_0_Albedo.png",
+   "normal": "Fruit_Lime_0_Normal.png",
+   "mask": "Fruit_Lime_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Fruit_Lime_0",
+   "shader": "prop"
+  }
+ ],
+ "Fruit_Pomegranate": [
+  {
+   "albedo": "Fruit_Pomegranate_0_Albedo.png",
+   "normal": "Fruit_Pomegranate_0_Normal.png",
+   "mask": "Fruit_Pomegranate_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Fruit_Pomegranate_0",
+   "shader": "prop"
+  }
+ ],
+ "Fruit_Kiwi": [
+  {
+   "albedo": "Fruit_Kiwi_0_Albedo.png",
+   "normal": "Fruit_Kiwi_0_Normal.png",
+   "mask": "Fruit_Kiwi_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Fruit_Kiwi_0",
+   "shader": "prop"
+  }
+ ],
+ "Fruit_Lychee": [
+  {
+   "albedo": "Fruit_Lychee_0_Albedo.png",
+   "normal": "Fruit_Lychee_0_Normal.png",
+   "mask": "Fruit_Lychee_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Fruit_Lychee_0",
+   "shader": "prop"
+  }
+ ],
+ "Fruit_Pears": [
+  {
+   "albedo": "Fruit_Pears_0_Albedo.png",
+   "normal": "Fruit_Pears_0_Normal.png",
+   "mask": "Fruit_Pears_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Fruit_Pears_0",
+   "shader": "prop"
+  }
+ ],
+ "Fruit_Bananas": [
+  {
+   "albedo": "Fruit_Bananas_0_Albedo.png",
+   "normal": "Fruit_Bananas_0_Normal.png",
+   "mask": "Fruit_Bananas_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Fruit_Bananas_0",
+   "shader": "prop",
+   "dir": "Fruit_Bananas"
+  }
+ ],
+ "Fruit_Lemon": [
+  {
+   "albedo": "Fruit_Lemon_0_Albedo.png",
+   "normal": "Fruit_Lemon_0_Normal.png",
+   "mask": "Fruit_Lemon_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Fruit_Lemon_0",
+   "shader": "prop"
+  }
+ ],
+ "Bowl_Wood": [
+  {
+   "albedo": "Bowl_Wood_0_Albedo.png",
+   "normal": "Bowl_Wood_0_Normal.png",
+   "mask": "Bowl_Wood_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Bowl_Wood_0",
+   "shader": "prop"
+  }
+ ],
+ "Goblets_Brass": [
+  {
+   "albedo": "Goblets_Brass_0_Albedo.png",
+   "normal": "Goblets_Brass_0_Normal.png",
+   "mask": "Goblets_Brass_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Goblets_Brass_0",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Goblets_Brass_1_Albedo.png",
+   "normal": "Goblets_Brass_1_Normal.png",
+   "mask": "Goblets_Brass_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Goblets_Brass_1",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Goblets_Brass_2_Albedo.png",
+   "normal": "Goblets_Brass_2_Normal.png",
+   "mask": "Goblets_Brass_2_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Goblets_Brass_2",
+   "shader": "prop"
+  }
+ ],
+ "Jug": [
+  {
+   "albedo": "Jug_0_Albedo.png",
+   "normal": "Jug_0_Normal.png",
+   "mask": "Jug_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Jug_0",
+   "shader": "prop"
+  }
+ ],
+ "Vase_Antique": [
+  {
+   "albedo": "Vase_Antique_0_Albedo.png",
+   "normal": "Vase_Antique_0_Normal.png",
+   "mask": "Vase_Antique_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Vase_Antique_0",
+   "shader": "prop"
+  }
+ ],
+ "Basket_Wicker": [
+  {
+   "albedo": "Basket_Wicker_0_Albedo.png",
+   "normal": "Basket_Wicker_0_Normal.png",
+   "mask": "Basket_Wicker_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Basket_Wicker_0",
+   "shader": "prop"
+  }
+ ],
+ "Candleholders": [
+  {
+   "albedo": "Candleholders_0_Albedo.png",
+   "normal": "Candleholders_0_Normal.png",
+   "mask": "Candleholders_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_0",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Candleholders_1_Albedo.png",
+   "smooth": 0.4,
+   "metal": 0,
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Candleholders_1",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Candleholders_2_Albedo.png",
+   "normal": "Candleholders_2_Normal.png",
+   "mask": "Candleholders_2_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_2",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Candleholders_3_Albedo.png",
+   "normal": "Candleholders_3_Normal.png",
+   "mask": "Candleholders_3_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_3",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Candleholders_4_Albedo.png",
+   "normal": "Candleholders_4_Normal.png",
+   "mask": "Candleholders_4_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_4",
+   "shader": "prop"
+  }
+ ],
+ "Plate_Carved": [
+  {
+   "albedo": "Plate_Carved_0_Albedo.png",
+   "normal": "Plate_Carved_0_Normal.png",
+   "mask": "Plate_Carved_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plate_Carved_0",
+   "shader": "prop"
+  }
+ ],
+ "Lion_Head": [
+  {
+   "albedo": "Lion_Head_0_Albedo.png",
+   "normal": "Lion_Head_0_Normal.png",
+   "mask": "Lion_Head_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Lion_Head_0",
+   "shader": "prop"
+  }
+ ],
+ "Chess_Set": [
+  {
+   "albedo": "Chess_Set_0_Albedo.png",
+   "normal": "Chess_Set_0_Normal.png",
+   "mask": "Chess_Set_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Chess_Set_0",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Chess_Set_1_Albedo.png",
+   "normal": "Chess_Set_1_Normal.png",
+   "mask": "Chess_Set_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Chess_Set_1",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Chess_Set_2_Albedo.png",
+   "normal": "Chess_Set_2_Normal.png",
+   "mask": "Chess_Set_2_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Chess_Set_2",
+   "shader": "prop"
+  }
+ ],
+ "Elephant_Carved": [
+  {
+   "albedo": "Elephant_Carved_0_Albedo.png",
+   "normal": "Elephant_Carved_0_Normal.png",
+   "mask": "Elephant_Carved_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Elephant_Carved_0",
+   "shader": "prop"
+  }
+ ],
+ "Shell_Lambis": [
+  {
+   "albedo": "Shell_Lambis_0_Albedo.png",
+   "normal": "Shell_Lambis_0_Normal.png",
+   "mask": "Shell_Lambis_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Shell_Lambis_0",
+   "shader": "prop"
+  }
+ ],
+ "Horse_Statue": [
+  {
+   "albedo": "Horse_Statue_0_Albedo.png",
+   "normal": "Horse_Statue_0_Normal.png",
+   "mask": "Horse_Statue_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Horse_Statue_0",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Horse_Statue_1_Albedo.png",
+   "normal": "Horse_Statue_1_Normal.png",
+   "mask": "Horse_Statue_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Horse_Statue_1",
+   "shader": "prop"
+  }
+ ],
+ "Marble_Bust": [
+  {
+   "albedo": "Marble_Bust_0_Albedo.png",
+   "normal": "Marble_Bust_0_Normal.png",
+   "mask": "Marble_Bust_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Marble_Bust_0",
+   "shader": "prop"
+  }
+ ],
+ "Whale_Bronze": [
+  {
+   "albedo": "Whale_Bronze_0_Albedo.png",
+   "normal": "Whale_Bronze_0_Normal.png",
+   "mask": "Whale_Bronze_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Whale_Bronze_0",
+   "shader": "prop"
+  }
+ ],
+ "Treasure_Chest": [
+  {
+   "albedo": "Treasure_Chest_0_Albedo.png",
+   "normal": "Treasure_Chest_0_Normal.png",
+   "mask": "Treasure_Chest_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Treasure_Chest_0",
+   "shader": "prop"
+  }
+ ],
+ "Lantern_Wood": [
+  {
+   "albedo": "Lantern_Wood_0_Albedo.png",
+   "normal": "Lantern_Wood_0_Normal.png",
+   "mask": "Lantern_Wood_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Lantern_Wood_0",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Lantern_Wood_1_Albedo.png",
+   "normal": "Lantern_Wood_1_Normal.png",
+   "mask": "Lantern_Wood_1_Mask.png",
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Lantern_Wood_1",
+   "shader": "prop"
+  }
+ ],
+ "Bucket_Wood": [
+  {
+   "albedo": "Bucket_Wood_0_Albedo.png",
+   "normal": "Bucket_Wood_0_Normal.png",
+   "mask": "Bucket_Wood_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Bucket_Wood_0",
+   "shader": "prop"
+  }
+ ],
+ "Plant_Pachira": [
+  {
+   "albedo": "Plant_Pachira_0_Albedo.png",
+   "normal": "Plant_Pachira_0_Normal.png",
+   "mask": "Plant_Pachira_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_0",
+   "shader": "foliage"
+  },
+  {
+   "albedo": "Plant_Pachira_1_Albedo.png",
+   "normal": "Plant_Pachira_1_Normal.png",
+   "mask": "Plant_Pachira_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_1",
+   "shader": "foliage"
+  }
+ ],
+ "Plant_Calathea": [
+  {
+   "albedo": "Plant_Calathea_0_Albedo.png",
+   "normal": "Plant_Calathea_0_Normal.png",
+   "mask": "Plant_Calathea_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Calathea_0",
+   "shader": "foliage"
+  }
+ ],
+ "Plant_Fern": [
+  {
+   "albedo": "Plant_Fern_0_Albedo.png",
+   "normal": "Plant_Fern_0_Normal.png",
+   "mask": "Plant_Fern_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Fern_0",
+   "shader": "foliage"
+  }
+ ],
+ "Plant_Sorrel": [
+  {
+   "albedo": "Plant_Sorrel_0_Albedo.png",
+   "normal": "Plant_Sorrel_0_Normal.png",
+   "mask": "Plant_Sorrel_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Sorrel_0",
+   "shader": "foliage"
+  }
+ ],
+ "Plant_Periwinkle": [
+  {
+   "albedo": "Plant_Periwinkle_0_Albedo.png",
+   "normal": "Plant_Periwinkle_0_Normal.png",
+   "mask": "Plant_Periwinkle_0_Mask.png",
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Plant_Periwinkle_0",
+   "shader": "foliage"
+  }
+ ],
+ "Rock_Coast": [
+  {
+   "albedo": "Rock_Coast_0_Albedo.png",
+   "normal": "Rock_Coast_0_Normal.png",
+   "mask": "Rock_Coast_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Rock_Coast_0",
+   "shader": "prop"
+  }
+ ],
+ "Rock_SandSmall": [
+  {
+   "albedo": "Rock_SandSmall_0_Albedo.png",
+   "normal": "Rock_SandSmall_0_Normal.png",
+   "mask": "Rock_SandSmall_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Rock_SandSmall_0",
+   "shader": "prop"
+  }
+ ],
+ "Rock_07": [
+  {
+   "albedo": "Rock_07_0_Albedo.png",
+   "normal": "Rock_07_0_Normal.png",
+   "mask": "Rock_07_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Rock_07_0",
+   "shader": "prop"
+  }
+ ],
+ "Rock_09": [
+  {
+   "albedo": "Rock_09_0_Albedo.png",
+   "normal": "Rock_09_0_Normal.png",
+   "mask": "Rock_09_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Rock_09_0",
+   "shader": "prop"
+  }
+ ],
+ "Boulder_01": [
+  {
+   "albedo": "Boulder_01_0_Albedo.png",
+   "normal": "Boulder_01_0_Normal.png",
+   "mask": "Boulder_01_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Boulder_01_0",
+   "shader": "prop"
+  }
+ ],
+ "Pier_Kit": [
+  {
+   "albedo": "Pier_Kit_0_Albedo.png",
+   "normal": "Pier_Kit_0_Normal.png",
+   "mask": "Pier_Kit_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Pier_Kit_0",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Pier_Kit_1_Albedo.png",
+   "normal": "Pier_Kit_1_Normal.png",
+   "mask": "Pier_Kit_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Pier_Kit_1",
+   "shader": "prop"
+  }
+ ],
+ "Ship_Dutch": [
+  {
+   "albedo": "Ship_Dutch_0_Albedo.png",
+   "normal": "Ship_Dutch_0_Normal.png",
+   "mask": "Ship_Dutch_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Ship_Dutch_0",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Ship_Dutch_1_Albedo.png",
+   "normal": "Ship_Dutch_1_Normal.png",
+   "mask": "Ship_Dutch_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Ship_Dutch_1",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Ship_Dutch_2_Albedo.png",
+   "normal": "Ship_Dutch_2_Normal.png",
+   "mask": "Ship_Dutch_2_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Ship_Dutch_2",
+   "shader": "prop"
+  }
+ ],
+ "Barrels": [
+  {
+   "albedo": "Barrels_0_Albedo.png",
+   "normal": "Barrels_0_Normal.png",
+   "mask": "Barrels_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Barrels_0",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Barrels_1_Albedo.png",
+   "normal": "Barrels_1_Normal.png",
+   "mask": "Barrels_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Barrels_1",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Barrels_2_Albedo.png",
+   "normal": "Barrels_2_Normal.png",
+   "mask": "Barrels_2_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Barrels_2",
+   "shader": "prop"
+  }
+ ],
+ "Coral_Staghorn": [
+  {
+   "albedo": "Coral_Staghorn_0_Albedo.png",
+   "normal": "Coral_Staghorn_0_Normal.png",
+   "mask": "Coral_Staghorn_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Staghorn_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_BrainGrooved": [
+  {
+   "albedo": "Coral_BrainGrooved_0_Albedo.png",
+   "normal": "Coral_BrainGrooved_0_Normal.png",
+   "mask": "Coral_BrainGrooved_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_BrainGrooved_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Lobe": [
+  {
+   "albedo": "Coral_Lobe_0_Albedo.png",
+   "normal": "Coral_Lobe_0_Normal.png",
+   "mask": "Coral_Lobe_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Lobe_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Cauliflower": [
+  {
+   "albedo": "Coral_Cauliflower_0_Albedo.png",
+   "normal": "Coral_Cauliflower_0_Normal.png",
+   "mask": "Coral_Cauliflower_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Cauliflower_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Lace": [
+  {
+   "albedo": "Coral_Lace_0_Albedo.png",
+   "normal": "Coral_Lace_0_Normal.png",
+   "mask": "Coral_Lace_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Lace_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Maze": [
+  {
+   "albedo": "Coral_Maze_0_Albedo.png",
+   "normal": "Coral_Maze_0_Normal.png",
+   "mask": "Coral_Maze_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Maze_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Fire": [
+  {
+   "albedo": "Coral_Fire_0_Albedo.png",
+   "normal": "Coral_Fire_0_Normal.png",
+   "mask": "Coral_Fire_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Fire_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Lettuce": [
+  {
+   "albedo": "Coral_Lettuce_0_Albedo.png",
+   "normal": "Coral_Lettuce_0_Normal.png",
+   "mask": "Coral_Lettuce_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Lettuce_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Lobo": [
+  {
+   "albedo": "Coral_Lobo_0_Albedo.png",
+   "normal": "Coral_Lobo_0_Normal.png",
+   "mask": "Coral_Lobo_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Lobo_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Cactus": [
+  {
+   "albedo": "Coral_Cactus_0_Albedo.png",
+   "normal": "Coral_Cactus_0_Normal.png",
+   "mask": "Coral_Cactus_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Cactus_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Montipora": [
+  {
+   "albedo": "Coral_Montipora_0_Albedo.png",
+   "normal": "Coral_Montipora_0_Normal.png",
+   "mask": "Coral_Montipora_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Montipora_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Mushroom": [
+  {
+   "albedo": "Coral_Mushroom_0_Albedo.png",
+   "normal": "Coral_Mushroom_0_Normal.png",
+   "mask": "Coral_Mushroom_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Mushroom_0",
+   "shader": "coral",
+   "dir": "Coral_Mushroom"
+  }
+ ],
+ "Coral_Table": [
+  {
+   "albedo": "Coral_Table_0_Albedo.png",
+   "normal": "Coral_Table_0_Normal.png",
+   "mask": "Coral_Table_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Table_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Honeycomb": [
+  {
+   "albedo": "Coral_Honeycomb_0_Albedo.png",
+   "normal": "Coral_Honeycomb_0_Normal.png",
+   "mask": "Coral_Honeycomb_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Honeycomb_0",
+   "shader": "coral"
+  }
+ ],
+ "SeaStar_Blue": [
+  {
+   "albedo": "SeaStar_Blue_0_Albedo.png",
+   "normal": "SeaStar_Blue_0_Normal.png",
+   "mask": "SeaStar_Blue_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "SeaStar_Blue_0",
+   "shader": "prop",
+   "dir": "SeaStar_Blue"
+  }
+ ],
+ "SeaStar_Cushion": [
+  {
+   "albedo": "SeaStar_Cushion_0_Albedo.png",
+   "normal": "SeaStar_Cushion_0_Normal.png",
+   "mask": "SeaStar_Cushion_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "SeaStar_Cushion_0",
+   "shader": "prop",
+   "dir": "SeaStar_Cushion"
+  }
+ ],
+ "SeaStar_Crown": [
+  {
+   "albedo": "SeaStar_Crown_0_Albedo.png",
+   "normal": "SeaStar_Crown_0_Normal.png",
+   "mask": "SeaStar_Crown_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "SeaStar_Crown_0",
+   "shader": "prop",
+   "dir": "SeaStar_Crown"
+  }
+ ],
+ "Shell_ConeTextile": [
+  {
+   "albedo": "Shell_ConeTextile_0_Albedo.png",
+   "normal": "Shell_ConeTextile_0_Normal.png",
+   "mask": "Shell_ConeTextile_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Shell_ConeTextile_0",
+   "shader": "prop"
+  }
+ ],
+ "Shell_ConeGlory": [
+  {
+   "albedo": "Shell_ConeGlory_0_Albedo.png",
+   "normal": "Shell_ConeGlory_0_Normal.png",
+   "mask": "Shell_ConeGlory_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Shell_ConeGlory_0",
+   "shader": "prop"
+  }
+ ],
+ "Clam_Giant": [
+  {
+   "albedo": "Clam_Giant_0_Albedo.png",
+   "normal": "Clam_Giant_0_Normal.png",
+   "mask": "Clam_Giant_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Clam_Giant_0",
+   "shader": "prop"
+  }
+ ],
+ "Sponge_Barrel": [
+  {
+   "albedo": "Sponge_Barrel_0_Albedo.png",
+   "normal": "Sponge_Barrel_0_Normal.png",
+   "mask": "Sponge_Barrel_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Sponge_Barrel_0",
+   "shader": "coral"
+  }
+ ],
+ "Sponge_Grass": [
+  {
+   "albedo": "Sponge_Grass_0_Albedo.png",
+   "normal": "Sponge_Grass_0_Normal.png",
+   "mask": "Sponge_Grass_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Sponge_Grass_0",
+   "shader": "coral"
+  }
+ ],
+ "Palm_0": [
+  {
+   "sub": "Palm_0_PalmBark",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "mask": "Palm/PalmBark_Mask.png",
+   "alpha": "OPAQUE"
+  },
+  {
+   "sub": "Palm_0_Coconut",
+   "shader": "prop",
+   "albedo": "Palm/Coconut_Albedo.png",
+   "alpha": "OPAQUE",
+   "smooth": 0.35
+  },
+  {
+   "sub": "Palm_0_PalmLeafDead",
+   "shader": "foliage",
+   "albedo": "Palm/PalmLeaf_Albedo.png",
+   "normal": "Palm/PalmLeaf_Normal.png",
+   "mask": "Palm/PalmLeaf_Mask.png",
+   "alpha": "MASK",
+   "tint": [
+    0.75,
+    0.55,
+    0.3
+   ],
+   "wind": 0.4,
+   "windScale": 10
+  },
+  {
+   "sub": "Palm_0_PalmLeaf",
+   "shader": "foliage",
+   "albedo": "Palm/PalmLeaf_Albedo.png",
+   "normal": "Palm/PalmLeaf_Normal.png",
+   "mask": "Palm/PalmLeaf_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.55,
+   "windScale": 10
+  }
+ ],
+ "Palm_1": [
+  {
+   "sub": "Palm_1_PalmBark",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "mask": "Palm/PalmBark_Mask.png",
+   "alpha": "OPAQUE"
+  },
+  {
+   "sub": "Palm_1_Coconut",
+   "shader": "prop",
+   "albedo": "Palm/Coconut_Albedo.png",
+   "alpha": "OPAQUE",
+   "smooth": 0.35
+  },
+  {
+   "sub": "Palm_1_PalmLeaf",
+   "shader": "foliage",
+   "albedo": "Palm/PalmLeaf_Albedo.png",
+   "normal": "Palm/PalmLeaf_Normal.png",
+   "mask": "Palm/PalmLeaf_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.55,
+   "windScale": 10
+  },
+  {
+   "sub": "Palm_1_PalmLeafDead",
+   "shader": "foliage",
+   "albedo": "Palm/PalmLeaf_Albedo.png",
+   "normal": "Palm/PalmLeaf_Normal.png",
+   "mask": "Palm/PalmLeaf_Mask.png",
+   "alpha": "MASK",
+   "tint": [
+    0.75,
+    0.55,
+    0.3
+   ],
+   "wind": 0.4,
+   "windScale": 10
+  }
+ ],
+ "Palm_2": [
+  {
+   "sub": "Palm_2_PalmBark",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "mask": "Palm/PalmBark_Mask.png",
+   "alpha": "OPAQUE"
+  },
+  {
+   "sub": "Palm_2_Coconut",
+   "shader": "prop",
+   "albedo": "Palm/Coconut_Albedo.png",
+   "alpha": "OPAQUE",
+   "smooth": 0.35
+  },
+  {
+   "sub": "Palm_2_PalmLeafDead",
+   "shader": "foliage",
+   "albedo": "Palm/PalmLeaf_Albedo.png",
+   "normal": "Palm/PalmLeaf_Normal.png",
+   "mask": "Palm/PalmLeaf_Mask.png",
+   "alpha": "MASK",
+   "tint": [
+    0.75,
+    0.55,
+    0.3
+   ],
+   "wind": 0.4,
+   "windScale": 10
+  },
+  {
+   "sub": "Palm_2_PalmLeaf",
+   "shader": "foliage",
+   "albedo": "Palm/PalmLeaf_Albedo.png",
+   "normal": "Palm/PalmLeaf_Normal.png",
+   "mask": "Palm/PalmLeaf_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.55,
+   "windScale": 10
+  }
+ ],
+ "Hibiscus_Red": [
+  {
+   "sub": "Hibiscus_Red_HibStem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.45,
+    0.4,
+    0.3
+   ],
+   "smooth": 0.2
+  },
+  {
+   "sub": "Hibiscus_Red_HibLeaf",
+   "shader": "foliage",
+   "albedo": "Hibiscus/HibLeaf_Albedo.png",
+   "normal": "Hibiscus/HibLeaf_Normal.png",
+   "mask": "Hibiscus/HibLeaf_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.25,
+   "windScale": 1.5
+  },
+  {
+   "sub": "Hibiscus_Red_HibPetalRed",
+   "shader": "foliage",
+   "albedo": "Hibiscus/HibPetalRed_Albedo.png",
+   "alpha": "MASK",
+   "wind": 0.2,
+   "windScale": 1.5,
+   "translucency": 1.2
+  },
+  {
+   "sub": "Hibiscus_Red_HibStamen",
+   "shader": "prop",
+   "albedo": "Hibiscus/HibPetalRed_Albedo.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    1.0,
+    0.85,
+    0.2
+   ],
+   "smooth": 0.4
+  }
+ ],
+ "Hibiscus_Pink": [
+  {
+   "sub": "Hibiscus_Pink_HibStem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.45,
+    0.4,
+    0.3
+   ],
+   "smooth": 0.2
+  },
+  {
+   "sub": "Hibiscus_Pink_HibLeaf",
+   "shader": "foliage",
+   "albedo": "Hibiscus/HibLeaf_Albedo.png",
+   "normal": "Hibiscus/HibLeaf_Normal.png",
+   "mask": "Hibiscus/HibLeaf_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.25,
+   "windScale": 1.5
+  },
+  {
+   "sub": "Hibiscus_Pink_HibPetalPink",
+   "shader": "foliage",
+   "albedo": "Hibiscus/HibPetalPink_Albedo.png",
+   "alpha": "MASK",
+   "wind": 0.2,
+   "windScale": 1.5,
+   "translucency": 1.2
+  },
+  {
+   "sub": "Hibiscus_Pink_HibStamen",
+   "shader": "prop",
+   "albedo": "Hibiscus/HibPetalRed_Albedo.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    1.0,
+    0.85,
+    0.2
+   ],
+   "smooth": 0.4
+  }
+ ],
+ "Hibiscus_Orange": [
+  {
+   "sub": "Hibiscus_Orange_HibStem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.45,
+    0.4,
+    0.3
+   ],
+   "smooth": 0.2
+  },
+  {
+   "sub": "Hibiscus_Orange_HibLeaf",
+   "shader": "foliage",
+   "albedo": "Hibiscus/HibLeaf_Albedo.png",
+   "normal": "Hibiscus/HibLeaf_Normal.png",
+   "mask": "Hibiscus/HibLeaf_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.25,
+   "windScale": 1.5
+  },
+  {
+   "sub": "Hibiscus_Orange_HibPetalOrange",
+   "shader": "foliage",
+   "albedo": "Hibiscus/HibPetalOrange_Albedo.png",
+   "alpha": "MASK",
+   "wind": 0.2,
+   "windScale": 1.5,
+   "translucency": 1.2
+  },
+  {
+   "sub": "Hibiscus_Orange_HibStamen",
+   "shader": "prop",
+   "albedo": "Hibiscus/HibPetalRed_Albedo.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    1.0,
+    0.85,
+    0.2
+   ],
+   "smooth": 0.4
+  }
+ ],
+ "BeachGrass": [
+  {
+   "sub": "BeachGrass_BeachGrass",
+   "shader": "foliage",
+   "albedo": "Palm/PalmLeaf_Albedo.png",
+   "normal": "Palm/PalmLeaf_Normal.png",
+   "alpha": "MASK",
+   "tint": [
+    0.85,
+    0.85,
+    0.6
+   ],
+   "wind": 0.6,
+   "windScale": 0.8
+  }
+ ],
+ "Candleholders_0": [
+  {
+   "albedo": "Candleholders_0_Albedo.png",
+   "normal": "Candleholders_0_Normal.png",
+   "mask": "Candleholders_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_0",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_1_Albedo.png",
+   "smooth": 0.4,
+   "metal": 0,
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Candleholders_1",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_2_Albedo.png",
+   "normal": "Candleholders_2_Normal.png",
+   "mask": "Candleholders_2_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_2",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_3_Albedo.png",
+   "normal": "Candleholders_3_Normal.png",
+   "mask": "Candleholders_3_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_3",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_4_Albedo.png",
+   "normal": "Candleholders_4_Normal.png",
+   "mask": "Candleholders_4_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_4",
+   "shader": "prop",
+   "dir": "Candleholders"
+  }
+ ],
+ "Candleholders_1": [
+  {
+   "albedo": "Candleholders_0_Albedo.png",
+   "normal": "Candleholders_0_Normal.png",
+   "mask": "Candleholders_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_0",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_1_Albedo.png",
+   "smooth": 0.4,
+   "metal": 0,
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Candleholders_1",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_2_Albedo.png",
+   "normal": "Candleholders_2_Normal.png",
+   "mask": "Candleholders_2_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_2",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_3_Albedo.png",
+   "normal": "Candleholders_3_Normal.png",
+   "mask": "Candleholders_3_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_3",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_4_Albedo.png",
+   "normal": "Candleholders_4_Normal.png",
+   "mask": "Candleholders_4_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_4",
+   "shader": "prop",
+   "dir": "Candleholders"
+  }
+ ],
+ "Candleholders_2": [
+  {
+   "albedo": "Candleholders_0_Albedo.png",
+   "normal": "Candleholders_0_Normal.png",
+   "mask": "Candleholders_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_0",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_1_Albedo.png",
+   "smooth": 0.4,
+   "metal": 0,
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Candleholders_1",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_2_Albedo.png",
+   "normal": "Candleholders_2_Normal.png",
+   "mask": "Candleholders_2_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_2",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_3_Albedo.png",
+   "normal": "Candleholders_3_Normal.png",
+   "mask": "Candleholders_3_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_3",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_4_Albedo.png",
+   "normal": "Candleholders_4_Normal.png",
+   "mask": "Candleholders_4_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_4",
+   "shader": "prop",
+   "dir": "Candleholders"
+  }
+ ],
+ "Plant_Pachira_0": [
+  {
+   "albedo": "Plant_Pachira_0_Albedo.png",
+   "normal": "Plant_Pachira_0_Normal.png",
+   "mask": "Plant_Pachira_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_0",
+   "shader": "foliage",
+   "dir": "Plant_Pachira"
+  },
+  {
+   "albedo": "Plant_Pachira_1_Albedo.png",
+   "normal": "Plant_Pachira_1_Normal.png",
+   "mask": "Plant_Pachira_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_1",
+   "shader": "foliage",
+   "dir": "Plant_Pachira"
+  }
+ ],
+ "Plant_Pachira_1": [
+  {
+   "albedo": "Plant_Pachira_0_Albedo.png",
+   "normal": "Plant_Pachira_0_Normal.png",
+   "mask": "Plant_Pachira_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_0",
+   "shader": "foliage",
+   "dir": "Plant_Pachira"
+  },
+  {
+   "albedo": "Plant_Pachira_1_Albedo.png",
+   "normal": "Plant_Pachira_1_Normal.png",
+   "mask": "Plant_Pachira_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_1",
+   "shader": "foliage",
+   "dir": "Plant_Pachira"
+  }
+ ],
+ "Plant_Pachira_2": [
+  {
+   "albedo": "Plant_Pachira_0_Albedo.png",
+   "normal": "Plant_Pachira_0_Normal.png",
+   "mask": "Plant_Pachira_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_0",
+   "shader": "foliage",
+   "dir": "Plant_Pachira"
+  },
+  {
+   "albedo": "Plant_Pachira_1_Albedo.png",
+   "normal": "Plant_Pachira_1_Normal.png",
+   "mask": "Plant_Pachira_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_1",
+   "shader": "foliage",
+   "dir": "Plant_Pachira"
+  }
+ ],
+ "Plant_Pachira_3": [
+  {
+   "albedo": "Plant_Pachira_0_Albedo.png",
+   "normal": "Plant_Pachira_0_Normal.png",
+   "mask": "Plant_Pachira_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_0",
+   "shader": "foliage",
+   "dir": "Plant_Pachira"
+  },
+  {
+   "albedo": "Plant_Pachira_1_Albedo.png",
+   "normal": "Plant_Pachira_1_Normal.png",
+   "mask": "Plant_Pachira_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_1",
+   "shader": "foliage",
+   "dir": "Plant_Pachira"
+  }
+ ],
+ "Plant_Anthurium_0": [
+  {
+   "albedo": "Plant_Anthurium_0_Albedo.png",
+   "normal": "Plant_Anthurium_0_Normal.png",
+   "mask": "Plant_Anthurium_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Anthurium_0",
+   "shader": "foliage",
+   "dir": "Plant_Anthurium"
+  }
+ ],
+ "Plant_Anthurium_1": [
+  {
+   "albedo": "Plant_Anthurium_0_Albedo.png",
+   "normal": "Plant_Anthurium_0_Normal.png",
+   "mask": "Plant_Anthurium_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Anthurium_0",
+   "shader": "foliage",
+   "dir": "Plant_Anthurium"
+  }
+ ],
+ "Plant_Anthurium_2": [
+  {
+   "albedo": "Plant_Anthurium_0_Albedo.png",
+   "normal": "Plant_Anthurium_0_Normal.png",
+   "mask": "Plant_Anthurium_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Anthurium_0",
+   "shader": "foliage",
+   "dir": "Plant_Anthurium"
+  }
+ ],
+ "Plant_Anthurium_3": [
+  {
+   "albedo": "Plant_Anthurium_0_Albedo.png",
+   "normal": "Plant_Anthurium_0_Normal.png",
+   "mask": "Plant_Anthurium_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Anthurium_0",
+   "shader": "foliage",
+   "dir": "Plant_Anthurium"
+  }
+ ],
+ "Plant_Anthurium_4": [
+  {
+   "albedo": "Plant_Anthurium_0_Albedo.png",
+   "normal": "Plant_Anthurium_0_Normal.png",
+   "mask": "Plant_Anthurium_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Anthurium_0",
+   "shader": "foliage",
+   "dir": "Plant_Anthurium"
+  }
+ ],
+ "Plant_Anthurium_5": [
+  {
+   "albedo": "Plant_Anthurium_0_Albedo.png",
+   "normal": "Plant_Anthurium_0_Normal.png",
+   "mask": "Plant_Anthurium_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Anthurium_0",
+   "shader": "foliage",
+   "dir": "Plant_Anthurium"
+  }
+ ],
+ "Plant_Calathea_0": [
+  {
+   "albedo": "Plant_Calathea_0_Albedo.png",
+   "normal": "Plant_Calathea_0_Normal.png",
+   "mask": "Plant_Calathea_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Calathea_0",
+   "shader": "foliage",
+   "dir": "Plant_Calathea"
+  }
+ ],
+ "Plant_Calathea_1": [
+  {
+   "albedo": "Plant_Calathea_0_Albedo.png",
+   "normal": "Plant_Calathea_0_Normal.png",
+   "mask": "Plant_Calathea_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Calathea_0",
+   "shader": "foliage",
+   "dir": "Plant_Calathea"
+  }
+ ],
+ "Plant_Calathea_2": [
+  {
+   "albedo": "Plant_Calathea_0_Albedo.png",
+   "normal": "Plant_Calathea_0_Normal.png",
+   "mask": "Plant_Calathea_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Calathea_0",
+   "shader": "foliage",
+   "dir": "Plant_Calathea"
+  }
+ ],
+ "Plant_Calathea_3": [
+  {
+   "albedo": "Plant_Calathea_0_Albedo.png",
+   "normal": "Plant_Calathea_0_Normal.png",
+   "mask": "Plant_Calathea_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Calathea_0",
+   "shader": "foliage",
+   "dir": "Plant_Calathea"
+  }
+ ],
+ "Plant_Calathea_4": [
+  {
+   "albedo": "Plant_Calathea_0_Albedo.png",
+   "normal": "Plant_Calathea_0_Normal.png",
+   "mask": "Plant_Calathea_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Calathea_0",
+   "shader": "foliage",
+   "dir": "Plant_Calathea"
+  }
+ ],
+ "Plant_Fern_0": [
+  {
+   "albedo": "Plant_Fern_0_Albedo.png",
+   "normal": "Plant_Fern_0_Normal.png",
+   "mask": "Plant_Fern_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Fern_0",
+   "shader": "foliage",
+   "dir": "Plant_Fern"
+  }
+ ],
+ "Plant_Fern_1": [
+  {
+   "albedo": "Plant_Fern_0_Albedo.png",
+   "normal": "Plant_Fern_0_Normal.png",
+   "mask": "Plant_Fern_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Fern_0",
+   "shader": "foliage",
+   "dir": "Plant_Fern"
+  }
+ ],
+ "Plant_Fern_2": [
+  {
+   "albedo": "Plant_Fern_0_Albedo.png",
+   "normal": "Plant_Fern_0_Normal.png",
+   "mask": "Plant_Fern_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Fern_0",
+   "shader": "foliage",
+   "dir": "Plant_Fern"
+  }
+ ],
+ "Plant_Fern_3": [
+  {
+   "albedo": "Plant_Fern_0_Albedo.png",
+   "normal": "Plant_Fern_0_Normal.png",
+   "mask": "Plant_Fern_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Fern_0",
+   "shader": "foliage",
+   "dir": "Plant_Fern"
+  }
+ ],
+ "Plant_Sorrel_0": [
+  {
+   "albedo": "Plant_Sorrel_0_Albedo.png",
+   "normal": "Plant_Sorrel_0_Normal.png",
+   "mask": "Plant_Sorrel_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Sorrel_0",
+   "shader": "foliage",
+   "dir": "Plant_Sorrel"
+  }
+ ],
+ "Plant_Sorrel_1": [
+  {
+   "albedo": "Plant_Sorrel_0_Albedo.png",
+   "normal": "Plant_Sorrel_0_Normal.png",
+   "mask": "Plant_Sorrel_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Sorrel_0",
+   "shader": "foliage",
+   "dir": "Plant_Sorrel"
+  }
+ ],
+ "Plant_Sorrel_2": [
+  {
+   "albedo": "Plant_Sorrel_0_Albedo.png",
+   "normal": "Plant_Sorrel_0_Normal.png",
+   "mask": "Plant_Sorrel_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Sorrel_0",
+   "shader": "foliage",
+   "dir": "Plant_Sorrel"
+  }
+ ],
+ "Plant_Sorrel_3": [
+  {
+   "albedo": "Plant_Sorrel_0_Albedo.png",
+   "normal": "Plant_Sorrel_0_Normal.png",
+   "mask": "Plant_Sorrel_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Sorrel_0",
+   "shader": "foliage",
+   "dir": "Plant_Sorrel"
+  }
+ ],
+ "Plant_Sorrel_4": [
+  {
+   "albedo": "Plant_Sorrel_0_Albedo.png",
+   "normal": "Plant_Sorrel_0_Normal.png",
+   "mask": "Plant_Sorrel_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Sorrel_0",
+   "shader": "foliage",
+   "dir": "Plant_Sorrel"
+  }
+ ],
+ "Plant_Sorrel_5": [
+  {
+   "albedo": "Plant_Sorrel_0_Albedo.png",
+   "normal": "Plant_Sorrel_0_Normal.png",
+   "mask": "Plant_Sorrel_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Sorrel_0",
+   "shader": "foliage",
+   "dir": "Plant_Sorrel"
+  }
+ ],
+ "Plant_Periwinkle_0": [
+  {
+   "albedo": "Plant_Periwinkle_0_Albedo.png",
+   "normal": "Plant_Periwinkle_0_Normal.png",
+   "mask": "Plant_Periwinkle_0_Mask.png",
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Plant_Periwinkle_0",
+   "shader": "foliage",
+   "dir": "Plant_Periwinkle"
+  }
+ ],
+ "Plant_Periwinkle_1": [
+  {
+   "albedo": "Plant_Periwinkle_0_Albedo.png",
+   "normal": "Plant_Periwinkle_0_Normal.png",
+   "mask": "Plant_Periwinkle_0_Mask.png",
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Plant_Periwinkle_0",
+   "shader": "foliage",
+   "dir": "Plant_Periwinkle"
+  }
+ ],
+ "Plant_Periwinkle_2": [
+  {
+   "albedo": "Plant_Periwinkle_0_Albedo.png",
+   "normal": "Plant_Periwinkle_0_Normal.png",
+   "mask": "Plant_Periwinkle_0_Mask.png",
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Plant_Periwinkle_0",
+   "shader": "foliage",
+   "dir": "Plant_Periwinkle"
+  }
+ ],
+ "Plant_Periwinkle_3": [
+  {
+   "albedo": "Plant_Periwinkle_0_Albedo.png",
+   "normal": "Plant_Periwinkle_0_Normal.png",
+   "mask": "Plant_Periwinkle_0_Mask.png",
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Plant_Periwinkle_0",
+   "shader": "foliage",
+   "dir": "Plant_Periwinkle"
+  }
+ ],
+ "Plant_Periwinkle_4": [
+  {
+   "albedo": "Plant_Periwinkle_0_Albedo.png",
+   "normal": "Plant_Periwinkle_0_Normal.png",
+   "mask": "Plant_Periwinkle_0_Mask.png",
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Plant_Periwinkle_0",
+   "shader": "foliage",
+   "dir": "Plant_Periwinkle"
+  }
+ ],
+ "Plant_Periwinkle_5": [
+  {
+   "albedo": "Plant_Periwinkle_0_Albedo.png",
+   "normal": "Plant_Periwinkle_0_Normal.png",
+   "mask": "Plant_Periwinkle_0_Mask.png",
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Plant_Periwinkle_0",
+   "shader": "foliage",
+   "dir": "Plant_Periwinkle"
+  }
+ ],
+ "Gondola": [
+  {
+   "sub": "Gondola_Lacquer",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "albedo": "Kit2/Lacquer_Albedo.png",
+   "normal": "Kit2/Planks_Normal.png",
+   "smooth": 0.85
+  },
+  {
+   "sub": "Gondola_Planks",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "albedo": "Kit2/Planks_Albedo.png",
+   "normal": "Kit2/Planks_Normal.png",
+   "mask": "Kit2/Planks_Mask.png"
+  },
+  {
+   "sub": "Gondola_Gold",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "tint": [
+    1.0,
+    0.76,
+    0.35
+   ],
+   "smooth": 0.75,
+   "metal": 1.0
+  },
+  {
+   "sub": "Gondola_LinenRed",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "albedo": "Kit2/LinenRed_Albedo.png",
+   "normal": "Kit2/LinenRed_Normal.png",
+   "mask": "Kit2/LinenRed_Mask.png"
+  }
+ ],
+ "Hammock": [
+  {
+   "sub": "Hammock_LinenCream",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "albedo": "Kit2/LinenCream_Albedo.png",
+   "normal": "Kit2/LinenCream_Normal.png",
+   "mask": "Kit2/LinenCream_Mask.png",
+   "doubleSided": true
+  },
+  {
+   "sub": "Hammock_Rope",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "albedo": "Kit2/Rope_Albedo.png",
+   "normal": "Kit2/Rope_Normal.png",
+   "mask": "Kit2/Rope_Mask.png"
+  }
+ ],
+ "Dock": [
+  {
+   "sub": "Dock_Planks",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "albedo": "Kit2/Planks_Albedo.png",
+   "normal": "Kit2/Planks_Normal.png",
+   "mask": "Kit2/Planks_Mask.png"
+  }
+ ],
+ "AqueductWater": [
+  {
+   "sub": "AqueductWater_Flow",
+   "shader": "flow",
+   "alpha": "BLEND"
+  }
+ ],
+ "NoriaWheel": [
+  {
+   "sub": "NoriaWheel_Planks",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "albedo": "Kit2/Planks_Albedo.png",
+   "normal": "Kit2/Planks_Normal.png",
+   "mask": "Kit2/Planks_Mask.png"
+  }
+ ],
+ "Slide": [
+  {
+   "sub": "Slide_Flume",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.93,
+    0.95,
+    0.97
+   ],
+   "smooth": 0.9,
+   "doubleSided": true
+  }
+ ],
+ "SlideWater": [
+  {
+   "sub": "SlideWater_Flow",
+   "shader": "flow",
+   "alpha": "BLEND"
+  }
+ ],
+ "Dolphin": [
+  {
+   "sub": "Dolphin_Dolphin",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "albedo": "Creatures/Dolphin_Albedo.png",
+   "smooth": 0.8,
+   "doubleSided": true
+  }
+ ],
+ "Albatross": [
+  {
+   "sub": "Albatross_white",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "albedo": "Creatures/Swatch_Albedo.png",
+   "smooth": 0.3
+  },
+  {
+   "sub": "Albatross_bill",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "albedo": "Creatures/Swatch_Albedo.png",
+   "smooth": 0.3
+  },
+  {
+   "sub": "Albatross_tip",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "albedo": "Creatures/Swatch_Albedo.png",
+   "smooth": 0.3
+  },
+  {
+   "sub": "Albatross_eye",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "albedo": "Creatures/Swatch_Albedo.png",
+   "smooth": 0.3
+  },
+  {
+   "sub": "Albatross_dark",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "albedo": "Creatures/Swatch_Albedo.png",
+   "smooth": 0.3
+  }
+ ],
+ "Nest": [
+  {
+   "sub": "Nest_mud",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "albedo": "Creatures/Swatch_Albedo.png",
+   "smooth": 0.2
+  },
+  {
+   "sub": "Nest_grass",
+   "shader": "foliage",
+   "alpha": "MASK",
+   "albedo": "Palm/PalmLeaf_Albedo.png",
+   "tint": [
+    0.85,
+    0.75,
+    0.5
+   ],
+   "wind": 0.2,
+   "windScale": 0.5
+  },
+  {
+   "sub": "Nest_egg",
+   "shader": "prop",
+   "alpha": "OPAQUE",
+   "albedo": "Creatures/Swatch_Albedo.png",
+   "smooth": 0.2
+  }
+ ],
+ "Ivy_Column_0": [
+  {
+   "sub": "Ivy_Column_0_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_Column_0_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_Column_1": [
+  {
+   "sub": "Ivy_Column_1_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_Column_1_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_VestBlind_0": [
+  {
+   "sub": "Ivy_VestBlind_0_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_VestBlind_0_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_VestBlind_1": [
+  {
+   "sub": "Ivy_VestBlind_1_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_VestBlind_1_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_VestWindow": [
+  {
+   "sub": "Ivy_VestWindow_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_VestWindow_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_VestInnerBlind": [
+  {
+   "sub": "Ivy_VestInnerBlind_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_VestInnerBlind_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_VestInnerOpen": [
+  {
+   "sub": "Ivy_VestInnerOpen_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_VestInnerOpen_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_ArcadeWin": [
+  {
+   "sub": "Ivy_ArcadeWin_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_ArcadeWin_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_Tower": [
+  {
+   "sub": "Ivy_Tower_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_Tower_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_Aqueduct": [
+  {
+   "sub": "Ivy_Aqueduct_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_Aqueduct_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_Ruin": [
+  {
+   "sub": "Ivy_Ruin_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_Ruin_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_HangRing": [
+  {
+   "sub": "Ivy_HangRing_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.7,
+   "windScale": 6,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_HangRing_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_HangLine_S": [
+  {
+   "sub": "Ivy_HangLine_S_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.7,
+   "windScale": 6,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_HangLine_S_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_HangLine_L": [
+  {
+   "sub": "Ivy_HangLine_L_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.7,
+   "windScale": 6,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_HangLine_L_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_Column_0_LOD1": [
+  {
+   "sub": "Ivy_Column_0_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_Column_0_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_Column_1_LOD1": [
+  {
+   "sub": "Ivy_Column_1_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_Column_1_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_VestBlind_0_LOD1": [
+  {
+   "sub": "Ivy_VestBlind_0_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_VestBlind_0_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_VestBlind_1_LOD1": [
+  {
+   "sub": "Ivy_VestBlind_1_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_VestBlind_1_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_VestWindow_LOD1": [
+  {
+   "sub": "Ivy_VestWindow_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_VestWindow_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_VestInnerBlind_LOD1": [
+  {
+   "sub": "Ivy_VestInnerBlind_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_VestInnerBlind_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_VestInnerOpen_LOD1": [
+  {
+   "sub": "Ivy_VestInnerOpen_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_VestInnerOpen_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_ArcadeWin_LOD1": [
+  {
+   "sub": "Ivy_ArcadeWin_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_ArcadeWin_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_Tower_LOD1": [
+  {
+   "sub": "Ivy_Tower_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_Tower_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_Aqueduct_LOD1": [
+  {
+   "sub": "Ivy_Aqueduct_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_Aqueduct_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_Ruin_LOD1": [
+  {
+   "sub": "Ivy_Ruin_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.18,
+   "windScale": 40,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_Ruin_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_HangRing_LOD1": [
+  {
+   "sub": "Ivy_HangRing_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.7,
+   "windScale": 6,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_HangRing_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_HangLine_S_LOD1": [
+  {
+   "sub": "Ivy_HangLine_S_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.7,
+   "windScale": 6,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_HangLine_S_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Ivy_HangLine_L_LOD1": [
+  {
+   "sub": "Ivy_HangLine_L_Leaf",
+   "shader": "foliage",
+   "albedo": "Ivy/Ivy_Albedo.png",
+   "normal": "Ivy/Ivy_Normal.png",
+   "mask": "Ivy/Ivy_Mask.png",
+   "alpha": "MASK",
+   "wind": 0.7,
+   "windScale": 6,
+   "translucency": 0.9,
+   "vertexTint": 1,
+   "smooth": 0.6,
+   "cutoff": 0.42
+  },
+  {
+   "sub": "Ivy_HangLine_L_Stem",
+   "shader": "prop",
+   "albedo": "Palm/PalmBark_Albedo.png",
+   "normal": "Palm/PalmBark_Normal.png",
+   "alpha": "OPAQUE",
+   "tint": [
+    0.42,
+    0.36,
+    0.3
+   ],
+   "smooth": 0.15
+  }
+ ],
+ "Barrels_LOD1": [
+  {
+   "albedo": "Barrels_0_Albedo.png",
+   "normal": "Barrels_0_Normal.png",
+   "mask": "Barrels_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Barrels_0",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Barrels_1_Albedo.png",
+   "normal": "Barrels_1_Normal.png",
+   "mask": "Barrels_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Barrels_1",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Barrels_2_Albedo.png",
+   "normal": "Barrels_2_Normal.png",
+   "mask": "Barrels_2_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Barrels_2",
+   "shader": "prop"
+  }
+ ],
+ "Basket_Wicker_LOD1": [
+  {
+   "albedo": "Basket_Wicker_0_Albedo.png",
+   "normal": "Basket_Wicker_0_Normal.png",
+   "mask": "Basket_Wicker_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Basket_Wicker_0",
+   "shader": "prop"
+  }
+ ],
+ "Boulder_01_LOD1": [
+  {
+   "albedo": "Boulder_01_0_Albedo.png",
+   "normal": "Boulder_01_0_Normal.png",
+   "mask": "Boulder_01_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Boulder_01_0",
+   "shader": "prop"
+  }
+ ],
+ "Candleholders_0_LOD1": [
+  {
+   "albedo": "Candleholders_0_Albedo.png",
+   "normal": "Candleholders_0_Normal.png",
+   "mask": "Candleholders_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_0",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_1_Albedo.png",
+   "smooth": 0.4,
+   "metal": 0,
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Candleholders_1",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_2_Albedo.png",
+   "normal": "Candleholders_2_Normal.png",
+   "mask": "Candleholders_2_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_2",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_3_Albedo.png",
+   "normal": "Candleholders_3_Normal.png",
+   "mask": "Candleholders_3_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_3",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_4_Albedo.png",
+   "normal": "Candleholders_4_Normal.png",
+   "mask": "Candleholders_4_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_4",
+   "shader": "prop",
+   "dir": "Candleholders"
+  }
+ ],
+ "Candleholders_1_LOD1": [
+  {
+   "albedo": "Candleholders_0_Albedo.png",
+   "normal": "Candleholders_0_Normal.png",
+   "mask": "Candleholders_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_0",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_1_Albedo.png",
+   "smooth": 0.4,
+   "metal": 0,
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Candleholders_1",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_2_Albedo.png",
+   "normal": "Candleholders_2_Normal.png",
+   "mask": "Candleholders_2_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_2",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_3_Albedo.png",
+   "normal": "Candleholders_3_Normal.png",
+   "mask": "Candleholders_3_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_3",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_4_Albedo.png",
+   "normal": "Candleholders_4_Normal.png",
+   "mask": "Candleholders_4_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_4",
+   "shader": "prop",
+   "dir": "Candleholders"
+  }
+ ],
+ "Candleholders_2_LOD1": [
+  {
+   "albedo": "Candleholders_0_Albedo.png",
+   "normal": "Candleholders_0_Normal.png",
+   "mask": "Candleholders_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_0",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_1_Albedo.png",
+   "smooth": 0.4,
+   "metal": 0,
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Candleholders_1",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_2_Albedo.png",
+   "normal": "Candleholders_2_Normal.png",
+   "mask": "Candleholders_2_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_2",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_3_Albedo.png",
+   "normal": "Candleholders_3_Normal.png",
+   "mask": "Candleholders_3_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_3",
+   "shader": "prop",
+   "dir": "Candleholders"
+  },
+  {
+   "albedo": "Candleholders_4_Albedo.png",
+   "normal": "Candleholders_4_Normal.png",
+   "mask": "Candleholders_4_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Candleholders_4",
+   "shader": "prop",
+   "dir": "Candleholders"
+  }
+ ],
+ "Chess_Set_LOD1": [
+  {
+   "albedo": "Chess_Set_0_Albedo.png",
+   "normal": "Chess_Set_0_Normal.png",
+   "mask": "Chess_Set_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Chess_Set_0",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Chess_Set_1_Albedo.png",
+   "normal": "Chess_Set_1_Normal.png",
+   "mask": "Chess_Set_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Chess_Set_1",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Chess_Set_2_Albedo.png",
+   "normal": "Chess_Set_2_Normal.png",
+   "mask": "Chess_Set_2_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Chess_Set_2",
+   "shader": "prop"
+  }
+ ],
+ "Clam_Giant_LOD1": [
+  {
+   "albedo": "Clam_Giant_0_Albedo.png",
+   "normal": "Clam_Giant_0_Normal.png",
+   "mask": "Clam_Giant_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Clam_Giant_0",
+   "shader": "prop"
+  }
+ ],
+ "Coral_Brain_LOD1": [
+  {
+   "albedo": "Coral_Brain_0_Albedo.png",
+   "normal": "Coral_Brain_0_Normal.png",
+   "mask": "Coral_Brain_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Brain_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_BrainGrooved_LOD1": [
+  {
+   "albedo": "Coral_BrainGrooved_0_Albedo.png",
+   "normal": "Coral_BrainGrooved_0_Normal.png",
+   "mask": "Coral_BrainGrooved_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_BrainGrooved_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Cactus_LOD1": [
+  {
+   "albedo": "Coral_Cactus_0_Albedo.png",
+   "normal": "Coral_Cactus_0_Normal.png",
+   "mask": "Coral_Cactus_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Cactus_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Cauliflower_LOD1": [
+  {
+   "albedo": "Coral_Cauliflower_0_Albedo.png",
+   "normal": "Coral_Cauliflower_0_Normal.png",
+   "mask": "Coral_Cauliflower_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Cauliflower_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Fire_LOD1": [
+  {
+   "albedo": "Coral_Fire_0_Albedo.png",
+   "normal": "Coral_Fire_0_Normal.png",
+   "mask": "Coral_Fire_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Fire_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Honeycomb_LOD1": [
+  {
+   "albedo": "Coral_Honeycomb_0_Albedo.png",
+   "normal": "Coral_Honeycomb_0_Normal.png",
+   "mask": "Coral_Honeycomb_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Honeycomb_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Lace_LOD1": [
+  {
+   "albedo": "Coral_Lace_0_Albedo.png",
+   "normal": "Coral_Lace_0_Normal.png",
+   "mask": "Coral_Lace_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Lace_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Lettuce_LOD1": [
+  {
+   "albedo": "Coral_Lettuce_0_Albedo.png",
+   "normal": "Coral_Lettuce_0_Normal.png",
+   "mask": "Coral_Lettuce_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Lettuce_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Lobe_LOD1": [
+  {
+   "albedo": "Coral_Lobe_0_Albedo.png",
+   "normal": "Coral_Lobe_0_Normal.png",
+   "mask": "Coral_Lobe_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Lobe_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Lobo_LOD1": [
+  {
+   "albedo": "Coral_Lobo_0_Albedo.png",
+   "normal": "Coral_Lobo_0_Normal.png",
+   "mask": "Coral_Lobo_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Lobo_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Maze_LOD1": [
+  {
+   "albedo": "Coral_Maze_0_Albedo.png",
+   "normal": "Coral_Maze_0_Normal.png",
+   "mask": "Coral_Maze_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Maze_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Montipora_LOD1": [
+  {
+   "albedo": "Coral_Montipora_0_Albedo.png",
+   "normal": "Coral_Montipora_0_Normal.png",
+   "mask": "Coral_Montipora_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Montipora_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Mushroom_LOD1": [
+  {
+   "albedo": "Coral_Mushroom_0_Albedo.png",
+   "normal": "Coral_Mushroom_0_Normal.png",
+   "mask": "Coral_Mushroom_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Mushroom_0",
+   "shader": "coral",
+   "dir": "Coral_Mushroom"
+  }
+ ],
+ "Coral_Staghorn_LOD1": [
+  {
+   "albedo": "Coral_Staghorn_0_Albedo.png",
+   "normal": "Coral_Staghorn_0_Normal.png",
+   "mask": "Coral_Staghorn_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Staghorn_0",
+   "shader": "coral"
+  }
+ ],
+ "Coral_Table_LOD1": [
+  {
+   "albedo": "Coral_Table_0_Albedo.png",
+   "normal": "Coral_Table_0_Normal.png",
+   "mask": "Coral_Table_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Coral_Table_0",
+   "shader": "coral"
+  }
+ ],
+ "Crab_Blue_LOD1": [
+  {
+   "normal": "Crab_Blue_0_Normal.png",
+   "albedo": "Crab_Blue_0_Albedo.png",
+   "mask": "Crab_Blue_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Crab_Blue_0",
+   "shader": "coral",
+   "dir": "Crab_Blue",
+   "base": [
+    0.82,
+    0.8,
+    0.72
+   ],
+   "tip": [
+    0.33,
+    0.36,
+    0.22
+   ],
+   "height": 0.12,
+   "detail": 0.9,
+   "glow": 0.0
+  }
+ ],
+ "Fruit_Apple_LOD1": [
+  {
+   "albedo": "Fruit_Apple_0_Albedo.png",
+   "normal": "Fruit_Apple_0_Normal.png",
+   "mask": "Fruit_Apple_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Fruit_Apple_0",
+   "shader": "prop"
+  }
+ ],
+ "Fruit_Bananas_LOD1": [
+  {
+   "albedo": "Fruit_Bananas_0_Albedo.png",
+   "normal": "Fruit_Bananas_0_Normal.png",
+   "mask": "Fruit_Bananas_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Fruit_Bananas_0",
+   "shader": "prop",
+   "dir": "Fruit_Bananas"
+  }
+ ],
+ "Fruit_Kiwi_LOD1": [
+  {
+   "albedo": "Fruit_Kiwi_0_Albedo.png",
+   "normal": "Fruit_Kiwi_0_Normal.png",
+   "mask": "Fruit_Kiwi_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Fruit_Kiwi_0",
+   "shader": "prop"
+  }
+ ],
+ "Fruit_Lemon_LOD1": [
+  {
+   "albedo": "Fruit_Lemon_0_Albedo.png",
+   "normal": "Fruit_Lemon_0_Normal.png",
+   "mask": "Fruit_Lemon_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Fruit_Lemon_0",
+   "shader": "prop"
+  }
+ ],
+ "Fruit_Lime_LOD1": [
+  {
+   "albedo": "Fruit_Lime_0_Albedo.png",
+   "normal": "Fruit_Lime_0_Normal.png",
+   "mask": "Fruit_Lime_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Fruit_Lime_0",
+   "shader": "prop"
+  }
+ ],
+ "Fruit_Lychee_LOD1": [
+  {
+   "albedo": "Fruit_Lychee_0_Albedo.png",
+   "normal": "Fruit_Lychee_0_Normal.png",
+   "mask": "Fruit_Lychee_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Fruit_Lychee_0",
+   "shader": "prop"
+  }
+ ],
+ "Fruit_Pears_LOD1": [
+  {
+   "albedo": "Fruit_Pears_0_Albedo.png",
+   "normal": "Fruit_Pears_0_Normal.png",
+   "mask": "Fruit_Pears_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Fruit_Pears_0",
+   "shader": "prop"
+  }
+ ],
+ "Fruit_Pomegranate_LOD1": [
+  {
+   "albedo": "Fruit_Pomegranate_0_Albedo.png",
+   "normal": "Fruit_Pomegranate_0_Normal.png",
+   "mask": "Fruit_Pomegranate_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Fruit_Pomegranate_0",
+   "shader": "prop"
+  }
+ ],
+ "Goblets_Brass_LOD1": [
+  {
+   "albedo": "Goblets_Brass_0_Albedo.png",
+   "normal": "Goblets_Brass_0_Normal.png",
+   "mask": "Goblets_Brass_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Goblets_Brass_0",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Goblets_Brass_1_Albedo.png",
+   "normal": "Goblets_Brass_1_Normal.png",
+   "mask": "Goblets_Brass_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Goblets_Brass_1",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Goblets_Brass_2_Albedo.png",
+   "normal": "Goblets_Brass_2_Normal.png",
+   "mask": "Goblets_Brass_2_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Goblets_Brass_2",
+   "shader": "prop"
+  }
+ ],
+ "Horse_Statue_LOD1": [
+  {
+   "albedo": "Horse_Statue_0_Albedo.png",
+   "normal": "Horse_Statue_0_Normal.png",
+   "mask": "Horse_Statue_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Horse_Statue_0",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Horse_Statue_1_Albedo.png",
+   "normal": "Horse_Statue_1_Normal.png",
+   "mask": "Horse_Statue_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Horse_Statue_1",
+   "shader": "prop"
+  }
+ ],
+ "Lion_Head_LOD1": [
+  {
+   "albedo": "Lion_Head_0_Albedo.png",
+   "normal": "Lion_Head_0_Normal.png",
+   "mask": "Lion_Head_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Lion_Head_0",
+   "shader": "prop"
+  }
+ ],
+ "Marble_Bust_LOD1": [
+  {
+   "albedo": "Marble_Bust_0_Albedo.png",
+   "normal": "Marble_Bust_0_Normal.png",
+   "mask": "Marble_Bust_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Marble_Bust_0",
+   "shader": "prop"
+  }
+ ],
+ "Plant_Calathea_0_LOD1": [
+  {
+   "albedo": "Plant_Calathea_0_Albedo.png",
+   "normal": "Plant_Calathea_0_Normal.png",
+   "mask": "Plant_Calathea_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Calathea_0",
+   "shader": "foliage",
+   "dir": "Plant_Calathea"
+  }
+ ],
+ "Plant_Calathea_1_LOD1": [
+  {
+   "albedo": "Plant_Calathea_0_Albedo.png",
+   "normal": "Plant_Calathea_0_Normal.png",
+   "mask": "Plant_Calathea_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Calathea_0",
+   "shader": "foliage",
+   "dir": "Plant_Calathea"
+  }
+ ],
+ "Plant_Calathea_2_LOD1": [
+  {
+   "albedo": "Plant_Calathea_0_Albedo.png",
+   "normal": "Plant_Calathea_0_Normal.png",
+   "mask": "Plant_Calathea_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Calathea_0",
+   "shader": "foliage",
+   "dir": "Plant_Calathea"
+  }
+ ],
+ "Plant_Calathea_3_LOD1": [
+  {
+   "albedo": "Plant_Calathea_0_Albedo.png",
+   "normal": "Plant_Calathea_0_Normal.png",
+   "mask": "Plant_Calathea_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Calathea_0",
+   "shader": "foliage",
+   "dir": "Plant_Calathea"
+  }
+ ],
+ "Plant_Calathea_4_LOD1": [
+  {
+   "albedo": "Plant_Calathea_0_Albedo.png",
+   "normal": "Plant_Calathea_0_Normal.png",
+   "mask": "Plant_Calathea_0_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Plant_Calathea_0",
+   "shader": "foliage",
+   "dir": "Plant_Calathea"
+  }
+ ],
+ "Plant_Pachira_0_LOD1": [
+  {
+   "albedo": "Plant_Pachira_0_Albedo.png",
+   "normal": "Plant_Pachira_0_Normal.png",
+   "mask": "Plant_Pachira_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_0",
+   "shader": "foliage",
+   "dir": "Plant_Pachira"
+  },
+  {
+   "albedo": "Plant_Pachira_1_Albedo.png",
+   "normal": "Plant_Pachira_1_Normal.png",
+   "mask": "Plant_Pachira_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_1",
+   "shader": "foliage",
+   "dir": "Plant_Pachira"
+  }
+ ],
+ "Plant_Pachira_1_LOD1": [
+  {
+   "albedo": "Plant_Pachira_0_Albedo.png",
+   "normal": "Plant_Pachira_0_Normal.png",
+   "mask": "Plant_Pachira_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_0",
+   "shader": "foliage",
+   "dir": "Plant_Pachira"
+  },
+  {
+   "albedo": "Plant_Pachira_1_Albedo.png",
+   "normal": "Plant_Pachira_1_Normal.png",
+   "mask": "Plant_Pachira_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_1",
+   "shader": "foliage",
+   "dir": "Plant_Pachira"
+  }
+ ],
+ "Plant_Pachira_2_LOD1": [
+  {
+   "albedo": "Plant_Pachira_0_Albedo.png",
+   "normal": "Plant_Pachira_0_Normal.png",
+   "mask": "Plant_Pachira_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_0",
+   "shader": "foliage",
+   "dir": "Plant_Pachira"
+  },
+  {
+   "albedo": "Plant_Pachira_1_Albedo.png",
+   "normal": "Plant_Pachira_1_Normal.png",
+   "mask": "Plant_Pachira_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_1",
+   "shader": "foliage",
+   "dir": "Plant_Pachira"
+  }
+ ],
+ "Plant_Pachira_3_LOD1": [
+  {
+   "albedo": "Plant_Pachira_0_Albedo.png",
+   "normal": "Plant_Pachira_0_Normal.png",
+   "mask": "Plant_Pachira_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_0",
+   "shader": "foliage",
+   "dir": "Plant_Pachira"
+  },
+  {
+   "albedo": "Plant_Pachira_1_Albedo.png",
+   "normal": "Plant_Pachira_1_Normal.png",
+   "mask": "Plant_Pachira_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Plant_Pachira_1",
+   "shader": "foliage",
+   "dir": "Plant_Pachira"
+  }
+ ],
+ "Plant_Periwinkle_0_LOD1": [
+  {
+   "albedo": "Plant_Periwinkle_0_Albedo.png",
+   "normal": "Plant_Periwinkle_0_Normal.png",
+   "mask": "Plant_Periwinkle_0_Mask.png",
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Plant_Periwinkle_0",
+   "shader": "foliage",
+   "dir": "Plant_Periwinkle"
+  }
+ ],
+ "Plant_Periwinkle_1_LOD1": [
+  {
+   "albedo": "Plant_Periwinkle_0_Albedo.png",
+   "normal": "Plant_Periwinkle_0_Normal.png",
+   "mask": "Plant_Periwinkle_0_Mask.png",
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Plant_Periwinkle_0",
+   "shader": "foliage",
+   "dir": "Plant_Periwinkle"
+  }
+ ],
+ "Plant_Periwinkle_2_LOD1": [
+  {
+   "albedo": "Plant_Periwinkle_0_Albedo.png",
+   "normal": "Plant_Periwinkle_0_Normal.png",
+   "mask": "Plant_Periwinkle_0_Mask.png",
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Plant_Periwinkle_0",
+   "shader": "foliage",
+   "dir": "Plant_Periwinkle"
+  }
+ ],
+ "Plant_Periwinkle_3_LOD1": [
+  {
+   "albedo": "Plant_Periwinkle_0_Albedo.png",
+   "normal": "Plant_Periwinkle_0_Normal.png",
+   "mask": "Plant_Periwinkle_0_Mask.png",
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Plant_Periwinkle_0",
+   "shader": "foliage",
+   "dir": "Plant_Periwinkle"
+  }
+ ],
+ "Plant_Periwinkle_4_LOD1": [
+  {
+   "albedo": "Plant_Periwinkle_0_Albedo.png",
+   "normal": "Plant_Periwinkle_0_Normal.png",
+   "mask": "Plant_Periwinkle_0_Mask.png",
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Plant_Periwinkle_0",
+   "shader": "foliage",
+   "dir": "Plant_Periwinkle"
+  }
+ ],
+ "Plant_Periwinkle_5_LOD1": [
+  {
+   "albedo": "Plant_Periwinkle_0_Albedo.png",
+   "normal": "Plant_Periwinkle_0_Normal.png",
+   "mask": "Plant_Periwinkle_0_Mask.png",
+   "alpha": "BLEND",
+   "doubleSided": true,
+   "sub": "Plant_Periwinkle_0",
+   "shader": "foliage",
+   "dir": "Plant_Periwinkle"
+  }
+ ],
+ "Rock_Coast_LOD1": [
+  {
+   "albedo": "Rock_Coast_0_Albedo.png",
+   "normal": "Rock_Coast_0_Normal.png",
+   "mask": "Rock_Coast_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Rock_Coast_0",
+   "shader": "prop"
+  }
+ ],
+ "Rock_SandSmall_LOD1": [
+  {
+   "albedo": "Rock_SandSmall_0_Albedo.png",
+   "normal": "Rock_SandSmall_0_Normal.png",
+   "mask": "Rock_SandSmall_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Rock_SandSmall_0",
+   "shader": "prop"
+  }
+ ],
+ "SeaStar_Blue_LOD1": [
+  {
+   "albedo": "SeaStar_Blue_0_Albedo.png",
+   "normal": "SeaStar_Blue_0_Normal.png",
+   "mask": "SeaStar_Blue_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "SeaStar_Blue_0",
+   "shader": "prop",
+   "dir": "SeaStar_Blue"
+  }
+ ],
+ "SeaStar_Crown_LOD1": [
+  {
+   "albedo": "SeaStar_Crown_0_Albedo.png",
+   "normal": "SeaStar_Crown_0_Normal.png",
+   "mask": "SeaStar_Crown_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "SeaStar_Crown_0",
+   "shader": "prop",
+   "dir": "SeaStar_Crown"
+  }
+ ],
+ "SeaStar_Cushion_LOD1": [
+  {
+   "albedo": "SeaStar_Cushion_0_Albedo.png",
+   "normal": "SeaStar_Cushion_0_Normal.png",
+   "mask": "SeaStar_Cushion_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "SeaStar_Cushion_0",
+   "shader": "prop",
+   "dir": "SeaStar_Cushion"
+  }
+ ],
+ "Ship_Dutch_LOD1": [
+  {
+   "albedo": "Ship_Dutch_0_Albedo.png",
+   "normal": "Ship_Dutch_0_Normal.png",
+   "mask": "Ship_Dutch_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Ship_Dutch_0",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Ship_Dutch_1_Albedo.png",
+   "normal": "Ship_Dutch_1_Normal.png",
+   "mask": "Ship_Dutch_1_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Ship_Dutch_1",
+   "shader": "prop"
+  },
+  {
+   "albedo": "Ship_Dutch_2_Albedo.png",
+   "normal": "Ship_Dutch_2_Normal.png",
+   "mask": "Ship_Dutch_2_Mask.png",
+   "alpha": "MASK",
+   "doubleSided": true,
+   "sub": "Ship_Dutch_2",
+   "shader": "prop"
+  }
+ ],
+ "Sponge_Barrel_LOD1": [
+  {
+   "albedo": "Sponge_Barrel_0_Albedo.png",
+   "normal": "Sponge_Barrel_0_Normal.png",
+   "mask": "Sponge_Barrel_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Sponge_Barrel_0",
+   "shader": "coral"
+  }
+ ],
+ "Sponge_Grass_LOD1": [
+  {
+   "albedo": "Sponge_Grass_0_Albedo.png",
+   "normal": "Sponge_Grass_0_Normal.png",
+   "mask": "Sponge_Grass_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": false,
+   "sub": "Sponge_Grass_0",
+   "shader": "coral"
+  }
+ ],
+ "Treasure_Chest_LOD1": [
+  {
+   "albedo": "Treasure_Chest_0_Albedo.png",
+   "normal": "Treasure_Chest_0_Normal.png",
+   "mask": "Treasure_Chest_0_Mask.png",
+   "alpha": "OPAQUE",
+   "doubleSided": true,
+   "sub": "Treasure_Chest_0",
+   "shader": "prop"
+  }
+ ]
+}

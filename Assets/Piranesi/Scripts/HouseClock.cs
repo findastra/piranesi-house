@@ -33,6 +33,8 @@ public class HouseClock : UdonSharpBehaviour
     public AudioSource[] windSources;
     public AudioSource shimmer;
     public HouseFootsteps footsteps;
+    public HouseBoat[] boats;
+    public HouseDolphins dolphins;
 
     [Header("Season palettes (0 spring, 1 summer, 2 autumn, 3 winter)")]
     public Color[] skyTop;
@@ -216,6 +218,9 @@ public class HouseClock : UdonSharpBehaviour
         VRCShader.SetGlobalFloat(idReflDim, Mathf.Lerp(1f, 0.22f, night));
 
         if (footsteps != null) footsteps.SetTide(tide);
+        if (boats != null)
+            for (int bi = 0; bi < boats.Length; bi++) if (boats[bi] != null) boats[bi].SetTide(tide);
+        if (dolphins != null) dolphins.SetTide(tide);
         if (water != null)
         {
             Vector3 wp = water.position;

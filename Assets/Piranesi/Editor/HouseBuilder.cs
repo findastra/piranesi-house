@@ -66,19 +66,48 @@ namespace Piranesi.EditorTools
         const int WaterLayer = 4;
 
         // ------------------------------------------------------------------ layout json
-        [Serializable] class LObj { public string name, mesh, col, tag; public float[] p, s; public float r; public bool stat, lie; }
+        [Serializable] class LObj { public string name, mesh, col, tag, mv; public float[] p, s, e, spin; public float r; public bool stat, lie, noshadow; }
         [Serializable] class LStatue { public string mesh, role; public float[] p; public float r, s; }
-        [Serializable] class LLight { public string kind; public float[] p, color; public float range, intensity; }
+        [Serializable] class LLight { public string kind; public float[] p, color, dir; public float range, intensity, angle; }
         [Serializable] class LShaft { public string kind; public float[] p; public float radius, height, face, dim; }
         [Serializable] class LEmitter { public string kind; public float[] p, size; public float fall, rot; }
         [Serializable] class LProbe { public string name; public float[] p, size; }
         [Serializable] class LReverb { public string preset; public float[] p; public float minD, maxD; }
         [Serializable] class LSound { public string clip; public float[] p; public float vol, minD, maxD, spatial; }
         [Serializable] class LSpawn { public float[] p; public float r; }
+        [Serializable] class LTrigger { public float[] p, size; }
+        [Serializable] class LSeat { public string kind, text; public float[] p, exit, size; public float r; public LTrigger trigger; }
+        [Serializable] class LItem { public string mesh; public float[] p; public float r, s; }
+        [Serializable] class LBoat { public string name; public float[] p; public float r; public bool drivable; public LItem[] items; }
+        [Serializable] class LCrab { public float[] p; public float r; }
+        [Serializable] class LRoute { public float[] a, b; }
+        [Serializable] class LDolphins { public float period, duration; public LRoute[] routes; }
+        [Serializable] class LVariant { public string name; public float[] @base, tip; public float glow; }
+        [Serializable] class LWade { public float y, size; }
+        [Serializable] class LSlide { public float[] exit, path; public float exitR; }
         [Serializable] class Layout
         {
             public LObj[] objects; public LStatue[] statues; public LLight[] lights; public LShaft[] shafts;
             public LEmitter[] emitters; public LProbe[] probes; public LReverb[] reverbs; public LSound[] sounds; public LSpawn spawn;
+            // v2
+            public LSeat[] seats; public LBoat[] boats; public LCrab[] crabs; public LDolphins dolphins; public LVariant[] variants;
+            public LWade wade; public LSlide slide;
+        }
+        // flattened material manifest (gen/manifest_u.py)
+        [Serializable] class MEntry
+        {
+            public string sub, shader, albedo, normal, mask, alpha, key; public bool doubleSided;
+            public float[] tint, @base, tip; public float smooth, metal, cutoff, wind, windScale, translucency, vertexTint, height, detail, glow;
+        }
+        [Serializable] class MList { public MEntry[] entries; }
+
+        static MList LoadManifest()
+        {
+            string path = Root + "/Data/MaterialsU.json";
+            if (!File.Exists(path)) return new MList { entries = new MEntry[0] };
+            var ml = JsonUtility.FromJson<MList>(File.ReadAllText(path));
+            if (ml.entries == null) ml.entries = new MEntry[0];
+            return ml;
         }
 
         static Vector3 V(float[] a) => a == null || a.Length < 3 ? Vector3.zero : new Vector3(a[0], a[1], a[2]);
@@ -100,6 +129,7 @@ namespace Piranesi.EditorTools
                 var meshes = BuildMeshes();
                 Progress("Creating materials", 0.3f);
                 var mats = BuildMaterials();
+                BuildManifestMaterials(LoadManifest());
                 var layout = JsonUtility.FromJson<Layout>(File.ReadAllText(Root + "/Data/HouseLayout.json"));
                 Progress("Building scene", 0.4f);
                 BuildScene(layout, meshes, mats);
@@ -214,6 +244,43 @@ namespace Piranesi.EditorTools
                 if (ti.textureCompression != TextureImporterCompression.CompressedHQ) { ti.textureCompression = TextureImporterCompression.CompressedHQ; changed = true; }
                 if (changed) ti.SaveAndReimport();
             }
+            // v2: scanned/packed prop textures (Imported/<asset>/<sub>_Albedo|_Normal|_Mask.png)
+            if (AssetDatabase.IsValidFolder(Root + "/Imported"))
+            {
+                var alphaTest = new Dictionary<string, float>();
+                foreach (var e in LoadManifest().entries)
+                    if (!string.IsNullOrEmpty(e.albedo) && (e.alpha == "MASK" || e.alpha == "BLEND"))
+                        alphaTest[$"{Root}/Imported/{e.albedo}"] = Mathf.Max(0.05f, e.cutoff);
+                AssetDatabase.StartAssetEditing();
+                try
+                {
+                    foreach (var guid in AssetDatabase.FindAssets("t:Texture2D", new[] { Root + "/Imported" }))
+                    {
+                        string path = AssetDatabase.GUIDToAssetPath(guid);
+                        var ti = AssetImporter.GetAtPath(path) as TextureImporter;
+                        if (ti == null) continue;
+                        string n = Path.GetFileNameWithoutExtension(path);
+                        bool normal = n.EndsWith("_Normal");
+                        bool linear = n.EndsWith("_Mask");
+                        bool changed = false;
+                        var want = normal ? TextureImporterType.NormalMap : TextureImporterType.Default;
+                        if (ti.textureType != want) { ti.textureType = want; changed = true; }
+                        if (linear == ti.sRGBTexture && !normal) { ti.sRGBTexture = !linear; changed = true; }
+                        if (alphaTest.TryGetValue(path, out float cut))
+                        {
+                            if (!ti.alphaIsTransparency) { ti.alphaIsTransparency = true; changed = true; }
+                            if (!ti.mipMapsPreserveCoverage || Mathf.Abs(ti.alphaTestReferenceValue - cut) > 0.001f)
+                            { ti.mipMapsPreserveCoverage = true; ti.alphaTestReferenceValue = cut; changed = true; }
+                        }
+                        if (ti.maxTextureSize != 2048) { ti.maxTextureSize = 2048; changed = true; }
+                        if (ti.anisoLevel != 8) { ti.anisoLevel = 8; changed = true; }
+                        if (ti.mipmapFilter != TextureImporterMipFilter.KaiserFilter) { ti.mipmapFilter = TextureImporterMipFilter.KaiserFilter; changed = true; }
+                        if (ti.textureCompression != TextureImporterCompression.CompressedHQ) { ti.textureCompression = TextureImporterCompression.CompressedHQ; changed = true; }
+                        if (changed) ti.SaveAndReimport();
+                    }
+                }
+                finally { AssetDatabase.StopAssetEditing(); }
+            }
             foreach (var guid in AssetDatabase.FindAssets("t:AudioClip", new[] { Root + "/Audio" }))
             {
                 string path = AssetDatabase.GUIDToAssetPath(guid);
@@ -235,7 +302,8 @@ namespace Piranesi.EditorTools
         }
 
         // ------------------------------------------------------------------ Udon
-        static readonly Type[] UdonTypes = { typeof(HouseClock), typeof(HouseFootsteps) };
+        static readonly Type[] UdonTypes = { typeof(HouseClock), typeof(HouseFootsteps), typeof(HouseSeat), typeof(HouseBoat),
+                                             typeof(HouseSlide), typeof(HouseCrabs), typeof(HouseDolphins), typeof(HouseSpinner) };
 
         /// <returns>true if program assets were just created (they compile asynchronously)</returns>
         static bool EnsureUdonPrograms()
@@ -320,7 +388,8 @@ namespace Piranesi.EditorTools
             using (var br = new BinaryReader(File.OpenRead(path)))
             {
                 string magic = Encoding.ASCII.GetString(br.ReadBytes(4));
-                if (magic != "PMS1") throw new Exception("Bad mesh file " + path);
+                bool uvMesh = magic == "PMS2";
+                if (magic != "PMS1" && !uvMesh) throw new Exception("Bad mesh file " + path);
                 int nv = br.ReadInt32(), ns = br.ReadInt32(); br.ReadInt32();
                 var P = new Vector3[nv]; var N = new Vector3[nv]; var C = new Color32[nv];
                 for (int i = 0; i < nv; i++) P[i] = new Vector3(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
@@ -328,15 +397,25 @@ namespace Piranesi.EditorTools
                 for (int i = 0; i < nv; i++) C[i] = new Color32(br.ReadByte(), br.ReadByte(), br.ReadByte(), br.ReadByte());
                 var mesh = new Mesh { indexFormat = nv > 65000 ? IndexFormat.UInt32 : IndexFormat.UInt16 };
                 mesh.vertices = P; mesh.normals = N; mesh.colors32 = C;
-                var T = new Vector4[nv]; var UV = new Vector2[nv];
-                for (int i = 0; i < nv; i++)
+                if (uvMesh)
                 {
-                    var n = N[i];
-                    var t = Vector3.Cross(n, Mathf.Abs(n.y) < 0.99f ? Vector3.up : Vector3.right).normalized;
-                    T[i] = new Vector4(t.x, t.y, t.z, 1f);
-                    UV[i] = new Vector2(P[i].x + P[i].z, P[i].y) * 0.25f;
+                    var UV0 = new Vector2[nv];
+                    for (int i = 0; i < nv; i++) UV0[i] = new Vector2(br.ReadSingle(), br.ReadSingle());
+                    mesh.uv = UV0;
                 }
-                mesh.tangents = T; mesh.uv = UV;
+                else
+                {
+                    // stone kit meshes are shaded triplanar: tangents/UVs are placeholders
+                    var T = new Vector4[nv]; var UV = new Vector2[nv];
+                    for (int i = 0; i < nv; i++)
+                    {
+                        var n = N[i];
+                        var t = Vector3.Cross(n, Mathf.Abs(n.y) < 0.99f ? Vector3.up : Vector3.right).normalized;
+                        T[i] = new Vector4(t.x, t.y, t.z, 1f);
+                        UV[i] = new Vector2(P[i].x + P[i].z, P[i].y) * 0.25f;
+                    }
+                    mesh.tangents = T; mesh.uv = UV;
+                }
                 subs = new string[ns];
                 mesh.subMeshCount = ns;
                 for (int s = 0; s < ns; s++)
@@ -349,6 +428,7 @@ namespace Piranesi.EditorTools
                     mesh.SetTriangles(idx, s, false);
                 }
                 mesh.RecalculateBounds();
+                if (uvMesh) mesh.RecalculateTangents();
                 return mesh;
             }
         }
@@ -516,6 +596,8 @@ namespace Piranesi.EditorTools
             d["ShaftOculus"] = Mat("M_ShaftOculus", "Piranesi/LightShaft", m => { m.SetTexture("_NoiseTex", Tex("Noise")); m.SetFloat("_Intensity", 0.32f); m.SetFloat("_UseFacing", 0f); });
             d["ShaftWindow"] = Mat("M_ShaftWindow", "Piranesi/LightShaft", m => { m.SetTexture("_NoiseTex", Tex("Noise")); m.SetFloat("_Intensity", 0.22f); m.SetFloat("_UseFacing", 1f); m.SetFloat("_Spread", 0.15f); });
             d["ShaftDim"] = Mat("M_ShaftDim", "Piranesi/LightShaft", m => { m.SetTexture("_NoiseTex", Tex("Noise")); m.SetFloat("_Intensity", 0.12f); m.SetFloat("_UseFacing", 1f); m.SetFloat("_Spread", 0.1f); });
+            d["Glass2"] = Mat("M_Glass", "Piranesi/Glass", m => { m.SetTexture("_NoiseTex", Tex("Noise")); m.enableInstancing = true; });
+            d["ShaftPalm"] = Mat("M_ShaftPalm", "Piranesi/LightShaft", m => { m.SetTexture("_NoiseTex", Tex("Noise")); m.SetFloat("_Intensity", 0.5f); m.SetFloat("_UseFacing", 0f); m.SetFloat("_Spread", 0.04f); m.SetFloat("_Vertical", 1f); });
             d["Glow"] = Mat("M_Glow", "Piranesi/Glow", m => { m.SetFloat("_Size", 1.4f); m.SetFloat("_Intensity", 0.55f); m.enableInstancing = true; });
             d["P_Petal"] = ParticleMat("M_P_Petal", 1, new Color(1f, 0.86f, 0.9f, 0.95f), false, 0.7f);
             d["P_Leaf"] = ParticleMat("M_P_Leaf", 2, Color.white, false, 0.8f);
@@ -528,6 +610,93 @@ namespace Piranesi.EditorTools
             AssetDatabase.SaveAssets();
             return d;
         }
+
+        // ------------------------------------------------------------------ manifest (prop / foliage / coral / flow) materials
+        static readonly Dictionary<string, Material> subMats = new Dictionary<string, Material>();
+        static readonly Dictionary<string, MEntry> subEntries = new Dictionary<string, MEntry>();
+        static readonly Dictionary<string, Material> variantMats = new Dictionary<string, Material>();
+        static Dictionary<string, LVariant> variants = new Dictionary<string, LVariant>();
+
+        static Texture2D ImpTex(string rel) => string.IsNullOrEmpty(rel) ? null : AssetDatabase.LoadAssetAtPath<Texture2D>($"{Root}/Imported/{rel}");
+        static Color Col(float[] c, float a = 1f) => c == null || c.Length < 3 ? Color.white : new Color(c[0], c[1], c[2], a);
+        static string Safe(string n) => new string(n.Select(ch => char.IsLetterOrDigit(ch) || ch == '_' ? ch : '_').ToArray());
+
+        static void BuildManifestMaterials(MList ml)
+        {
+            subMats.Clear(); subEntries.Clear(); variantMats.Clear();
+            var byKey = new Dictionary<string, Material>();
+            int i = 0;
+            foreach (var e in ml.entries)
+            {
+                if (++i % 10 == 0) Progress("Material " + e.sub, 0.3f + 0.08f * i / Mathf.Max(1, ml.entries.Length));
+                if (!byKey.TryGetValue(e.key ?? e.sub, out var mat))
+                {
+                    mat = MakeManifestMat(e);
+                    byKey[e.key ?? e.sub] = mat;
+                }
+                subMats[e.sub] = mat; subEntries[e.sub] = e;
+            }
+            AssetDatabase.SaveAssets();
+        }
+
+        static Material MakeManifestMat(MEntry e)
+        {
+            string name = "PM_" + Safe(e.sub);
+            switch (e.shader)
+            {
+                case "foliage":
+                    return Mat(name, "Piranesi/Foliage", m =>
+                    {
+                        m.SetTexture("_MainTex", ImpTex(e.albedo)); m.SetTexture("_BumpMap", ImpTex(e.normal)); m.SetTexture("_MaskTex", ImpTex(e.mask));
+                        m.SetColor("_Color", Col(e.tint)); m.SetFloat("_Cutoff", e.cutoff > 0 ? e.cutoff : 0.45f); m.SetFloat("_Smoothness", e.smooth);
+                        m.SetFloat("_Wind", e.wind); m.SetFloat("_WindScale", Mathf.Max(0.1f, e.windScale)); m.SetFloat("_Translucency", e.translucency);
+                        m.SetFloat("_VertexTint", e.vertexTint); m.SetTexture("_Caustics", Tex("Caustics"));
+                        m.enableInstancing = true;
+                    });
+                case "coral":
+                    return Mat(name, "Piranesi/Coral", m =>
+                    {
+                        m.SetTexture("_MainTex", ImpTex(e.albedo)); m.SetTexture("_BumpMap", ImpTex(e.normal));
+                        m.SetColor("_BaseColor", Col(e.@base)); m.SetColor("_TipColor", Col(e.tip));
+                        m.SetFloat("_Height", Mathf.Max(0.05f, e.height)); m.SetFloat("_Detail", e.detail); m.SetFloat("_Glow", e.glow);
+                        m.SetFloat("_Smoothness", e.smooth); m.SetTexture("_Caustics", Tex("Caustics"));
+                        m.enableInstancing = true;
+                    });
+                case "flow":
+                    return Mat(name, "Piranesi/WaterFlow", m =>
+                    {
+                        m.SetTexture("_Normal0", Tex("Water_Normal0")); m.SetTexture("_NoiseTex", Tex("Noise"));
+                        m.SetColor("_Color", new Color(0.55f, 0.85f, 0.9f, 0.72f));
+                        m.enableInstancing = true;
+                    });
+                default:
+                    return Mat(name, "Piranesi/Prop", m =>
+                    {
+                        m.SetTexture("_MainTex", ImpTex(e.albedo)); m.SetTexture("_BumpMap", ImpTex(e.normal)); m.SetTexture("_MaskTex", ImpTex(e.mask));
+                        m.SetColor("_Color", Col(e.tint)); m.SetFloat("_Smoothness", e.smooth); m.SetFloat("_Metallic", e.metal);
+                        m.SetFloat("_Cutoff", e.cutoff); m.SetFloat("_Cull", e.doubleSided ? 0f : 2f);
+                        m.SetTexture("_Caustics", Tex("Caustics")); m.SetFloat("_VertexAO", 0.5f);
+                        m.enableInstancing = true;
+                    });
+            }
+        }
+
+        static Material VariantMat(string sub, Material baseMat, string variant)
+        {
+            if (!variants.TryGetValue(variant, out var v)) return baseMat;
+            string key = sub + "#" + variant;
+            if (variantMats.TryGetValue(key, out var vm)) return vm;
+            vm = Mat("PMV_" + Safe(sub) + "_" + Safe(variant), "Piranesi/Coral", m =>
+            {
+                m.CopyPropertiesFromMaterial(baseMat);
+                m.SetColor("_BaseColor", Col(v.@base)); m.SetColor("_TipColor", Col(v.tip)); m.SetFloat("_Glow", v.glow);
+                m.enableInstancing = true;
+            });
+            variantMats[key] = vm;
+            return vm;
+        }
+
+        static bool IsManifestMesh(MeshEntry me) => me.subs.Length > 0 && me.subs.All(sb => subEntries.ContainsKey(sb));
 
         // ------------------------------------------------------------------ scene
         static GameObject Child(Transform parent, string name)
@@ -560,18 +729,33 @@ namespace Piranesi.EditorTools
             var tProbe = Child(root, "Reflection Probes").transform;
             var tSys = Child(root, "Systems").transform;
 
-            Material MatFor(string n) => mats.TryGetValue(n, out var m) ? m : mats["Default"];
+            variants = (L.variants ?? new LVariant[0]).Where(v => v != null && !string.IsNullOrEmpty(v.name)).ToDictionary(v => v.name, v => v);
+            Material MatFor(string n, string mv = null)
+            {
+                if (mats.TryGetValue(n, out var m)) return m;
+                if (subMats.TryGetValue(n, out var pm))
+                    return !string.IsNullOrEmpty(mv) && subEntries[n].shader == "coral" ? VariantMat(n, pm, mv) : pm;
+                return mats["Default"];
+            }
             var archFlags = StaticEditorFlags.ContributeGI | StaticEditorFlags.OccluderStatic | StaticEditorFlags.OccludeeStatic | StaticEditorFlags.ReflectionProbeStatic;
+            var propFlags = StaticEditorFlags.OccludeeStatic | StaticEditorFlags.ReflectionProbeStatic | StaticEditorFlags.BatchingStatic;
+            var tProps = Child(root, "Islands & Props").transform;
+            var tReef = Child(root, "Coral Reefs").transform;
+            var tIvy = Child(root, "Ivy").transform;
 
             // ---- architecture & props
             int count = 0;
             foreach (var o in L.objects)
             {
                 if (++count % 25 == 0) Progress("Placing " + o.name, 0.4f + 0.2f * count / L.objects.Length);
+                bool isIvy = !string.IsNullOrEmpty(o.mesh) && o.mesh.StartsWith("Ivy_");
+                meshes.TryGetValue(o.mesh ?? "", out var me);
+                bool isProp = me != null && IsManifestMesh(me);
+                Transform parent = o.tag == "reef" ? tReef : isIvy ? tIvy : isProp || (o.mesh ?? "").StartsWith("Isle_") ? tProps : tArch;
                 var go = new GameObject(o.name);
-                go.transform.SetParent(tArch, false);
+                go.transform.SetParent(parent, false);
                 go.transform.position = V(o.p);
-                go.transform.rotation = Quaternion.Euler(o.lie ? 90f : 0f, o.r, 0f);
+                go.transform.rotation = o.e != null && o.e.Length == 3 ? Quaternion.Euler(o.e[0], o.e[1], o.e[2]) : Quaternion.Euler(o.lie ? 90f : 0f, o.r, 0f);
                 go.transform.localScale = o.s != null && o.s.Length == 3 ? V(o.s) : Vector3.one;
                 if (string.IsNullOrEmpty(o.mesh))
                 {
@@ -580,20 +764,54 @@ namespace Piranesi.EditorTools
                     bc.size = V(o.s);
                     continue;
                 }
-                if (!meshes.TryGetValue(o.mesh, out var me)) { Debug.LogWarning("[Piranesi] Missing mesh " + o.mesh); continue; }
-                go.AddComponent<MeshFilter>().sharedMesh = me.mesh;
-                var mr = go.AddComponent<MeshRenderer>();
-                mr.sharedMaterials = me.subs.Select(MatFor).ToArray();
-                bool distant = o.mesh.StartsWith("Wing") || o.mesh == "Seabed";
-                if (distant) mr.shadowCastingMode = ShadowCastingMode.Off;
-                if (o.mesh == "Cascade") { mr.shadowCastingMode = ShadowCastingMode.Off; go.layer = WaterLayer; }
-                if (o.stat && o.mesh != "Cascade" && o.mesh != "Lantern")
-                    GameObjectUtility.SetStaticEditorFlags(go, distant ? StaticEditorFlags.ReflectionProbeStatic : archFlags);
+                if (me == null) { Debug.LogWarning("[Piranesi] Missing mesh " + o.mesh); continue; }
+                var renderers = new List<Renderer>();
+                if (meshes.TryGetValue(o.mesh + "_LOD1", out var lod1))
+                {
+                    var r0 = MakeRendererMulti(go.transform, "LOD0", me.mesh, me.subs.Select(sb => MatFor(sb, o.mv)).ToArray());
+                    var r1 = MakeRendererMulti(go.transform, "LOD1", lod1.mesh, lod1.subs.Select(sb => MatFor(sb, o.mv)).ToArray());
+                    var lg = go.AddComponent<LODGroup>();
+                    float near = o.tag == "reef" ? 0.07f : isIvy ? 0.14f : 0.1f, far = o.tag == "reef" ? 0.012f : isIvy ? 0.006f : 0.008f;
+                    lg.SetLODs(new[] { new LOD(near, new Renderer[] { r0 }), new LOD(far, new Renderer[] { r1 }) });
+                    lg.RecalculateBounds();
+                    renderers.Add(r0); renderers.Add(r1);
+                }
+                else
+                {
+                    go.AddComponent<MeshFilter>().sharedMesh = me.mesh;
+                    var mr = go.AddComponent<MeshRenderer>();
+                    mr.sharedMaterials = me.subs.Select(sb => MatFor(sb, o.mv)).ToArray();
+                    renderers.Add(mr);
+                }
+                bool distant = o.mesh.StartsWith("Wing") || o.mesh.StartsWith("Seabed");
+                bool water = o.mesh == "Cascade" || o.mesh == "AqueductWater" || o.mesh == "SlideWater";
+                foreach (var r in renderers)
+                {
+                    if (distant || water || o.noshadow || o.mesh.StartsWith("Isle_")) r.shadowCastingMode = ShadowCastingMode.Off;
+                    if (water) r.gameObject.layer = WaterLayer;
+                    if (o.stat && !water && o.mesh != "Lantern")
+                        GameObjectUtility.SetStaticEditorFlags(r.gameObject, distant ? StaticEditorFlags.ReflectionProbeStatic : (isIvy || isProp) ? propFlags : archFlags);
+                }
+                if (water) go.layer = WaterLayer;
+                var bnd = me.mesh.bounds;
                 switch (o.col)
                 {
                     case "mesh": go.AddComponent<MeshCollider>().sharedMesh = me.mesh; break;
-                    case "box": go.AddComponent<BoxCollider>(); break;
-                    case "capsule": go.AddComponent<CapsuleCollider>(); break;
+                    case "box": { var bc = go.AddComponent<BoxCollider>(); bc.center = bnd.center; bc.size = bnd.size; break; }
+                    case "capsule":
+                    {
+                        var cc = go.AddComponent<CapsuleCollider>();
+                        cc.direction = 1; cc.center = bnd.center; cc.height = bnd.size.y;
+                        cc.radius = Mathf.Min(bnd.extents.x, bnd.extents.z) * 0.8f;
+                        break;
+                    }
+                }
+                if (o.spin != null && o.spin.Length == 4)
+                {
+                    var sp = AddUdon<HouseSpinner>(go);
+                    sp.axis = new Vector3(o.spin[0], o.spin[1], o.spin[2]);
+                    sp.degreesPerSecond = o.spin[3];
+                    UdonSharpEditorUtility.CopyProxyToUdon(sp);
                 }
             }
 
@@ -640,6 +858,19 @@ namespace Piranesi.EditorTools
             var lanterns = new List<Light>();
             foreach (var l in L.lights)
             {
+                if (l.kind == "spot")
+                {
+                    // the light from the oculus that always falls on the Colossus' palm
+                    var sg = Child(tLight, "Oculus Spotlight (Colossus palm)");
+                    sg.transform.position = V(l.p);
+                    sg.transform.rotation = Quaternion.LookRotation(l.dir != null && l.dir.Length == 3 ? V(l.dir) : Vector3.down);
+                    var sl = sg.AddComponent<Light>();
+                    sl.type = LightType.Spot; sl.spotAngle = l.angle > 0 ? l.angle : 20f; sl.innerSpotAngle = sl.spotAngle * 0.55f;
+                    sl.range = l.range; sl.intensity = l.intensity; sl.color = Col(l.color);
+                    sl.shadows = LightShadows.Soft; sl.shadowStrength = 0.8f; sl.renderMode = LightRenderMode.ForcePixel;
+                    sl.lightmapBakeType = LightmapBakeType.Realtime; sl.bounceIntensity = 0f;
+                    continue;
+                }
                 var go = Child(tLight, "Lantern Light");
                 go.transform.position = V(l.p);
                 var lt = go.AddComponent<Light>();
@@ -671,7 +902,7 @@ namespace Piranesi.EditorTools
                 go.transform.localScale = new Vector3(s.radius, s.height, s.radius);
                 go.AddComponent<MeshFilter>().sharedMesh = meshes["__Shaft"].mesh;
                 var r = go.AddComponent<MeshRenderer>();
-                r.sharedMaterial = s.kind == "window" ? (s.dim > 0 ? mats["ShaftDim"] : mats["ShaftWindow"]) : mats["ShaftOculus"];
+                r.sharedMaterial = s.kind == "window" ? (s.dim > 0 ? mats["ShaftDim"] : mats["ShaftWindow"]) : s.kind == "palm" ? mats["ShaftPalm"] : mats["ShaftOculus"];
                 r.shadowCastingMode = ShadowCastingMode.Off; r.receiveShadows = false;
             }
 
@@ -699,6 +930,9 @@ namespace Piranesi.EditorTools
                     case "splash":
                         MakeMist(tFx, "Cascade Mist", pos, size, mats["P_Mist"], 10f, 3f);
                         MakeSplash(tFx, pos, size, mats["P_Drop"]);
+                        break;
+                    case "sparkle":
+                        MakeSparkle(tFx, pos, size, mats["P_Sparkle"]);
                         break;
                 }
             }
@@ -809,6 +1043,9 @@ namespace Piranesi.EditorTools
             desc.RespawnHeightY = -25f;
             EditorUtility.SetDirty(desc);
 
+            // ---- v2: seats, gondolas, slide, crabs, dolphins, wading floor
+            var v2 = BuildV2Systems(L, meshes, mats, root, ocean.transform, MatFor);
+
             // ---- Udon systems
             var fsGo = Child(tSys, "Footsteps");
             var fsSrc = fsGo.AddComponent<AudioSource>();
@@ -834,11 +1071,283 @@ namespace Piranesi.EditorTools
             clock.windSources = windSources.ToArray();
             clock.shimmer = shimmer;
             clock.footsteps = steps;
+            clock.boats = v2.boats;
+            clock.dolphins = v2.dolphins;
             SetPalettes(clock);
             UdonSharpEditorUtility.CopyProxyToUdon(clock);
 
             HousePreviewWindow.ApplyState(HousePreviewWindow.Day, HousePreviewWindow.Season, HousePreviewWindow.Tide, false);
             EditorSceneManager.SaveScene(scene, ScenePath);
+        }
+
+        // ------------------------------------------------------------------ v2 systems
+        class V2Result { public HouseBoat[] boats = new HouseBoat[0]; public HouseDolphins dolphins; }
+
+        static readonly Vector3[] GondolaSeats = { new Vector3(0f, 0.5f, -1.9f), new Vector3(0f, 0.5f, -0.4f), new Vector3(0f, 0.5f, 1.1f) };
+        const float HullDrop = -0.18f;
+
+        static GameObject MakeMeshObject(Transform parent, string name, string mesh, Dictionary<string, MeshEntry> meshes, Func<string, string, Material> matFor, bool shadows = true)
+        {
+            var go = Child(parent, name);
+            if (!meshes.TryGetValue(mesh, out var me)) { Debug.LogWarning("[Piranesi] Missing mesh " + mesh); return go; }
+            var rs = new List<Renderer>();
+            if (meshes.TryGetValue(mesh + "_LOD1", out var l1))
+            {
+                rs.Add(MakeRendererMulti(go.transform, "LOD0", me.mesh, me.subs.Select(sb => matFor(sb, null)).ToArray()));
+                rs.Add(MakeRendererMulti(go.transform, "LOD1", l1.mesh, l1.subs.Select(sb => matFor(sb, null)).ToArray()));
+                var lg = go.AddComponent<LODGroup>();
+                lg.SetLODs(new[] { new LOD(0.1f, new[] { rs[0] }), new LOD(0.008f, new[] { rs[1] }) });
+                lg.RecalculateBounds();
+            }
+            else
+            {
+                go.AddComponent<MeshFilter>().sharedMesh = me.mesh;
+                var mr = go.AddComponent<MeshRenderer>();
+                mr.sharedMaterials = me.subs.Select(sb => matFor(sb, null)).ToArray();
+                rs.Add(mr);
+            }
+            if (!shadows) foreach (var r in rs) r.shadowCastingMode = ShadowCastingMode.Off;
+            return go;
+        }
+
+        static HouseSeat MakeSeat(Transform parent, string name, Vector3 pos, float yaw, Vector3 exit, string text, Vector3 colSize,
+                                  VRC.SDKBase.VRCStation.Mobility mobility, VRCStation existing = null, float proximity = 2.5f)
+        {
+            var go = Child(parent, name);
+            go.transform.SetPositionAndRotation(pos, Quaternion.Euler(0f, yaw, 0f));
+            VRCStation st = existing;
+            if (st == null)
+            {
+                var exitT = Child(go.transform, "Exit").transform;
+                exitT.SetPositionAndRotation(exit, Quaternion.Euler(0f, yaw, 0f));
+                st = go.AddComponent<VRCStation>();
+                st.PlayerMobility = mobility;
+                st.seated = true;
+                st.canUseStationFromStation = false;
+                st.disableStationExit = false;
+                st.stationEnterPlayerLocation = go.transform;
+                st.stationExitPlayerLocation = exitT;
+            }
+            var bc = go.AddComponent<BoxCollider>();
+            bc.isTrigger = true; bc.size = colSize; bc.center = new Vector3(0f, colSize.y * 0.5f, 0f);
+            var seat = AddUdon<HouseSeat>(go);
+            seat.station = st;
+            UdonSharpEditorUtility.CopyProxyToUdon(seat);
+            var ub = UdonSharpEditorUtility.GetBackingUdonBehaviour(seat);
+            if (ub != null) { ub.interactText = text; ub.proximity = proximity; EditorUtility.SetDirty(ub); }
+            return seat;
+        }
+
+        static void SetInteract(UdonSharpBehaviour b, string text, float proximity)
+        {
+            var ub = UdonSharpEditorUtility.GetBackingUdonBehaviour(b);
+            if (ub != null) { ub.interactText = text; ub.proximity = proximity; EditorUtility.SetDirty(ub); }
+        }
+
+        static AudioSource MakeOneShot(Transform parent, string name, AudioClip clip, float vol, float maxD, bool loop = false)
+        {
+            var g = Child(parent, name);
+            var a = g.AddComponent<AudioSource>();
+            a.clip = clip; a.playOnAwake = false; a.loop = loop; a.volume = vol; a.spatialBlend = 1f;
+            a.minDistance = 1f; a.maxDistance = maxD; a.rolloffMode = AudioRolloffMode.Logarithmic; a.dopplerLevel = 0f;
+            var sp = g.AddComponent<VRCSpatialAudioSource>();
+            sp.Near = 0f; sp.Far = maxD; sp.Gain = 0f; sp.UseAudioSourceVolumeCurve = true;
+            return a;
+        }
+
+        static V2Result BuildV2Systems(Layout L, Dictionary<string, MeshEntry> meshes, Dictionary<string, Material> mats, Transform root,
+                                       Transform sea, Func<string, string, Material> matFor)
+        {
+            var res = new V2Result();
+            var water = Clips("Step_Water_");
+            AudioClip WaterClip(int i) => water.Length > 0 ? water[i % water.Length] : null;
+            var tSeats = Child(root, "Seats (window seats, benches, hammocks, the palm)").transform;
+            var immobile = VRC.SDKBase.VRCStation.Mobility.Immobilize;
+            var vehicle = VRC.SDKBase.VRCStation.Mobility.ImmobilizeForVehicle;
+
+            // ---- seats
+            int n = 0;
+            foreach (var s in L.seats ?? new LSeat[0])
+            {
+                if (s == null || s.p == null || s.p.Length < 3) continue;
+                Progress("Seats", 0.62f + 0.04f * n++ / Mathf.Max(1, L.seats.Length));
+                var size = s.size != null && s.size.Length == 3 ? V(s.size) : new Vector3(0.8f, 0.5f, 0.8f);
+                var seat = MakeSeat(tSeats, "Seat (" + s.kind + ")", V(s.p), s.r, s.exit != null && s.exit.Length == 3 ? V(s.exit) : V(s.p) + Vector3.up * 0.2f,
+                                    string.IsNullOrEmpty(s.text) ? "Sit" : s.text, size, immobile);
+                if (s.trigger != null && s.trigger.p != null && s.trigger.p.Length == 3)
+                {
+                    // the palm is 14 m up: the interaction lives on the pedestal and lifts you into the hand
+                    var tg = MakeSeat(tSeats, "Rest in the palm (pedestal)", V(s.trigger.p), s.r, Vector3.zero, s.text,
+                                      s.trigger.size != null && s.trigger.size.Length == 3 ? V(s.trigger.size) : Vector3.one, immobile, (VRCStation)seat.station, 4f);
+                    tg.transform.position = V(s.trigger.p) - Vector3.up * (tg.GetComponent<BoxCollider>().size.y * 0.5f);
+                }
+            }
+
+            // ---- gondolas (Venetian long canoes): row from the stern seat
+            var tBoats = Child(root, "Gondolas").transform;
+            var boats = new List<HouseBoat>();
+            int bi = 0;
+            foreach (var b in L.boats ?? new LBoat[0])
+            {
+                var go = Child(tBoats, "Gondola - " + (b.name ?? "boat") + " " + (++bi));
+                go.transform.SetPositionAndRotation(new Vector3(b.p[0], 0.2f, b.p[2]), Quaternion.Euler(0f, b.r, 0f));
+                var hull = MakeMeshObject(go.transform, "Hull", "Gondola", meshes, matFor);
+                hull.transform.localPosition = new Vector3(0f, HullDrop, 0f);
+                foreach (var it in b.items ?? new LItem[0])
+                {
+                    var ig = MakeMeshObject(hull.transform, it.mesh, it.mesh, meshes, matFor, false);
+                    ig.transform.localPosition = V(it.p);
+                    ig.transform.localRotation = Quaternion.Euler(0f, it.r, 0f);
+                    ig.transform.localScale = Vector3.one * (it.s > 0 ? it.s : 1f);
+                }
+                HouseBoat hb = null;
+                if (b.drivable)
+                {
+                    var paddle = MakeOneShot(go.transform, "Paddle", WaterClip(bi), 0.6f, 18f);
+                    hb = AddUdon<HouseBoat>(go);
+                    hb.paddleSound = paddle;
+                    hb.hitMask = 1;
+                    UdonSharpEditorUtility.CopyProxyToUdon(hb);
+                    boats.Add(hb);
+                }
+                for (int i = 0; i < GondolaSeats.Length; i++)
+                {
+                    var lp = GondolaSeats[i] + new Vector3(0f, HullDrop, 0f);
+                    bool driver = i == 0 && hb != null;
+                    var seat = MakeSeat(go.transform, driver ? "Seat (rower, stern)" : "Seat (passenger)", go.transform.TransformPoint(lp), b.r,
+                                        go.transform.TransformPoint(new Vector3(1.5f, 0.4f, lp.z)),
+                                        driver ? "Row the gondola (move to paddle, turn to steer)" : "Sit in the gondola",
+                                        new Vector3(0.9f, 0.5f, 0.6f), hb != null ? vehicle : immobile, null, 3f);
+                    seat.boat = hb; seat.isDriver = driver;
+                    UdonSharpEditorUtility.CopyProxyToUdon(seat);
+                }
+            }
+            res.boats = boats.ToArray();
+
+            // ---- the water slide from the top of the stair tower to the south beach
+            if (L.slide != null && L.slide.path != null && L.slide.path.Length >= 6)
+            {
+                var pts = new Vector3[L.slide.path.Length / 3];
+                for (int i = 0; i < pts.Length; i++) pts[i] = new Vector3(L.slide.path[i * 3], L.slide.path[i * 3 + 1], L.slide.path[i * 3 + 2]);
+                var sgo = Child(root, "Water Slide (ride)");
+                sgo.transform.position = pts[0];
+                var trig = sgo.AddComponent<BoxCollider>();
+                trig.isTrigger = true; trig.size = new Vector3(1.6f, 1.2f, 1.6f); trig.center = new Vector3(0f, 0.3f, 0f);
+                var sled = Child(sgo.transform, "Sled");
+                var vis = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                vis.name = "Sled cushion"; vis.transform.SetParent(sled.transform, false);
+                vis.transform.localScale = new Vector3(0.7f, 0.1f, 1.1f); vis.transform.localPosition = new Vector3(0f, 0.05f, 0f);
+                Object.DestroyImmediate(vis.GetComponent<BoxCollider>());
+                vis.GetComponent<MeshRenderer>().sharedMaterial = subMats.TryGetValue("Gondola_LinenRed", out var linen) ? linen : mats["Gold"];
+                var seatT = Child(sled.transform, "Seat"); seatT.transform.localPosition = new Vector3(0f, 0.12f, 0f);
+                var exitT = Child(root, "Water Slide exit (beach)").transform;
+                exitT.SetPositionAndRotation(L.slide.exit != null && L.slide.exit.Length == 3 ? V(L.slide.exit) : pts[pts.Length - 1], Quaternion.Euler(0f, L.slide.exitR, 0f));
+                var st = seatT.AddComponent<VRCStation>();
+                st.PlayerMobility = vehicle; st.seated = true; st.canUseStationFromStation = false; st.disableStationExit = false;
+                st.stationEnterPlayerLocation = seatT.transform; st.stationExitPlayerLocation = exitT;
+                var ride = MakeOneShot(sled.transform, "Ride", AssetDatabase.LoadAssetAtPath<AudioClip>($"{Root}/Audio/Cascade_Loop.wav"), 0.45f, 25f, true);
+                var endGo = Child(root, "Water Slide splash"); endGo.transform.position = pts[pts.Length - 1];
+                var splashA = MakeOneShot(endGo.transform, "Splash", WaterClip(3), 1f, 30f);
+                var hs = AddUdon<HouseSlide>(sgo);
+                hs.station = st; hs.sled = sled.transform; hs.path = pts; hs.exitPoint = exitT;
+                hs.rideSound = ride; hs.splashSound = splashA; hs.splashFx = MakeBurst(endGo.transform, mats["P_Drop"], 120);
+                UdonSharpEditorUtility.CopyProxyToUdon(hs);
+                SetInteract(hs, "Ride the slide", 3f);
+            }
+
+            // ---- crabs
+            if (L.crabs != null && L.crabs.Length > 0)
+            {
+                var croot = Child(root, "Crabs");
+                var list = new List<Transform>();
+                foreach (var c in L.crabs)
+                {
+                    var cg = MakeMeshObject(croot.transform, "Crab", "Crab_Blue", meshes, matFor);
+                    cg.transform.SetPositionAndRotation(V(c.p), Quaternion.Euler(0f, c.r, 0f));
+                    list.Add(cg.transform);
+                }
+                var hc = AddUdon<HouseCrabs>(croot);
+                hc.crabs = list.ToArray(); hc.groundMask = 1;
+                UdonSharpEditorUtility.CopyProxyToUdon(hc);
+            }
+
+            // ---- dolphins (occasionally)
+            if (L.dolphins != null && L.dolphins.routes != null && L.dolphins.routes.Length > 0)
+            {
+                var droot = Child(root, "Dolphins");
+                var ds = new List<Transform>();
+                for (int i = 0; i < 3; i++)
+                {
+                    var d = Child(droot.transform, "Dolphin " + (i + 1));
+                    var m = MakeMeshObject(d.transform, "Body", "Dolphin", meshes, matFor);
+                    m.transform.localRotation = Quaternion.Euler(0f, -90f, 0f);     // mesh nose is +X; the script steers +Z
+                    m.transform.localScale = Vector3.one * (i == 1 ? 1.08f : 0.95f);
+                    ds.Add(d.transform);
+                }
+                var hd = AddUdon<HouseDolphins>(droot);
+                hd.dolphins = ds.ToArray();
+                hd.routeStart = L.dolphins.routes.Select(r => V(r.a)).ToArray();
+                hd.routeEnd = L.dolphins.routes.Select(r => V(r.b)).ToArray();
+                hd.period = L.dolphins.period > 0 ? L.dolphins.period : 110f;
+                hd.duration = L.dolphins.duration > 0 ? L.dolphins.duration : 22f;
+                hd.splash = MakeBurst(droot.transform, mats["P_Drop"], 60);
+                hd.splashSound = MakeOneShot(droot.transform, "Splash", WaterClip(1), 0.9f, 60f);
+                UdonSharpEditorUtility.CopyProxyToUdon(hd);
+                res.dolphins = hd;
+            }
+
+            // ---- wading floor: open water is chest-deep everywhere (rises and falls with the sea)
+            if (L.wade != null && L.wade.size > 0)
+            {
+                var wg = Child(sea, "Wading floor");
+                int env = LayerMask.NameToLayer("Environment");
+                wg.layer = env >= 0 ? env : 11;
+                var bc = wg.AddComponent<BoxCollider>();
+                bc.size = new Vector3(L.wade.size, 0.4f, L.wade.size);
+                bc.center = new Vector3(0f, L.wade.y - 0.2f, 0f);
+            }
+            return res;
+        }
+
+        static void MakeSparkle(Transform parent, Vector3 pos, Vector3 size, Material mat)
+        {
+            var ps = NewSystem(parent, "Palm Sparkles", pos, mat, out var r);
+            r.maxParticleSize = 0.2f;
+            var main = ps.main;
+            main.loop = true; main.playOnAwake = true; main.prewarm = true; main.duration = 5f;
+            main.startLifetime = new ParticleSystem.MinMaxCurve(1.5f, 3.5f);
+            main.startSpeed = new ParticleSystem.MinMaxCurve(0f, 0.08f);
+            main.startSize = new ParticleSystem.MinMaxCurve(0.02f, 0.07f);
+            main.startColor = new ParticleSystem.MinMaxGradient(new Color(1f, 0.95f, 0.8f, 0.9f), new Color(0.85f, 0.95f, 1f, 0.7f));
+            main.simulationSpace = ParticleSystemSimulationSpace.World;
+            main.gravityModifier = -0.01f;
+            main.maxParticles = 300;
+            var em = ps.emission; em.rateOverTime = 45f;
+            var sh = ps.shape; sh.enabled = true; sh.shapeType = ParticleSystemShapeType.Sphere; sh.radius = Mathf.Max(size.x, size.z) * 0.5f;
+            var nz = ps.noise; nz.enabled = true; nz.strength = 0.08f; nz.frequency = 0.6f; nz.scrollSpeed = 0.2f;
+            var g = new Gradient();
+            g.SetKeys(new[] { new GradientColorKey(Color.white, 0), new GradientColorKey(Color.white, 1) },
+                      new[] { new GradientAlphaKey(0, 0), new GradientAlphaKey(1, 0.1f), new GradientAlphaKey(0.2f, 0.4f), new GradientAlphaKey(1, 0.6f), new GradientAlphaKey(0, 1) });
+            var col = ps.colorOverLifetime; col.enabled = true; col.color = new ParticleSystem.MinMaxGradient(g);
+            ps.Play();
+        }
+
+        static ParticleSystem MakeBurst(Transform parent, Material mat, int maxP)
+        {
+            var ps = NewSystem(parent, "Splash", parent.position, mat, out var r);
+            var main = ps.main;
+            main.loop = false; main.playOnAwake = false; main.duration = 1f;
+            main.startLifetime = new ParticleSystem.MinMaxCurve(0.6f, 1.4f);
+            main.startSpeed = new ParticleSystem.MinMaxCurve(2f, 5.5f);
+            main.startSize = new ParticleSystem.MinMaxCurve(0.04f, 0.14f);
+            main.gravityModifier = 1f;
+            main.simulationSpace = ParticleSystemSimulationSpace.World;
+            main.maxParticles = maxP;
+            var em = ps.emission; em.enabled = true; em.rateOverTime = 0f;
+            em.SetBursts(new[] { new ParticleSystem.Burst(0f, (short)(maxP * 0.8f)) });
+            var sh = ps.shape; sh.enabled = true; sh.shapeType = ParticleSystemShapeType.Cone; sh.angle = 28f; sh.radius = 0.6f;
+            sh.rotation = new Vector3(-90f, 0f, 0f);
+            return ps;
         }
 
         static AudioClip[] Clips(string prefix)
@@ -850,6 +1359,15 @@ namespace Piranesi.EditorTools
                 if (c != null) list.Add(c);
             }
             return list.ToArray();
+        }
+
+        static Renderer MakeRendererMulti(Transform parent, string name, Mesh mesh, Material[] mats)
+        {
+            var g = Child(parent, name);
+            g.AddComponent<MeshFilter>().sharedMesh = mesh;
+            var r = g.AddComponent<MeshRenderer>();
+            r.sharedMaterials = mats;
+            return r;
         }
 
         static Renderer MakeRenderer(Transform parent, string name, Mesh mesh, Material mat)

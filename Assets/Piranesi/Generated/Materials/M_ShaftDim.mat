@@ -32,6 +32,7 @@ Material:
     - _Intensity: 0.12
     - _Spread: 0.1
     - _UseFacing: 1
+    - _Vertical: 0
     m_Colors:
     - _Tint: {r: 1, g: 0.96999997, b: 0.9, a: 1}
   m_BuildTextureStacks: []
