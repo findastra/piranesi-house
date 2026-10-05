@@ -1,0 +1,3 @@
+# ArtSource holds the Python generators that build the meshes and textures in Blender.
+# The world itself is Unity C# and shaders, so keep the generators out of the language stats.
+ArtSource/** -linguist-detectable
