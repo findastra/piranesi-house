@@ -1,0 +1,9221 @@
+{
+ "objects": [
+  {
+   "name": "Vestibule_00_Core",
+   "mesh": "Vest_Core",
+   "p": [
+    -60.0,
+    0.0,
+    -60.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_00_N",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    -60.0,
+    0.0,
+    -60.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_00_E",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    -60.0,
+    0.0,
+    -60.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_00_S",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    -60.0,
+    0.0,
+    -60.0
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Colossus_Pedestal",
+   "mesh": "Pedestal_Colossal",
+   "p": [
+    -60.0,
+    0.0,
+    -69.6
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_00_W",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    -60.0,
+    0.0,
+    -60.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Colossus_Pedestal",
+   "mesh": "Pedestal_Colossal",
+   "p": [
+    -69.6,
+    0.0,
+    -60.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "SandDrift",
+   "mesh": "SandDrift",
+   "p": [
+    -52.0,
+    0,
+    -52.0
+   ],
+   "r": 60.989,
+   "s": [
+    0.8838646317691079,
+    1.0756355983207575,
+    0.726776004188859
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_01_Core",
+   "mesh": "Vest_Core",
+   "p": [
+    -60.0,
+    0.0,
+    0.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_01_N",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    -60.0,
+    0.0,
+    0.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_01_E",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    -60.0,
+    0.0,
+    0.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_01_S",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    -60.0,
+    0.0,
+    0.0
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_01_W",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    -60.0,
+    0.0,
+    0.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "SeaGate",
+   "mesh": "SeaGate",
+   "p": [
+    -60.0,
+    0.0,
+    0.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "SeaBarrier",
+   "mesh": "",
+   "p": [
+    -87.0,
+    -1.0,
+    -4.95981953654678e-15
+   ],
+   "r": 270,
+   "s": [
+    22,
+    4,
+    0.5
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": "invisible"
+  },
+  {
+   "name": "SeaBarrier",
+   "mesh": "",
+   "p": [
+    -77.0,
+    1.0,
+    -11.300000000000004
+   ],
+   "r": 270,
+   "s": [
+    0.5,
+    4,
+    12
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": "invisible"
+  },
+  {
+   "name": "SeaBarrier",
+   "mesh": "",
+   "p": [
+    -77.0,
+    1.0,
+    11.299999999999997
+   ],
+   "r": 270,
+   "s": [
+    0.5,
+    4,
+    12
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": "invisible"
+  },
+  {
+   "name": "SandDrift",
+   "mesh": "SandDrift",
+   "p": [
+    -68.0,
+    0,
+    -8.0
+   ],
+   "r": 47.673,
+   "s": [
+    0.8615176273669969,
+    1.09549179371606,
+    0.6189982714672598
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_02_Core",
+   "mesh": "Vest_Core",
+   "p": [
+    -60.0,
+    0.0,
+    60.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_02_N",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    -60.0,
+    0.0,
+    60.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Colossus_Pedestal",
+   "mesh": "Pedestal_Colossal",
+   "p": [
+    -60.0,
+    0.0,
+    69.6
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_02_E",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    -60.0,
+    0.0,
+    60.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_02_S",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    -60.0,
+    0.0,
+    60.0
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_02_W",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    -60.0,
+    0.0,
+    60.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Colossus_Pedestal",
+   "mesh": "Pedestal_Colossal",
+   "p": [
+    -69.6,
+    0.0,
+    60.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_10_Core",
+   "mesh": "Vest_Core",
+   "p": [
+    0.0,
+    0.0,
+    -60.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_10_N",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    0.0,
+    0.0,
+    -60.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Colossus_Pedestal",
+   "mesh": "Pedestal_Colossal",
+   "p": [
+    0.0,
+    0.0,
+    -50.4
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_10_E",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    0.0,
+    0.0,
+    -60.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Colossus_Pedestal",
+   "mesh": "Pedestal_Colossal",
+   "p": [
+    9.6,
+    0.0,
+    -60.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_10_S",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    0.0,
+    0.0,
+    -60.0
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Colossus_Pedestal",
+   "mesh": "Pedestal_Colossal",
+   "p": [
+    0.0,
+    0.0,
+    -69.6
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_10_W",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    0.0,
+    0.0,
+    -60.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_11_Core",
+   "mesh": "Vest_Core",
+   "p": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_11_N",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_11_E",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_11_S",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Colossus_Pedestal",
+   "mesh": "Pedestal_Colossal",
+   "p": [
+    0.0,
+    0.0,
+    -9.6
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_11_W",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_12_Core",
+   "mesh": "Vest_Core",
+   "p": [
+    0.0,
+    0.0,
+    60.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_12_N",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    0.0,
+    0.0,
+    60.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Colossus_Pedestal",
+   "mesh": "Pedestal_Colossal",
+   "p": [
+    0.0,
+    0.0,
+    69.6
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_12_E",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    0.0,
+    0.0,
+    60.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Colossus_Pedestal",
+   "mesh": "Pedestal_Colossal",
+   "p": [
+    9.6,
+    0.0,
+    60.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_12_S",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    0.0,
+    0.0,
+    60.0
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_12_W",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    0.0,
+    0.0,
+    60.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_20_Core",
+   "mesh": "Vest_Core",
+   "p": [
+    60.0,
+    0.0,
+    -60.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_20_N",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    60.0,
+    0.0,
+    -60.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_20_E",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    60.0,
+    0.0,
+    -60.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Colossus_Pedestal",
+   "mesh": "Pedestal_Colossal",
+   "p": [
+    69.6,
+    0.0,
+    -60.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_20_S",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    60.0,
+    0.0,
+    -60.0
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Colossus_Pedestal",
+   "mesh": "Pedestal_Colossal",
+   "p": [
+    60.0,
+    0.0,
+    -69.6
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_20_W",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    60.0,
+    0.0,
+    -60.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Colossus_Pedestal",
+   "mesh": "Pedestal_Colossal",
+   "p": [
+    50.4,
+    0.0,
+    -60.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_21_Core",
+   "mesh": "Vest_Core",
+   "p": [
+    60.0,
+    0.0,
+    0.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_21_N",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    60.0,
+    0.0,
+    0.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_21_E",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    60.0,
+    0.0,
+    0.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Colossus_Pedestal",
+   "mesh": "Pedestal_Colossal",
+   "p": [
+    69.6,
+    0.0,
+    0.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_21_S",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    60.0,
+    0.0,
+    0.0
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_21_W",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    60.0,
+    0.0,
+    0.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_22_Core",
+   "mesh": "Vest_Core",
+   "p": [
+    60.0,
+    0.0,
+    60.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_22_N",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    60.0,
+    0.0,
+    60.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Cascade",
+   "mesh": "Cascade",
+   "p": [
+    60.0,
+    0.0,
+    70.0
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_22_E",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    60.0,
+    0.0,
+    60.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Colossus_Pedestal",
+   "mesh": "Pedestal_Colossal",
+   "p": [
+    69.6,
+    0.0,
+    60.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_22_S",
+   "mesh": "Vest_SideOpen",
+   "p": [
+    60.0,
+    0.0,
+    60.0
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Vestibule_22_W",
+   "mesh": "Vest_SideBlind",
+   "p": [
+    60.0,
+    0.0,
+    60.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Colossus_Pedestal",
+   "mesh": "Pedestal_Colossal",
+   "p": [
+    50.4,
+    0.0,
+    60.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "SandDrift",
+   "mesh": "SandDrift",
+   "p": [
+    68.0,
+    0,
+    68.0
+   ],
+   "r": 50.091,
+   "s": [
+    0.6710199939267159,
+    0.9681167993933358,
+    0.8552194858611664
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "SandDrift",
+   "mesh": "SandDrift",
+   "p": [
+    52.0,
+    0,
+    52.0
+   ],
+   "r": 43.644,
+   "s": [
+    0.7736100894160651,
+    1.0476517247117922,
+    0.6609159581293539
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Arcade_00_01",
+   "mesh": "Arcade",
+   "p": [
+    -60.0,
+    0.0,
+    -30.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -63.2,
+    0.0,
+    -43.5
+   ],
+   "r": 47.946,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -63.2,
+    0.0,
+    -34.5
+   ],
+   "r": 151.239,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -63.2,
+    0.0,
+    -25.5
+   ],
+   "r": 62.12,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -63.2,
+    0.0,
+    -16.5
+   ],
+   "r": 306.716,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -56.8,
+    0.0,
+    -39.0
+   ],
+   "r": 144.852,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -56.8,
+    0.0,
+    -30.0
+   ],
+   "r": 187.941,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -56.8,
+    0.0,
+    -21.0
+   ],
+   "r": 131.605,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    -64.58,
+    3.0,
+    -39.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    -55.42,
+    3.0,
+    -30.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    -64.58,
+    3.0,
+    -21.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Fragment_Slab",
+   "mesh": "Fragment_Slab",
+   "p": [
+    -62.9963,
+    0.0,
+    -40.8722
+   ],
+   "r": 79.814,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Fragment_Slab",
+   "mesh": "Fragment_Slab",
+   "p": [
+    -61.0517,
+    0.0,
+    -41.5131
+   ],
+   "r": 226.624,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "SandDrift",
+   "mesh": "SandDrift",
+   "p": [
+    -63.0,
+    0.0,
+    -44.0
+   ],
+   "r": 137.297,
+   "s": [
+    0.7,
+    0.8,
+    0.9
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Arcade_00_10",
+   "mesh": "Arcade",
+   "p": [
+    -30.0,
+    0.0,
+    -60.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -43.5,
+    0.0,
+    -56.8
+   ],
+   "r": 179.039,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -34.5,
+    0.0,
+    -56.8
+   ],
+   "r": 34.479,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -25.5,
+    0.0,
+    -56.8
+   ],
+   "r": 240.302,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -16.5,
+    0.0,
+    -56.8
+   ],
+   "r": 62.192,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -39.0,
+    0.0,
+    -63.2
+   ],
+   "r": 105.926,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -30.0,
+    0.0,
+    -63.2
+   ],
+   "r": 49.428,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -21.0,
+    0.0,
+    -63.2
+   ],
+   "r": 51.307,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    -39.0,
+    3.0,
+    -55.42
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    -30.0,
+    3.0,
+    -64.58
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    -21.0,
+    3.0,
+    -55.42
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Fragment_Slab",
+   "mesh": "Fragment_Slab",
+   "p": [
+    -18.1507,
+    0.0,
+    -59.0932
+   ],
+   "r": 99.666,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Fragment_Drum",
+   "mesh": "Fragment_Drum",
+   "p": [
+    -26.3689,
+    0.42,
+    -58.04
+   ],
+   "r": 30.338,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": "",
+   "lie": true
+  },
+  {
+   "name": "Arcade_01_02",
+   "mesh": "Arcade",
+   "p": [
+    -60.0,
+    0.0,
+    30.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -63.2,
+    0.0,
+    16.5
+   ],
+   "r": 73.042,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -63.2,
+    0.0,
+    25.5
+   ],
+   "r": 173.542,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -63.2,
+    0.0,
+    34.5
+   ],
+   "r": 320.038,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -63.2,
+    0.0,
+    43.5
+   ],
+   "r": 23.608,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -56.8,
+    0.0,
+    21.0
+   ],
+   "r": 35.863,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -56.8,
+    0.0,
+    30.0
+   ],
+   "r": 217.05,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -56.8,
+    0.0,
+    39.0
+   ],
+   "r": 262.652,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    -64.58,
+    3.0,
+    21.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    -55.42,
+    3.0,
+    30.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    -64.58,
+    3.0,
+    39.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Fragment_Slab",
+   "mesh": "Fragment_Slab",
+   "p": [
+    -60.5599,
+    0.0,
+    17.931
+   ],
+   "r": 68.072,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Nave_01_11",
+   "mesh": "Nave",
+   "p": [
+    -30.0,
+    0.0,
+    0.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    -45.75,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    -41.25,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    -36.75,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    -32.25,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    -27.75,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    -23.25,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    -18.75,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    -14.25,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    -43.5,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    -39.0,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    -34.5,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    -30.0,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    -25.5,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    -21.0,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    -16.5,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    -45.75,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    -41.25,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    -36.75,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    -32.25,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    -27.75,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    -23.25,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    -18.75,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    -14.25,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    -43.5,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    -39.0,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    -34.5,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    -30.0,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    -25.5,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    -21.0,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    -16.5,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Fragment_Drum",
+   "mesh": "Fragment_Drum",
+   "p": [
+    -34.0658,
+    0.42,
+    2.6107
+   ],
+   "r": 169.287,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": "",
+   "lie": true
+  },
+  {
+   "name": "Arcade_02_12",
+   "mesh": "Arcade",
+   "p": [
+    -30.0,
+    0.0,
+    60.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -43.5,
+    0.0,
+    63.2
+   ],
+   "r": 253.276,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -34.5,
+    0.0,
+    63.2
+   ],
+   "r": 212.488,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -25.5,
+    0.0,
+    63.2
+   ],
+   "r": 241.645,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -16.5,
+    0.0,
+    63.2
+   ],
+   "r": 43.233,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -39.0,
+    0.0,
+    56.8
+   ],
+   "r": 314.758,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -30.0,
+    0.0,
+    56.8
+   ],
+   "r": 158.132,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -21.0,
+    0.0,
+    56.8
+   ],
+   "r": 171.208,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    -39.0,
+    3.0,
+    64.58
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    -30.0,
+    3.0,
+    55.42
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    -21.0,
+    3.0,
+    64.58
+   ],
+   "r": 180,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Fragment_Drum",
+   "mesh": "Fragment_Drum",
+   "p": [
+    -16.6845,
+    0.42,
+    58.1983
+   ],
+   "r": 283.064,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": "",
+   "lie": true
+  },
+  {
+   "name": "Fragment_Slab",
+   "mesh": "Fragment_Slab",
+   "p": [
+    -19.4559,
+    0.0,
+    57.4159
+   ],
+   "r": 331.191,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Arcade_11_12",
+   "mesh": "Arcade",
+   "p": [
+    0.0,
+    0.0,
+    30.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -3.2,
+    0.0,
+    16.5
+   ],
+   "r": 158.155,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -3.2,
+    0.0,
+    25.5
+   ],
+   "r": 321.288,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -3.2,
+    0.0,
+    34.5
+   ],
+   "r": 164.127,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    -3.2,
+    0.0,
+    43.5
+   ],
+   "r": 195.797,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    3.2,
+    0.0,
+    21.0
+   ],
+   "r": 346.436,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    3.2,
+    0.0,
+    30.0
+   ],
+   "r": 250.923,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    3.2,
+    0.0,
+    39.0
+   ],
+   "r": 261.804,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    -4.58,
+    3.0,
+    21.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    4.58,
+    3.0,
+    30.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    -4.58,
+    3.0,
+    39.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Fragment_Drum",
+   "mesh": "Fragment_Drum",
+   "p": [
+    -1.6576,
+    0.42,
+    43.5305
+   ],
+   "r": 113.274,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": "",
+   "lie": true
+  },
+  {
+   "name": "SandDrift",
+   "mesh": "SandDrift",
+   "p": [
+    3.0,
+    0.0,
+    16.0
+   ],
+   "r": 249.703,
+   "s": [
+    0.7,
+    0.8,
+    0.9
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Nave_11_21",
+   "mesh": "Nave",
+   "p": [
+    30.0,
+    0.0,
+    0.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    14.25,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    18.75,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    23.25,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    27.75,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    32.25,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    36.75,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    41.25,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    45.75,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    16.5,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    21.0,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    25.5,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    30.0,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    34.5,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    39.0,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    43.5,
+    0.0,
+    6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    14.25,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    18.75,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    23.25,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    27.75,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    32.25,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    36.75,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    41.25,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Column",
+   "mesh": "Column",
+   "p": [
+    45.75,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "capsule",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    16.5,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    21.0,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    25.5,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    30.0,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    34.5,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    39.0,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Square",
+   "p": [
+    43.5,
+    0.0,
+    -6.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Fragment_Slab",
+   "mesh": "Fragment_Slab",
+   "p": [
+    27.0729,
+    0.0,
+    -0.8951
+   ],
+   "r": 319.837,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Fragment_Drum",
+   "mesh": "Fragment_Drum",
+   "p": [
+    26.0075,
+    0.42,
+    -0.0523
+   ],
+   "r": 340.975,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": "",
+   "lie": true
+  },
+  {
+   "name": "Fragment_Drum",
+   "mesh": "Fragment_Drum",
+   "p": [
+    26.7812,
+    0.42,
+    1.0773
+   ],
+   "r": 65.675,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": "",
+   "lie": true
+  },
+  {
+   "name": "Arcade_20_21",
+   "mesh": "Arcade",
+   "p": [
+    60.0,
+    0.0,
+    -30.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    56.8,
+    0.0,
+    -43.5
+   ],
+   "r": 64.131,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    56.8,
+    0.0,
+    -34.5
+   ],
+   "r": 311.665,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    56.8,
+    0.0,
+    -25.5
+   ],
+   "r": 51.736,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    56.8,
+    0.0,
+    -16.5
+   ],
+   "r": 269.323,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    63.2,
+    0.0,
+    -39.0
+   ],
+   "r": 193.593,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    63.2,
+    0.0,
+    -30.0
+   ],
+   "r": 48.37,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    63.2,
+    0.0,
+    -21.0
+   ],
+   "r": 304.804,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    55.42,
+    3.0,
+    -39.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    64.58,
+    3.0,
+    -30.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    55.42,
+    3.0,
+    -21.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Fragment_Slab",
+   "mesh": "Fragment_Slab",
+   "p": [
+    59.6243,
+    0.0,
+    -23.6559
+   ],
+   "r": 68.662,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Fragment_Drum",
+   "mesh": "Fragment_Drum",
+   "p": [
+    62.5073,
+    0.42,
+    -17.0043
+   ],
+   "r": 30.559,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": "",
+   "lie": true
+  },
+  {
+   "name": "SandDrift",
+   "mesh": "SandDrift",
+   "p": [
+    57.0,
+    0.0,
+    -16.0
+   ],
+   "r": 348.881,
+   "s": [
+    0.7,
+    0.8,
+    0.9
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Arcade_21_22",
+   "mesh": "Arcade",
+   "p": [
+    60.0,
+    0.0,
+    30.0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    56.8,
+    0.0,
+    16.5
+   ],
+   "r": 4.337,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    56.8,
+    0.0,
+    25.5
+   ],
+   "r": 307.393,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    56.8,
+    0.0,
+    34.5
+   ],
+   "r": 118.89,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    56.8,
+    0.0,
+    43.5
+   ],
+   "r": 347.257,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    63.2,
+    0.0,
+    21.0
+   ],
+   "r": 240.209,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    63.2,
+    0.0,
+    30.0
+   ],
+   "r": 332.039,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Plinth",
+   "mesh": "Plinth_Round",
+   "p": [
+    63.2,
+    0.0,
+    39.0
+   ],
+   "r": 173.453,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    55.42,
+    3.0,
+    21.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    64.58,
+    3.0,
+    30.0
+   ],
+   "r": 270,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Lantern",
+   "mesh": "Lantern",
+   "p": [
+    55.42,
+    3.0,
+    39.0
+   ],
+   "r": 90,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "none",
+   "stat": false,
+   "tag": ""
+  },
+  {
+   "name": "Fragment_Slab",
+   "mesh": "Fragment_Slab",
+   "p": [
+    58.5223,
+    0.0,
+    33.1546
+   ],
+   "r": 341.851,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Fragment_Slab",
+   "mesh": "Fragment_Slab",
+   "p": [
+    60.2214,
+    0.0,
+    43.9507
+   ],
+   "r": 265.799,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Fragment_Slab",
+   "mesh": "Fragment_Slab",
+   "p": [
+    58.8689,
+    0.0,
+    39.8437
+   ],
+   "r": 74.237,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "box",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "SandDrift",
+   "mesh": "SandDrift",
+   "p": [
+    63.0,
+    0.0,
+    16.0
+   ],
+   "r": 91.7,
+   "s": [
+    0.7,
+    0.8,
+    0.9
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "DistantWing",
+   "mesh": "Wing_1",
+   "p": [
+    -129.9677,
+    -2,
+    -357.0832
+   ],
+   "r": 281.815,
+   "s": [
+    1.6,
+    1.6,
+    1.6
+   ],
+   "col": "none",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "DistantWing",
+   "mesh": "Wing_2",
+   "p": [
+    -488.6402,
+    -2,
+    -177.8505
+   ],
+   "r": 320.463,
+   "s": [
+    1.6,
+    1.6,
+    1.6
+   ],
+   "col": "none",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "DistantWing",
+   "mesh": "Wing_3",
+   "p": [
+    -389.7114,
+    -2,
+    225.0
+   ],
+   "r": 36.749,
+   "s": [
+    1.6,
+    1.6,
+    1.6
+   ],
+   "col": "none",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "DistantWing",
+   "mesh": "Wing_1",
+   "p": [
+    222.3131,
+    -2,
+    -610.8002
+   ],
+   "r": 246.586,
+   "s": [
+    1.6,
+    1.6,
+    1.6
+   ],
+   "col": "none",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "DistantWing",
+   "mesh": "Wing_2",
+   "p": [
+    -449.9513,
+    -2,
+    536.2311
+   ],
+   "r": 40.874,
+   "s": [
+    1.6,
+    1.6,
+    1.6
+   ],
+   "col": "none",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "DistantWing",
+   "mesh": "Wing_3",
+   "p": [
+    205.2121,
+    -2,
+    563.8156
+   ],
+   "r": 127.725,
+   "s": [
+    1.6,
+    1.6,
+    1.6
+   ],
+   "col": "none",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "DistantWing",
+   "mesh": "Wing_2",
+   "p": [
+    526.2279,
+    -2,
+    -191.5313
+   ],
+   "r": 193.929,
+   "s": [
+    1.6,
+    1.6,
+    1.6
+   ],
+   "col": "none",
+   "stat": true,
+   "tag": ""
+  },
+  {
+   "name": "Seabed_Sand",
+   "mesh": "Seabed",
+   "p": [
+    0,
+    0,
+    0
+   ],
+   "r": 0,
+   "s": [
+    1,
+    1,
+    1
+   ],
+   "col": "mesh",
+   "stat": true,
+   "tag": ""
+  }
+ ],
+ "statues": [
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -60.0,
+    1.75,
+    -69.6
+   ],
+   "r": 0,
+   "s": 2.3,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -69.6,
+    1.75,
+    -60.0
+   ],
+   "r": 90,
+   "s": 2.3,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -83.8,
+    1.3,
+    -9.2
+   ],
+   "r": 0,
+   "s": 1.5,
+   "role": "Horse of the Sea Gate"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -83.8,
+    1.3,
+    9.2
+   ],
+   "r": 180,
+   "s": 1.4,
+   "role": "Guardian beast of the Sea Gate"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -60.0,
+    1.75,
+    69.6
+   ],
+   "r": 180,
+   "s": 2.3,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -69.6,
+    1.75,
+    60.0
+   ],
+   "r": 90,
+   "s": 2.6,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    0.0,
+    1.75,
+    -50.4
+   ],
+   "r": 180,
+   "s": 2.3,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    9.6,
+    1.75,
+    -60.0
+   ],
+   "r": 270,
+   "s": 2.6,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    0.0,
+    1.75,
+    -69.6
+   ],
+   "r": 0,
+   "s": 2.3,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    0.0,
+    1.75,
+    -9.6
+   ],
+   "r": 0,
+   "s": 2.3,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    0.0,
+    1.75,
+    69.6
+   ],
+   "r": 180,
+   "s": 2.3,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    9.6,
+    1.75,
+    60.0
+   ],
+   "r": 270,
+   "s": 2.6,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    69.6,
+    1.75,
+    -60.0
+   ],
+   "r": 270,
+   "s": 2.6,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    60.0,
+    1.75,
+    -69.6
+   ],
+   "r": 0,
+   "s": 2.6,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    50.4,
+    1.75,
+    -60.0
+   ],
+   "r": 90,
+   "s": 2.6,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    69.6,
+    1.75,
+    0.0
+   ],
+   "r": 270,
+   "s": 2.3,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    69.6,
+    1.75,
+    60.0
+   ],
+   "r": 270,
+   "s": 2.3,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    50.4,
+    1.75,
+    60.0
+   ],
+   "r": 90,
+   "s": 2.6,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -65.45,
+    0.9,
+    -45.75
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -63.2,
+    1.25,
+    -43.5
+   ],
+   "r": 90.04,
+   "s": 0.85,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -65.45,
+    0.9,
+    -41.25
+   ],
+   "r": 90,
+   "s": 0.7,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -63.2,
+    1.25,
+    -34.5
+   ],
+   "r": 74.608,
+   "s": 0.65,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -65.45,
+    0.9,
+    -27.75
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -63.2,
+    1.25,
+    -25.5
+   ],
+   "r": 100.982,
+   "s": 0.6,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -65.45,
+    0.9,
+    -23.25
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -65.45,
+    0.9,
+    -18.75
+   ],
+   "r": 90,
+   "s": 0.7,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    -63.2,
+    1.25,
+    -16.5
+   ],
+   "r": 78.416,
+   "s": 0.85,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    -54.55,
+    0.9,
+    -41.25
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -56.8,
+    1.25,
+    -39.0
+   ],
+   "r": 253.087,
+   "s": 0.85,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    -54.55,
+    0.9,
+    -36.75
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    -54.55,
+    0.9,
+    -32.25
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -56.8,
+    1.25,
+    -30.0
+   ],
+   "r": 283.731,
+   "s": 0.6,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -54.55,
+    0.9,
+    -27.75
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -54.55,
+    0.9,
+    -23.25
+   ],
+   "r": 270,
+   "s": 0.7,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -56.8,
+    1.25,
+    -21.0
+   ],
+   "r": 265.109,
+   "s": 0.85,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -54.55,
+    0.9,
+    -14.25
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -45.75,
+    0.9,
+    -54.55
+   ],
+   "r": 180,
+   "s": 0.7,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    -43.5,
+    1.25,
+    -56.8
+   ],
+   "r": 193.889,
+   "s": 0.85,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -41.25,
+    0.9,
+    -54.55
+   ],
+   "r": 180,
+   "s": 1.0,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -36.75,
+    0.9,
+    -54.55
+   ],
+   "r": 180,
+   "s": 1.0,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -34.5,
+    1.25,
+    -56.8
+   ],
+   "r": 180.494,
+   "s": 0.65,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -27.75,
+    0.9,
+    -54.55
+   ],
+   "r": 180,
+   "s": 1.0,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -25.5,
+    1.25,
+    -56.8
+   ],
+   "r": 189.632,
+   "s": 0.85,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_Queen",
+   "p": [
+    -18.75,
+    0.9,
+    -54.55
+   ],
+   "r": 180,
+   "s": 1.6,
+   "role": "Bust of a queen"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -16.5,
+    1.25,
+    -56.8
+   ],
+   "r": 204.308,
+   "s": 0.85,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -14.25,
+    0.9,
+    -54.55
+   ],
+   "r": 180,
+   "s": 1.0,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -45.75,
+    0.9,
+    -65.45
+   ],
+   "r": 0,
+   "s": 0.7,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -41.25,
+    0.9,
+    -65.45
+   ],
+   "r": 0,
+   "s": 0.7,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -39.0,
+    1.25,
+    -63.2
+   ],
+   "r": 23.322,
+   "s": 0.85,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -36.75,
+    0.9,
+    -65.45
+   ],
+   "r": 0,
+   "s": 1.0,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -32.25,
+    0.9,
+    -65.45
+   ],
+   "r": 0,
+   "s": 1.0,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -30.0,
+    1.25,
+    -63.2
+   ],
+   "r": 12.375,
+   "s": 0.85,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -27.75,
+    0.9,
+    -65.45
+   ],
+   "r": 0,
+   "s": 1.0,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -23.25,
+    0.9,
+    -65.45
+   ],
+   "r": 0,
+   "s": 0.7,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -21.0,
+    1.25,
+    -63.2
+   ],
+   "r": 13.209,
+   "s": 0.6,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Queen",
+   "p": [
+    -18.75,
+    0.9,
+    -65.45
+   ],
+   "r": 0,
+   "s": 1.6,
+   "role": "Bust of a queen"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    -14.25,
+    0.9,
+    -65.45
+   ],
+   "r": 0,
+   "s": 1.0,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -65.45,
+    0.9,
+    14.25
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -63.2,
+    1.25,
+    16.5
+   ],
+   "r": 87.835,
+   "s": 0.65,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -65.45,
+    0.9,
+    18.75
+   ],
+   "r": 90,
+   "s": 0.7,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -65.45,
+    0.9,
+    23.25
+   ],
+   "r": 90,
+   "s": 0.7,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -63.2,
+    1.25,
+    25.5
+   ],
+   "r": 91.771,
+   "s": 0.85,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -65.45,
+    0.9,
+    32.25
+   ],
+   "r": 90,
+   "s": 0.7,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -63.2,
+    1.25,
+    34.5
+   ],
+   "r": 80.438,
+   "s": 0.6,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    -65.45,
+    0.9,
+    36.75
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    -63.2,
+    1.25,
+    43.5
+   ],
+   "r": 93.694,
+   "s": 0.85,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -54.55,
+    0.9,
+    14.25
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -54.55,
+    0.9,
+    18.75
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -56.8,
+    1.25,
+    21.0
+   ],
+   "r": 267.677,
+   "s": 0.65,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    -54.55,
+    0.9,
+    23.25
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    -54.55,
+    0.9,
+    27.75
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -56.8,
+    1.25,
+    30.0
+   ],
+   "r": 257.182,
+   "s": 0.85,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -54.55,
+    0.9,
+    32.25
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -56.8,
+    1.25,
+    39.0
+   ],
+   "r": 269.796,
+   "s": 0.6,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -54.55,
+    0.9,
+    41.25
+   ],
+   "r": 270,
+   "s": 0.7,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -54.55,
+    0.9,
+    45.75
+   ],
+   "r": 270,
+   "s": 0.7,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -43.5,
+    1.3,
+    6.0
+   ],
+   "r": 180,
+   "s": 0.95,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Queen",
+   "p": [
+    -43.5,
+    0.6,
+    8.35
+   ],
+   "r": 180,
+   "s": 1.4,
+   "role": "Bust of a queen"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -39.0,
+    1.3,
+    6.0
+   ],
+   "r": 180,
+   "s": 0.95,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -34.5,
+    1.3,
+    6.0
+   ],
+   "r": 180,
+   "s": 0.95,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Child",
+   "p": [
+    -34.5,
+    0.6,
+    8.35
+   ],
+   "r": 180,
+   "s": 1.4,
+   "role": "Stand-in for the Boy playing cymbals"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -30.0,
+    1.3,
+    6.0
+   ],
+   "r": 180,
+   "s": 0.75,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -25.5,
+    1.3,
+    6.0
+   ],
+   "r": 180,
+   "s": 0.75,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Head",
+   "p": [
+    -25.5,
+    0.6,
+    8.35
+   ],
+   "r": 180,
+   "s": 1.4,
+   "role": "Colossal head (Drowned Halls)"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    -21.0,
+    1.3,
+    6.0
+   ],
+   "r": 180,
+   "s": 0.95,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -16.5,
+    1.3,
+    6.0
+   ],
+   "r": 180,
+   "s": 0.95,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Queen",
+   "p": [
+    -16.5,
+    0.6,
+    8.35
+   ],
+   "r": 180,
+   "s": 1.4,
+   "role": "Bust of a queen"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -43.5,
+    1.3,
+    -6.0
+   ],
+   "r": 0,
+   "s": 0.75,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Child",
+   "p": [
+    -43.5,
+    0.6,
+    -8.35
+   ],
+   "r": 0,
+   "s": 1.4,
+   "role": "Stand-in for the Boy playing cymbals"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -39.0,
+    1.3,
+    -6.0
+   ],
+   "r": 0,
+   "s": 0.75,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    -34.5,
+    1.3,
+    -6.0
+   ],
+   "r": 0,
+   "s": 0.95,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_Head",
+   "p": [
+    -34.5,
+    0.6,
+    -8.35
+   ],
+   "r": 0,
+   "s": 1.4,
+   "role": "Colossal head (Drowned Halls)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -30.0,
+    1.3,
+    -6.0
+   ],
+   "r": 0,
+   "s": 0.95,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -25.5,
+    1.3,
+    -6.0
+   ],
+   "r": 0,
+   "s": 0.95,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_Queen",
+   "p": [
+    -25.5,
+    0.6,
+    -8.35
+   ],
+   "r": 0,
+   "s": 1.4,
+   "role": "Bust of a queen"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -21.0,
+    1.3,
+    -6.0
+   ],
+   "r": 0,
+   "s": 0.95,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -16.5,
+    1.3,
+    -6.0
+   ],
+   "r": 0,
+   "s": 0.75,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Child",
+   "p": [
+    -16.5,
+    0.6,
+    -8.35
+   ],
+   "r": 0,
+   "s": 1.4,
+   "role": "Stand-in for the Boy playing cymbals"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -45.75,
+    0.9,
+    65.45
+   ],
+   "r": 180,
+   "s": 1.0,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -43.5,
+    1.25,
+    63.2
+   ],
+   "r": 171.691,
+   "s": 0.85,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -36.75,
+    0.9,
+    65.45
+   ],
+   "r": 180,
+   "s": 0.7,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -34.5,
+    1.25,
+    63.2
+   ],
+   "r": 204.316,
+   "s": 0.65,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -27.75,
+    0.9,
+    65.45
+   ],
+   "r": 180,
+   "s": 1.0,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -25.5,
+    1.25,
+    63.2
+   ],
+   "r": 193.999,
+   "s": 0.65,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -23.25,
+    0.9,
+    65.45
+   ],
+   "r": 180,
+   "s": 1.0,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -18.75,
+    0.9,
+    65.45
+   ],
+   "r": 180,
+   "s": 1.0,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    -16.5,
+    1.25,
+    63.2
+   ],
+   "r": 203.81,
+   "s": 0.85,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    -14.25,
+    0.9,
+    65.45
+   ],
+   "r": 180,
+   "s": 1.0,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    -45.75,
+    0.9,
+    54.55
+   ],
+   "r": 0,
+   "s": 1.0,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -41.25,
+    0.9,
+    54.55
+   ],
+   "r": 0,
+   "s": 1.0,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -39.0,
+    1.25,
+    56.8
+   ],
+   "r": 346.808,
+   "s": 0.85,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -36.75,
+    0.9,
+    54.55
+   ],
+   "r": 0,
+   "s": 0.7,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -32.25,
+    0.9,
+    54.55
+   ],
+   "r": 0,
+   "s": 1.0,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -30.0,
+    1.25,
+    56.8
+   ],
+   "r": 336.112,
+   "s": 0.6,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Queen",
+   "p": [
+    -27.75,
+    0.9,
+    54.55
+   ],
+   "r": 0,
+   "s": 1.6,
+   "role": "Bust of a queen"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -23.25,
+    0.9,
+    54.55
+   ],
+   "r": 0,
+   "s": 1.0,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -21.0,
+    1.25,
+    56.8
+   ],
+   "r": 5.263,
+   "s": 0.85,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    -18.75,
+    0.9,
+    54.55
+   ],
+   "r": 0,
+   "s": 1.0,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -14.25,
+    0.9,
+    54.55
+   ],
+   "r": 0,
+   "s": 1.0,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -5.45,
+    0.9,
+    14.25
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -3.2,
+    1.25,
+    16.5
+   ],
+   "r": 95.209,
+   "s": 0.65,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -5.45,
+    0.9,
+    18.75
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -3.2,
+    1.25,
+    25.5
+   ],
+   "r": 75.447,
+   "s": 0.65,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -5.45,
+    0.9,
+    27.75
+   ],
+   "r": 90,
+   "s": 0.7,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    -5.45,
+    0.9,
+    32.25
+   ],
+   "r": 90,
+   "s": 0.7,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    -3.2,
+    1.25,
+    34.5
+   ],
+   "r": 74.317,
+   "s": 0.65,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -5.45,
+    0.9,
+    36.75
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    -5.45,
+    0.9,
+    41.25
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -3.2,
+    1.25,
+    43.5
+   ],
+   "r": 75.555,
+   "s": 0.85,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    -5.45,
+    0.9,
+    45.75
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    5.45,
+    0.9,
+    18.75
+   ],
+   "r": 270,
+   "s": 0.7,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    3.2,
+    1.25,
+    21.0
+   ],
+   "r": 283.08,
+   "s": 0.6,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    5.45,
+    0.9,
+    27.75
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    3.2,
+    1.25,
+    30.0
+   ],
+   "r": 248.793,
+   "s": 0.85,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    5.45,
+    0.9,
+    32.25
+   ],
+   "r": 270,
+   "s": 0.7,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Queen",
+   "p": [
+    5.45,
+    0.9,
+    36.75
+   ],
+   "r": 270,
+   "s": 1.6,
+   "role": "Bust of a queen"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    3.2,
+    1.25,
+    39.0
+   ],
+   "r": 270.117,
+   "s": 0.6,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    5.45,
+    0.9,
+    41.25
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    5.45,
+    0.9,
+    45.75
+   ],
+   "r": 270,
+   "s": 0.7,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    16.5,
+    1.3,
+    6.0
+   ],
+   "r": 180,
+   "s": 0.95,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Queen",
+   "p": [
+    16.5,
+    0.6,
+    8.35
+   ],
+   "r": 180,
+   "s": 1.4,
+   "role": "Bust of a queen"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    21.0,
+    1.3,
+    6.0
+   ],
+   "r": 180,
+   "s": 0.95,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    25.5,
+    1.3,
+    6.0
+   ],
+   "r": 180,
+   "s": 0.95,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Child",
+   "p": [
+    25.5,
+    0.6,
+    8.35
+   ],
+   "r": 180,
+   "s": 1.4,
+   "role": "Stand-in for the Boy playing cymbals"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    30.0,
+    1.3,
+    6.0
+   ],
+   "r": 180,
+   "s": 0.75,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    34.5,
+    1.3,
+    6.0
+   ],
+   "r": 180,
+   "s": 0.75,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Head",
+   "p": [
+    34.5,
+    0.6,
+    8.35
+   ],
+   "r": 180,
+   "s": 1.4,
+   "role": "Colossal head (Drowned Halls)"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    39.0,
+    1.3,
+    6.0
+   ],
+   "r": 180,
+   "s": 0.95,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    43.5,
+    1.3,
+    6.0
+   ],
+   "r": 180,
+   "s": 0.95,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Queen",
+   "p": [
+    43.5,
+    0.6,
+    8.35
+   ],
+   "r": 180,
+   "s": 1.4,
+   "role": "Bust of a queen"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    16.5,
+    1.3,
+    -6.0
+   ],
+   "r": 0,
+   "s": 0.75,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Child",
+   "p": [
+    16.5,
+    0.6,
+    -8.35
+   ],
+   "r": 0,
+   "s": 1.4,
+   "role": "Stand-in for the Boy playing cymbals"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    21.0,
+    1.3,
+    -6.0
+   ],
+   "r": 0,
+   "s": 0.75,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    25.5,
+    1.3,
+    -6.0
+   ],
+   "r": 0,
+   "s": 0.95,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_Head",
+   "p": [
+    25.5,
+    0.6,
+    -8.35
+   ],
+   "r": 0,
+   "s": 1.4,
+   "role": "Colossal head (Drowned Halls)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    30.0,
+    1.3,
+    -6.0
+   ],
+   "r": 0,
+   "s": 0.95,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    34.5,
+    1.3,
+    -6.0
+   ],
+   "r": 0,
+   "s": 0.95,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_Queen",
+   "p": [
+    34.5,
+    0.6,
+    -8.35
+   ],
+   "r": 0,
+   "s": 1.4,
+   "role": "Bust of a queen"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    39.0,
+    1.3,
+    -6.0
+   ],
+   "r": 0,
+   "s": 0.95,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    43.5,
+    1.3,
+    -6.0
+   ],
+   "r": 0,
+   "s": 0.75,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Child",
+   "p": [
+    43.5,
+    0.6,
+    -8.35
+   ],
+   "r": 0,
+   "s": 1.4,
+   "role": "Stand-in for the Boy playing cymbals"
+  },
+  {
+   "mesh": "Statue_Queen",
+   "p": [
+    54.55,
+    0.9,
+    -45.75
+   ],
+   "r": 90,
+   "s": 1.6,
+   "role": "Bust of a queen"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    56.8,
+    1.25,
+    -43.5
+   ],
+   "r": 65.473,
+   "s": 0.85,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    54.55,
+    0.9,
+    -41.25
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    54.55,
+    0.9,
+    -36.75
+   ],
+   "r": 90,
+   "s": 0.7,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    56.8,
+    1.25,
+    -34.5
+   ],
+   "r": 86.356,
+   "s": 0.85,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    54.55,
+    0.9,
+    -27.75
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    56.8,
+    1.25,
+    -25.5
+   ],
+   "r": 88.94,
+   "s": 0.65,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    54.55,
+    0.9,
+    -18.75
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    56.8,
+    1.25,
+    -16.5
+   ],
+   "r": 102.181,
+   "s": 0.85,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    54.55,
+    0.9,
+    -14.25
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    65.45,
+    0.9,
+    -41.25
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    63.2,
+    1.25,
+    -39.0
+   ],
+   "r": 283.1,
+   "s": 0.85,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    65.45,
+    0.9,
+    -36.75
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    65.45,
+    0.9,
+    -32.25
+   ],
+   "r": 270,
+   "s": 0.7,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    63.2,
+    1.25,
+    -30.0
+   ],
+   "r": 255.829,
+   "s": 0.65,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    65.45,
+    0.9,
+    -27.75
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    65.45,
+    0.9,
+    -23.25
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    63.2,
+    1.25,
+    -21.0
+   ],
+   "r": 291.808,
+   "s": 0.85,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    65.45,
+    0.9,
+    -18.75
+   ],
+   "r": 270,
+   "s": 0.7,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    65.45,
+    0.9,
+    -14.25
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    54.55,
+    0.9,
+    14.25
+   ],
+   "r": 90,
+   "s": 0.7,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    56.8,
+    1.25,
+    16.5
+   ],
+   "r": 91.991,
+   "s": 0.85,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    54.55,
+    0.9,
+    18.75
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    54.55,
+    0.9,
+    23.25
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    56.8,
+    1.25,
+    25.5
+   ],
+   "r": 113.535,
+   "s": 0.6,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_SeatedSage",
+   "p": [
+    54.55,
+    0.9,
+    27.75
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Seated figure (stand-in for the two Kings playing chess)"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    54.55,
+    0.9,
+    32.25
+   ],
+   "r": 90,
+   "s": 1.0,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    56.8,
+    1.25,
+    34.5
+   ],
+   "r": 66.803,
+   "s": 0.65,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Queen",
+   "p": [
+    54.55,
+    0.9,
+    36.75
+   ],
+   "r": 90,
+   "s": 1.6,
+   "role": "Bust of a queen"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    54.55,
+    0.9,
+    41.25
+   ],
+   "r": 90,
+   "s": 0.7,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_WingedFigure",
+   "p": [
+    56.8,
+    1.25,
+    43.5
+   ],
+   "r": 80.719,
+   "s": 0.85,
+   "role": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)"
+  },
+  {
+   "mesh": "Statue_Hare",
+   "p": [
+    65.45,
+    0.9,
+    18.75
+   ],
+   "r": 270,
+   "s": 1.0,
+   "role": "Stand-in for the Fox teaching squirrels (animal group)"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    63.2,
+    1.25,
+    21.0
+   ],
+   "r": 291.224,
+   "s": 0.6,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Queen",
+   "p": [
+    65.45,
+    0.9,
+    23.25
+   ],
+   "r": 270,
+   "s": 1.6,
+   "role": "Bust of a queen"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    63.2,
+    1.25,
+    30.0
+   ],
+   "r": 286.557,
+   "s": 0.85,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    65.45,
+    0.9,
+    32.25
+   ],
+   "r": 270,
+   "s": 0.7,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    65.45,
+    0.9,
+    36.75
+   ],
+   "r": 270,
+   "s": 0.7,
+   "role": "Horse"
+  },
+  {
+   "mesh": "Statue_Beast",
+   "p": [
+    63.2,
+    1.25,
+    39.0
+   ],
+   "r": 286.803,
+   "s": 0.85,
+   "role": "Stand-in for the Gorilla"
+  },
+  {
+   "mesh": "Statue_Dragon",
+   "p": [
+    65.45,
+    0.9,
+    41.25
+   ],
+   "r": 270,
+   "s": 0.7,
+   "role": "Dragon / strange beast"
+  },
+  {
+   "mesh": "Statue_Horse",
+   "p": [
+    65.45,
+    0.9,
+    45.75
+   ],
+   "r": 270,
+   "s": 0.7,
+   "role": "Horse"
+  }
+ ],
+ "lights": [
+  {
+   "kind": "lantern",
+   "p": [
+    -63.95,
+    3.35,
+    -39.0
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    -56.05,
+    3.35,
+    -30.0
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    -63.95,
+    3.35,
+    -21.0
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    -39.0,
+    3.35,
+    -56.05
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    -30.0,
+    3.35,
+    -63.95
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    -21.0,
+    3.35,
+    -56.05
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    -63.95,
+    3.35,
+    21.0
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    -56.05,
+    3.35,
+    30.0
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    -63.95,
+    3.35,
+    39.0
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    -39.0,
+    3.35,
+    63.95
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    -30.0,
+    3.35,
+    56.05
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    -21.0,
+    3.35,
+    63.95
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    -3.95,
+    3.35,
+    21.0
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    3.95,
+    3.35,
+    30.0
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    -3.95,
+    3.35,
+    39.0
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    56.05,
+    3.35,
+    -39.0
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    63.95,
+    3.35,
+    -30.0
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    56.05,
+    3.35,
+    -21.0
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    56.05,
+    3.35,
+    21.0
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    63.95,
+    3.35,
+    30.0
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  },
+  {
+   "kind": "lantern",
+   "p": [
+    56.05,
+    3.35,
+    39.0
+   ],
+   "range": 7.0,
+   "intensity": 1.5,
+   "color": [
+    1.0,
+    0.68,
+    0.38
+   ]
+  }
+ ],
+ "shafts": [
+  {
+   "p": [
+    -60.0,
+    26.6,
+    -60.0
+   ],
+   "radius": 2.9,
+   "height": 26.6,
+   "kind": "oculus"
+  },
+  {
+   "p": [
+    -60.0,
+    18.2,
+    -49.4
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 180
+  },
+  {
+   "p": [
+    -49.4,
+    18.2,
+    -60.0
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 270
+  },
+  {
+   "p": [
+    -60.0,
+    18.2,
+    -70.6
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 360
+  },
+  {
+   "p": [
+    -70.6,
+    18.2,
+    -60.0
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 450
+  },
+  {
+   "p": [
+    -60.0,
+    26.6,
+    0.0
+   ],
+   "radius": 2.9,
+   "height": 26.6,
+   "kind": "oculus"
+  },
+  {
+   "p": [
+    -60.0,
+    18.2,
+    10.6
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 180
+  },
+  {
+   "p": [
+    -49.4,
+    18.2,
+    6.490628035480972e-16
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 270
+  },
+  {
+   "p": [
+    -60.0,
+    18.2,
+    -10.6
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 360
+  },
+  {
+   "p": [
+    -70.6,
+    18.2,
+    -1.9471884106442914e-15
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 450
+  },
+  {
+   "p": [
+    -60.0,
+    26.6,
+    60.0
+   ],
+   "radius": 2.9,
+   "height": 26.6,
+   "kind": "oculus"
+  },
+  {
+   "p": [
+    -60.0,
+    18.2,
+    70.6
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 180
+  },
+  {
+   "p": [
+    -49.4,
+    18.2,
+    60.0
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 270
+  },
+  {
+   "p": [
+    -60.0,
+    18.2,
+    49.4
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 360
+  },
+  {
+   "p": [
+    -70.6,
+    18.2,
+    60.0
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 450
+  },
+  {
+   "p": [
+    0.0,
+    26.6,
+    -60.0
+   ],
+   "radius": 2.9,
+   "height": 26.6,
+   "kind": "oculus"
+  },
+  {
+   "p": [
+    0.0,
+    18.2,
+    -49.4
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 180
+  },
+  {
+   "p": [
+    10.6,
+    18.2,
+    -60.0
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 270
+  },
+  {
+   "p": [
+    1.2981256070961944e-15,
+    18.2,
+    -70.6
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 360
+  },
+  {
+   "p": [
+    -10.6,
+    18.2,
+    -60.0
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 450
+  },
+  {
+   "p": [
+    0.0,
+    26.6,
+    0.0
+   ],
+   "radius": 2.9,
+   "height": 26.6,
+   "kind": "oculus"
+  },
+  {
+   "p": [
+    0.0,
+    18.2,
+    10.6
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 180
+  },
+  {
+   "p": [
+    10.6,
+    18.2,
+    6.490628035480972e-16
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 270
+  },
+  {
+   "p": [
+    1.2981256070961944e-15,
+    18.2,
+    -10.6
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 360
+  },
+  {
+   "p": [
+    -10.6,
+    18.2,
+    -1.9471884106442914e-15
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 450
+  },
+  {
+   "p": [
+    0.0,
+    26.6,
+    60.0
+   ],
+   "radius": 2.9,
+   "height": 26.6,
+   "kind": "oculus"
+  },
+  {
+   "p": [
+    0.0,
+    18.2,
+    70.6
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 180
+  },
+  {
+   "p": [
+    10.6,
+    18.2,
+    60.0
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 270
+  },
+  {
+   "p": [
+    1.2981256070961944e-15,
+    18.2,
+    49.4
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 360
+  },
+  {
+   "p": [
+    -10.6,
+    18.2,
+    60.0
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 450
+  },
+  {
+   "p": [
+    60.0,
+    26.6,
+    -60.0
+   ],
+   "radius": 2.9,
+   "height": 26.6,
+   "kind": "oculus"
+  },
+  {
+   "p": [
+    60.0,
+    18.2,
+    -49.4
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 180
+  },
+  {
+   "p": [
+    70.6,
+    18.2,
+    -60.0
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 270
+  },
+  {
+   "p": [
+    60.0,
+    18.2,
+    -70.6
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 360
+  },
+  {
+   "p": [
+    49.4,
+    18.2,
+    -60.0
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 450
+  },
+  {
+   "p": [
+    60.0,
+    26.6,
+    0.0
+   ],
+   "radius": 2.9,
+   "height": 26.6,
+   "kind": "oculus"
+  },
+  {
+   "p": [
+    60.0,
+    18.2,
+    10.6
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 180
+  },
+  {
+   "p": [
+    70.6,
+    18.2,
+    6.490628035480972e-16
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 270
+  },
+  {
+   "p": [
+    60.0,
+    18.2,
+    -10.6
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 360
+  },
+  {
+   "p": [
+    49.4,
+    18.2,
+    -1.9471884106442914e-15
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 450
+  },
+  {
+   "p": [
+    60.0,
+    26.6,
+    60.0
+   ],
+   "radius": 2.9,
+   "height": 26.6,
+   "kind": "oculus"
+  },
+  {
+   "p": [
+    60.0,
+    18.2,
+    70.6
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 180
+  },
+  {
+   "p": [
+    70.6,
+    18.2,
+    60.0
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 270
+  },
+  {
+   "p": [
+    60.0,
+    18.2,
+    49.4
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 360
+  },
+  {
+   "p": [
+    49.4,
+    18.2,
+    60.0
+   ],
+   "radius": 1.9,
+   "height": 18.0,
+   "kind": "window",
+   "face": 450
+  },
+  {
+   "p": [
+    -60.0,
+    14.2,
+    -39.0
+   ],
+   "radius": 0.75,
+   "height": 14.2,
+   "kind": "skylight"
+  },
+  {
+   "p": [
+    -60.0,
+    14.2,
+    -21.0
+   ],
+   "radius": 0.75,
+   "height": 14.2,
+   "kind": "skylight"
+  },
+  {
+   "p": [
+    -39.0,
+    14.2,
+    -60.0
+   ],
+   "radius": 0.75,
+   "height": 14.2,
+   "kind": "skylight"
+  },
+  {
+   "p": [
+    -21.0,
+    14.2,
+    -60.0
+   ],
+   "radius": 0.75,
+   "height": 14.2,
+   "kind": "skylight"
+  },
+  {
+   "p": [
+    -60.0,
+    14.2,
+    21.0
+   ],
+   "radius": 0.75,
+   "height": 14.2,
+   "kind": "skylight"
+  },
+  {
+   "p": [
+    -60.0,
+    14.2,
+    39.0
+   ],
+   "radius": 0.75,
+   "height": 14.2,
+   "kind": "skylight"
+  },
+  {
+   "p": [
+    -39.0,
+    20.5,
+    -5.51091059616309e-16
+   ],
+   "radius": 1.5,
+   "height": 20.5,
+   "kind": "oculus"
+  },
+  {
+   "p": [
+    -21.0,
+    20.5,
+    5.51091059616309e-16
+   ],
+   "radius": 1.5,
+   "height": 20.5,
+   "kind": "oculus"
+  },
+  {
+   "p": [
+    -43.5,
+    13.5,
+    6.299999999999999
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 180,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    -43.5,
+    13.5,
+    -6.300000000000001
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 0,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    -39.0,
+    13.5,
+    6.299999999999999
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 180,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    -39.0,
+    13.5,
+    -6.300000000000001
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 0,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    -34.5,
+    13.5,
+    6.3
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 180,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    -34.5,
+    13.5,
+    -6.3
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 0,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    -30.0,
+    13.5,
+    6.3
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 180,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    -30.0,
+    13.5,
+    -6.3
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 0,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    -25.5,
+    13.5,
+    6.3
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 180,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    -25.5,
+    13.5,
+    -6.3
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 0,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    -21.0,
+    13.5,
+    6.300000000000001
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 180,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    -21.0,
+    13.5,
+    -6.299999999999999
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 0,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    -16.5,
+    13.5,
+    6.300000000000001
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 180,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    -16.5,
+    13.5,
+    -6.299999999999999
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 0,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    -39.0,
+    14.2,
+    60.0
+   ],
+   "radius": 0.75,
+   "height": 14.2,
+   "kind": "skylight"
+  },
+  {
+   "p": [
+    -21.0,
+    14.2,
+    60.0
+   ],
+   "radius": 0.75,
+   "height": 14.2,
+   "kind": "skylight"
+  },
+  {
+   "p": [
+    0.0,
+    14.2,
+    21.0
+   ],
+   "radius": 0.75,
+   "height": 14.2,
+   "kind": "skylight"
+  },
+  {
+   "p": [
+    0.0,
+    14.2,
+    39.0
+   ],
+   "radius": 0.75,
+   "height": 14.2,
+   "kind": "skylight"
+  },
+  {
+   "p": [
+    21.0,
+    20.5,
+    -5.51091059616309e-16
+   ],
+   "radius": 1.5,
+   "height": 20.5,
+   "kind": "oculus"
+  },
+  {
+   "p": [
+    39.0,
+    20.5,
+    5.51091059616309e-16
+   ],
+   "radius": 1.5,
+   "height": 20.5,
+   "kind": "oculus"
+  },
+  {
+   "p": [
+    16.5,
+    13.5,
+    6.299999999999999
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 180,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    16.5,
+    13.5,
+    -6.300000000000001
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 0,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    21.0,
+    13.5,
+    6.299999999999999
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 180,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    21.0,
+    13.5,
+    -6.300000000000001
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 0,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    25.5,
+    13.5,
+    6.3
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 180,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    25.5,
+    13.5,
+    -6.3
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 0,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    30.0,
+    13.5,
+    6.3
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 180,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    30.0,
+    13.5,
+    -6.3
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 0,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    34.5,
+    13.5,
+    6.3
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 180,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    34.5,
+    13.5,
+    -6.3
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 0,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    39.0,
+    13.5,
+    6.300000000000001
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 180,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    39.0,
+    13.5,
+    -6.299999999999999
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 0,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    43.5,
+    13.5,
+    6.300000000000001
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 180,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    43.5,
+    13.5,
+    -6.299999999999999
+   ],
+   "radius": 1.1,
+   "height": 13.5,
+   "kind": "window",
+   "face": 0,
+   "dim": 0.5
+  },
+  {
+   "p": [
+    60.0,
+    14.2,
+    -39.0
+   ],
+   "radius": 0.75,
+   "height": 14.2,
+   "kind": "skylight"
+  },
+  {
+   "p": [
+    60.0,
+    14.2,
+    -21.0
+   ],
+   "radius": 0.75,
+   "height": 14.2,
+   "kind": "skylight"
+  },
+  {
+   "p": [
+    60.0,
+    14.2,
+    21.0
+   ],
+   "radius": 0.75,
+   "height": 14.2,
+   "kind": "skylight"
+  },
+  {
+   "p": [
+    60.0,
+    14.2,
+    39.0
+   ],
+   "radius": 0.75,
+   "height": 14.2,
+   "kind": "skylight"
+  }
+ ],
+ "emitters": [
+  {
+   "kind": "season",
+   "p": [
+    -60.0,
+    26.0,
+    -60.0
+   ],
+   "size": [
+    5,
+    0.5,
+    5
+   ],
+   "fall": 26
+  },
+  {
+   "kind": "dust",
+   "p": [
+    -60.0,
+    8,
+    -60.0
+   ],
+   "size": [
+    18,
+    14,
+    18
+   ]
+  },
+  {
+   "kind": "season",
+   "p": [
+    -60.0,
+    26.0,
+    0.0
+   ],
+   "size": [
+    5,
+    0.5,
+    5
+   ],
+   "fall": 26
+  },
+  {
+   "kind": "dust",
+   "p": [
+    -60.0,
+    8,
+    0.0
+   ],
+   "size": [
+    18,
+    14,
+    18
+   ]
+  },
+  {
+   "kind": "season",
+   "p": [
+    -90.0,
+    30.0,
+    -5.510910596163089e-15
+   ],
+   "size": [
+    60,
+    1,
+    40
+   ],
+   "fall": 34
+  },
+  {
+   "kind": "spray",
+   "p": [
+    -90.0,
+    -0.2,
+    -5.510910596163089e-15
+   ],
+   "size": [
+    16,
+    0.2,
+    1
+   ]
+  },
+  {
+   "kind": "season",
+   "p": [
+    -60.0,
+    26.0,
+    60.0
+   ],
+   "size": [
+    5,
+    0.5,
+    5
+   ],
+   "fall": 26
+  },
+  {
+   "kind": "dust",
+   "p": [
+    -60.0,
+    8,
+    60.0
+   ],
+   "size": [
+    18,
+    14,
+    18
+   ]
+  },
+  {
+   "kind": "season",
+   "p": [
+    0.0,
+    26.0,
+    -60.0
+   ],
+   "size": [
+    5,
+    0.5,
+    5
+   ],
+   "fall": 26
+  },
+  {
+   "kind": "dust",
+   "p": [
+    0.0,
+    8,
+    -60.0
+   ],
+   "size": [
+    18,
+    14,
+    18
+   ]
+  },
+  {
+   "kind": "season",
+   "p": [
+    0.0,
+    26.0,
+    0.0
+   ],
+   "size": [
+    5,
+    0.5,
+    5
+   ],
+   "fall": 26
+  },
+  {
+   "kind": "dust",
+   "p": [
+    0.0,
+    8,
+    0.0
+   ],
+   "size": [
+    18,
+    14,
+    18
+   ]
+  },
+  {
+   "kind": "season",
+   "p": [
+    0.0,
+    26.0,
+    60.0
+   ],
+   "size": [
+    5,
+    0.5,
+    5
+   ],
+   "fall": 26
+  },
+  {
+   "kind": "dust",
+   "p": [
+    0.0,
+    8,
+    60.0
+   ],
+   "size": [
+    18,
+    14,
+    18
+   ]
+  },
+  {
+   "kind": "season",
+   "p": [
+    60.0,
+    26.0,
+    -60.0
+   ],
+   "size": [
+    5,
+    0.5,
+    5
+   ],
+   "fall": 26
+  },
+  {
+   "kind": "dust",
+   "p": [
+    60.0,
+    8,
+    -60.0
+   ],
+   "size": [
+    18,
+    14,
+    18
+   ]
+  },
+  {
+   "kind": "season",
+   "p": [
+    60.0,
+    26.0,
+    0.0
+   ],
+   "size": [
+    5,
+    0.5,
+    5
+   ],
+   "fall": 26
+  },
+  {
+   "kind": "dust",
+   "p": [
+    60.0,
+    8,
+    0.0
+   ],
+   "size": [
+    18,
+    14,
+    18
+   ]
+  },
+  {
+   "kind": "season",
+   "p": [
+    60.0,
+    26.0,
+    60.0
+   ],
+   "size": [
+    5,
+    0.5,
+    5
+   ],
+   "fall": 26
+  },
+  {
+   "kind": "dust",
+   "p": [
+    60.0,
+    8,
+    60.0
+   ],
+   "size": [
+    18,
+    14,
+    18
+   ]
+  },
+  {
+   "kind": "splash",
+   "p": [
+    60.0,
+    0.3,
+    67.4
+   ],
+   "size": [
+    3.5,
+    0.3,
+    1.0
+   ]
+  },
+  {
+   "kind": "dust",
+   "p": [
+    -60.0,
+    7.0,
+    -30.0
+   ],
+   "size": [
+    8,
+    10,
+    34
+   ],
+   "rot": 0
+  },
+  {
+   "kind": "season",
+   "p": [
+    -60.0,
+    14.0,
+    -39.0
+   ],
+   "size": [
+    1.4,
+    0.3,
+    1.4
+   ],
+   "fall": 14
+  },
+  {
+   "kind": "season",
+   "p": [
+    -60.0,
+    14.0,
+    -21.0
+   ],
+   "size": [
+    1.4,
+    0.3,
+    1.4
+   ],
+   "fall": 14
+  },
+  {
+   "kind": "dust",
+   "p": [
+    -30.0,
+    7.0,
+    -60.0
+   ],
+   "size": [
+    8,
+    10,
+    34
+   ],
+   "rot": 90
+  },
+  {
+   "kind": "season",
+   "p": [
+    -39.0,
+    14.0,
+    -60.0
+   ],
+   "size": [
+    1.4,
+    0.3,
+    1.4
+   ],
+   "fall": 14
+  },
+  {
+   "kind": "season",
+   "p": [
+    -21.0,
+    14.0,
+    -60.0
+   ],
+   "size": [
+    1.4,
+    0.3,
+    1.4
+   ],
+   "fall": 14
+  },
+  {
+   "kind": "dust",
+   "p": [
+    -60.0,
+    7.0,
+    30.0
+   ],
+   "size": [
+    8,
+    10,
+    34
+   ],
+   "rot": 0
+  },
+  {
+   "kind": "season",
+   "p": [
+    -60.0,
+    14.0,
+    21.0
+   ],
+   "size": [
+    1.4,
+    0.3,
+    1.4
+   ],
+   "fall": 14
+  },
+  {
+   "kind": "season",
+   "p": [
+    -60.0,
+    14.0,
+    39.0
+   ],
+   "size": [
+    1.4,
+    0.3,
+    1.4
+   ],
+   "fall": 14
+  },
+  {
+   "kind": "dust",
+   "p": [
+    -30.0,
+    7.0,
+    0.0
+   ],
+   "size": [
+    10,
+    12,
+    34
+   ],
+   "rot": 90
+  },
+  {
+   "kind": "season",
+   "p": [
+    -39.0,
+    20.3,
+    -5.51091059616309e-16
+   ],
+   "size": [
+    2.5,
+    0.4,
+    2.5
+   ],
+   "fall": 20
+  },
+  {
+   "kind": "season",
+   "p": [
+    -21.0,
+    20.3,
+    5.51091059616309e-16
+   ],
+   "size": [
+    2.5,
+    0.4,
+    2.5
+   ],
+   "fall": 20
+  },
+  {
+   "kind": "dust",
+   "p": [
+    -30.0,
+    7.0,
+    60.0
+   ],
+   "size": [
+    8,
+    10,
+    34
+   ],
+   "rot": 90
+  },
+  {
+   "kind": "season",
+   "p": [
+    -39.0,
+    14.0,
+    60.0
+   ],
+   "size": [
+    1.4,
+    0.3,
+    1.4
+   ],
+   "fall": 14
+  },
+  {
+   "kind": "season",
+   "p": [
+    -21.0,
+    14.0,
+    60.0
+   ],
+   "size": [
+    1.4,
+    0.3,
+    1.4
+   ],
+   "fall": 14
+  },
+  {
+   "kind": "dust",
+   "p": [
+    0.0,
+    7.0,
+    30.0
+   ],
+   "size": [
+    8,
+    10,
+    34
+   ],
+   "rot": 0
+  },
+  {
+   "kind": "season",
+   "p": [
+    0.0,
+    14.0,
+    21.0
+   ],
+   "size": [
+    1.4,
+    0.3,
+    1.4
+   ],
+   "fall": 14
+  },
+  {
+   "kind": "season",
+   "p": [
+    0.0,
+    14.0,
+    39.0
+   ],
+   "size": [
+    1.4,
+    0.3,
+    1.4
+   ],
+   "fall": 14
+  },
+  {
+   "kind": "dust",
+   "p": [
+    30.0,
+    7.0,
+    0.0
+   ],
+   "size": [
+    10,
+    12,
+    34
+   ],
+   "rot": 90
+  },
+  {
+   "kind": "season",
+   "p": [
+    21.0,
+    20.3,
+    -5.51091059616309e-16
+   ],
+   "size": [
+    2.5,
+    0.4,
+    2.5
+   ],
+   "fall": 20
+  },
+  {
+   "kind": "season",
+   "p": [
+    39.0,
+    20.3,
+    5.51091059616309e-16
+   ],
+   "size": [
+    2.5,
+    0.4,
+    2.5
+   ],
+   "fall": 20
+  },
+  {
+   "kind": "dust",
+   "p": [
+    60.0,
+    7.0,
+    -30.0
+   ],
+   "size": [
+    8,
+    10,
+    34
+   ],
+   "rot": 0
+  },
+  {
+   "kind": "season",
+   "p": [
+    60.0,
+    14.0,
+    -39.0
+   ],
+   "size": [
+    1.4,
+    0.3,
+    1.4
+   ],
+   "fall": 14
+  },
+  {
+   "kind": "season",
+   "p": [
+    60.0,
+    14.0,
+    -21.0
+   ],
+   "size": [
+    1.4,
+    0.3,
+    1.4
+   ],
+   "fall": 14
+  },
+  {
+   "kind": "dust",
+   "p": [
+    60.0,
+    7.0,
+    30.0
+   ],
+   "size": [
+    8,
+    10,
+    34
+   ],
+   "rot": 0
+  },
+  {
+   "kind": "season",
+   "p": [
+    60.0,
+    14.0,
+    21.0
+   ],
+   "size": [
+    1.4,
+    0.3,
+    1.4
+   ],
+   "fall": 14
+  },
+  {
+   "kind": "season",
+   "p": [
+    60.0,
+    14.0,
+    39.0
+   ],
+   "size": [
+    1.4,
+    0.3,
+    1.4
+   ],
+   "fall": 14
+  }
+ ],
+ "probes": [
+  {
+   "p": [
+    -60.0,
+    8,
+    -60.0
+   ],
+   "size": [
+    20,
+    28,
+    20
+   ],
+   "name": "Vestibule_00"
+  },
+  {
+   "p": [
+    -60.0,
+    8,
+    0.0
+   ],
+   "size": [
+    20,
+    28,
+    20
+   ],
+   "name": "Vestibule_01"
+  },
+  {
+   "p": [
+    -60.0,
+    8,
+    60.0
+   ],
+   "size": [
+    20,
+    28,
+    20
+   ],
+   "name": "Vestibule_02"
+  },
+  {
+   "p": [
+    0.0,
+    8,
+    -60.0
+   ],
+   "size": [
+    20,
+    28,
+    20
+   ],
+   "name": "Vestibule_10"
+  },
+  {
+   "p": [
+    0.0,
+    8,
+    0.0
+   ],
+   "size": [
+    20,
+    28,
+    20
+   ],
+   "name": "Vestibule_11"
+  },
+  {
+   "p": [
+    0.0,
+    8,
+    60.0
+   ],
+   "size": [
+    20,
+    28,
+    20
+   ],
+   "name": "Vestibule_12"
+  },
+  {
+   "p": [
+    60.0,
+    8,
+    -60.0
+   ],
+   "size": [
+    20,
+    28,
+    20
+   ],
+   "name": "Vestibule_20"
+  },
+  {
+   "p": [
+    60.0,
+    8,
+    0.0
+   ],
+   "size": [
+    20,
+    28,
+    20
+   ],
+   "name": "Vestibule_21"
+  },
+  {
+   "p": [
+    60.0,
+    8,
+    60.0
+   ],
+   "size": [
+    20,
+    28,
+    20
+   ],
+   "name": "Vestibule_22"
+  },
+  {
+   "p": [
+    -60.0,
+    7,
+    -30.0
+   ],
+   "size": [
+    20,
+    22,
+    36
+   ],
+   "name": "Arcade_00_01"
+  },
+  {
+   "p": [
+    -30.0,
+    7,
+    -60.0
+   ],
+   "size": [
+    36,
+    22,
+    20
+   ],
+   "name": "Arcade_00_10"
+  },
+  {
+   "p": [
+    -60.0,
+    7,
+    30.0
+   ],
+   "size": [
+    20,
+    22,
+    36
+   ],
+   "name": "Arcade_01_02"
+  },
+  {
+   "p": [
+    -30.0,
+    7,
+    0.0
+   ],
+   "size": [
+    36,
+    22,
+    20
+   ],
+   "name": "Nave_01_11"
+  },
+  {
+   "p": [
+    -30.0,
+    7,
+    60.0
+   ],
+   "size": [
+    36,
+    22,
+    20
+   ],
+   "name": "Arcade_02_12"
+  },
+  {
+   "p": [
+    0.0,
+    7,
+    30.0
+   ],
+   "size": [
+    20,
+    22,
+    36
+   ],
+   "name": "Arcade_11_12"
+  },
+  {
+   "p": [
+    30.0,
+    7,
+    0.0
+   ],
+   "size": [
+    36,
+    22,
+    20
+   ],
+   "name": "Nave_11_21"
+  },
+  {
+   "p": [
+    60.0,
+    7,
+    -30.0
+   ],
+   "size": [
+    20,
+    22,
+    36
+   ],
+   "name": "Arcade_20_21"
+  },
+  {
+   "p": [
+    60.0,
+    7,
+    30.0
+   ],
+   "size": [
+    20,
+    22,
+    36
+   ],
+   "name": "Arcade_21_22"
+  }
+ ],
+ "reverbs": [
+  {
+   "p": [
+    -60.0,
+    6,
+    -60.0
+   ],
+   "minD": 8,
+   "maxD": 16,
+   "preset": "Cave"
+  },
+  {
+   "p": [
+    -60.0,
+    6,
+    0.0
+   ],
+   "minD": 8,
+   "maxD": 16,
+   "preset": "Cave"
+  },
+  {
+   "p": [
+    -60.0,
+    6,
+    60.0
+   ],
+   "minD": 8,
+   "maxD": 16,
+   "preset": "Cave"
+  },
+  {
+   "p": [
+    0.0,
+    6,
+    -60.0
+   ],
+   "minD": 8,
+   "maxD": 16,
+   "preset": "Cave"
+  },
+  {
+   "p": [
+    0.0,
+    6,
+    0.0
+   ],
+   "minD": 8,
+   "maxD": 16,
+   "preset": "Cave"
+  },
+  {
+   "p": [
+    0.0,
+    6,
+    60.0
+   ],
+   "minD": 8,
+   "maxD": 16,
+   "preset": "Cave"
+  },
+  {
+   "p": [
+    60.0,
+    6,
+    -60.0
+   ],
+   "minD": 8,
+   "maxD": 16,
+   "preset": "Cave"
+  },
+  {
+   "p": [
+    60.0,
+    6,
+    0.0
+   ],
+   "minD": 8,
+   "maxD": 16,
+   "preset": "Cave"
+  },
+  {
+   "p": [
+    60.0,
+    6,
+    60.0
+   ],
+   "minD": 8,
+   "maxD": 16,
+   "preset": "Cave"
+  },
+  {
+   "p": [
+    -60.0,
+    5,
+    -30.0
+   ],
+   "minD": 10,
+   "maxD": 20,
+   "preset": "StoneCorridor"
+  },
+  {
+   "p": [
+    -30.0,
+    5,
+    -60.0
+   ],
+   "minD": 10,
+   "maxD": 20,
+   "preset": "StoneCorridor"
+  },
+  {
+   "p": [
+    -60.0,
+    5,
+    30.0
+   ],
+   "minD": 10,
+   "maxD": 20,
+   "preset": "StoneCorridor"
+  },
+  {
+   "p": [
+    -30.0,
+    5,
+    0.0
+   ],
+   "minD": 10,
+   "maxD": 20,
+   "preset": "Auditorium"
+  },
+  {
+   "p": [
+    -30.0,
+    5,
+    60.0
+   ],
+   "minD": 10,
+   "maxD": 20,
+   "preset": "StoneCorridor"
+  },
+  {
+   "p": [
+    0.0,
+    5,
+    30.0
+   ],
+   "minD": 10,
+   "maxD": 20,
+   "preset": "StoneCorridor"
+  },
+  {
+   "p": [
+    30.0,
+    5,
+    0.0
+   ],
+   "minD": 10,
+   "maxD": 20,
+   "preset": "Auditorium"
+  },
+  {
+   "p": [
+    60.0,
+    5,
+    -30.0
+   ],
+   "minD": 10,
+   "maxD": 20,
+   "preset": "StoneCorridor"
+  },
+  {
+   "p": [
+    60.0,
+    5,
+    30.0
+   ],
+   "minD": 10,
+   "maxD": 20,
+   "preset": "StoneCorridor"
+  }
+ ],
+ "sounds": [
+  {
+   "clip": "Wind_Loop",
+   "p": [
+    -60.0,
+    24,
+    -60.0
+   ],
+   "vol": 0.35,
+   "minD": 4,
+   "maxD": 45,
+   "spatial": 1
+  },
+  {
+   "clip": "Ocean_Far_Loop",
+   "p": [
+    -60.0,
+    6.0,
+    -73.0
+   ],
+   "vol": 0.45,
+   "minD": 5,
+   "maxD": 40,
+   "spatial": 1
+  },
+  {
+   "clip": "Ocean_Far_Loop",
+   "p": [
+    -73.0,
+    6.0,
+    -60.0
+   ],
+   "vol": 0.45,
+   "minD": 5,
+   "maxD": 40,
+   "spatial": 1
+  },
+  {
+   "clip": "Wind_Loop",
+   "p": [
+    -60.0,
+    24,
+    0.0
+   ],
+   "vol": 0.35,
+   "minD": 4,
+   "maxD": 45,
+   "spatial": 1
+  },
+  {
+   "clip": "Ocean_Near_Loop",
+   "p": [
+    -90.0,
+    0.0,
+    -5.510910596163089e-15
+   ],
+   "vol": 1.0,
+   "minD": 6,
+   "maxD": 140,
+   "spatial": 1
+  },
+  {
+   "clip": "Wind_Loop",
+   "p": [
+    -60.0,
+    24,
+    60.0
+   ],
+   "vol": 0.35,
+   "minD": 4,
+   "maxD": 45,
+   "spatial": 1
+  },
+  {
+   "clip": "Ocean_Far_Loop",
+   "p": [
+    -60.0,
+    6.0,
+    73.0
+   ],
+   "vol": 0.45,
+   "minD": 5,
+   "maxD": 40,
+   "spatial": 1
+  },
+  {
+   "clip": "Ocean_Far_Loop",
+   "p": [
+    -73.0,
+    6.0,
+    60.0
+   ],
+   "vol": 0.45,
+   "minD": 5,
+   "maxD": 40,
+   "spatial": 1
+  },
+  {
+   "clip": "Wind_Loop",
+   "p": [
+    0.0,
+    24,
+    -60.0
+   ],
+   "vol": 0.35,
+   "minD": 4,
+   "maxD": 45,
+   "spatial": 1
+  },
+  {
+   "clip": "Ocean_Far_Loop",
+   "p": [
+    1.592040838891559e-15,
+    6.0,
+    -73.0
+   ],
+   "vol": 0.45,
+   "minD": 5,
+   "maxD": 40,
+   "spatial": 1
+  },
+  {
+   "clip": "Wind_Loop",
+   "p": [
+    0.0,
+    24,
+    0.0
+   ],
+   "vol": 0.35,
+   "minD": 4,
+   "maxD": 45,
+   "spatial": 1
+  },
+  {
+   "clip": "Wind_Loop",
+   "p": [
+    0.0,
+    24,
+    60.0
+   ],
+   "vol": 0.35,
+   "minD": 4,
+   "maxD": 45,
+   "spatial": 1
+  },
+  {
+   "clip": "Ocean_Far_Loop",
+   "p": [
+    0.0,
+    6.0,
+    73.0
+   ],
+   "vol": 0.45,
+   "minD": 5,
+   "maxD": 40,
+   "spatial": 1
+  },
+  {
+   "clip": "Wind_Loop",
+   "p": [
+    60.0,
+    24,
+    -60.0
+   ],
+   "vol": 0.35,
+   "minD": 4,
+   "maxD": 45,
+   "spatial": 1
+  },
+  {
+   "clip": "Ocean_Far_Loop",
+   "p": [
+    73.0,
+    6.0,
+    -60.0
+   ],
+   "vol": 0.45,
+   "minD": 5,
+   "maxD": 40,
+   "spatial": 1
+  },
+  {
+   "clip": "Ocean_Far_Loop",
+   "p": [
+    60.0,
+    6.0,
+    -73.0
+   ],
+   "vol": 0.45,
+   "minD": 5,
+   "maxD": 40,
+   "spatial": 1
+  },
+  {
+   "clip": "Wind_Loop",
+   "p": [
+    60.0,
+    24,
+    0.0
+   ],
+   "vol": 0.35,
+   "minD": 4,
+   "maxD": 45,
+   "spatial": 1
+  },
+  {
+   "clip": "Ocean_Far_Loop",
+   "p": [
+    73.0,
+    6.0,
+    7.960204194457795e-16
+   ],
+   "vol": 0.45,
+   "minD": 5,
+   "maxD": 40,
+   "spatial": 1
+  },
+  {
+   "clip": "Wind_Loop",
+   "p": [
+    60.0,
+    24,
+    60.0
+   ],
+   "vol": 0.35,
+   "minD": 4,
+   "maxD": 45,
+   "spatial": 1
+  },
+  {
+   "clip": "Cascade_Loop",
+   "p": [
+    60.0,
+    2.0,
+    67.5
+   ],
+   "vol": 0.9,
+   "minD": 3,
+   "maxD": 50,
+   "spatial": 1
+  },
+  {
+   "clip": "Ocean_Far_Loop",
+   "p": [
+    60.0,
+    6.0,
+    73.0
+   ],
+   "vol": 0.45,
+   "minD": 5,
+   "maxD": 40,
+   "spatial": 1
+  },
+  {
+   "clip": "Ocean_Far_Loop",
+   "p": [
+    73.0,
+    6.0,
+    60.0
+   ],
+   "vol": 0.45,
+   "minD": 5,
+   "maxD": 40,
+   "spatial": 1
+  },
+  {
+   "clip": "House_Drone_Loop",
+   "p": [
+    0,
+    0,
+    0
+   ],
+   "vol": 0.18,
+   "spatial": 0
+  },
+  {
+   "clip": "Ocean_Far_Loop",
+   "p": [
+    0,
+    0,
+    0
+   ],
+   "vol": 0.12,
+   "spatial": 0
+  }
+ ],
+ "spawn": {
+  "p": [
+   -2.0,
+   0.1,
+   0.0
+  ],
+  "r": 270
+ },
+ "registry": {
+  "Statue_WingedFigure": "Winged figure (stand-in; book: angel caught in a rose bush - TO CONFIRM placement)",
+  "Statue_Beast": "Stand-in for the Gorilla",
+  "Statue_Horse": "Horse",
+  "Statue_Dragon": "Dragon / strange beast",
+  "Statue_Hare": "Stand-in for the Fox teaching squirrels (animal group)",
+  "Statue_SeatedSage": "Seated figure (stand-in for the two Kings playing chess)",
+  "Statue_Queen": "Bust of a queen",
+  "Statue_Child": "Stand-in for the Boy playing cymbals",
+  "Statue_Head": "Colossal head (Drowned Halls)"
+ },
+ "house_bounds": [
+  -75,
+  -75,
+  75,
+  75
+ ]
+}
