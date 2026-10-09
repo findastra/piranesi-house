@@ -1,4 +1,4 @@
-# The House: Art Pipeline
+# Piranesi House: Art Pipeline
 
 How we get from "procedural first pass" to "insanely good". Everything in v1 is generated, so every
 pass below can replace one layer at a time without breaking the world.

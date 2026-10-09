@@ -1,4 +1,6 @@
-# The House: a VRChat world inspired by *Piranesi*
+# Piranesi House
+
+A VRChat world inspired by Susanna Clarke's *Piranesi*.
 
 An endless labyrinth of marble halls, thousands of statues, and a sea that rises and falls through it all.
 Built for PC VRChat (Unity 2022.3.22f1, VRChat Worlds SDK 3.10, UdonSharp).
