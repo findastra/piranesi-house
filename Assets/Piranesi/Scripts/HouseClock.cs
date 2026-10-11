@@ -35,6 +35,9 @@ public class HouseClock : UdonSharpBehaviour
     public HouseFootsteps footsteps;
     public HouseBoat[] boats;
     public HouseDolphins dolphins;
+    [Tooltip("v3: things that float on the tide (dock decks, floating vines): y = tide + offset")]
+    public Transform[] floaters;
+    public float[] floatOffsets;
 
     [Header("Season palettes (0 spring, 1 summer, 2 autumn, 3 winter)")]
     public Color[] skyTop;
@@ -66,9 +69,23 @@ public class HouseClock : UdonSharpBehaviour
     public float sunIntensity = 1.35f;
     public float moonIntensity = 0.32f;
 
+    [Header("v3 Stormscape (set by HouseStorm, local only)")]
+    [HideInInspector] public float storm;      // 0..1 the storm
+    [HideInInspector] public float white;      // 0..1 the whiteout on the stair
+    [HideInInspector] public float starsW;     // 0..1 the stars at the top
+    [HideInInspector] public float flash;      // lightning
+    public Color stormSky = new Color(0.10f, 0.11f, 0.14f);
+    public Color stormHorizon = new Color(0.22f, 0.24f, 0.28f);
+    public Color stormFog = new Color(0.17f, 0.19f, 0.22f);
+    public Color stormAmbient = new Color(0.16f, 0.17f, 0.2f);
+    public Color whiteColor = new Color(0.96f, 0.97f, 1.0f);
+    public Color starsTop = new Color(0.012f, 0.008f, 0.045f);
+    public Color starsFog = new Color(0.012f, 0.01f, 0.03f);
+    public Color starsAmbient = new Color(0.14f, 0.12f, 0.26f);
+
     // shader property ids (VRCShader requires the _Udon prefix)
     private int idSunDir, idMoonDir, idLightDir, idSunColor, idSkyTop, idSkyHorizon, idWaterShallow, idWaterDeep;
-    private int idNight, idSnow, idTide, idWetLine, idShaft, idCloud, idReflDim;
+    private int idNight, idSnow, idTide, idWetLine, idShaft, idCloud, idReflDim, idWhiteout;
     private bool idsReady;
 
     private float snow;
@@ -100,6 +117,7 @@ public class HouseClock : UdonSharpBehaviour
         idShaft = VRCShader.PropertyToID("_UdonShaft");
         idCloud = VRCShader.PropertyToID("_UdonCloud");
         idReflDim = VRCShader.PropertyToID("_UdonReflDim");
+        idWhiteout = VRCShader.PropertyToID("_UdonWhiteout");
         idsReady = true;
     }
 
@@ -173,6 +191,10 @@ public class HouseClock : UdonSharpBehaviour
             moonDir = DirFrom(Mathf.Sin(n * Mathf.PI) * 58f - 2f, Mathf.Lerp(100f, 250f, n));
         }
         float night = Mathf.SmoothStep(0f, 1f, Mathf.InverseLerp(0.06f, -0.1f, sunDir.y));
+        float sv = storm * (1f - white);                   // the storm, until the whiteout takes over
+        float wv = white * (1f - starsW);                  // the whiteout, until the stars open
+        night = Mathf.Max(night, sv * 0.7f);
+        night = Mathf.Lerp(night, 1f, starsW);
         float twilight = Mathf.Clamp01(1f - Mathf.Abs(sunDir.y) / 0.28f) * (1f - night * 0.6f);
 
         Color sunC = Color.Lerp(Pal(sunColor, idx, b), sunsetColor, twilight * 0.85f);
@@ -180,6 +202,10 @@ public class HouseClock : UdonSharpBehaviour
         float moonUp = Mathf.Clamp01(moonDir.y * 3f);
         Vector3 lightDir = night < 0.5f ? sunDir : moonDir;
         Color lightC = night < 0.5f ? sunC * (sunIntensity * sunUp) : moonColor * (moonIntensity * moonUp);
+        lightC *= Mathf.Lerp(1f, 0.3f, sv);
+        lightC = Color.Lerp(lightC, whiteColor * 0.85f, wv);
+        lightC = Color.Lerp(lightC, new Color(0.45f, 0.5f, 0.8f) * 0.35f, starsW);
+        lightC += new Color(0.75f, 0.8f, 1f) * flash * 1.6f;
 
         if (mainLight != null)
         {
@@ -193,13 +219,31 @@ public class HouseClock : UdonSharpBehaviour
         Color top = Color.Lerp(Pal(skyTop, idx, b), nightSkyTop, night);
         Color hor = Color.Lerp(Color.Lerp(Pal(skyHorizon, idx, b), sunsetColor, twilight * 0.55f), nightSkyHorizon, night);
         Color fog = Color.Lerp(Color.Lerp(Pal(fogColor, idx, b), sunsetColor * 0.6f, twilight * 0.3f), nightFog, night);
-        RenderSettings.fogColor = fog;
-        RenderSettings.fogDensity = Mathf.Lerp(PalF(fogDensity, idx, b), nightFogDensity, night);
-        RenderSettings.ambientSkyColor = Color.Lerp(Pal(ambientSky, idx, b), nightAmbientSky, night);
-        RenderSettings.ambientEquatorColor = Color.Lerp(Pal(ambientEquator, idx, b), nightAmbientEquator, night);
-        RenderSettings.ambientGroundColor = Color.Lerp(Pal(ambientGround, idx, b), nightAmbientGround, night);
-
+        float fogD = Mathf.Lerp(PalF(fogDensity, idx, b), nightFogDensity, night);
+        Color aSky = Color.Lerp(Pal(ambientSky, idx, b), nightAmbientSky, night);
+        Color aEq = Color.Lerp(Pal(ambientEquator, idx, b), nightAmbientEquator, night);
+        Color aGr = Color.Lerp(Pal(ambientGround, idx, b), nightAmbientGround, night);
         float cloud = PalF(cloudCover, idx, b);
+        if (storm > 0f || white > 0f || starsW > 0f || flash > 0f)
+        {
+            Color fl = new Color(0.55f, 0.6f, 0.75f) * flash;
+            top = Color.Lerp(top, stormSky, sv) + fl; hor = Color.Lerp(hor, stormHorizon, sv) + fl; fog = Color.Lerp(fog, stormFog, sv) + fl * 0.6f;
+            fogD = Mathf.Lerp(fogD, 0.017f, sv);
+            aSky = Color.Lerp(aSky, stormAmbient, sv) + fl; aEq = Color.Lerp(aEq, stormAmbient * 0.8f, sv) + fl * 0.8f; aGr = Color.Lerp(aGr, stormAmbient * 0.5f, sv);
+            cloud = Mathf.Lerp(cloud, 1f, sv);
+            top = Color.Lerp(top, whiteColor, wv); hor = Color.Lerp(hor, whiteColor, wv); fog = Color.Lerp(fog, whiteColor, wv);
+            fogD = Mathf.Lerp(fogD, 0.055f, wv);
+            aSky = Color.Lerp(aSky, whiteColor, wv); aEq = Color.Lerp(aEq, whiteColor * 0.92f, wv); aGr = Color.Lerp(aGr, whiteColor * 0.8f, wv);
+            cloud = Mathf.Lerp(cloud, 0f, Mathf.Max(wv, starsW));
+            top = Color.Lerp(top, starsTop, starsW); hor = Color.Lerp(hor, starsTop * 2f, starsW); fog = Color.Lerp(fog, starsFog, starsW);
+            fogD = Mathf.Lerp(fogD, 0.011f, starsW);
+            aSky = Color.Lerp(aSky, starsAmbient, starsW); aEq = Color.Lerp(aEq, starsAmbient * 0.8f, starsW); aGr = Color.Lerp(aGr, starsAmbient * 0.5f, starsW);
+        }
+        RenderSettings.fogColor = fog;
+        RenderSettings.fogDensity = fogD;
+        RenderSettings.ambientSkyColor = aSky;
+        RenderSettings.ambientEquatorColor = aEq;
+        RenderSettings.ambientGroundColor = aGr;
 
         VRCShader.SetGlobalVector(idSunDir, new Vector4(sunDir.x, sunDir.y, sunDir.z, 0f));
         VRCShader.SetGlobalVector(idMoonDir, new Vector4(moonDir.x, moonDir.y, moonDir.z, 0f));
@@ -213,7 +257,8 @@ public class HouseClock : UdonSharpBehaviour
         VRCShader.SetGlobalFloat(idSnow, snowAmount);
         VRCShader.SetGlobalFloat(idTide, tide);
         VRCShader.SetGlobalFloat(idWetLine, wet);
-        VRCShader.SetGlobalFloat(idShaft, (1f - night) * sunUp * (1f - cloud * 0.55f) + night * moonUp * 0.35f);
+        VRCShader.SetGlobalFloat(idShaft, ((1f - night) * sunUp * (1f - cloud * 0.55f) + night * moonUp * 0.35f) * (1f - sv) * (1f - wv));
+        VRCShader.SetGlobalFloat(idWhiteout, wv);
         VRCShader.SetGlobalFloat(idCloud, cloud);
         VRCShader.SetGlobalFloat(idReflDim, Mathf.Lerp(1f, 0.22f, night));
 
@@ -226,6 +271,18 @@ public class HouseClock : UdonSharpBehaviour
             Vector3 wp = water.position;
             wp.y = tide;
             water.position = wp;
+        }
+        if (floaters != null && floatOffsets != null)
+        {
+            int nf = Mathf.Min(floaters.Length, floatOffsets.Length);
+            for (int fi = 0; fi < nf; fi++)
+            {
+                Transform ft = floaters[fi];
+                if (ft == null) continue;
+                Vector3 fp = ft.position;
+                fp.y = tide + floatOffsets[fi];
+                ft.position = fp;
+            }
         }
 
         if (!slowUpdate) return;
@@ -248,10 +305,10 @@ public class HouseClock : UdonSharpBehaviour
         SetSystems(winter, active == 3);
         if (windSources != null && windVolume != null && windVolume.Length == 4)
         {
-            float wv = PalF(windVolume, idx, b);
+            float wvol = Mathf.Lerp(PalF(windVolume, idx, b), 0.95f, sv) * (1f - wv) * (1f - starsW);
             for (int i = 0; i < windSources.Length; i++)
             {
-                if (windSources[i] != null) windSources[i].volume = wv;
+                if (windSources[i] != null) windSources[i].volume = wvol;
             }
         }
         if (lastSeason != -1 && lastSeason != active && shimmer != null) shimmer.Play();

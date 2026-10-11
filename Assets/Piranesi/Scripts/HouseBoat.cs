@@ -38,7 +38,13 @@ public class HouseBoat : UdonSharpBehaviour
         syncPos = pos; syncYaw = yaw;
     }
 
-    public void SetTide(float t) { tide = t; }
+    public void SetTide(float t)
+    {
+        tide = t;
+        // keep the hull on the water even when Update is not running (editor tide preview, before Start)
+        Vector3 p = transform.position;
+        if (Mathf.Abs(p.y - t) > 0.15f) { p.y = t; transform.position = p; }
+    }
 
     public void BeginDrive()
     {

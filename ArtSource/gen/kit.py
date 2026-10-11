@@ -400,7 +400,7 @@ def oculus_ring(r, z_center, y_center=0, m='Marble', name='ring', axis_z=True):
     return ob
 
 # ================================================================== VESTIBULE (20x20 inner, sail vault, oculus)
-def make_vestibule_core():
+def make_vestibule_core(hole=3.0, name='Vest_Core'):
     parts = []
     parts.append(box(-12, 12, -12, 12, -8, 0, 'Floor', 'floor'))
     R2 = 200.0; S = 13.0; n = 121
@@ -433,7 +433,7 @@ def make_vestibule_core():
             # keep the vault boundary on the wall planes
             if abs(x) >= 9.999: px = x
             if abs(y) >= 9.999: py = y
-            if r2 < 3.0 ** 2: keep[j, i] = False
+            if r2 < hole ** 2: keep[j, i] = False
             V.append((px, py, z)); AO.append(ao)
     F = []
     for j in range(n - 1):
@@ -446,10 +446,10 @@ def make_vestibule_core():
     # exterior: square roof ring at wall-top (z=24) + spherical cap dome with a drum around the oculus
     Rs = 14.6; a0 = math.asin(11.0 / Rs)
     capr = Rs * cos(a0)
-    a1 = math.acos(3.6 / Rs)
+    a1 = math.acos((hole + 0.6) / Rs)
     prof = [(capr * 1.0 + 0.4, 24.0), (capr, 24.0)] + [(Rs * cos(a), 13.0 + Rs * sin(a)) for a in np.linspace(a0, a1, 10)]
     zt = 13.0 + Rs * sin(a1)
-    prof += [(3.6, zt + 0.7), (3.0, zt + 0.7)]
+    prof += [(hole + 0.6, zt + 0.7), (hole, zt + 0.7)]
     parts.append(lathe(prof, 48, 'Wall', name='dome_ext', cap_top=False, cap_bottom=False))
     nth = 64; Vr = []; Fr = []
     for k in range(nth):
@@ -461,8 +461,8 @@ def make_vestibule_core():
         a = 2 * k; b = 2 * ((k + 1) % nth)
         Fr.append((a, a + 1, b + 1, b))
     parts.append(obj_from(Vr, Fr, 'Wall', name='roofring'))
-    zc = S + sqrt(R2 - 9.0)
-    parts.append(oculus_ring(3.0, zc, 0, 'Gold', 'oculus_ring'))
+    zc = S + sqrt(R2 - hole * hole)
+    parts.append(oculus_ring(hole, zc, 0, 'Gold', 'oculus_ring'))
     # cornice ring at springing on all 4 sides (inner faces)
     prof = [(0, 12.6), (-0.25, 12.6), (-0.3, 12.75), (-0.45, 12.85), (-0.5, 13.0), (0, 13.0)]
     for k in range(4):
@@ -479,7 +479,7 @@ def make_vestibule_core():
         with bpy.context.temp_override(active_object=g, selected_editable_objects=[g], object=g):
             bpy.ops.object.transform_apply(rotation=True)
         parts.append(g)
-    return join([p for p in parts if p is not None], 'Vest_Core')
+    return join([p for p in parts if p is not None], name)
 
 def make_vestibule_side(open_=True):
     """Wall on +Y side: inner face y=10, outer y=12, x in [-12,12], z 0..24."""

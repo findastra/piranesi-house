@@ -211,6 +211,41 @@
 "key": "0a7789c4f8"
 },
 {
+"sub": "ArcadeExtWater_Flow",
+"shader": "flow",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "BLEND",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"cutoff": 0.0,
+"smooth": 0.0,
+"metal": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "0a7789c4f8"
+},
+{
 "sub": "Barrels_0",
 "shader": "prop",
 "albedo": "Barrels/Barrels_0_Albedo.png",
@@ -386,6 +421,321 @@
 "key": "ce6ed65751"
 },
 {
+"sub": "BedLinen_0_Mattress",
+"shader": "prop",
+"albedo": "Kit2/LinenCream_Albedo.png",
+"normal": "Kit2/LinenCream_Normal.png",
+"mask": "Kit2/LinenCream_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "bcac67e549"
+},
+{
+"sub": "BedLinen_0_Pillow",
+"shader": "prop",
+"albedo": "Kit2/LinenCream_Albedo.png",
+"normal": "Kit2/LinenCream_Normal.png",
+"mask": "Kit2/LinenCream_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "bcac67e549"
+},
+{
+"sub": "BedLinen_0_Throw",
+"shader": "prop",
+"albedo": "Kit2/LinenRed_Albedo.png",
+"normal": "Kit2/LinenRed_Normal.png",
+"mask": "Kit2/LinenRed_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "26e645136c"
+},
+{
+"sub": "BedLinen_1_Mattress",
+"shader": "prop",
+"albedo": "Kit2/LinenCream_Albedo.png",
+"normal": "Kit2/LinenCream_Normal.png",
+"mask": "Kit2/LinenCream_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "bcac67e549"
+},
+{
+"sub": "BedLinen_1_Pillow",
+"shader": "prop",
+"albedo": "Kit2/LinenCream_Albedo.png",
+"normal": "Kit2/LinenCream_Normal.png",
+"mask": "Kit2/LinenCream_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "bcac67e549"
+},
+{
+"sub": "BedLinen_1_Throw",
+"shader": "prop",
+"albedo": "Kit2/LinenTeal_Albedo.png",
+"normal": "Kit2/LinenTeal_Normal.png",
+"mask": "Kit2/LinenTeal_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "fc86a89cdf"
+},
+{
+"sub": "BedLinen_2_Mattress",
+"shader": "prop",
+"albedo": "Kit2/LinenCream_Albedo.png",
+"normal": "Kit2/LinenCream_Normal.png",
+"mask": "Kit2/LinenCream_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "bcac67e549"
+},
+{
+"sub": "BedLinen_2_Pillow",
+"shader": "prop",
+"albedo": "Kit2/LinenCream_Albedo.png",
+"normal": "Kit2/LinenCream_Normal.png",
+"mask": "Kit2/LinenCream_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "bcac67e549"
+},
+{
+"sub": "BedLinen_2_Throw",
+"shader": "prop",
+"albedo": "Kit2/LinenCream_Albedo.png",
+"normal": "Kit2/LinenCream_Normal.png",
+"mask": "Kit2/LinenCream_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "bcac67e549"
+},
+{
 "sub": "Boulder_01_0",
 "shader": "prop",
 "albedo": "Boulder_01/Boulder_01_0_Albedo.png",
@@ -456,6 +806,76 @@
 "key": "af9d98f1aa"
 },
 {
+"sub": "Briccola_Planks",
+"shader": "prop",
+"albedo": "Kit2/Planks_Albedo.png",
+"normal": "Kit2/Planks_Normal.png",
+"mask": "Kit2/Planks_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b9e79fb2bd"
+},
+{
+"sub": "Briccola_Rope",
+"shader": "prop",
+"albedo": "Kit2/Rope_Albedo.png",
+"normal": "Kit2/Rope_Normal.png",
+"mask": "Kit2/Rope_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "cf975e9db8"
+},
+{
 "sub": "Bucket_Wood_0",
 "shader": "prop",
 "albedo": "Bucket_Wood/Bucket_Wood_0_Albedo.png",
@@ -489,6 +909,216 @@
 1
 ],
 "key": "1a8d675a92"
+},
+{
+"sub": "Bundle_Linen",
+"shader": "prop",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.86,
+0.82,
+0.72
+],
+"smooth": 0.2,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "86fb22ddce"
+},
+{
+"sub": "Bundle_Rope",
+"shader": "prop",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.18,
+0.3,
+0.16
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a13494bf11"
+},
+{
+"sub": "CampLogs_Planks",
+"shader": "prop",
+"albedo": "Kit2/Planks_Albedo.png",
+"normal": "Kit2/Planks_Normal.png",
+"mask": "Kit2/Planks_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b9e79fb2bd"
+},
+{
+"sub": "CampLogs_LinenRed",
+"shader": "prop",
+"albedo": "Kit2/LinenRed_Albedo.png",
+"normal": "Kit2/LinenRed_Normal.png",
+"mask": "Kit2/LinenRed_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "26e645136c"
+},
+{
+"sub": "CampLogs_LinenTeal",
+"shader": "prop",
+"albedo": "Kit2/LinenTeal_Albedo.png",
+"normal": "Kit2/LinenTeal_Normal.png",
+"mask": "Kit2/LinenTeal_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "fc86a89cdf"
+},
+{
+"sub": "CampLogs_LinenCream",
+"shader": "prop",
+"albedo": "Kit2/LinenCream_Albedo.png",
+"normal": "Kit2/LinenCream_Normal.png",
+"mask": "Kit2/LinenCream_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "bcac67e549"
 },
 {
 "sub": "Candleholders_0",
@@ -666,6 +1296,41 @@
 "key": "f78ef503ca"
 },
 {
+"sub": "CastellumPool_Pool",
+"shader": "pool",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "BLEND",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.0,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "dbe3016fdc"
+},
+{
 "sub": "Chess_Set_0",
 "shader": "prop",
 "albedo": "Chess_Set/Chess_Set_0_Albedo.png",
@@ -804,6 +1469,146 @@
 1
 ],
 "key": "e864e3c853"
+},
+{
+"sub": "CloudJar_Glass",
+"shader": "prop",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "BLEND",
+"doubleSided": true,
+"tint": [
+0.85,
+0.92,
+1.0
+],
+"smooth": 0.98,
+"metal": 0.0,
+"cutoff": 0.3,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "2f270e0c54"
+},
+{
+"sub": "CloudJar_Cork",
+"shader": "prop",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.55,
+0.4,
+0.25
+],
+"smooth": 0.2,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "c2631a4544"
+},
+{
+"sub": "Coconuts_CoconutHusk",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.62,
+0.45,
+0.3
+],
+"smooth": 0.2,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "59da6a3a34"
+},
+{
+"sub": "Colossus_Marble",
+"shader": "prop",
+"albedo": "Colossus/Colossus_Albedo.png",
+"normal": "Colossus/Colossus_Normal.png",
+"mask": "Colossus/Colossus_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "e7bd8e886e"
 },
 {
 "sub": "Coral_Brain_0",
@@ -1366,7 +2171,497 @@
 "key": "a2398b9d02"
 },
 {
+"sub": "DaybedLinen_0_Mattress",
+"shader": "prop",
+"albedo": "Kit2/LinenCream_Albedo.png",
+"normal": "Kit2/LinenCream_Normal.png",
+"mask": "Kit2/LinenCream_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "bcac67e549"
+},
+{
+"sub": "DaybedLinen_0_Pillow2",
+"shader": "prop",
+"albedo": "Kit2/LinenTeal_Albedo.png",
+"normal": "Kit2/LinenTeal_Normal.png",
+"mask": "Kit2/LinenTeal_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "fc86a89cdf"
+},
+{
+"sub": "DaybedLinen_0_Pillow",
+"shader": "prop",
+"albedo": "Kit2/LinenCream_Albedo.png",
+"normal": "Kit2/LinenCream_Normal.png",
+"mask": "Kit2/LinenCream_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "bcac67e549"
+},
+{
+"sub": "DaybedLinen_0_Throw",
+"shader": "prop",
+"albedo": "Kit2/LinenRed_Albedo.png",
+"normal": "Kit2/LinenRed_Normal.png",
+"mask": "Kit2/LinenRed_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "26e645136c"
+},
+{
+"sub": "DaybedLinen_1_Mattress",
+"shader": "prop",
+"albedo": "Kit2/LinenCream_Albedo.png",
+"normal": "Kit2/LinenCream_Normal.png",
+"mask": "Kit2/LinenCream_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "bcac67e549"
+},
+{
+"sub": "DaybedLinen_1_Pillow2",
+"shader": "prop",
+"albedo": "Kit2/LinenRed_Albedo.png",
+"normal": "Kit2/LinenRed_Normal.png",
+"mask": "Kit2/LinenRed_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "26e645136c"
+},
+{
+"sub": "DaybedLinen_1_Pillow",
+"shader": "prop",
+"albedo": "Kit2/LinenCream_Albedo.png",
+"normal": "Kit2/LinenCream_Normal.png",
+"mask": "Kit2/LinenCream_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "bcac67e549"
+},
+{
+"sub": "DaybedLinen_2_Mattress",
+"shader": "prop",
+"albedo": "Kit2/LinenCream_Albedo.png",
+"normal": "Kit2/LinenCream_Normal.png",
+"mask": "Kit2/LinenCream_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "bcac67e549"
+},
+{
+"sub": "DaybedLinen_2_Pillow2",
+"shader": "prop",
+"albedo": "Kit2/LinenTeal_Albedo.png",
+"normal": "Kit2/LinenTeal_Normal.png",
+"mask": "Kit2/LinenTeal_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "fc86a89cdf"
+},
+{
+"sub": "DaybedLinen_2_Pillow",
+"shader": "prop",
+"albedo": "Kit2/LinenCream_Albedo.png",
+"normal": "Kit2/LinenCream_Normal.png",
+"mask": "Kit2/LinenCream_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "bcac67e549"
+},
+{
+"sub": "DaybedLinen_2_Throw",
+"shader": "prop",
+"albedo": "Kit2/LinenTeal_Albedo.png",
+"normal": "Kit2/LinenTeal_Normal.png",
+"mask": "Kit2/LinenTeal_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "fc86a89cdf"
+},
+{
 "sub": "Dock_Planks",
+"shader": "prop",
+"albedo": "Kit2/Planks_Albedo.png",
+"normal": "Kit2/Planks_Normal.png",
+"mask": "Kit2/Planks_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b9e79fb2bd"
+},
+{
+"sub": "DockDeck_Planks",
+"shader": "prop",
+"albedo": "Kit2/Planks_Albedo.png",
+"normal": "Kit2/Planks_Normal.png",
+"mask": "Kit2/Planks_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b9e79fb2bd"
+},
+{
+"sub": "DockDeck_Rope",
+"shader": "prop",
+"albedo": "Kit2/Rope_Albedo.png",
+"normal": "Kit2/Rope_Normal.png",
+"mask": "Kit2/Rope_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "cf975e9db8"
+},
+{
+"sub": "DockPiles_Planks",
 "shader": "prop",
 "albedo": "Kit2/Planks_Albedo.png",
 "normal": "Kit2/Planks_Normal.png",
@@ -1469,6 +2764,146 @@
 1
 ],
 "key": "e3b2153b45"
+},
+{
+"sub": "FishSchool_Chromis_Fish",
+"shader": "fish",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.0,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "190d4b5b51"
+},
+{
+"sub": "FishSchool_Reef_Fish",
+"shader": "fish",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.0,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "190d4b5b51"
+},
+{
+"sub": "FishSchool_Tang_Fish",
+"shader": "fish",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.0,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "190d4b5b51"
+},
+{
+"sub": "FloodWater_Flood",
+"shader": "pool",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "BLEND",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.0,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "dbe3016fdc"
 },
 {
 "sub": "Fruit_Apple_0",
@@ -1751,6 +3186,41 @@
 "key": "c02fced443"
 },
 {
+"sub": "GiantEgg_Egg",
+"shader": "prop",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1.0,
+0.97,
+0.9
+],
+"smooth": 1.0,
+"metal": 0.35,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "0b383665c9"
+},
+{
 "sub": "Goblets_Brass_0",
 "shader": "prop",
 "albedo": "Goblets_Brass/Goblets_Brass_0_Albedo.png",
@@ -1996,6 +3466,76 @@
 "key": "26e645136c"
 },
 {
+"sub": "HallFountainPool_Pool",
+"shader": "pool",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "BLEND",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.0,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "dbe3016fdc"
+},
+{
+"sub": "HallFountainWater_Flow",
+"shader": "flow",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "BLEND",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"cutoff": 0.0,
+"smooth": 0.0,
+"metal": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "0a7789c4f8"
+},
+{
 "sub": "Hammock_LinenCream",
 "shader": "prop",
 "albedo": "Kit2/LinenCream_Albedo.png",
@@ -2064,6 +3604,111 @@
 1
 ],
 "key": "cf975e9db8"
+},
+{
+"sub": "Hammock_Vine_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.18,
+"windScale": 40.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "70650947e4"
+},
+{
+"sub": "Hammock_Vine_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.5,
+0.45,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "fa8f2c32d6"
+},
+{
+"sub": "Hammock_Vine_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
 },
 {
 "sub": "Hibiscus_Orange_HibStem",
@@ -2696,6 +4341,111 @@
 "key": "a54c1b0eb0"
 },
 {
+"sub": "Ivy_ArcadeWin3_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.18,
+"windScale": 40.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "70650947e4"
+},
+{
+"sub": "Ivy_ArcadeWin3_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.42,
+0.36,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_ArcadeWin3_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
+},
+{
 "sub": "Ivy_Column_0_Leaf",
 "shader": "foliage",
 "albedo": "Ivy/Ivy_Albedo.png",
@@ -2834,6 +4584,741 @@
 1
 ],
 "key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_DomeTop_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.18,
+"windScale": 40.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "70650947e4"
+},
+{
+"sub": "Ivy_DomeTop_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.42,
+0.36,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_DomeTop_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
+},
+{
+"sub": "Ivy_ExtBlind_0_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.18,
+"windScale": 40.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "70650947e4"
+},
+{
+"sub": "Ivy_ExtBlind_0_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.42,
+0.36,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_ExtBlind_0_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
+},
+{
+"sub": "Ivy_ExtBlind_1_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.18,
+"windScale": 40.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "70650947e4"
+},
+{
+"sub": "Ivy_ExtBlind_1_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.42,
+0.36,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_ExtBlind_1_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
+},
+{
+"sub": "Ivy_ExtWin_0_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.18,
+"windScale": 40.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "70650947e4"
+},
+{
+"sub": "Ivy_ExtWin_0_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.42,
+0.36,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_ExtWin_0_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
+},
+{
+"sub": "Ivy_ExtWin_1_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.18,
+"windScale": 40.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "70650947e4"
+},
+{
+"sub": "Ivy_ExtWin_1_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.42,
+0.36,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_ExtWin_1_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
+},
+{
+"sub": "Ivy_Float_0_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.18,
+"windScale": 40.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "70650947e4"
+},
+{
+"sub": "Ivy_Float_0_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.42,
+0.36,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_Float_0_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
+},
+{
+"sub": "Ivy_Float_1_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.18,
+"windScale": 40.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "70650947e4"
+},
+{
+"sub": "Ivy_Float_1_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.42,
+0.36,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_Float_1_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
 },
 {
 "sub": "Ivy_HangLine_L_Leaf",
@@ -3046,6 +5531,321 @@
 "key": "a54c1b0eb0"
 },
 {
+"sub": "Ivy_IsleHall_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.18,
+"windScale": 40.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "70650947e4"
+},
+{
+"sub": "Ivy_IsleHall_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.42,
+0.36,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_IsleHall_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
+},
+{
+"sub": "Ivy_NaveWin_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.18,
+"windScale": 40.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "70650947e4"
+},
+{
+"sub": "Ivy_NaveWin_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.42,
+0.36,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_NaveWin_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
+},
+{
+"sub": "Ivy_Pergola_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.18,
+"windScale": 40.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "70650947e4"
+},
+{
+"sub": "Ivy_Pergola_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.42,
+0.36,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_Pergola_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
+},
+{
 "sub": "Ivy_Ruin_Leaf",
 "shader": "foliage",
 "albedo": "Ivy/Ivy_Albedo.png",
@@ -3116,6 +5916,216 @@
 "key": "a54c1b0eb0"
 },
 {
+"sub": "Ivy_Ruin3_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.18,
+"windScale": 40.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "70650947e4"
+},
+{
+"sub": "Ivy_Ruin3_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.42,
+0.36,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_Ruin3_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
+},
+{
+"sub": "Ivy_SeaHall_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.18,
+"windScale": 40.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "70650947e4"
+},
+{
+"sub": "Ivy_SeaHall_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.42,
+0.36,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_SeaHall_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
+},
+{
 "sub": "Ivy_Tower_Leaf",
 "shader": "foliage",
 "albedo": "Ivy/Ivy_Albedo.png",
@@ -3184,6 +6194,111 @@
 1
 ],
 "key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_Tower3_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.18,
+"windScale": 40.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "70650947e4"
+},
+{
+"sub": "Ivy_Tower3_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.42,
+0.36,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_Tower3_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
 },
 {
 "sub": "Ivy_VestBlind_0_Leaf",
@@ -3536,6 +6651,146 @@
 "key": "a54c1b0eb0"
 },
 {
+"sub": "Ivy_WinIn_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.18,
+"windScale": 40.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "70650947e4"
+},
+{
+"sub": "Ivy_WinIn_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.42,
+0.36,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a54c1b0eb0"
+},
+{
+"sub": "Ivy_WinIn_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
+},
+{
+"sub": "JournalPage_Page",
+"shader": "prop",
+"albedo": "Quests/JournalPage.png",
+"normal": "",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.2,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "44dc966b04"
+},
+{
 "sub": "Jug_0",
 "shader": "prop",
 "albedo": "Jug/Jug_0_Albedo.png",
@@ -3641,6 +6896,41 @@
 "key": "91c17c11d6"
 },
 {
+"sub": "LinenScreen_Curtain",
+"shader": "prop",
+"albedo": "Kit2/LinenCream_Albedo.png",
+"normal": "Kit2/LinenCream_Normal.png",
+"mask": "Kit2/LinenCream_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "8edf84c0c8"
+},
+{
 "sub": "Lion_Head_0",
 "shader": "prop",
 "albedo": "Lion_Head/Lion_Head_0_Albedo.png",
@@ -3709,6 +6999,41 @@
 1
 ],
 "key": "330ead1622"
+},
+{
+"sub": "NaveExtWater_Flow",
+"shader": "flow",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "BLEND",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"cutoff": 0.0,
+"smooth": 0.0,
+"metal": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "0a7789c4f8"
 },
 {
 "sub": "Nest_mud",
@@ -3921,41 +7246,6 @@
 "key": "a2f0a9411a"
 },
 {
-"sub": "Palm_0_PalmLeafDead",
-"shader": "foliage",
-"albedo": "Palm/PalmLeaf_Albedo.png",
-"normal": "Palm/PalmLeaf_Normal.png",
-"mask": "Palm/PalmLeaf_Mask.png",
-"alpha": "MASK",
-"doubleSided": true,
-"tint": [
-0.75,
-0.55,
-0.3
-],
-"smooth": 0.6,
-"metal": 0.0,
-"cutoff": 0.45,
-"wind": 0.4,
-"windScale": 10.0,
-"translucency": 0.6,
-"vertexTint": 0.0,
-"height": 0.0,
-"detail": 0.0,
-"glow": 0.0,
-"base": [
-1,
-1,
-1
-],
-"tip": [
-1,
-1,
-1
-],
-"key": "096bc2509f"
-},
-{
 "sub": "Palm_0_PalmLeaf",
 "shader": "foliage",
 "albedo": "Palm/PalmLeaf_Albedo.png",
@@ -4096,41 +7386,6 @@
 "key": "0d8bb5d484"
 },
 {
-"sub": "Palm_1_PalmLeafDead",
-"shader": "foliage",
-"albedo": "Palm/PalmLeaf_Albedo.png",
-"normal": "Palm/PalmLeaf_Normal.png",
-"mask": "Palm/PalmLeaf_Mask.png",
-"alpha": "MASK",
-"doubleSided": true,
-"tint": [
-0.75,
-0.55,
-0.3
-],
-"smooth": 0.6,
-"metal": 0.0,
-"cutoff": 0.45,
-"wind": 0.4,
-"windScale": 10.0,
-"translucency": 0.6,
-"vertexTint": 0.0,
-"height": 0.0,
-"detail": 0.0,
-"glow": 0.0,
-"base": [
-1,
-1,
-1
-],
-"tip": [
-1,
-1,
-1
-],
-"key": "096bc2509f"
-},
-{
 "sub": "Palm_2_PalmBark",
 "shader": "prop",
 "albedo": "Palm/PalmBark_Albedo.png",
@@ -4201,41 +7456,6 @@
 "key": "a2f0a9411a"
 },
 {
-"sub": "Palm_2_PalmLeafDead",
-"shader": "foliage",
-"albedo": "Palm/PalmLeaf_Albedo.png",
-"normal": "Palm/PalmLeaf_Normal.png",
-"mask": "Palm/PalmLeaf_Mask.png",
-"alpha": "MASK",
-"doubleSided": true,
-"tint": [
-0.75,
-0.55,
-0.3
-],
-"smooth": 0.6,
-"metal": 0.0,
-"cutoff": 0.45,
-"wind": 0.4,
-"windScale": 10.0,
-"translucency": 0.6,
-"vertexTint": 0.0,
-"height": 0.0,
-"detail": 0.0,
-"glow": 0.0,
-"base": [
-1,
-1,
-1
-],
-"tip": [
-1,
-1,
-1
-],
-"key": "096bc2509f"
-},
-{
 "sub": "Palm_2_PalmLeaf",
 "shader": "foliage",
 "albedo": "Palm/PalmLeaf_Albedo.png",
@@ -4269,6 +7489,391 @@
 1
 ],
 "key": "0d8bb5d484"
+},
+{
+"sub": "Palm_Tall_0_PalmBark",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "Palm/PalmBark_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b637b82870"
+},
+{
+"sub": "Palm_Tall_0_Coconut",
+"shader": "prop",
+"albedo": "Palm/Coconut_Albedo.png",
+"normal": "",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.35,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a2f0a9411a"
+},
+{
+"sub": "Palm_Tall_0_PalmLeaf",
+"shader": "foliage",
+"albedo": "Palm/PalmLeaf_Albedo.png",
+"normal": "Palm/PalmLeaf_Normal.png",
+"mask": "Palm/PalmLeaf_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.45,
+"wind": 0.55,
+"windScale": 10.0,
+"translucency": 0.6,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "0d8bb5d484"
+},
+{
+"sub": "Palm_Tall_1_PalmBark",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "Palm/PalmBark_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b637b82870"
+},
+{
+"sub": "Palm_Tall_1_Coconut",
+"shader": "prop",
+"albedo": "Palm/Coconut_Albedo.png",
+"normal": "",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.35,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a2f0a9411a"
+},
+{
+"sub": "Palm_Tall_1_PalmLeaf",
+"shader": "foliage",
+"albedo": "Palm/PalmLeaf_Albedo.png",
+"normal": "Palm/PalmLeaf_Normal.png",
+"mask": "Palm/PalmLeaf_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.45,
+"wind": 0.55,
+"windScale": 10.0,
+"translucency": 0.6,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "0d8bb5d484"
+},
+{
+"sub": "Palm_Tall_2_PalmBark",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "Palm/PalmBark_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b637b82870"
+},
+{
+"sub": "Palm_Tall_2_Coconut",
+"shader": "prop",
+"albedo": "Palm/Coconut_Albedo.png",
+"normal": "",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.35,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a2f0a9411a"
+},
+{
+"sub": "Palm_Tall_2_PalmLeaf",
+"shader": "foliage",
+"albedo": "Palm/PalmLeaf_Albedo.png",
+"normal": "Palm/PalmLeaf_Normal.png",
+"mask": "Palm/PalmLeaf_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.45,
+"wind": 0.55,
+"windScale": 10.0,
+"translucency": 0.6,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "0d8bb5d484"
+},
+{
+"sub": "Pier_Kit_0",
+"shader": "prop",
+"albedo": "Pier_Kit/Pier_Kit_0_Albedo.png",
+"normal": "Pier_Kit/Pier_Kit_0_Normal.png",
+"mask": "Pier_Kit/Pier_Kit_0_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "eb0e6ce579"
+},
+{
+"sub": "Pier_Kit_1",
+"shader": "prop",
+"albedo": "Pier_Kit/Pier_Kit_1_Albedo.png",
+"normal": "Pier_Kit/Pier_Kit_1_Normal.png",
+"mask": "Pier_Kit/Pier_Kit_1_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "9f3a1cffb0"
 },
 {
 "sub": "Plant_Anthurium_0",
@@ -4481,6 +8086,1266 @@
 "key": "e23d4fe3f7"
 },
 {
+"sub": "Plant_Sorrel_0",
+"shader": "foliage",
+"albedo": "Plant_Sorrel/Plant_Sorrel_0_Albedo.png",
+"normal": "Plant_Sorrel/Plant_Sorrel_0_Normal.png",
+"mask": "Plant_Sorrel/Plant_Sorrel_0_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.45,
+"wind": 0.4,
+"windScale": 2.0,
+"translucency": 0.6,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "990152e26e"
+},
+{
+"sub": "Plaque_CLIMB_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_ClimbToTheLight_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Count0_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Count1_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Count2_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Count3_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Count4_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Count5_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_DeadEnds_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_I_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_II_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_III_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_IV_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_IX_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Quest0_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Quest1_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Quest2_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Quest3_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Quest4_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Quest5_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Quest6_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Quests_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Return_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Role0_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Role1_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Role2_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Role3_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Role4_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Role5_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_Spawn_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_V_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_VI_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_VII_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_VIII_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
+"sub": "Plaque_X_Plaque",
+"shader": "prop",
+"albedo": "Plaques/Plaques_Albedo.png",
+"normal": "Plaques/Plaques_Normal.png",
+"mask": "Plaques/Plaques_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.85,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "3536aae466"
+},
+{
 "sub": "Plate_Carved_0",
 "shader": "prop",
 "albedo": "Plate_Carved/Plate_Carved_0_Albedo.png",
@@ -4516,6 +9381,146 @@
 "key": "72a3c5c37b"
 },
 {
+"sub": "RideTube_Tube",
+"shader": "prop",
+"albedo": "Kit2/LinenRed_Albedo.png",
+"normal": "Kit2/LinenRed_Normal.png",
+"mask": "Kit2/LinenRed_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.5,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "12e953dd35"
+},
+{
+"sub": "Rock_07_0",
+"shader": "prop",
+"albedo": "Rock_07/Rock_07_0_Albedo.png",
+"normal": "Rock_07/Rock_07_0_Normal.png",
+"mask": "Rock_07/Rock_07_0_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "c19fa76c97"
+},
+{
+"sub": "Rock_09_0",
+"shader": "prop",
+"albedo": "Rock_09/Rock_09_0_Albedo.png",
+"normal": "Rock_09/Rock_09_0_Normal.png",
+"mask": "Rock_09/Rock_09_0_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "4dd6a8d3c3"
+},
+{
+"sub": "Rock_Coast_0",
+"shader": "prop",
+"albedo": "Rock_Coast/Rock_Coast_0_Albedo.png",
+"normal": "Rock_Coast/Rock_Coast_0_Normal.png",
+"mask": "Rock_Coast/Rock_Coast_0_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a209a0faaf"
+},
+{
 "sub": "Rock_SandSmall_0",
 "shader": "prop",
 "albedo": "Rock_SandSmall/Rock_SandSmall_0_Albedo.png",
@@ -4549,6 +9554,111 @@
 1
 ],
 "key": "d33b11b51d"
+},
+{
+"sub": "RoofAqueductsWater_Flow",
+"shader": "flow",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "BLEND",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"cutoff": 0.0,
+"smooth": 0.0,
+"metal": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "0a7789c4f8"
+},
+{
+"sub": "Rug_0_Rug",
+"shader": "prop",
+"albedo": "Kit2/LinenRed_Albedo.png",
+"normal": "Kit2/LinenRed_Normal.png",
+"mask": "Kit2/LinenRed_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "26e645136c"
+},
+{
+"sub": "Rug_1_Rug",
+"shader": "prop",
+"albedo": "Kit2/LinenTeal_Albedo.png",
+"normal": "Kit2/LinenTeal_Normal.png",
+"mask": "Kit2/LinenTeal_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "fc86a89cdf"
 },
 {
 "sub": "SeaStar_Blue_0",
@@ -5006,6 +10116,216 @@
 "key": "7223fcdb18"
 },
 {
+"sub": "Tent_Cream_LinenCream",
+"shader": "prop",
+"albedo": "Kit2/LinenCream_Albedo.png",
+"normal": "Kit2/LinenCream_Normal.png",
+"mask": "Kit2/LinenCream_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "8edf84c0c8"
+},
+{
+"sub": "Tent_Cream_Planks",
+"shader": "prop",
+"albedo": "Kit2/Planks_Albedo.png",
+"normal": "Kit2/Planks_Normal.png",
+"mask": "Kit2/Planks_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b9e79fb2bd"
+},
+{
+"sub": "Tent_Teal_LinenTeal",
+"shader": "prop",
+"albedo": "Kit2/LinenTeal_Albedo.png",
+"normal": "Kit2/LinenTeal_Normal.png",
+"mask": "Kit2/LinenTeal_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "03b52e53e8"
+},
+{
+"sub": "Tent_Teal_Planks",
+"shader": "prop",
+"albedo": "Kit2/Planks_Albedo.png",
+"normal": "Kit2/Planks_Normal.png",
+"mask": "Kit2/Planks_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 1.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b9e79fb2bd"
+},
+{
+"sub": "ThreadLines_Thread",
+"shader": "thread",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "BLEND",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.0,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "91d230f58f"
+},
+{
+"sub": "Tower3SlideWater_Flow",
+"shader": "flow",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "BLEND",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"cutoff": 0.0,
+"smooth": 0.0,
+"metal": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "0a7789c4f8"
+},
+{
 "sub": "Treasure_Chest_0",
 "shader": "prop",
 "albedo": "Treasure_Chest/Treasure_Chest_0_Albedo.png",
@@ -5039,6 +10359,76 @@
 1
 ],
 "key": "e33db0d9cd"
+},
+{
+"sub": "TreviPool_Pool",
+"shader": "pool",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "BLEND",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.0,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "dbe3016fdc"
+},
+{
+"sub": "TreviWater_Flow",
+"shader": "flow",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "BLEND",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"cutoff": 0.0,
+"smooth": 0.0,
+"metal": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "0a7789c4f8"
 },
 {
 "sub": "Vase_Antique_0",
@@ -5076,6 +10466,286 @@
 "key": "df7379e4bc"
 },
 {
+"sub": "Vine_Climb_Leaf",
+"shader": "foliage",
+"albedo": "Ivy/Ivy_Albedo.png",
+"normal": "Ivy/Ivy_Normal.png",
+"mask": "Ivy/Ivy_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.6,
+"metal": 0.0,
+"cutoff": 0.42,
+"wind": 0.7,
+"windScale": 6.0,
+"translucency": 0.9,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "32bd1f1ff7"
+},
+{
+"sub": "Vine_Climb_Stem",
+"shader": "prop",
+"albedo": "Palm/PalmBark_Albedo.png",
+"normal": "Palm/PalmBark_Normal.png",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.42,
+0.36,
+0.3
+],
+"smooth": 0.15,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "a54c1b0eb0"
+},
+{
+"sub": "Vine_Climb_Flower",
+"shader": "foliage",
+"albedo": "Ivy/Flower_Albedo.png",
+"normal": "Ivy/Flower_Normal.png",
+"mask": "Ivy/Flower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.3,
+"metal": 0.0,
+"cutoff": 0.4,
+"wind": 0.25,
+"windScale": 12.0,
+"translucency": 1.1,
+"vertexTint": 1.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "b3be5403e0"
+},
+{
+"sub": "WaterLily_Pad",
+"shader": "prop",
+"albedo": "WaterLily/LilyPad_Albedo.png",
+"normal": "WaterLily/LilyPad_Normal.png",
+"mask": "WaterLily/LilyPad_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "717137d952"
+},
+{
+"sub": "WaterLily_Flower",
+"shader": "foliage",
+"albedo": "WaterLily/LilyFlower_Albedo.png",
+"normal": "WaterLily/LilyFlower_Normal.png",
+"mask": "WaterLily/LilyFlower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.9,
+"metal": 0.0,
+"cutoff": 0.3,
+"wind": 0.0,
+"windScale": 1.0,
+"translucency": 0.9,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "0e9cd5f0f8"
+},
+{
+"sub": "WaterLily_Pads_Pad",
+"shader": "prop",
+"albedo": "WaterLily/LilyPad_Albedo.png",
+"normal": "WaterLily/LilyPad_Normal.png",
+"mask": "WaterLily/LilyPad_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "717137d952"
+},
+{
+"sub": "WaterLily_Pink_Pad",
+"shader": "prop",
+"albedo": "WaterLily/LilyPad_Albedo.png",
+"normal": "WaterLily/LilyPad_Normal.png",
+"mask": "WaterLily/LilyPad_Mask.png",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 1.0,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "717137d952"
+},
+{
+"sub": "WaterLily_Pink_Flower",
+"shader": "foliage",
+"albedo": "WaterLily/LilyFlower_Albedo.png",
+"normal": "WaterLily/LilyFlower_Normal.png",
+"mask": "WaterLily/LilyFlower_Mask.png",
+"alpha": "MASK",
+"doubleSided": true,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.9,
+"metal": 0.0,
+"cutoff": 0.3,
+"wind": 0.0,
+"windScale": 1.0,
+"translucency": 0.9,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "0e9cd5f0f8"
+},
+{
 "sub": "Whale_Bronze_0",
 "shader": "prop",
 "albedo": "Whale_Bronze/Whale_Bronze_0_Albedo.png",
@@ -5109,6 +10779,41 @@
 1
 ],
 "key": "061e129e5a"
+},
+{
+"sub": "WineBottle_Glass",
+"shader": "prop",
+"albedo": "",
+"normal": "",
+"mask": "",
+"alpha": "OPAQUE",
+"doubleSided": false,
+"tint": [
+0.06,
+0.16,
+0.08
+],
+"smooth": 0.95,
+"metal": 0.0,
+"cutoff": 0.0,
+"wind": 0.0,
+"windScale": 0.0,
+"translucency": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "6bfb6a210b"
 }
 ]
 }

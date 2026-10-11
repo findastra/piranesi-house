@@ -21,7 +21,7 @@ using Object = UnityEngine.Object;
 namespace Piranesi.EditorTools
 {
     [InitializeOnLoad]
-    public static class HouseBuilder
+    public static partial class HouseBuilder
     {
         const string RetryKey = "Piranesi.BuildRetry";
         static double retryAt;
@@ -66,12 +66,12 @@ namespace Piranesi.EditorTools
         const int WaterLayer = 4;
 
         // ------------------------------------------------------------------ layout json
-        [Serializable] class LObj { public string name, mesh, col, tag, mv; public float[] p, s, e, spin; public float r; public bool stat, lie, noshadow; }
-        [Serializable] class LStatue { public string mesh, role; public float[] p; public float r, s; }
-        [Serializable] class LLight { public string kind; public float[] p, color, dir; public float range, intensity, angle; }
+        [Serializable] class LObj { public string name, mesh, col, tag, mv, group; public float[] p, s, e, spin; public float r, fy; public bool stat, lie, noshadow, floats, hide; }
+        [Serializable] class LStatue { public string mesh, role, group; public float[] p; public float r, s; }
+        [Serializable] class LLight { public string kind, name; public float[] p, color, dir; public float range, intensity, angle; }
         [Serializable] class LShaft { public string kind; public float[] p; public float radius, height, face, dim; }
         [Serializable] class LEmitter { public string kind; public float[] p, size; public float fall, rot; }
-        [Serializable] class LProbe { public string name; public float[] p, size; }
+        [Serializable] class LProbe { public string name; public float[] p, size; public int res; }
         [Serializable] class LReverb { public string preset; public float[] p; public float minD, maxD; }
         [Serializable] class LSound { public string clip; public float[] p; public float vol, minD, maxD, spatial; }
         [Serializable] class LSpawn { public float[] p; public float r; }
@@ -92,6 +92,10 @@ namespace Piranesi.EditorTools
             // v2
             public LSeat[] seats; public LBoat[] boats; public LCrab[] crabs; public LDolphins dolphins; public LVariant[] variants;
             public LWade wade; public LSlide slide;
+            // v3 (see HouseBuilderV3.cs)
+            public LPalette[] palette; public LTeleport[] teleports; public LRide[] rides; public LDeadEnd[] deadends; public LQuest[] quests;
+            public LFlood[] floods; public LOffering[] offerings; public LQuestUi questUi; public LStorm storm;
+            public float[] house_bounds; public LCalm[] calm; public LPlatform[] platforms;
         }
         // flattened material manifest (gen/manifest_u.py)
         [Serializable] class MEntry
@@ -116,6 +120,7 @@ namespace Piranesi.EditorTools
         [MenuItem("Piranesi/Build House", priority = 0)]
         public static void BuildHouse()
         {
+            HouseReview.BuildStarted();
             try
             {
                 Progress("Preparing project", 0.02f);
@@ -140,6 +145,7 @@ namespace Piranesi.EditorTools
                 FrameSpawn(layout);
                 SessionState.EraseInt(RetryKey);
                 Debug.Log("[Piranesi] The House is built. Open Piranesi > Time, Season & Tide Preview to explore lighting states.");
+                HouseReview.BuildFinished("ok");
             }
             catch (InvalidOperationException e) when (e.Message.Contains("outdated script version") || e.Message.Contains("compiled"))
             {
@@ -148,6 +154,7 @@ namespace Piranesi.EditorTools
             catch (Exception e)
             {
                 Debug.LogError("[Piranesi] Build failed: " + e);
+                HouseReview.BuildFinished("failed: " + e.Message);
                 throw;
             }
             finally { EditorUtility.ClearProgressBar(); }
@@ -233,6 +240,15 @@ namespace Piranesi.EditorTools
                 if (normal && ti.textureType != TextureImporterType.NormalMap) { ti.textureType = TextureImporterType.NormalMap; changed = true; }
                 if (!normal && ti.textureType != TextureImporterType.Default) { ti.textureType = TextureImporterType.Default; changed = true; }
                 if (linear && ti.sRGBTexture) { ti.sRGBTexture = false; changed = true; }
+                if (n == "HandMenu_Card")
+                {
+                    // keep the QR codes crisp: no power-of-two squash, no blurring compression
+                    if (ti.npotScale != TextureImporterNPOTScale.None) { ti.npotScale = TextureImporterNPOTScale.None; changed = true; }
+                    if (ti.wrapMode != TextureWrapMode.Clamp) { ti.wrapMode = TextureWrapMode.Clamp; changed = true; }
+                    if (ti.textureCompression != TextureImporterCompression.Uncompressed) { ti.textureCompression = TextureImporterCompression.Uncompressed; ti.SaveAndReimport(); }
+                    else if (changed) ti.SaveAndReimport();
+                    continue;
+                }
                 if (n == "ParticleAtlas")
                 {
                     if (!ti.alphaIsTransparency) { ti.alphaIsTransparency = true; changed = true; }
@@ -303,7 +319,9 @@ namespace Piranesi.EditorTools
 
         // ------------------------------------------------------------------ Udon
         static readonly Type[] UdonTypes = { typeof(HouseClock), typeof(HouseFootsteps), typeof(HouseSeat), typeof(HouseBoat),
-                                             typeof(HouseSlide), typeof(HouseCrabs), typeof(HouseDolphins), typeof(HouseSpinner) };
+                                             typeof(HouseSlide), typeof(HouseCrabs), typeof(HouseDolphins), typeof(HouseSpinner), typeof(HouseHandMenu),
+                                             typeof(HouseTeleport), typeof(HouseFlood), typeof(HouseOffering), typeof(HouseStorm), typeof(HouseStormLink),
+                                             typeof(HouseQuest), typeof(HouseQuestLink) };
 
         /// <returns>true if program assets were just created (they compile asynchronously)</returns>
         static bool EnsureUdonPrograms()
@@ -367,8 +385,12 @@ namespace Piranesi.EditorTools
             }
             dict["__Shaft"] = new MeshEntry { mesh = SaveMesh(MakeShaftMesh(), "__Shaft"), subs = new[] { "Shaft" } };
             dict["__Quad"] = new MeshEntry { mesh = SaveMesh(MakeQuad(), "__Quad"), subs = new[] { "Glow" } };
-            dict["__OceanNear"] = new MeshEntry { mesh = SaveMesh(MakeOceanNear(360f, 1.5f), "__OceanNear"), subs = new[] { "Ocean" } };
-            dict["__OceanFar"] = new MeshEntry { mesh = SaveMesh(MakeOceanFar(360f, 1.5f), "__OceanFar"), subs = new[] { "Ocean" } };
+            dict["__Flame"] = new MeshEntry { mesh = SaveMesh(MakeFlame(), "__Flame"), subs = new[] { "Fire" } };
+            dict["__Card"] = new MeshEntry { mesh = SaveMesh(MakeCard(), "__Card"), subs = new[] { "Card" } };
+            // v3: the far wings reach 650 m out, so the detailed sea is larger (the far rings carry on to the horizon)
+            dict["__OceanNear"] = new MeshEntry { mesh = SaveMesh(MakeOceanNear(640f, 2f), "__OceanNear"), subs = new[] { "Ocean" } };
+            dict["__OceanFar"] = new MeshEntry { mesh = SaveMesh(MakeOceanFar(640f, 2f), "__OceanFar"), subs = new[] { "Ocean" } };
+            BuildV3Meshes(dict);
             AssetDatabase.SaveAssets();
             return dict;
         }
@@ -464,6 +486,35 @@ namespace Piranesi.EditorTools
             m.uv = new[] { new Vector2(0, 0), new Vector2(1, 0), new Vector2(1, 1), new Vector2(0, 1) };
             m.triangles = new[] { 0, 2, 1, 0, 3, 2 };
             m.bounds = new Bounds(Vector3.zero, Vector3.one * 3);
+            return m;
+        }
+
+        static Mesh MakeFlame()
+        {
+            // three vertical cards crossed at 60 degrees, 0.34 wide, 0.62 tall, base at y = 0
+            var v = new List<Vector3>(); var uv = new List<Vector2>(); var t = new List<int>();
+            for (int k = 0; k < 3; k++)
+            {
+                float a = k * Mathf.PI / 3f; var d = new Vector3(Mathf.Cos(a), 0, Mathf.Sin(a)) * 0.17f;
+                int b = v.Count;
+                v.Add(-d); v.Add(d); v.Add(d + Vector3.up * 0.62f); v.Add(-d + Vector3.up * 0.62f);
+                uv.Add(new Vector2(0, 0)); uv.Add(new Vector2(1, 0)); uv.Add(new Vector2(1, 1)); uv.Add(new Vector2(0, 1));
+                t.AddRange(new[] { b, b + 2, b + 1, b, b + 3, b + 2 });
+            }
+            var m = new Mesh(); m.SetVertices(v); m.SetUVs(0, uv); m.SetTriangles(t, 0);
+            m.bounds = new Bounds(new Vector3(0, 0.35f, 0), new Vector3(0.6f, 0.9f, 0.6f));
+            return m;
+        }
+
+        static Mesh MakeCard()
+        {
+            // unit card in the XY plane, facing -Z (toward the viewer the script turns it to)
+            var m = new Mesh();
+            m.vertices = new[] { new Vector3(-0.5f, -0.5f, 0), new Vector3(0.5f, -0.5f, 0), new Vector3(0.5f, 0.5f, 0), new Vector3(-0.5f, 0.5f, 0) };
+            m.uv = new[] { new Vector2(0, 0), new Vector2(1, 0), new Vector2(1, 1), new Vector2(0, 1) };
+            m.normals = new[] { Vector3.back, Vector3.back, Vector3.back, Vector3.back };
+            m.triangles = new[] { 0, 2, 1, 0, 3, 2 };
+            m.bounds = new Bounds(Vector3.zero, Vector3.one * 2);
             return m;
         }
 
@@ -577,6 +628,7 @@ namespace Piranesi.EditorTools
             d["Verde"] = StoneMat("M_Verde", "MarbleVerde", 1.5f, 1f, 0.3f, 0.6f, Color.white);
             d["Statue"] = StoneMat("M_Statue", "MarbleWhite", 1.6f, 0.85f, 0.25f, 1f, new Color(1f, 0.99f, 0.97f), 0.8f);
             d["Sand"] = StoneMat("M_Sand", "Sand", 4f, 1f, 1.2f, 0f, Color.white, 1.2f);
+            d["Sand"].SetFloat("_AntiTile", 1f);        // redlines 2: break up the sand ripple grid
             d["Gold"] = Mat("M_Gold", "Standard", m =>
             {
                 m.SetColor("_Color", new Color(1f, 0.77f, 0.4f)); m.SetFloat("_Metallic", 1f); m.SetFloat("_Glossiness", 0.72f); m.enableInstancing = true;
@@ -606,7 +658,10 @@ namespace Piranesi.EditorTools
             d["P_Mote"] = ParticleMat("M_P_Mote", 0, new Color(1f, 0.85f, 0.55f, 0.8f), true, 0f);
             d["P_Mist"] = ParticleMat("M_P_Mist", 0, new Color(0.9f, 0.95f, 1f, 0.07f), false, 0.8f);
             d["P_Drop"] = ParticleMat("M_P_Drop", 3, new Color(0.85f, 0.95f, 1f, 0.7f), false, 0.7f);
+            d["Fire"] = Mat("M_Fire", "Piranesi/Fire", m => { m.SetTexture("_NoiseTex", Tex("Noise")); m.enableInstancing = true; });
+            d["Card"] = Mat("M_HandMenuCard", "Piranesi/Card", m => { m.SetTexture("_MainTex", Tex("HandMenu_Card")); m.SetFloat("_Fade", 1f); });
             d["Default"] = d["Marble"];
+            BuildV3Materials(d);
             AssetDatabase.SaveAssets();
             return d;
         }
@@ -668,6 +723,23 @@ namespace Piranesi.EditorTools
                         m.SetTexture("_Normal0", Tex("Water_Normal0")); m.SetTexture("_NoiseTex", Tex("Noise"));
                         m.SetColor("_Color", new Color(0.55f, 0.85f, 0.9f, 0.72f));
                         m.enableInstancing = true;
+                    });
+                case "pool":       // v3: still basin water (fountain pools): slow drift, little foam
+                    return Mat(name, "Piranesi/WaterFlow", m =>
+                    {
+                        m.SetTexture("_Normal0", Tex("Water_Normal0")); m.SetTexture("_NoiseTex", Tex("Noise"));
+                        m.SetColor("_Color", new Color(0.42f, 0.78f, 0.82f, 0.62f));
+                        m.SetFloat("_Speed", 0.25f); m.SetVector("_Tiling", new Vector4(0.6f, 0.45f, 0, 0)); m.SetFloat("_Foam", 0.12f);
+                        m.renderQueue = 2990;
+                        m.enableInstancing = true;
+                    });
+                case "thread":     // v3: Ariadne's golden thread
+                    return Mat(name, "Piranesi/Thread", m => { m.enableInstancing = true; });
+                case "fish":       // v3: GPU-animated fish schools
+                    return Mat(name, "Piranesi/Fish", m =>
+                    {
+                        m.SetFloat("_Speed", e.wind > 0 ? e.wind : 0.25f); m.SetTexture("_Caustics", Tex("Caustics"));
+                        m.enableInstancing = false;
                     });
                 default:
                     return Mat(name, "Piranesi/Prop", m =>
@@ -732,6 +804,8 @@ namespace Piranesi.EditorTools
             variants = (L.variants ?? new LVariant[0]).Where(v => v != null && !string.IsNullOrEmpty(v.name)).ToDictionary(v => v.name, v => v);
             Material MatFor(string n, string mv = null)
             {
+                // v3: the colour key: neon rings, painted pole bands and floater tubes take their road's neon
+                if (!string.IsNullOrEmpty(mv) && (n == "Neon" || n == "RideTube_Tube") && neonMats.TryGetValue(mv, out var nm)) return nm;
                 if (mats.TryGetValue(n, out var m)) return m;
                 if (subMats.TryGetValue(n, out var pm))
                     return !string.IsNullOrEmpty(mv) && subEntries[n].shader == "coral" ? VariantMat(n, pm, mv) : pm;
@@ -742,18 +816,30 @@ namespace Piranesi.EditorTools
             var tProps = Child(root, "Islands & Props").transform;
             var tReef = Child(root, "Coral Reefs").transform;
             var tIvy = Child(root, "Ivy").transform;
+            // v3: everything along one road (gate, isle, building, painted poles, far bar, far hall, far wing) under that road
+            var tRoads = Child(root, "Roads (gate to far hall, one colour each)").transform;
+            var roadT = new Dictionary<string, Transform>();
+            Transform RoadT(string g)
+            {
+                if (string.IsNullOrEmpty(g)) return null;
+                if (!roadT.TryGetValue(g, out var t)) { t = Child(tRoads, g).transform; roadT[g] = t; }
+                return t;
+            }
+            named.Clear();
 
             // ---- architecture & props
             int count = 0;
+            var floaters = new List<Transform>(); var floatOffsets = new List<float>();
             foreach (var o in L.objects)
             {
                 if (++count % 25 == 0) Progress("Placing " + o.name, 0.4f + 0.2f * count / L.objects.Length);
                 bool isIvy = !string.IsNullOrEmpty(o.mesh) && o.mesh.StartsWith("Ivy_");
                 meshes.TryGetValue(o.mesh ?? "", out var me);
                 bool isProp = me != null && IsManifestMesh(me);
-                Transform parent = o.tag == "reef" ? tReef : isIvy ? tIvy : isProp || (o.mesh ?? "").StartsWith("Isle_") ? tProps : tArch;
+                Transform parent = RoadT(o.group) ?? (o.tag == "reef" ? tReef : isIvy ? tIvy : isProp || (o.mesh ?? "").StartsWith("Isle_") ? tProps : tArch);
                 var go = new GameObject(o.name);
                 go.transform.SetParent(parent, false);
+                Register(go);
                 go.transform.position = V(o.p);
                 go.transform.rotation = o.e != null && o.e.Length == 3 ? Quaternion.Euler(o.e[0], o.e[1], o.e[2]) : Quaternion.Euler(o.lie ? 90f : 0f, o.r, 0f);
                 go.transform.localScale = o.s != null && o.s.Length == 3 ? V(o.s) : Vector3.one;
@@ -784,7 +870,8 @@ namespace Piranesi.EditorTools
                     renderers.Add(mr);
                 }
                 bool distant = o.mesh.StartsWith("Wing") || o.mesh.StartsWith("Seabed");
-                bool water = o.mesh == "Cascade" || o.mesh == "AqueductWater" || o.mesh == "SlideWater";
+                bool water = o.mesh == "Cascade" || o.mesh.EndsWith("Water") || o.mesh.EndsWith("Pool");
+                if (o.floats) { floaters.Add(go.transform); floatOffsets.Add(o.fy); }
                 foreach (var r in renderers)
                 {
                     if (distant || water || o.noshadow || o.mesh.StartsWith("Isle_")) r.shadowCastingMode = ShadowCastingMode.Off;
@@ -792,6 +879,7 @@ namespace Piranesi.EditorTools
                     if (o.stat && !water && o.mesh != "Lantern")
                         GameObjectUtility.SetStaticEditorFlags(r.gameObject, distant ? StaticEditorFlags.ReflectionProbeStatic : (isIvy || isProp) ? propFlags : archFlags);
                 }
+                if (o.hide) foreach (var r in renderers) r.enabled = false;   // redlines 2: collider only (e.g. the Colossus climb ledges)
                 if (water) go.layer = WaterLayer;
                 var bnd = me.mesh.bounds;
                 switch (o.col)
@@ -824,15 +912,19 @@ namespace Piranesi.EditorTools
                 meshes.TryGetValue(s.mesh + "_LOD1", out var m1);
                 string label = string.IsNullOrEmpty(s.role) ? s.mesh : s.role;
                 var go = new GameObject("Statue - " + label);
-                go.transform.SetParent(tStat, false);
+                go.transform.SetParent(RoadT(s.group) ?? tStat, false);
                 go.transform.position = V(s.p);
                 go.transform.rotation = Quaternion.Euler(0, s.r, 0);
                 go.transform.localScale = Vector3.one * (s.s <= 0 ? 1f : s.s);
-                var r0 = MakeRenderer(go.transform, "LOD0", m0.mesh, mats["Statue"]);
+                // scanned statues (PMS2 + manifest) carry their own baked marble, normal and occlusion maps
+                bool scanned = IsManifestMesh(m0);
+                var r0 = scanned ? MakeRendererMulti(go.transform, "LOD0", m0.mesh, m0.subs.Select(sb => MatFor(sb)).ToArray())
+                                 : MakeRenderer(go.transform, "LOD0", m0.mesh, mats["Statue"]);
                 var lods = new List<LOD> { new LOD(0.16f, new Renderer[] { r0 }) };
                 if (m1 != null)
                 {
-                    var r1 = MakeRenderer(go.transform, "LOD1", m1.mesh, mats["Statue"]);
+                    var r1 = scanned && IsManifestMesh(m1) ? MakeRendererMulti(go.transform, "LOD1", m1.mesh, m1.subs.Select(sb => MatFor(sb)).ToArray())
+                                                           : MakeRenderer(go.transform, "LOD1", m1.mesh, mats["Statue"]);
                     lods.Add(new LOD(0.012f, new Renderer[] { r1 }));
                 }
                 var lg = go.AddComponent<LODGroup>();
@@ -861,7 +953,7 @@ namespace Piranesi.EditorTools
                 if (l.kind == "spot")
                 {
                     // the light from the oculus that always falls on the Colossus' palm
-                    var sg = Child(tLight, "Oculus Spotlight (Colossus palm)");
+                    var sg = Child(tLight, string.IsNullOrEmpty(l.name) ? "Oculus Spotlight (Colossus palm)" : l.name);
                     sg.transform.position = V(l.p);
                     sg.transform.rotation = Quaternion.LookRotation(l.dir != null && l.dir.Length == 3 ? V(l.dir) : Vector3.down);
                     var sl = sg.AddComponent<Light>();
@@ -871,8 +963,20 @@ namespace Piranesi.EditorTools
                     sl.lightmapBakeType = LightmapBakeType.Realtime; sl.bounceIntensity = 0f;
                     continue;
                 }
-                var go = Child(tLight, "Lantern Light");
+                var go = Child(tLight, l.kind == "torch" ? "Torch Light" : "Lantern Light");
                 go.transform.position = V(l.p);
+                if (l.kind == "torch")
+                {
+                    // gauntlet torch: crossed flame cards + embers; the light joins the lanterns (brighter at night)
+                    var fl = Child(go.transform, "Flame");
+                    fl.layer = WaterLayer;
+                    fl.transform.localPosition = new Vector3(0, -0.12f, 0);
+                    fl.AddComponent<MeshFilter>().sharedMesh = meshes["__Flame"].mesh;
+                    var frr = fl.AddComponent<MeshRenderer>();
+                    frr.sharedMaterial = mats["Fire"];
+                    frr.shadowCastingMode = ShadowCastingMode.Off; frr.receiveShadows = false;
+                    MakeEmbers(go.transform, V(l.p) + Vector3.up * 0.3f, mats["P_Mote"]);
+                }
                 var lt = go.AddComponent<Light>();
                 lt.type = LightType.Point;
                 lt.range = l.range;
@@ -934,6 +1038,9 @@ namespace Piranesi.EditorTools
                     case "sparkle":
                         MakeSparkle(tFx, pos, size, mats["P_Sparkle"]);
                         break;
+                    default:
+                        MakeV3Emitter(tFx, e.kind, pos, size, e.fall, e.rot, mats);
+                        break;
                 }
             }
 
@@ -993,7 +1100,7 @@ namespace Piranesi.EditorTools
                 rp.mode = ReflectionProbeMode.Custom;
                 rp.boxProjection = true;
                 rp.size = V(p.size);
-                rp.resolution = 256; rp.hdr = true; rp.importance = 1; rp.blendDistance = 3f;
+                rp.resolution = p.res > 0 ? p.res : 128; rp.hdr = true; rp.importance = 1; rp.blendDistance = 3f;
                 rp.cullingMask = ~(1 << WaterLayer);
                 rp.nearClipPlane = 0.3f; rp.farClipPlane = 600f;
             }
@@ -1073,8 +1180,26 @@ namespace Piranesi.EditorTools
             clock.footsteps = steps;
             clock.boats = v2.boats;
             clock.dolphins = v2.dolphins;
+            clock.floaters = floaters.ToArray();
+            clock.floatOffsets = floatOffsets.ToArray();
             SetPalettes(clock);
             UdonSharpEditorUtility.CopyProxyToUdon(clock);
+
+            // ---- v3: wrist menu (local only): Piranesi on Audible + buy the book, as QR codes
+            var menuGo = Child(tSys, "Hand Menu (Piranesi on Audible, buy the book)");
+            var cardGo = Child(menuGo.transform, "Card");
+            cardGo.AddComponent<MeshFilter>().sharedMesh = meshes["__Card"].mesh;
+            var cardR = cardGo.AddComponent<MeshRenderer>();
+            cardR.sharedMaterial = mats["Card"];
+            cardR.shadowCastingMode = ShadowCastingMode.Off; cardR.receiveShadows = false;
+            cardGo.transform.localScale = new Vector3(0.16f, 0.2f, 1f);
+            var menu = AddUdon<HouseHandMenu>(menuGo);
+            menu.card = cardGo.transform;
+            UdonSharpEditorUtility.CopyProxyToUdon(menu);
+            cardGo.SetActive(false);
+
+            // ---- v3: roof floater tubes, the Climb vine, floods, offerings, Far Hall Quests, dead ends, the Stormscape
+            BuildV3Systems(L, meshes, mats, root, tSys, clock, world.transform, MatFor);
 
             HousePreviewWindow.ApplyState(HousePreviewWindow.Day, HousePreviewWindow.Season, HousePreviewWindow.Tide, false);
             EditorSceneManager.SaveScene(scene, ScenePath);
@@ -1329,6 +1454,27 @@ namespace Piranesi.EditorTools
             g.SetKeys(new[] { new GradientColorKey(Color.white, 0), new GradientColorKey(Color.white, 1) },
                       new[] { new GradientAlphaKey(0, 0), new GradientAlphaKey(1, 0.1f), new GradientAlphaKey(0.2f, 0.4f), new GradientAlphaKey(1, 0.6f), new GradientAlphaKey(0, 1) });
             var col = ps.colorOverLifetime; col.enabled = true; col.color = new ParticleSystem.MinMaxGradient(g);
+            ps.Play();
+        }
+
+        static void MakeEmbers(Transform parent, Vector3 pos, Material mat)
+        {
+            var ps = NewSystem(parent, "Embers", pos, mat, out var r);
+            r.maxParticleSize = 0.05f;
+            var main = ps.main;
+            main.loop = true; main.playOnAwake = true; main.prewarm = true; main.duration = 4f;
+            main.startLifetime = new ParticleSystem.MinMaxCurve(0.8f, 2.0f);
+            main.startSpeed = new ParticleSystem.MinMaxCurve(0.2f, 0.7f);
+            main.startSize = new ParticleSystem.MinMaxCurve(0.012f, 0.03f);
+            main.startColor = new ParticleSystem.MinMaxGradient(new Color(1f, 0.75f, 0.35f, 1f), new Color(1f, 0.45f, 0.15f, 1f));
+            main.simulationSpace = ParticleSystemSimulationSpace.World;
+            main.gravityModifier = -0.12f;
+            main.maxParticles = 60;
+            var em = ps.emission; em.rateOverTime = 9f;
+            var sh = ps.shape; sh.enabled = true; sh.shapeType = ParticleSystemShapeType.Cone; sh.angle = 18f; sh.radius = 0.06f;
+            sh.rotation = new Vector3(-90f, 0f, 0f);
+            var nz = ps.noise; nz.enabled = true; nz.strength = 0.25f; nz.frequency = 1.2f; nz.scrollSpeed = 0.6f;
+            var col = ps.colorOverLifetime; col.enabled = true; col.color = new ParticleSystem.MinMaxGradient(FadeGradient());
             ps.Play();
         }
 

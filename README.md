@@ -20,6 +20,17 @@ Built for PC VRChat (Unity 2022.3.22f1, VRChat Worlds SDK 3.10, UdonSharp).
   pouring from a high window, mica glints in the marble, bloom and ACES grading, reverb per hall.
 - **Sound:** marble, sand, and water footsteps, surf, wind in the oculi, the House's low drone.
 
+## What's new in v3 (2026-10-11)
+
+- **A 7×7 labyrinth**, the Cross of the Four Winds, with far halls, islands, reefs and a secret roof way.
+- **The Colossus is now a real statue:** a museum scan of Athena, weathered by the sea and 13.5 m tall. Climb the
+  invisible footholds around her and rest on her shoulder.
+- **New water lilies** with veined pads, white and pink flowers and buds.
+- **Calm water inside the House**, with waves only out at sea.
+
+Details and the to-do list: [docs/v3-status-20261011.md](docs/v3-status-20261011.md). The statue and ivy processes are
+recorded as the marble-carver and vine-bloomer tools in [Unity Unicorn](https://github.com/findastra/unity-unicorn).
+
 ## What's new in v2
 
 - **The Colossus:** a 13 m robed figure stands in the north-central hall with one enormous hand raised palm-up

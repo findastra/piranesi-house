@@ -19,6 +19,9 @@ Shader "Piranesi/Stone"
         _NoiseTex ("Noise", 2D) = "gray" {}
         _SnowAllowed ("Snow allowed", Range(0,1)) = 1
         _Blend ("Triplanar sharpness", Range(1,16)) = 8
+        _AntiTile ("Break up tiling (sand)", Range(0,1)) = 0
+        _TideStain ("High-tide stain", Range(0,1)) = 1
+        _HighTide ("High tide level (world y)", Float) = 0.85
     }
     SubShader
     {
@@ -33,7 +36,7 @@ Shader "Piranesi/Stone"
         #include "PiranesiCommon.cginc"
 
         sampler2D _MainTex, _BumpMap, _MaskTex, _Caustics, _NoiseTex;
-        float _Tile, _NormalScale, _Smoothness, _Metallic, _VertexAO, _Sparkle, _CausticStrength, _SnowAllowed, _Blend;
+        float _Tile, _NormalScale, _Smoothness, _Metallic, _VertexAO, _Sparkle, _CausticStrength, _SnowAllowed, _Blend, _AntiTile, _TideStain, _HighTide;
         fixed4 _Color;
 
         struct Input
@@ -82,6 +85,23 @@ Shader "Piranesi/Stone"
             half3 nX = UnpackScaleNormal(tex2D(_BumpMap, uvX), _NormalScale);
             half3 nY = UnpackScaleNormal(tex2D(_BumpMap, uvY), _NormalScale);
             half3 nZ = UnpackScaleNormal(tex2D(_BumpMap, uvZ), _NormalScale);
+            // ---- anti-tiling for big flat ground (sand): a second, rotated & rescaled sample of the top projection,
+            // blended in by low-frequency noise, so the ripple pattern never lines up into an obvious grid
+            float macro = 1.0;
+            if (_AntiTile > 0.001)
+            {
+                float2 r1 = float2(0.8090, 0.5878);                       // 36 degrees
+                float2 uv2 = float2(dot(uvY, r1), dot(uvY, float2(-r1.y, r1.x))) * 0.61 + float2(0.37, 0.71);
+                float nb = tex2D(_NoiseTex, wp.xz * 0.013).r;
+                float nb2 = tex2D(_NoiseTex, wp.xz * 0.0041 + 0.5).r;
+                float w2 = smoothstep(0.35, 0.65, nb) * _AntiTile;
+                cY = lerp(cY, tex2D(_MainTex, uv2), w2);
+                mY = lerp(mY, tex2D(_MaskTex, uv2), w2);
+                half3 n2 = UnpackScaleNormal(tex2D(_BumpMap, uv2), _NormalScale);
+                nY = normalize(lerp(nY, n2, w2));
+                nY.xy *= lerp(1.0, 0.55 + nb2 * 0.6, _AntiTile);      // ripples fade in and out across the beach
+                macro = lerp(1.0, 0.9 + 0.2 * nb2, _AntiTile);
+            }
             nX.x *= axisSign.x; nY.x *= axisSign.y; nZ.x *= -axisSign.z;
             // whiteout blend
             nX = half3(nX.xy + wn.zy, abs(nX.z) * wn.x);
@@ -89,7 +109,7 @@ Shader "Piranesi/Stone"
             nZ = half3(nZ.xy + wn.xy, abs(nZ.z) * wn.z);
             float3 nW = normalize(nX.zyx * bw.x + nY.xzy * bw.y + nZ.xyz * bw.z);
 
-            fixed3 albedo = (cX.rgb * bw.x + cY.rgb * bw.y + cZ.rgb * bw.z) * _Color.rgb;
+            fixed3 albedo = (cX.rgb * bw.x + cY.rgb * bw.y + cZ.rgb * bw.z) * _Color.rgb * macro;
             fixed4 mask = mX * bw.x + mY * bw.y + mZ * bw.z;
             float smooth = saturate(mask.r * _Smoothness);
             float vao = lerp(1.0, IN.color.r, _VertexAO);
@@ -104,6 +124,21 @@ Shader "Piranesi/Stone"
             smooth = lerp(smooth, 0.94, wetAmt);
             // faint tide-line staining
             albedo *= 1.0 - 0.06 * saturate(1.0 - abs(_UdonWetLine - wp.y) * 8.0) * (1.0 - under);
+            // ---- the high-tide mark: a permanent band of weed and salt on every wall the sea reaches
+            // (dark green-brown below the mark, a crisp scum line at it, salt bloom just above), on upright faces only
+            {
+                float upright = saturate(1.6 - abs(wn.y) * 2.0);
+                float nt = tex2D(_NoiseTex, float2(wp.x + wp.z, wp.y) * 0.9).r;
+                float ht = _HighTide + (nt - 0.5) * 0.1;
+                float below = smoothstep(ht + 0.02, ht - 0.25, wp.y) * smoothstep(-2.5, -0.4, wp.y);
+                float line_ = saturate(1.0 - abs(wp.y - ht) * 22.0);
+                float salt = saturate(1.0 - (wp.y - ht) * 4.0) * step(ht, wp.y);
+                float st = _TideStain * upright;
+                albedo = lerp(albedo, albedo * float3(0.55, 0.63, 0.47), below * 0.75 * st);
+                albedo *= 1.0 - line_ * 0.35 * st;
+                albedo = lerp(albedo, albedo * 0.9 + 0.1, salt * 0.25 * st * (1.0 - under));
+                smooth = lerp(smooth, smooth * 0.55, below * st * (1.0 - wetAmt));
+            }
 
             // ---- winter: frost everywhere upward, real snow outdoors / under oculi
             float up = saturate((nW.y - 0.5) * 3.0);

@@ -21,6 +21,55 @@ Shader "Piranesi/Ocean"
         _WaveD ("Wave D", Vector) = (0.9, -0.4, 0.08, 7.5)
         _HouseHalf ("House half size (m)", Float) = 73
         _InsideAmp ("Wave amplitude inside", Range(0,1)) = 0.04
+        // calm water round the buildings out on the sea (far halls, wings, isle halls, the camp): rotated boxes
+        [HideInInspector] _CalmA0 ("Calm zone 0 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB0 ("Calm zone 0 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA1 ("Calm zone 1 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB1 ("Calm zone 1 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA2 ("Calm zone 2 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB2 ("Calm zone 2 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA3 ("Calm zone 3 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB3 ("Calm zone 3 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA4 ("Calm zone 4 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB4 ("Calm zone 4 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA5 ("Calm zone 5 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB5 ("Calm zone 5 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA6 ("Calm zone 6 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB6 ("Calm zone 6 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA7 ("Calm zone 7 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB7 ("Calm zone 7 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA8 ("Calm zone 8 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB8 ("Calm zone 8 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA9 ("Calm zone 9 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB9 ("Calm zone 9 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA10 ("Calm zone 10 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB10 ("Calm zone 10 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA11 ("Calm zone 11 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB11 ("Calm zone 11 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA12 ("Calm zone 12 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB12 ("Calm zone 12 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA13 ("Calm zone 13 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB13 ("Calm zone 13 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA14 ("Calm zone 14 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB14 ("Calm zone 14 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA15 ("Calm zone 15 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB15 ("Calm zone 15 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA16 ("Calm zone 16 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB16 ("Calm zone 16 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA17 ("Calm zone 17 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB17 ("Calm zone 17 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA18 ("Calm zone 18 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB18 ("Calm zone 18 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA19 ("Calm zone 19 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB19 ("Calm zone 19 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA20 ("Calm zone 20 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB20 ("Calm zone 20 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA21 ("Calm zone 21 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB21 ("Calm zone 21 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA22 ("Calm zone 22 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB22 ("Calm zone 22 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
+        [HideInInspector] _CalmA23 ("Calm zone 23 (centre xz, cos, sin)", Vector) = (0, 0, 1, 0)
+        [HideInInspector] _CalmB23 ("Calm zone 23 (half x, half z, falloff)", Vector) = (0, 0, 0, 0)
     }
     SubShader
     {
@@ -48,6 +97,44 @@ Shader "Piranesi/Ocean"
             UNITY_DECLARE_SCREENSPACE_TEXTURE(_PiranesiWaterGrab);
             UNITY_DECLARE_DEPTH_TEXTURE(_CameraDepthTexture);
             float _Tile0, _Tile1, _DetailStrength, _InsideDetail, _Scatter, _Refraction, _FoamDist, _HouseHalf, _InsideAmp;
+            float4 _CalmA0, _CalmB0, _CalmA1, _CalmB1, _CalmA2, _CalmB2, _CalmA3, _CalmB3, _CalmA4, _CalmB4, _CalmA5, _CalmB5, _CalmA6, _CalmB6, _CalmA7, _CalmB7, _CalmA8, _CalmB8, _CalmA9, _CalmB9, _CalmA10, _CalmB10, _CalmA11, _CalmB11, _CalmA12, _CalmB12, _CalmA13, _CalmB13, _CalmA14, _CalmB14, _CalmA15, _CalmB15, _CalmA16, _CalmB16, _CalmA17, _CalmB17, _CalmA18, _CalmB18, _CalmA19, _CalmB19, _CalmA20, _CalmB20, _CalmA21, _CalmB21, _CalmA22, _CalmB22, _CalmA23, _CalmB23;
+            // 1 inside a calm box (and its pad), falling to 0 over b.z metres outside it
+            float CalmBox(float2 p, float4 a, float4 b)
+            {
+                float2 d = p - a.xy;
+                float2 l = float2(d.x * a.z - d.y * a.w, d.x * a.w + d.y * a.z);
+                float dist = length(max(abs(l) - b.xy, 0.0));
+                return step(1e-4, b.z) * saturate(1.0 - dist / max(b.z, 1e-3));
+            }
+            float CalmZones(float2 p)
+            {
+                float c = 0;
+                c = max(c, CalmBox(p, _CalmA0, _CalmB0));
+                c = max(c, CalmBox(p, _CalmA1, _CalmB1));
+                c = max(c, CalmBox(p, _CalmA2, _CalmB2));
+                c = max(c, CalmBox(p, _CalmA3, _CalmB3));
+                c = max(c, CalmBox(p, _CalmA4, _CalmB4));
+                c = max(c, CalmBox(p, _CalmA5, _CalmB5));
+                c = max(c, CalmBox(p, _CalmA6, _CalmB6));
+                c = max(c, CalmBox(p, _CalmA7, _CalmB7));
+                c = max(c, CalmBox(p, _CalmA8, _CalmB8));
+                c = max(c, CalmBox(p, _CalmA9, _CalmB9));
+                c = max(c, CalmBox(p, _CalmA10, _CalmB10));
+                c = max(c, CalmBox(p, _CalmA11, _CalmB11));
+                c = max(c, CalmBox(p, _CalmA12, _CalmB12));
+                c = max(c, CalmBox(p, _CalmA13, _CalmB13));
+                c = max(c, CalmBox(p, _CalmA14, _CalmB14));
+                c = max(c, CalmBox(p, _CalmA15, _CalmB15));
+                c = max(c, CalmBox(p, _CalmA16, _CalmB16));
+                c = max(c, CalmBox(p, _CalmA17, _CalmB17));
+                c = max(c, CalmBox(p, _CalmA18, _CalmB18));
+                c = max(c, CalmBox(p, _CalmA19, _CalmB19));
+                c = max(c, CalmBox(p, _CalmA20, _CalmB20));
+                c = max(c, CalmBox(p, _CalmA21, _CalmB21));
+                c = max(c, CalmBox(p, _CalmA22, _CalmB22));
+                c = max(c, CalmBox(p, _CalmA23, _CalmB23));
+                return c;
+            }
             float4 _Absorption, _WaveA, _WaveB, _WaveC, _WaveD;
 
             struct appdata { float4 vertex : POSITION; UNITY_VERTEX_INPUT_INSTANCE_ID };
@@ -85,7 +172,7 @@ Shader "Piranesi/Ocean"
                 UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
                 float3 wp = mul(unity_ObjectToWorld, v.vertex).xyz;
                 float edge = max(abs(wp.x), abs(wp.z));
-                float inside = 1.0 - saturate((edge - _HouseHalf) / 25.0);
+                float inside = max(1.0 - saturate((edge - _HouseHalf) / 25.0), CalmZones(wp.xz));
                 float far = saturate((length(wp.xz) - 600.0) / 900.0);
                 float amp = lerp(1.0, _InsideAmp, inside) * (1.0 - far);
                 float3 t = float3(1, 0, 0), b = float3(0, 0, 1);
