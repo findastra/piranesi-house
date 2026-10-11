@@ -58,13 +58,19 @@ Built for PC VRChat (Unity 2022.3.22f1, VRChat Worlds SDK 3.10, UdonSharp).
 4. Press Play (ClientSim) to walk around, or use the VRChat SDK panel to build and test.
 5. Optional: **Piranesi ▸ Bake Occlusion Culling** before uploading.
 
+## Masonry audit and repairs
+
+The [2026-10-11 masonry audit](docs/masonry-structural-audit-20261011.md) documents repairs to directional courses, arch openings, overlapping surfaces and texture seams. The reusable checker and execution-history library live in [Unity Unicorn](https://github.com/findastra/unity-unicorn).
+
+For an existing assembled scene, **Piranesi ▸ Refresh Masonry and Capture Audit** updates its existing masonry mesh assets in place and captures inspection views without rebuilding the scene layout. It writes a dated validation report and a Unity Unicorn usage receipt to an ignored local audit folder. The receipt records the actual completion time; it does not certify a VRChat client test.
+
 ## Layout
 
 ```
 Assets/Piranesi/
   Scripts/     HouseClock (day, seasons, tide, sky, fog, snow, particles), HouseFootsteps,
                HouseSeat, HouseBoat, HouseSlide, HouseCrabs, HouseDolphins, HouseSpinner
-  Shaders/     Stone (triplanar marble + caustics + snow), Ocean, Sky, LightShaft, Particle,
+  Shaders/     Stone (surface-mapped masonry / triplanar marble + caustics + snow), Ocean, Sky, LightShaft, Particle,
                Prop, Foliage, Coral, WaterFlow, Glass, …
   Imported/    scanned props and their packed textures (Albedo / Normal / Mask)
   Editor/      HouseBuilder (Build House), HousePreviewWindow

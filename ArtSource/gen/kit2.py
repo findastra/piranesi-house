@@ -1,6 +1,6 @@
 """House v2 kit: window-seat walls, islands + seabed, Venetian long canoe, hammock, garden table, docks,
 aqueduct + noria + pump house, stair tower with helical stair, and the water slide (flume + ride spline).
-Stone parts export as PMS1 (triplanar shaders); UV-textured parts export as PMS2 with manifest entries."""
+Stone parts export as PMS2 with authored metric masonry UVs; textured props use PMS2 with manifest entries."""
 import os, sys, json, math, numpy as np
 from math import pi, sin, cos, sqrt
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -77,7 +77,7 @@ def vest_side_window():
     pts = [(rw * cos(t), zw + rw * sin(t)) for t in th]; n = len(pts)
     Vc = [(p[0], 9.9, p[1]) for p in pts] + [(p[0], 12.1, p[1]) for p in pts]
     Fc = [tuple(range(n - 1, -1, -1)), tuple(range(n, 2 * n))] + [(i, (i + 1) % n, (i + 1) % n + n, i + n) for i in range(n)]
-    cuts.append(K.obj_from(Vc, Fc, 'Wall', name='lun'))
+    cuts.append(K.round_prism_uv(K.obj_from(Vc, Fc, 'Wall', name='lun'), 0, zw))
     K.boolean(wall, cuts)
     parts = [wall]
     parts.append(K.arch_molding(8, 7.2, 0, 10.0, 0.25, 0.5, m='Marble', name='av', legs_to=0.55))
@@ -130,8 +130,8 @@ def arcade_window():
             parts.append(bx(4.6, 5.0, yp - 0.45, yp + 0.45, 0.9, 8.5, 'Stone', 'pil'))
             parts.append(bx(4.45, 5.0, yp - 0.6, yp + 0.6, 8.5, 8.85, 'Stone', 'pilcap'))
         for yc in bays:
-            mo = K.arch_molding(2.4, 4.2, 0, 0.0, 0.12, 0.22, m='Stone', name='nm', legs_to=0.9)
-            mo.rotation_euler.z = (pi / 2 if sx > 0 else -pi / 2); mo.location = (5.0 * sx, yc, 0)
+            mo = K.arch_molding(2.4, 4.2, 0, 0.0, 0.12, 0.22, m='Stone', name='nm', legs_to=0.9, bury_back=0.004)
+            mo.rotation_euler.z = (-pi / 2 if sx > 0 else pi / 2); mo.location = (5.0 * sx, yc, 0)
             with bpy.context.temp_override(active_object=mo, selected_editable_objects=[mo], object=mo):
                 bpy.ops.object.transform_apply(location=True, rotation=True)
             parts.append(mo)
@@ -145,6 +145,7 @@ def arcade_window():
         parts.append(bx(4.4, 5.0, -18, 18, 8.85, 9.3, 'Stone', 'cornice'))
     ribs = [(-13.5, 0.9), (-4.5, 0.9), (4.5, 0.9), (13.5, 0.9)]
     parts.append(K.barrel_vault(5.0, 9.3, -18, 18, 'Wall', coffer=False, ribs=ribs, sky_holes=[(-9.0, 0.8), (9.0, 0.8)], base_step=0.3, name='vault'))
+    K.trim_hidden_gallery_ends(parts)
     parts += K.end_caps(7, 15.5)
     ob = K.join(parts, 'Arcade_Win')
     export_stone(ob, 'Arcade_Win')
@@ -368,8 +369,18 @@ def make_aqueduct(L=29.0):
     for b in range(bays):
         yc = (b + 0.5) * bw
         cuts.append(K.arch_prism(bw - 2.2, 6.5, yc, -W, W, z0=-6, axis='y', name='a1'))
-        cuts.append(K.arch_prism(bw - 3.2, 12.6, yc, -W, W, z0=9.5, axis='y', name='a2'))
+        # Let the 9.5 m course supply the sill. Bury the Boolean sill 4 mm
+        # below it so the two upward faces cannot draw in the same plane.
+        cuts.append(K.arch_prism(bw - 3.2, 12.6, yc, -W, W, z0=9.496, axis='y', name='a2'))
     K.boolean(body, cuts); parts.append(body)
+    for b in range(bays):
+        yc = (b + 0.5) * bw
+        for sx in (-1, 1):
+            # The lower ring ends below the existing 9.2 m string course.
+            parts.append(K.masonry_surround(bw - 2.2, 6.5, yc, sx * W / 2, axis='y',
+                                           outward=sx, legs_to=-6, thick=0.16, name='lower_voussoirs'))
+            parts.append(K.masonry_surround(bw - 3.2, 12.6, yc, sx * W / 2, axis='y',
+                                           outward=sx, legs_to=9.5, thick=0.35, name='upper_voussoirs'))
     # channel walls on top + string courses
     parts.append(K.box(-W / 2 - 0.15, -W / 2 + 0.35, 0, L, 17.0, 18.0, 'Stone', 'cw1'))
     parts.append(K.box(W / 2 - 0.35, W / 2 + 0.15, 0, L, 17.0, 18.0, 'Stone', 'cw2'))
@@ -447,6 +458,7 @@ def make_noria(axle_h=8.2):
     ph = K.box(-3.0, 3.0, -4.0, 4.0, -1.0, 6.0, 'Wall', 'house')
     K.boolean(ph, [K.arch_prism(1.8, 2.6, 0, -3.1, -2.4, z0=0.0, axis='y', name='door'), K.box(-2.4, 2.4, -3.4, 3.4, 0.0, 5.4, 'Wall', 'room')])
     parts = [ph, K.box(-3.3, 3.3, -4.3, 4.3, 6.0, 6.5, 'Marble', 'roof'), K.box(-2.4, 2.4, -3.4, 3.4, -0.05, 0.05, 'Floor', 'floor')]
+    parts.append(K.masonry_surround(1.8, 2.6, 0, -3, axis='y', outward=-1, thick=0.22, name='door_voussoirs'))
     for sy in (-1, 1):
         parts.append(K.box(-3.15, -2.95, sy * 1.6 - 0.12, sy * 1.6 + 0.12, 0.0, 6.0, 'Marble', 'pil'))
     ob = K.join(parts, 'PumpHouse'); export_stone(ob, 'PumpHouse')
@@ -471,6 +483,7 @@ def make_tower():
     cuts.append(K.box(-1.1, 4.15, 2.2, 9.2, H - 1.0, H + 0.2, 'Wall', 'hatch'))
     K.boolean(shell, cuts)
     parts.append(shell)
+    parts.append(K.masonry_surround(3.0, 2.6, 0, 0, thick=0.3, name='door_voussoirs'))
     # helical stair
     steps = 137; rise = H / steps; dA = 2 * pi / 30
     for i in range(steps):

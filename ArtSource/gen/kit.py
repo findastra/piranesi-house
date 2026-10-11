@@ -13,6 +13,7 @@ OUT_MESH = os.path.join(HERE, '..', 'out', 'Meshes')
 OUT_BLEND = os.path.join(HERE, '..', 'out', 'Blender')
 os.makedirs(OUT_MESH, exist_ok=True); os.makedirs(OUT_BLEND, exist_ok=True)
 rng = np.random.default_rng(42)
+BOOLEAN_WINDING_FIXES = []
 
 # ------------------------------------------------------------------ scene reset
 bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -38,11 +39,36 @@ def mat(name):
                 bsdf.inputs['Emission Strength'].default_value = 8
     return m
 
-def obj_from(verts, faces, matname, smooth=False, ao=None, name='part', sharp_angle=40):
+def metric_uvs(me, per_face=None):
+    """Author metre-valued corner UVs; vertical planar faces keep Z-up courses.
+
+    Curved generators supply their own surface coordinates. Corners, rather than
+    vertices, own UVs so hard corners and the seam of a closed ring stay separate.
+    """
+    layer = me.uv_layers.get('UVMap') or me.uv_layers.new(name='UVMap')
+    me.update()
+    for poly in me.polygons:
+        if per_face is not None:
+            values = per_face[poly.index]
+        else:
+            n = poly.normal
+            # Dominant-axis planar mapping is only the fallback for flat parts.
+            if abs(n.z) > max(abs(n.x), abs(n.y)):
+                values = [(me.vertices[i].co.x, me.vertices[i].co.y) for i in poly.vertices]
+            elif abs(n.x) > abs(n.y):
+                values = [(me.vertices[i].co.y, me.vertices[i].co.z) for i in poly.vertices]
+            else:
+                values = [(me.vertices[i].co.x, me.vertices[i].co.z) for i in poly.vertices]
+        for li, uv in zip(poly.loop_indices, values):
+            layer.data[li].uv = uv
+    return layer
+
+def obj_from(verts, faces, matname, smooth=False, ao=None, name='part', sharp_angle=40, face_uvs=None):
     me = bpy.data.meshes.new(name)
     me.from_pydata([tuple(map(float, v)) for v in verts], [], [tuple(map(int, f)) for f in faces])
     me.validate(clean_customdata=False)
     me.materials.append(mat(matname))
+    metric_uvs(me, face_uvs)
     if smooth:
         me.shade_smooth()
         me.set_sharp_from_angle(angle=math.radians(sharp_angle))
@@ -92,7 +118,26 @@ def lathe(profile, seg=48, m='Marble', radial=None, name='lathe', ao=None, cap_t
     aov = None
     if ao is not None:
         aov = np.ones(len(V)); aov[:nv] = ao
-    return obj_from(V, F, m, smooth=True, ao=aov, name=name)
+    ob = obj_from(V, F, m, smooth=True, ao=aov, name=name)
+    if m in ('Wall', 'Stone'):
+        # Keep meridians continuous between strips, with a whole number of
+        # texture repeats at the closing seam. Dome units narrow toward the
+        # crown as real wedge-shaped blocks do; no discontinuity cuts a block
+        # halfway through merely because the profile has another sample ring.
+        # V is meridian arc length, including sloping dome surfaces and ledges.
+        meridian = np.r_[0.0, np.cumsum(np.linalg.norm(np.diff(prof, axis=0), axis=1))]
+        circumference = 2 * pi * max(abs(prof[:, 0]))
+        repeat = max(1, round(circumference / 4.8)) * 4.8
+        face_uvs = []
+        for k in range(len(prof) - 1):
+            for i in range(seg):
+                u0, u1 = repeat * i / seg, repeat * (i + 1) / seg
+                face_uvs.append([(u0, meridian[k]), (u1, meridian[k]),
+                                 (u1, meridian[k + 1]), (u0, meridian[k + 1])])
+        for f in F[len(face_uvs):]:
+            face_uvs.append([(V[i][0], V[i][1]) for i in f])
+        metric_uvs(ob.data, face_uvs)
+    return ob
 
 def arch_prism(width, spring, x_center, y0, y1, z0=0.0, seg=32, axis='x', name='cut'):
     """Round-arched opening prism (rect up to `spring`, semicircle above) spanning y0..y1.
@@ -111,10 +156,58 @@ def arch_prism(width, spring, x_center, y0, y1, z0=0.0, seg=32, axis='x', name='
     for i in range(n):
         j = (i + 1) % n
         F.append((i, j, j + n, i + n))
-    return obj_from(V, F, 'Wall', name=name)
+    if axis == 'y':
+        # Swapping X/Y is a reflection. Keep the cutter outward-facing after
+        # that reflection, otherwise Exact Boolean can retain filled caps in
+        # the supposed opening and create overlapping masonry face layers.
+        F = [tuple(reversed(f)) for f in F]
+    ob = obj_from(V, F, 'Wall', name=name)
+    layer = ob.data.uv_layers.active
+    # The cutter carries the jamb and intrados mapping into Boolean-created
+    # faces. U follows the actual semicircle; V traverses wall depth there.
+    for i in range(n):
+        poly = ob.data.polygons[i + 2]
+        if 1 <= i <= seg:
+            u0, u1 = (i - 1) * pi * r / seg, i * pi * r / seg
+            values = [(u0, y0), (u1, y0), (u1, y1), (u0, y1)]
+        elif i == n - 1:
+            values = [(pts[i][0], y0), (pts[0][0], y0), (pts[0][0], y1), (pts[i][0], y1)]
+        else:
+            j = (i + 1) % n
+            values = [(y0, pts[i][1]), (y0, pts[j][1]), (y1, pts[j][1]), (y1, pts[i][1])]
+        if axis == 'y': values.reverse()
+        for li, uv in zip(poly.loop_indices, values): layer.data[li].uv = uv
+    return ob
+
+def round_prism_uv(ob, xc, zc, axis='x'):
+    """Surface coordinates for a circular window cutter, including its soffit."""
+    me = ob.data; layer = me.uv_layers.active
+    for poly in me.polygons:
+        points = [me.vertices[i].co for i in poly.vertices]
+        depth_axis, cross_axis = (1, 0) if axis == 'x' else (0, 1)
+        if max(p[depth_axis] for p in points) - min(p[depth_axis] for p in points) < 1e-5: continue
+        angles = [math.atan2(p.z - zc, p[cross_axis] - xc) % (2 * pi) for p in points]
+        if max(angles) - min(angles) > pi: angles = [a + 2 * pi if a < pi else a for a in angles]
+        radius = sum(math.hypot(p[cross_axis] - xc, p.z - zc) for p in points) / len(points)
+        for li, a, p in zip(poly.loop_indices, angles, points): layer.data[li].uv = (a * radius, p[depth_axis])
+    return ob
 
 def boolean(target, cutters, op='DIFFERENCE'):
+    target_bounds = [(min(v.co[a] for v in target.data.vertices), max(v.co[a] for v in target.data.vertices))
+                     for a in range(3)]
     for c in cutters:
+        # A closed cutter is a volume, not a double-sided drawing. Hand-built
+        # circular prisms formerly had inward winding and left solid caps in
+        # the window openings. Correct only closed manifold negative volumes;
+        # open surfaces are not reinterpreted as solids by this guard.
+        bm = bmesh.new(); bm.from_mesh(c.data)
+        if bm.faces and all(edge.is_manifold for edge in bm.edges):
+            volume = bm.calc_volume(signed=True)
+            if volume < -1e-8:
+                bmesh.ops.reverse_faces(bm, faces=list(bm.faces))
+                bm.to_mesh(c.data); c.data.update()
+                BOOLEAN_WINDING_FIXES.append(dict(cutter=c.name, original_signed_volume=float(volume)))
+        bm.free()
         mod = target.modifiers.new('b', 'BOOLEAN')
         mod.operation = op; mod.object = c
         try: mod.solver = 'EXACT'
@@ -128,6 +221,34 @@ def boolean(target, cutters, op='DIFFERENCE'):
     for c in cutters:
         bpy.data.objects.remove(c, do_unlink=True)
     me.shade_flat()
+    # Boolean may assign a cutter's soffit UV to a tiny boundary sliver lying
+    # on the original exterior plane. Restore the planar wall chart there;
+    # interior jamb/intrados surfaces retain the authored cutter coordinates.
+    layer = me.uv_layers.active
+    if layer is not None:
+        me.calc_loop_triangles()
+        split = set()
+        for tri in me.loop_triangles:
+            p = [me.vertices[i].co for i in tri.vertices]
+            u = [layer.data[i].uv for i in tri.loops]
+            a, b = u[1] - u[0], u[2] - u[0]
+            if abs(a.x * b.y - a.y * b.x) < 1e-8 and (p[1] - p[0]).cross(p[2] - p[0]).length > 1e-8:
+                split.add(tri.polygon_index)
+        if split:
+            # A nonplanar Boolean n-gon can contain both a soffit and a tiny
+            # exterior-plane triangle. Give them separate corner charts.
+            bm = bmesh.new(); bm.from_mesh(me); bm.faces.ensure_lookup_table()
+            bmesh.ops.triangulate(bm, faces=[bm.faces[i] for i in split])
+            bm.to_mesh(me); bm.free(); me.update()
+            layer = me.uv_layers.active
+    if layer is not None:
+        for poly in me.polygons:
+            points = [me.vertices[i].co for i in poly.vertices]
+            axis = next((a for a in range(3) if any(all(abs(p[a] - b) < 1e-6 for p in points)
+                                                   for b in target_bounds[a])), None)
+            if axis is None: continue
+            axes = (1, 2) if axis == 0 else (0, 2) if axis == 1 else (0, 1)
+            for li, p in zip(poly.loop_indices, points): layer.data[li].uv = (p[axes[0]], p[axes[1]])
     return target
 
 def join(parts, name):
@@ -154,7 +275,7 @@ def sweep_profile_y(profile, y0, y1, name, m):
         j = (i + 1) % n; F.append((j, i, i + n, j + n))
     return obj_from(V, F, m, name=name)
 
-def arch_molding(width, spring, xc, yface, depth, thick, seg=40, m='Marble', name='archivolt', legs_to=0.0):
+def arch_molding(width, spring, xc, yface, depth, thick, seg=40, m='Marble', name='archivolt', legs_to=0.0, bury_back=0.0):
     """Molding band following an arch outline on a wall face (wall runs along X, face at y=yface,
     molding protrudes toward -y by `depth`)."""
     r = width / 2.0
@@ -170,7 +291,7 @@ def arch_molding(width, spring, xc, yface, depth, thick, seg=40, m='Marble', nam
     n = len(path)
     for i in range(n):
         x, z = path[i]; ox, oz = outward(i)
-        for (yy, off) in [(yface, 0), (yface - depth, 0), (yface - depth, thick), (yface, thick)]:
+        for (yy, off) in [(yface + bury_back, 0), (yface - depth, 0), (yface - depth, thick), (yface + bury_back, thick)]:
             V.append((x + ox * off, yy, z + oz * off))
     for i in range(n - 1):
         a = i * 4; b = (i + 1) * 4
@@ -178,7 +299,121 @@ def arch_molding(width, spring, xc, yface, depth, thick, seg=40, m='Marble', nam
             k2 = (k + 1) % 4
             F.append((a + k, a + k2, b + k2, b + k))
     F.append((0, 1, 2, 3)); e = (n - 1) * 4; F.append((e + 3, e + 2, e + 1, e))
-    return obj_from(V, F, m, name=name)
+    ob = obj_from(V, F, m, name=name)
+    layer = ob.data.uv_layers.active
+    for poly in ob.data.polygons:
+        if poly.index >= (n - 1) * 4: continue
+        interval, side = divmod(poly.index, 4)
+        curved = 1 <= interval <= seg
+        for li in poly.loop_indices:
+            vi = ob.data.loops[li].vertex_index
+            row, corner = divmod(vi, 4)
+            x, y, z = V[vi]
+            if curved:
+                arc = (row - 1) * pi * r / seg
+                # Face rings get radial courses; the inner/outer soffit gets
+                # the same radial joints continued through the wall depth.
+                cross = (thick if corner in (2, 3) else 0) if side in (1, 3) else y - yface
+                uv = (arc, cross)
+            else:
+                uv = (x, z) if side in (1, 3) else (y - yface, z)
+            layer.data[li].uv = uv
+    return ob
+
+def masonry_surround(width, spring, xc, face, axis='x', outward=-1, legs_to=0.0,
+                     thick=0.35, depth=0.06, name='voussoirs'):
+    """A bonded voussoir/jamb surround on a previously unframed arch opening.
+
+    The shallow relief has its back embedded in the wall, and its intrados is
+    4 mm inside the cut outline. Those distinct surfaces avoid both a floating
+    second wall layer and coplanar overlap with the Boolean opening's soffit.
+    """
+    ob = arch_molding(width - 0.008, spring, 0, 0, depth, thick + 0.004,
+                      seg=32, m='Wall', name=name, legs_to=legs_to, bury_back=0.004)
+    if axis == 'x':
+        ob.rotation_euler.z = pi if outward > 0 else 0
+        ob.location = (xc, face, 0)
+    else:
+        ob.rotation_euler.z = pi / 2 if outward > 0 else -pi / 2
+        ob.location = (face, xc, 0)
+    with bpy.context.temp_override(active_object=ob, selected_editable_objects=[ob], object=ob):
+        bpy.ops.object.transform_apply(location=True, rotation=True)
+    return ob
+
+def trim_hidden_gallery_ends(parts, opening_w=10.0, spring=7.0, seg=32):
+    """Remove Wall/Stone end-face portions supplied by the adjacent end cap.
+
+    Clip only surfaces exactly on Y=+/-18 to the open doorway. This preserves
+    exposed ledge ends inside the opening while removing coincident same-facing
+    side-wall and cornice surfaces behind the solid cap. No walkable surface is
+    changed, and arch geometry is the same polygon used by the cap's cutter.
+    """
+    r = opening_w / 2
+    clip = [(-r, 0)] + [(r * cos(pi - pi * i / seg), spring + r * sin(pi - pi * i / seg))
+                       for i in range(seg + 1)] + [(r, 0)]
+    for ob in parts:
+        if ob is None: continue
+        me = ob.data
+        eligible = []
+        for poly in me.polygons:
+            material = me.materials[poly.material_index]
+            if not material or material.name not in ('Wall', 'Stone'): continue
+            ys = [me.vertices[i].co.y for i in poly.vertices]
+            if all(abs(y - 18) < 1e-5 for y in ys) or all(abs(y + 18) < 1e-5 for y in ys):
+                eligible.append(poly.index)
+        if not eligible: continue
+        V = [tuple(v.co) for v in me.vertices]
+        ca = me.color_attributes.get('Col')
+        C = [tuple(c.color) for c in ca.data] if ca is not None else [(1, 1, 1, 1)] * len(V)
+        layer = me.uv_layers.active
+        faces = []; uvs = []; material_indices = []; smooth = []
+        for poly in me.polygons:
+            points = [(np.array(V[me.loops[li].vertex_index]), np.array(layer.data[li].uv),
+                       np.array(C[me.loops[li].vertex_index]), me.loops[li].vertex_index) for li in poly.loop_indices]
+            if poly.index in eligible:
+                for e in range(len(clip)):
+                    a = np.array(clip[e]); b = np.array(clip[(e + 1) % len(clip)]); edge = b - a
+                    def distance(p):
+                        q = p[0][[0, 2]] - a
+                        return edge[0] * q[1] - edge[1] * q[0]
+                    out = []
+                    for i, cur in enumerate(points):
+                        prev = points[i - 1]; dc, dp = distance(cur), distance(prev)
+                        ic, ip = dc <= 1e-8, dp <= 1e-8  # clockwise clip outline
+                        if ic != ip:
+                            t = dp / (dp - dc)
+                            out.append((prev[0] + t * (cur[0] - prev[0]), prev[1] + t * (cur[1] - prev[1]),
+                                        prev[2] + t * (cur[2] - prev[2]), None))
+                        if ic: out.append(cur)
+                    points = out
+                    if len(points) < 3: break
+                # Clipping to a boundary can leave repeated or collinear points.
+                cleaned = []
+                for p in points:
+                    if not cleaned or np.linalg.norm(p[0] - cleaned[-1][0]) > 1e-7: cleaned.append(p)
+                if len(cleaned) > 1 and np.linalg.norm(cleaned[0][0] - cleaned[-1][0]) < 1e-7: cleaned.pop()
+                points = cleaned
+                if len(points) < 3: continue
+                area = sum(np.cross(points[i][0] - points[0][0], points[i + 1][0] - points[0][0])
+                           for i in range(1, len(points) - 1))
+                if np.linalg.norm(area) < 1e-9: continue
+            indices = []
+            for p, uv, color, index in points:
+                if index is None:
+                    index = len(V); V.append(tuple(p)); C.append(tuple(color))
+                indices.append(index)
+            faces.append(indices); uvs.append([tuple(p[1]) for p in points])
+            material_indices.append(poly.material_index); smooth.append(poly.use_smooth)
+        out = bpy.data.meshes.new(me.name + '_trimmed')
+        out.from_pydata(V, [], faces)
+        for material in me.materials: out.materials.append(material)
+        metric_uvs(out, uvs)
+        color = out.color_attributes.new('Col', 'FLOAT_COLOR', 'POINT')
+        color.data.foreach_set('color', np.asarray(C, np.float32).ravel())
+        for poly, mi, sm in zip(out.polygons, material_indices, smooth):
+            poly.material_index = mi; poly.use_smooth = sm
+        ob.data = out
+        bpy.data.meshes.remove(me)
 
 # ================================================================== exporter
 def export_bytes(ob, fname):
@@ -199,12 +434,16 @@ def export_bytes(ob, fname):
         if ca.domain == 'POINT': col = buf
         else:
             col = np.ones((len(me.vertices), 4), np.float32); col[lv] = buf
-    # unique (vertex, quantized normal)
-    key = np.concatenate([lv[:, None].astype(np.int64), np.round(cn * 1000).astype(np.int64)], 1)
+    uv = np.zeros((nl, 2), np.float32)
+    if me.uv_layers.active:
+        me.uv_layers.active.data.foreach_get('uv', uv.ravel())
+    # UV seams are part of vertex identity, including closed-ring wrap seams.
+    key = np.concatenate([lv[:, None].astype(np.int64), np.round(cn * 1000).astype(np.int64),
+                          np.round(uv * 8192).astype(np.int64)], 1)
     uniq, inv = np.unique(key, axis=0, return_inverse=True)
     inv = inv.ravel()
     first = np.zeros(len(uniq), np.int64); first[inv[::-1]] = np.arange(nl)[::-1]
-    P = co[lv[first]]; N = cn[first]; C = col[lv[first]]
+    P = co[lv[first]]; N = cn[first]; C = col[lv[first]]; U = uv[first]
     # to Unity space
     P = P[:, [0, 2, 1]]; N = N[:, [0, 2, 1]]
     tris = inv[tl][:, [0, 2, 1]]
@@ -215,8 +454,9 @@ def export_bytes(ob, fname):
         if len(sel): subs.append((nm, sel.ravel().astype(np.int32)))
     C8 = (np.clip(C, 0, 1) * 255).astype(np.uint8)
     with open(os.path.join(OUT_MESH, fname + '.bytes'), 'wb') as f:
-        f.write(b'PMS1'); f.write(struct.pack('<iii', len(P), len(subs), 0))
+        f.write(b'PMS2'); f.write(struct.pack('<iii', len(P), len(subs), 1))
         f.write(P.astype('<f4').tobytes()); f.write(N.astype('<f4').tobytes()); f.write(C8.tobytes())
+        f.write(U.astype('<f4').tobytes())
         for nm, idx in subs:
             b = nm.encode(); f.write(struct.pack('<i', len(b))); f.write(b)
             f.write(struct.pack('<i', len(idx))); f.write(idx.astype('<i4').tobytes())
@@ -378,6 +618,7 @@ def barrel_vault(half_w, spring, y0, y1, m, coffer=True, ribs=(), oculi=(), name
                 a0 = j * nu + i
                 F.append((a0, a0 + nu, a0 + nu + 1, a0 + 1))
     ob = obj_from(V, F, m, smooth=True, ao=AO, name=name, sharp_angle=35)
+    metric_uvs(ob.data, [[(su[i % nu], ys[i // nu]) for i in face] for face in F])
     parts = [ob]
     if extrados:
         # coarse outer roof shell (seen only from outside / courtyards)
@@ -388,7 +629,9 @@ def barrel_vault(half_w, spring, y0, y1, m, coffer=True, ribs=(), oculi=(), name
                 a = pi * k / (na - 1)
                 Vo.append((-Ro * cos(a), y, spring + Ro * sin(a)))
         Fo = [(k, k + 1, na + k + 1, na + k) for k in range(na - 1)]
-        parts.append(obj_from(Vo, Fo, 'Wall', smooth=True, name=name + '_roof'))
+        roof = obj_from(Vo, Fo, 'Wall', smooth=True, name=name + '_roof')
+        metric_uvs(roof.data, [[(pi * Ro * (i % na) / (na - 1), Vo[i][1]) for i in face] for face in Fo])
+        parts.append(roof)
     return join(parts, name) if len(parts) > 1 else ob
 
 def oculus_ring(r, z_center, y_center=0, m='Marble', name='ring', axis_z=True):
@@ -451,12 +694,16 @@ def make_vestibule_core():
     zt = 13.0 + Rs * sin(a1)
     prof += [(3.6, zt + 0.7), (3.0, zt + 0.7)]
     parts.append(lathe(prof, 48, 'Wall', name='dome_ext', cap_top=False, cap_bottom=False))
-    nth = 64; Vr = []; Fr = []
+    # Match the dome's 48-segment flange exactly: mismatched circular polygons
+    # would alternate tiny overlapping slivers and gaps along this joint.
+    nth = 48; Vr = []; Fr = []
     for k in range(nth):
         t = 2 * pi * k / nth
         c, s_ = cos(t), sin(t)
         m_ = max(abs(c), abs(s_))
-        Vr.append((capr * c, capr * s_, 24.0)); Vr.append((12.0 * c / m_, 12.0 * s_ / m_, 24.0))
+        # The dome profile already supplies its 0.4 m horizontal flange here.
+        # Meet that flange at its outer edge instead of covering it twice.
+        Vr.append(((capr + 0.4) * c, (capr + 0.4) * s_, 24.0)); Vr.append((12.0 * c / m_, 12.0 * s_ / m_, 24.0))
     for k in range(nth):
         a = 2 * k; b = 2 * ((k + 1) % nth)
         Fr.append((a, a + 1, b + 1, b))
@@ -492,7 +739,7 @@ def make_vestibule_side(open_=True):
     n = len(pts)
     Vc = [(p[0], 9.9, p[1]) for p in pts] + [(p[0], 12.1, p[1]) for p in pts]
     Fc = [tuple(range(n - 1, -1, -1)), tuple(range(n, 2 * n))] + [(i, (i + 1) % n, (i + 1) % n + n, i + n) for i in range(n)]
-    cut.append(obj_from(Vc, Fc, 'Wall', name='win'))
+    cut.append(round_prism_uv(obj_from(Vc, Fc, 'Wall', name='win'), 0, zw))
     boolean(wall, cut)
     parts = [wall]
     parts.append(arch_molding(10, 7, 0, 10.0, 0.25, 0.55, m='Marble', name='archivolt_in'))
@@ -520,13 +767,40 @@ def make_vestibule_side(open_=True):
 
 # ================================================================== NAVE (colonnade gallery, 36 m)
 COL_Y = [-15.75 + 4.5 * k for k in range(8)]
-def end_caps(half_w, top, opening_w=10, spring=7, name='caps', m='Wall'):
+def end_caps(half_w, top, opening_w=10, spring=7, name='caps', m='Wall', clerestory=None):
     caps = []
     for sy in (-1, 1):
         y0, y1 = (17.4, 18.0) if sy > 0 else (-18.0, -17.4)
         c = box(-half_w, half_w, y0, y1, 0, top, m, 'cap')
-        boolean(c, [arch_prism(opening_w, spring, 0, y0 - 0.1, y1 + 0.1, name='capcut')])
+        cuts = [arch_prism(opening_w, spring, 0, y0 - 0.1, y1 + 0.1, name='capcut')]
+        if clerestory is not None:
+            radius, height = clerestory
+            # The Nave's high end cap abuts a vestibule wall. Continue that
+            # wall's circular opening through the cap instead of sealing it
+            # again with the neighboring module's otherwise solid masonry.
+            count = 40
+            ring = [(radius * cos(2 * pi * i / count), height + radius * sin(2 * pi * i / count))
+                    for i in range(count)]
+            verts = [(x, y0 - 0.1, z) for x, z in ring] + [(x, y1 + 0.1, z) for x, z in ring]
+            faces = [tuple(range(count - 1, -1, -1)), tuple(range(count, count * 2))]
+            faces += [(i, (i + 1) % count, (i + 1) % count + count, i + count) for i in range(count)]
+            cuts.append(round_prism_uv(obj_from(verts, faces, m, name='clerestory_cut'), 0, height))
+        boolean(c, cuts)
+        # The longitudinal walls supply the cap's outer side planes. In the
+        # narrow Arcade their inner faces also supply the straight doorway
+        # jambs. Keep the curved intrados and all remaining exposed cap faces.
+        hidden_x = [-half_w, half_w]
+        if abs(opening_w / 2 - (half_w - 2)) < 1e-5:
+            hidden_x += [-opening_w / 2, opening_w / 2]
+        bm = bmesh.new(); bm.from_mesh(c.data)
+        covered = [face for face in bm.faces if any(all(abs(v.co.x - x) < 1e-5 for v in face.verts) for x in hidden_x)]
+        bmesh.ops.delete(bm, geom=covered, context='FACES')
+        bm.to_mesh(c.data); bm.free(); c.data.update()
         caps.append(c)
+        # Only the corridor-facing surface is exposed; the far face abuts the
+        # adjoining module and must not grow another overlapping doorway band.
+        caps.append(masonry_surround(opening_w, spring, 0, y0 if sy > 0 else y1,
+                                      outward=-sy, thick=0.45, name='end_voussoirs'))
     return caps
 
 def make_nave():
@@ -540,6 +814,10 @@ def make_nave():
             cuts.append(c)
         boolean(w, cuts)
         parts.append(w)
+        for k in range(7):
+            yc = (COL_Y[k] + COL_Y[k + 1]) / 2
+            parts.append(masonry_surround(2.0, 4.0, yc, 8 * sx, axis='y', outward=-sx,
+                                          legs_to=0.6, thick=0.25, name='niche_voussoirs'))
         # aisle ceiling slab
         parts.append(box(6.45 if sx > 0 else -8, 8 if sx > 0 else -6.45, -18, 18, 10.6, 12.4, 'Marble', 'aisleceil'))
         # entablature: architrave, gold frieze, cornice (stepped)
@@ -574,7 +852,8 @@ def make_nave():
     parts.append(barrel_vault(6.0, 14.6, -18, 18, 'Marble', coffer=True, ribs=ribs, oculi=[(-9.0, 1.6), (9.0, 1.6)], name='vault'))
     for yo in (-9.0, 9.0):
         parts.append(oculus_ring(1.6, 14.6 + 6.0 - 0.02, yo, 'Gold', 'ocring'))
-    parts += end_caps(10, 21.5)
+    trim_hidden_gallery_ends(parts)
+    parts += end_caps(10, 21.5, clerestory=(2.2, 18.2))
     return join([p for p in parts if p is not None], 'Nave')
 
 # ================================================================== ARCADE (stone vaulted corridor, 36 m)
@@ -598,9 +877,9 @@ def make_arcade():
             parts.append(bx(4.45, 5.0, yp - 0.6, yp + 0.6, 8.5, 8.85, 'Stone', 'pilcap'))
         # niche arch moldings
         for yc in bays:
-            m = arch_molding(2.4, 4.2, 0, 0.0, 0.12, 0.22, m='Stone', name='nm', legs_to=0.9)
+            m = arch_molding(2.4, 4.2, 0, 0.0, 0.12, 0.22, m='Stone', name='nm', legs_to=0.9, bury_back=0.004)
             # built in XZ plane facing -y; rotate to face inward along x
-            m.rotation_euler.z = (pi / 2 if sx > 0 else -pi / 2)
+            m.rotation_euler.z = (-pi / 2 if sx > 0 else pi / 2)
             m.location = (5.0 * sx, yc, 0)
             with bpy.context.temp_override(active_object=m, selected_editable_objects=[m], object=m):
                 bpy.ops.object.transform_apply(location=True, rotation=True)
@@ -608,6 +887,7 @@ def make_arcade():
         parts.append(bx(4.4, 5.0, -18, 18, 8.85, 9.3, 'Stone', 'cornice'))
     ribs = [(-13.5, 0.9), (-4.5, 0.9), (4.5, 0.9), (13.5, 0.9)]
     parts.append(barrel_vault(5.0, 9.3, -18, 18, 'Wall', coffer=False, ribs=ribs, sky_holes=[(-9.0, 0.8), (9.0, 0.8)], base_step=0.3, name='vault'))
+    trim_hidden_gallery_ends(parts)
     parts += end_caps(7, 15.5)
     return join(parts, 'Arcade')
 
@@ -745,6 +1025,11 @@ def make_distant_wing(seed):
             c = arch_prism(w, sp, x, -14.2, -11.5, z0=z0, name='a')
             cuts.append(c)
     boolean(parts[0], cuts)
+    for k in range(nb):
+        x = -L / 2 + (k + 0.5) * L / nb
+        for z0, sp, w in [(0.5, 6.0, 5.0), (H * 0.45, H * 0.45 + 5, 4.0), (H * 0.72, H * 0.72 + 3, 3.0)]:
+            if z0 + w > H - 3: continue
+            parts.append(masonry_surround(w, sp, x, -14, legs_to=z0, thick=0.35, name='wing_voussoirs'))
     # pediment / attic
     parts.append(box(-L / 2 - 1, L / 2 + 1, -15, 15, H, H + 2, 'Marble', 'cornice'))
     for k in range(r.integers(1, 3)):

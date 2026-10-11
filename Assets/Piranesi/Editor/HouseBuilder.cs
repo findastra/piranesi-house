@@ -153,6 +153,150 @@ namespace Piranesi.EditorTools
             finally { EditorUtility.ClearProgressBar(); }
         }
 
+        // Updates existing mesh assets in place: scene references, GUIDs and layout survive.
+        // Batch entry: -executeMethod Piranesi.EditorTools.HouseBuilder.RefreshMasonryAudit
+        [Serializable] class MasonryRunProject { public string name = "Piranesi House"; }
+        [Serializable] class MasonryRunReceipt
+        {
+            public string schema = "unity-unicorn.tool-usage/v1";
+            public string tool_id = "masonry-unity-refresh";
+            public MasonryRunProject project = new MasonryRunProject();
+            public string completed_at, status, evidence, evidence_path;
+        }
+
+        static void WriteMasonryReceipt(string output, string status, string evidence, string evidencePath)
+        {
+            var receipt = new MasonryRunReceipt { completed_at = DateTime.UtcNow.ToString("o"),
+                status = status, evidence = evidence, evidence_path = evidencePath };
+            File.WriteAllText(Path.Combine(output, "unity-masonry-usage-" + MasonryDateStamp() + ".json"),
+                JsonUtility.ToJson(receipt, true));
+        }
+
+        [MenuItem("Piranesi/Refresh Masonry and Capture Audit", priority = 19)]
+        public static void RefreshMasonryAudit()
+        {
+            if (!Application.isBatchMode && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
+            string output = Path.GetFullPath("local-audit-" + MasonryDateStamp());
+            Directory.CreateDirectory(output);
+            var refreshed = new List<string>();
+            try
+            {
+                AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+                foreach (var file in Directory.GetFiles(Root + "/Meshes", "*.bytes"))
+                {
+                    var mesh = ParseMesh(file, out var subs);
+                    if (!subs.Any(s => s == "Wall" || s == "Stone"))
+                    {
+                        Object.DestroyImmediate(mesh);
+                        continue;
+                    }
+                    using (var reader = new BinaryReader(File.OpenRead(file)))
+                    {
+                        string magic = Encoding.ASCII.GetString(reader.ReadBytes(4));
+                        reader.ReadInt32(); reader.ReadInt32();
+                        int flags = reader.ReadInt32();
+                        if (magic != "PMS2" || (flags & 1) == 0)
+                            throw new InvalidDataException("Masonry requires authored UVs: " + file);
+                    }
+                    mesh.name = Path.GetFileNameWithoutExtension(file);
+                    string assetPath = Gen + "/Meshes/" + mesh.name + ".asset";
+                    var existing = AssetDatabase.LoadAssetAtPath<Mesh>(assetPath);
+                    if (existing == null) throw new InvalidDataException("Missing existing mesh: " + assetPath);
+                    EditorUtility.CopySerialized(mesh, existing);
+                    EditorUtility.SetDirty(existing);
+                    Object.DestroyImmediate(mesh);
+                    refreshed.Add(assetPath);
+                }
+                foreach (string name in new[] { "M_Wall", "M_Stone" })
+                {
+                    var material = AssetDatabase.LoadAssetAtPath<Material>(Gen + "/Materials/" + name + ".mat");
+                    if (material == null || !material.HasProperty("_MasonryUV"))
+                        throw new InvalidDataException("Masonry shader property missing: " + name);
+                    material.SetFloat("_MasonryUV", 1f);
+                    EditorUtility.SetDirty(material);
+                }
+                AssetDatabase.SaveAssets();
+                // Reload serialized meshes before rendering so native render buffers match disk.
+                foreach (string assetPath in refreshed)
+                    AssetDatabase.ImportAsset(assetPath, ImportAssetOptions.ForceUpdate | ImportAssetOptions.ForceSynchronousImport);
+                var shader = Shader.Find("Piranesi/Stone");
+                if (shader == null || ShaderUtil.ShaderHasError(shader))
+                    throw new InvalidOperationException("Piranesi/Stone failed shader compilation");
+                // Do not replace or save the assembled scene. Only render its current references.
+                EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Single);
+                HousePreviewWindow.ApplyState(0.32f, 1.3f, 0.25f, false);
+                CaptureMasonry(output, "masonry-spawn", new Vector3(-2, 1.7f, 0), new Vector3(-16, 6, 0));
+                CaptureMasonry(output, "masonry-arcade-vault", new Vector3(0, 2.4f, 23), new Vector3(0, 6.2f, 36));
+                CaptureMasonry(output, "masonry-arcade-arch", new Vector3(0, 2.5f, 32.25f), new Vector3(5, 3.5f, 32.25f));
+                CaptureMasonry(output, "masonry-dome", new Vector3(0, 2, -5), new Vector3(0, 26, 1));
+                CaptureMasonry(output, "masonry-clerestory", new Vector3(.5f, 18.2f, 7), new Vector3(.5f, 18.2f, 13));
+                CaptureMasonry(output, "masonry-clerestory-east", new Vector3(7, 18.2f, .5f), new Vector3(14, 18.2f, .5f));
+                CaptureMasonry(output, "masonry-clerestory-west", new Vector3(-7, 18.2f, .5f), new Vector3(-14, 18.2f, .5f));
+                var aqueduct = Object.FindObjectsOfType<MeshFilter>().FirstOrDefault(f => f.sharedMesh != null && f.sharedMesh.name == "Aqueduct");
+                if (aqueduct == null) throw new InvalidDataException("Saved scene has no Aqueduct mesh instance");
+                Bounds aq = aqueduct.GetComponent<Renderer>().bounds;
+                CaptureMasonry(output, "masonry-aqueduct", aq.center + new Vector3(1, .2f, .15f).normalized * aq.extents.magnitude * 1.9f, aq.center);
+                CaptureMasonry(output, "masonry-sea-gate", new Vector3(-67, 2.5f, 0), new Vector3(-77, 5, 0));
+                CaptureMasonry(output, "masonry-tower-door", new Vector3(3, 2, -67), new Vector3(0, 3, -74));
+                if (ShaderUtil.ShaderHasError(shader))
+                    throw new InvalidOperationException("Piranesi/Stone failed a rendered shader variant");
+                string stamp = DateTime.UtcNow.ToString("o");
+                string reportPath = Path.Combine(output, "unity-masonry-validation-" + MasonryDateStamp() + ".txt");
+                File.WriteAllText(reportPath,
+                    "Completed UTC: " + stamp + "\nExisting meshes refreshed: " + refreshed.Count +
+                    "\nPiranesi/Stone shader errors: 0\nScene opened and ten camera renders captured.\n" +
+                    "Editor rendering only; VRChat client and headset not tested.\n" + string.Join("\n", refreshed));
+                WriteMasonryReceipt(output, "completed", "Refreshed " + refreshed.Count +
+                    " existing masonry meshes; shader compiled and ten saved-scene camera views rendered.", reportPath);
+                Debug.Log("[Piranesi] Masonry refreshed and rendered: " + output);
+            }
+            catch (Exception error)
+            {
+                WriteMasonryReceipt(output, "failed", "Masonry refresh failed: " + error.Message, "");
+                throw;
+            }
+            finally { EditorUtility.ClearProgressBar(); }
+        }
+
+        static string MasonryDateStamp()
+        {
+            TimeZoneInfo zone;
+            try { zone = TimeZoneInfo.FindSystemTimeZoneById("America/Denver"); }
+            catch (TimeZoneNotFoundException) { zone = TimeZoneInfo.FindSystemTimeZoneById("Mountain Standard Time"); }
+            return TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, zone).ToString("yyyyMMdd");
+        }
+
+        static void CaptureMasonry(string output, string name, Vector3 position, Vector3 target)
+        {
+            var go = new GameObject("Masonry audit camera") { hideFlags = HideFlags.HideAndDontSave };
+            var camera = go.AddComponent<Camera>();
+            var rt = new RenderTexture(1600, 1000, 24, RenderTextureFormat.ARGB32);
+            var pixels = new Texture2D(1600, 1000, TextureFormat.RGB24, false);
+            var previous = RenderTexture.active;
+            try
+            {
+                camera.transform.position = position;
+                camera.transform.LookAt(target);
+                camera.fieldOfView = 65;
+                camera.nearClipPlane = .05f;
+                camera.farClipPlane = 600f;
+                camera.targetTexture = rt;
+                camera.Render();
+                RenderTexture.active = rt;
+                pixels.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
+                pixels.Apply();
+                File.WriteAllBytes(Path.Combine(output, name + "-" + MasonryDateStamp() + ".png"), pixels.EncodeToPNG());
+            }
+            finally
+            {
+                RenderTexture.active = previous;
+                camera.targetTexture = null;
+                Object.DestroyImmediate(pixels);
+                Object.DestroyImmediate(rt);
+                Object.DestroyImmediate(go);
+            }
+        }
+
         [MenuItem("Piranesi/Rebake Reflection Probes", priority = 20)]
         public static void BakeProbes()
         {
@@ -543,6 +687,7 @@ namespace Piranesi.EditorTools
                 m.SetTexture("_Caustics", Tex("Caustics"));
                 m.SetTexture("_NoiseTex", Tex("Noise"));
                 m.SetFloat("_Tile", tile);
+                m.SetFloat("_MasonryUV", set == "Wall" ? 1f : 0f);
                 m.SetFloat("_Smoothness", smooth);
                 m.SetFloat("_Sparkle", sparkle);
                 m.SetFloat("_VertexAO", vao);

@@ -1,4 +1,4 @@
-// Marble / stone for the whole House: world-space triplanar PBR (no UVs needed), vertex AO,
+// Marble / stone: authored metric UVs for masonry; triplanar for unjointed stone, vertex AO,
 // mica sparkle, tide-wet darkening, underwater caustics, winter frost & snow.
 Shader "Piranesi/Stone"
 {
@@ -9,6 +9,7 @@ Shader "Piranesi/Stone"
         [Normal] _BumpMap ("Normal", 2D) = "bump" {}
         _MaskTex ("Mask (R smooth, G ao, B height, A sparkle)", 2D) = "white" {}
         _Tile ("World tile size (m)", Float) = 3
+        [Toggle] _MasonryUV ("Authored masonry courses (metric UVs)", Float) = 0
         _NormalScale ("Normal strength", Range(0,2)) = 1
         _Smoothness ("Smoothness scale", Range(0,1.5)) = 1
         _Metallic ("Metallic", Range(0,1)) = 0
@@ -33,11 +34,12 @@ Shader "Piranesi/Stone"
         #include "PiranesiCommon.cginc"
 
         sampler2D _MainTex, _BumpMap, _MaskTex, _Caustics, _NoiseTex;
-        float _Tile, _NormalScale, _Smoothness, _Metallic, _VertexAO, _Sparkle, _CausticStrength, _SnowAllowed, _Blend;
+        float _Tile, _MasonryUV, _NormalScale, _Smoothness, _Metallic, _VertexAO, _Sparkle, _CausticStrength, _SnowAllowed, _Blend;
         fixed4 _Color;
 
         struct Input
         {
+            float2 uv_MainTex;
             float3 worldPos;
             float3 worldNormal;
             float4 color : COLOR;
@@ -68,6 +70,21 @@ Shader "Piranesi/Stone"
         {
             float3 wp = IN.worldPos;
             float3 wn = normalize(WorldNormalVector(IN, float3(0,0,1)));
+            fixed3 albedo;
+            fixed4 mask;
+            float3 nW;
+            // Mortar is directional: one authored surface chart, never blended grids.
+            // UVs are in metres and follow flat courses, arch rings and vault surfaces.
+            if (_MasonryUV > 0.5)
+            {
+                float2 uv = IN.uv_MainTex / max(_Tile, 0.001);
+                albedo = tex2D(_MainTex, uv).rgb * _Color.rgb;
+                mask = tex2D(_MaskTex, uv);
+                half3 nt = UnpackScaleNormal(tex2D(_BumpMap, uv), _NormalScale);
+                nW = normalize(WorldNormalVector(IN, nt));
+            }
+            else
+            {
             float3 bw = pow(abs(wn), _Blend);
             bw /= (bw.x + bw.y + bw.z + 1e-5);
 
@@ -87,10 +104,11 @@ Shader "Piranesi/Stone"
             nX = half3(nX.xy + wn.zy, abs(nX.z) * wn.x);
             nY = half3(nY.xy + wn.xz, abs(nY.z) * wn.y);
             nZ = half3(nZ.xy + wn.xy, abs(nZ.z) * wn.z);
-            float3 nW = normalize(nX.zyx * bw.x + nY.xzy * bw.y + nZ.xyz * bw.z);
+            nW = normalize(nX.zyx * bw.x + nY.xzy * bw.y + nZ.xyz * bw.z);
 
-            fixed3 albedo = (cX.rgb * bw.x + cY.rgb * bw.y + cZ.rgb * bw.z) * _Color.rgb;
-            fixed4 mask = mX * bw.x + mY * bw.y + mZ * bw.z;
+            albedo = (cX.rgb * bw.x + cY.rgb * bw.y + cZ.rgb * bw.z) * _Color.rgb;
+            mask = mX * bw.x + mY * bw.y + mZ * bw.z;
+            }
             float smooth = saturate(mask.r * _Smoothness);
             float vao = lerp(1.0, IN.color.r, _VertexAO);
             float occl = vao * lerp(1.0, mask.g, 0.8);
