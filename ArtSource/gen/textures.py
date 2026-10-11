@@ -128,35 +128,9 @@ save_mask(smooth, ao, h, sparkle, 'Floor_Mask.png')
 
 # ---------------------------------------------------------------- ashlar wall (4.8m tile, blocks 1.6 x 0.8)
 print('wall...')
-n = 2048; bw, bh = n // 3, n // 6
-cr = np.array(Image.open(os.path.join(OUT, 'MarbleCream_Albedo.png'))).astype(float) / 255
-wh = big_w
-col = np.zeros((n, n, 3)); h = np.zeros((n, n))
-r = np.random.default_rng(5)
-for row in range(6):
-    off = (bw // 2) * (row % 2)
-    for c in range(-1, 4):
-        x0 = c * bw + off; y0 = row * bh
-        src = cr if r.random() < 0.7 else wh
-        sh = r.integers(0, n, 2)
-        tint = 1 + r.normal(0, 0.03)
-        for dx in range(0, bw, 256):
-            pass
-        xs = (np.arange(x0, x0 + bw)) % n
-        block = np.roll(src, (int(sh[0]), int(sh[1])), (0, 1))[y0:y0 + bh][:, xs] * tint
-        col[y0:y0 + bh][:, xs] = block
-        # bevel height: distance to block edge
-        yy_, xx_ = np.mgrid[0:bh, 0:bw]
-        d = np.minimum(np.minimum(xx_, bw - 1 - xx_), np.minimum(yy_, bh - 1 - yy_)).astype(float)
-        hb = np.clip(d / 14.0, 0, 1)
-        h[y0:y0 + bh][:, xs] = hb
-col *= (0.6 + 0.4 * h)[..., None] ** 0.5
-grime = gaussian_filter(fbm(n, 2.2, 90), 2)
-col *= (0.92 + 0.08 * grime)[..., None]
-save_rgb(col, 'Wall_Albedo.png')
-hh = h * 0.6 + 0.03 * fbm(n, 1.5, 91, lo=100)
-save_u8(normal_from_height(hh, 10.0), 'Wall_Normal.png')
-save_mask(0.55 + 0.25 * h - 0.1 * grime, 0.6 + 0.4 * h, hh, (fbm(n, 0.0, 92, lo=n / 6) > 0.86).astype(float), 'Wall_Mask.png')
+# The shared wall-only tool covers every pixel and preserves periodic courses.
+import runpy
+runpy.run_path(os.path.join(os.path.dirname(__file__), 'rebuild-wall-textures-20261011.py'))['make_wall'](OUT)
 
 # ---------------------------------------------------------------- sand (4m tile)
 print('sand...')
