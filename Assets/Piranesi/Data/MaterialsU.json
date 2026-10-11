@@ -363,8 +363,8 @@
 1,
 1
 ],
-"smooth": 1.0,
-"metal": 1.0,
+"smooth": 0.6,
+"metal": 0.0,
 "cutoff": 0.0,
 "wind": 0.0,
 "windScale": 0.0,
@@ -383,7 +383,7 @@
 1,
 1
 ],
-"key": "a594db2d3d"
+"key": "56246adf50"
 },
 {
 "sub": "BeachGrass_BeachGrass",
@@ -783,8 +783,8 @@
 1,
 1
 ],
-"smooth": 1.0,
-"metal": 1.0,
+"smooth": 0.6,
+"metal": 0.0,
 "cutoff": 0.0,
 "wind": 0.0,
 "windScale": 0.0,
@@ -803,7 +803,7 @@
 1,
 1
 ],
-"key": "af9d98f1aa"
+"key": "9edb5adcad"
 },
 {
 "sub": "Briccola_Planks",
@@ -2918,8 +2918,8 @@
 1,
 1
 ],
-"smooth": 1.0,
-"metal": 1.0,
+"smooth": 0.55,
+"metal": 0.0,
 "cutoff": 0.0,
 "wind": 0.0,
 "windScale": 0.0,
@@ -2938,7 +2938,7 @@
 1,
 1
 ],
-"key": "534e6aef47"
+"key": "865c4a523c"
 },
 {
 "sub": "Fruit_Bananas_0",
@@ -2953,8 +2953,8 @@
 1,
 1
 ],
-"smooth": 1.0,
-"metal": 1.0,
+"smooth": 0.55,
+"metal": 0.0,
 "cutoff": 0.0,
 "wind": 0.0,
 "windScale": 0.0,
@@ -2973,7 +2973,7 @@
 1,
 1
 ],
-"key": "779f2be369"
+"key": "be1de06682"
 },
 {
 "sub": "Fruit_Kiwi_0",
@@ -2988,8 +2988,8 @@
 1,
 1
 ],
-"smooth": 1.0,
-"metal": 1.0,
+"smooth": 0.55,
+"metal": 0.0,
 "cutoff": 0.0,
 "wind": 0.0,
 "windScale": 0.0,
@@ -3008,7 +3008,7 @@
 1,
 1
 ],
-"key": "66e9eb6897"
+"key": "fc47d2f3b0"
 },
 {
 "sub": "Fruit_Lemon_0",
@@ -3023,8 +3023,8 @@
 1,
 1
 ],
-"smooth": 1.0,
-"metal": 1.0,
+"smooth": 0.55,
+"metal": 0.0,
 "cutoff": 0.0,
 "wind": 0.0,
 "windScale": 0.0,
@@ -3043,7 +3043,7 @@
 1,
 1
 ],
-"key": "913b8050b9"
+"key": "c2ddb47f57"
 },
 {
 "sub": "Fruit_Lime_0",
@@ -3058,8 +3058,8 @@
 1,
 1
 ],
-"smooth": 1.0,
-"metal": 1.0,
+"smooth": 0.55,
+"metal": 0.0,
 "cutoff": 0.0,
 "wind": 0.0,
 "windScale": 0.0,
@@ -3078,7 +3078,7 @@
 1,
 1
 ],
-"key": "c689954450"
+"key": "7b93c3bb6c"
 },
 {
 "sub": "Fruit_Lychee_0",
@@ -3093,8 +3093,8 @@
 1,
 1
 ],
-"smooth": 1.0,
-"metal": 1.0,
+"smooth": 0.55,
+"metal": 0.0,
 "cutoff": 0.0,
 "wind": 0.0,
 "windScale": 0.0,
@@ -3113,7 +3113,7 @@
 1,
 1
 ],
-"key": "1aafb82901"
+"key": "757ff23648"
 },
 {
 "sub": "Fruit_Pears_0",
@@ -3128,8 +3128,8 @@
 1,
 1
 ],
-"smooth": 1.0,
-"metal": 1.0,
+"smooth": 0.55,
+"metal": 0.0,
 "cutoff": 0.0,
 "wind": 0.0,
 "windScale": 0.0,
@@ -3148,7 +3148,7 @@
 1,
 1
 ],
-"key": "e9a4dc85e7"
+"key": "105bc0efb7"
 },
 {
 "sub": "Fruit_Pomegranate_0",
@@ -3163,8 +3163,8 @@
 1,
 1
 ],
-"smooth": 1.0,
-"metal": 1.0,
+"smooth": 0.55,
+"metal": 0.0,
 "cutoff": 0.0,
 "wind": 0.0,
 "windScale": 0.0,
@@ -3183,7 +3183,7 @@
 1,
 1
 ],
-"key": "c02fced443"
+"key": "dc7578ada6"
 },
 {
 "sub": "GiantEgg_Egg",
@@ -4199,6 +4199,41 @@
 1
 ],
 "key": "4bf2e37995"
+},
+{
+"sub": "IvyMantle_Mat",
+"shader": "ivymat",
+"albedo": "IvyMat/IvyMat_Albedo.png",
+"normal": "IvyMat/IvyMat_Normal.png",
+"mask": "IvyMat/IvyMat_Mask.png",
+"alpha": "MASK",
+"doubleSided": false,
+"tint": [
+1,
+1,
+1
+],
+"smooth": 0.75,
+"metal": 0.0,
+"cutoff": 0.5,
+"translucency": 0.7,
+"wind": 0.0,
+"windScale": 0.0,
+"vertexTint": 0.0,
+"height": 0.0,
+"detail": 0.0,
+"glow": 0.0,
+"base": [
+1,
+1,
+1
+],
+"tip": [
+1,
+1,
+1
+],
+"key": "fca4365d2b"
 },
 {
 "sub": "Ivy_Aqueduct_Leaf",
@@ -9358,8 +9393,8 @@
 1,
 1
 ],
-"smooth": 1.0,
-"metal": 1.0,
+"smooth": 0.6,
+"metal": 0.0,
 "cutoff": 0.0,
 "wind": 0.0,
 "windScale": 0.0,
@@ -9378,7 +9413,7 @@
 1,
 1
 ],
-"key": "72a3c5c37b"
+"key": "8acbd5d042"
 },
 {
 "sub": "RideTube_Tube",

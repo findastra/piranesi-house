@@ -80,6 +80,25 @@ def make_material(mesh, e):
     if nm:
         t = N.new('ShaderNodeTexImage'); t.image = nm; L.new(uv.outputs[0], t.inputs[0])
         nn = N.new('ShaderNodeNormalMap'); L.new(t.outputs['Color'], nn.inputs['Color']); L.new(nn.outputs[0], bs.inputs['Normal'])
+    if sh == 'ivymat' and alb:
+        vc = N.new('ShaderNodeVertexColor'); vc.layer_name = 'Col'
+        mk2 = _img(rel(e.get('mask')), True)
+        t2 = N.new('ShaderNodeTexImage'); t2.image = mk2; L.new(uv.outputs[0], t2.inputs[0])
+        sp2 = N.new('ShaderNodeSeparateColor'); L.new(t2.outputs['Color'], sp2.inputs[0])
+        thr = N.new('ShaderNodeMath'); thr.operation = 'MULTIPLY_ADD'      # (1 - cov) * 0.85 + 0.1
+        inv = N.new('ShaderNodeMath'); inv.operation = 'SUBTRACT'; inv.inputs[0].default_value = 1.0; L.new(vc.outputs['Alpha'], inv.inputs[1])
+        L.new(inv.outputs[0], thr.inputs[0]); thr.inputs[1].default_value = 0.85; thr.inputs[2].default_value = 0.1
+        gt1 = N.new('ShaderNodeMath'); gt1.operation = 'GREATER_THAN'; L.new(sp2.outputs[2], gt1.inputs[0]); L.new(thr.outputs[0], gt1.inputs[1])
+        a1 = [n for n in N if n.type == 'TEX_IMAGE' and n.image == alb][0]
+        gt2 = N.new('ShaderNodeMath'); gt2.operation = 'GREATER_THAN'; gt2.inputs[1].default_value = 0.5; L.new(a1.outputs['Alpha'], gt2.inputs[0])
+        both = N.new('ShaderNodeMath'); both.operation = 'MULTIPLY'; L.new(gt1.outputs[0], both.inputs[0]); L.new(gt2.outputs[0], both.inputs[1])
+        trn = N.new('ShaderNodeBsdfTranslucent'); L.new(bs.inputs['Base Color'].links[0].from_socket, trn.inputs['Color'])
+        mix = N.new('ShaderNodeMixShader'); mix.inputs[0].default_value = 0.15; L.new(bs.outputs[0], mix.inputs[1]); L.new(trn.outputs[0], mix.inputs[2])
+        tp = N.new('ShaderNodeBsdfTransparent'); mx2 = N.new('ShaderNodeMixShader')
+        L.new(both.outputs[0], mx2.inputs[0]); L.new(tp.outputs[0], mx2.inputs[1]); L.new(mix.outputs[0], mx2.inputs[2]); L.new(mx2.outputs[0], out.inputs[0])
+        bs.inputs['Metallic'].default_value = 0.0
+        if bs.inputs['Metallic'].links: nt.links.remove(bs.inputs['Metallic'].links[0])
+        return m
     if sh == 'foliage':
         tr = float(e.get('translucency', 0.6))
         try:
@@ -121,6 +140,8 @@ def add_prop(name, loc=(0, 0, 0), yaw=0.0, scale=1.0, man=None):
         e = ents.get(nm, dict(sub=nm))
         me.materials.append(make_material(name, e))
     me.polygons.foreach_set('material_index', mi.astype(np.int32))
+    ca = me.color_attributes.new('Col', 'FLOAT_COLOR', 'POINT')
+    ca.data.foreach_set('color', (C.astype(np.float32) / 255).ravel())
     me.shade_smooth()
     try:
         me.normals_split_custom_set_from_vertices(Nn.tolist())

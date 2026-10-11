@@ -708,6 +708,14 @@ namespace Piranesi.EditorTools
                         m.SetFloat("_VertexTint", e.vertexTint); m.SetTexture("_Caustics", Tex("Caustics"));
                         m.enableInstancing = true;
                     });
+                case "ivymat":     // vine-bloomer: ivy mantle over roofs and outer walls (coverage in vertex alpha)
+                    return Mat(name, "Piranesi/IvyMat", m =>
+                    {
+                        m.SetTexture("_MainTex", ImpTex(e.albedo)); m.SetTexture("_BumpMap", ImpTex(e.normal)); m.SetTexture("_MaskTex", ImpTex(e.mask));
+                        m.SetColor("_Color", Col(e.tint)); m.SetFloat("_Cutoff", e.cutoff > 0 ? e.cutoff : 0.5f); m.SetFloat("_Smoothness", e.smooth);
+                        m.SetFloat("_Translucency", e.translucency); m.SetTexture("_Caustics", Tex("Caustics"));
+                        m.enableInstancing = true;
+                    });
                 case "coral":
                     return Mat(name, "Piranesi/Coral", m =>
                     {

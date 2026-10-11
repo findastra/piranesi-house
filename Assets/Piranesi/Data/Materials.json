@@ -7,7 +7,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Fruit_Apple_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.55,
+   "metal": 0.0
   }
  ],
  "Plant_Anthurium": [
@@ -65,7 +67,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Fruit_Lime_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.55,
+   "metal": 0.0
   }
  ],
  "Fruit_Pomegranate": [
@@ -76,7 +80,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Fruit_Pomegranate_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.55,
+   "metal": 0.0
   }
  ],
  "Fruit_Kiwi": [
@@ -87,7 +93,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Fruit_Kiwi_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.55,
+   "metal": 0.0
   }
  ],
  "Fruit_Lychee": [
@@ -98,7 +106,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Fruit_Lychee_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.55,
+   "metal": 0.0
   }
  ],
  "Fruit_Pears": [
@@ -109,7 +119,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Fruit_Pears_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.55,
+   "metal": 0.0
   }
  ],
  "Fruit_Bananas": [
@@ -121,7 +133,9 @@
    "doubleSided": true,
    "sub": "Fruit_Bananas_0",
    "shader": "prop",
-   "dir": "Fruit_Bananas"
+   "dir": "Fruit_Bananas",
+   "smooth": 0.55,
+   "metal": 0.0
   }
  ],
  "Fruit_Lemon": [
@@ -132,7 +146,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Fruit_Lemon_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.55,
+   "metal": 0.0
   }
  ],
  "Bowl_Wood": [
@@ -143,7 +159,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Bowl_Wood_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.6,
+   "metal": 0.0
   }
  ],
  "Goblets_Brass": [
@@ -205,7 +223,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Basket_Wicker_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.6,
+   "metal": 0.0
   }
  ],
  "Candleholders": [
@@ -263,7 +283,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Plate_Carved_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.6,
+   "metal": 0.0
   }
  ],
  "Lion_Head": [
@@ -3094,7 +3116,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Fruit_Apple_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.55,
+   "metal": 0.0
   }
  ],
  "Fruit_Bananas_LOD1": [
@@ -3106,7 +3130,9 @@
    "doubleSided": true,
    "sub": "Fruit_Bananas_0",
    "shader": "prop",
-   "dir": "Fruit_Bananas"
+   "dir": "Fruit_Bananas",
+   "smooth": 0.55,
+   "metal": 0.0
   }
  ],
  "Fruit_Kiwi_LOD1": [
@@ -3117,7 +3143,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Fruit_Kiwi_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.55,
+   "metal": 0.0
   }
  ],
  "Fruit_Lemon_LOD1": [
@@ -3128,7 +3156,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Fruit_Lemon_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.55,
+   "metal": 0.0
   }
  ],
  "Fruit_Lime_LOD1": [
@@ -3139,7 +3169,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Fruit_Lime_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.55,
+   "metal": 0.0
   }
  ],
  "Fruit_Lychee_LOD1": [
@@ -3150,7 +3182,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Fruit_Lychee_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.55,
+   "metal": 0.0
   }
  ],
  "Fruit_Pears_LOD1": [
@@ -3161,7 +3195,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Fruit_Pears_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.55,
+   "metal": 0.0
   }
  ],
  "Fruit_Pomegranate_LOD1": [
@@ -3172,7 +3208,9 @@
    "alpha": "OPAQUE",
    "doubleSided": true,
    "sub": "Fruit_Pomegranate_0",
-   "shader": "prop"
+   "shader": "prop",
+   "smooth": 0.55,
+   "metal": 0.0
   }
  ],
  "Goblets_Brass_LOD1": [
@@ -6065,6 +6103,1014 @@
    "alpha": "OPAQUE",
    "smooth": 1.0,
    "metal": 0.0,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtBlind_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtBlind_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtBlind_1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtBlind_1_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_Dome_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_Dome_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_Dome_1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_Dome_1_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_Dome_2": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_Dome_2_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_Arcade_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_Arcade_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_Arcade_1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_Arcade_1_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtWindow_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtWindow_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtWindow_1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtWindow_1_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtWindow_CutL_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtWindow_CutL_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtWindow_CutR_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtWindow_CutR_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtGallery_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtGallery_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtGallery_1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtGallery_1_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtGate_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtGate_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtTower_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtTower_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtCascade_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_ExtCascade_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_CoreTop_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_CoreTop_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_Nave_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_Nave_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_Nave_1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_Nave_1_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SeaHall_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SeaHall_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_IsleHall_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_IsleHall_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideWindow_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideWindow_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideWindow_1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideWindow_1_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideWindow_CutL_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideWindow_CutL_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideWindow_CutR_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideWindow_CutR_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideBlind_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideBlind_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideBlind_1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideBlind_1_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideOpen_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideOpen_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideOpen_1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideOpen_1_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideGate_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_SideGate_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_GalArcade_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_GalArcade_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_GalArcade_1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_GalArcade_1_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_GalArcadeWin_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_GalArcadeWin_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_GalArcadeWin_1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_GalArcadeWin_1_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_GalNave_0": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_GalNave_0_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_GalNave_1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
+   "doubleSided": false
+  }
+ ],
+ "IvyMantle_GalNave_1_LOD1": [
+  {
+   "sub": "IvyMantle_Mat",
+   "shader": "ivymat",
+   "albedo": "IvyMat/IvyMat_Albedo.png",
+   "normal": "IvyMat/IvyMat_Normal.png",
+   "mask": "IvyMat/IvyMat_Mask.png",
+   "alpha": "MASK",
+   "cutoff": 0.5,
+   "translucency": 0.7,
+   "smooth": 0.75,
    "doubleSided": false
   }
  ]

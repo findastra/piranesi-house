@@ -155,12 +155,9 @@ namespace Piranesi.EditorTools
             float rise = S != null && S.rise > 0 ? S.rise : 0.16f, a0 = S != null ? S.theta0 : 0f;
             dict["__StairTurn"] = new MeshEntry { mesh = SaveMesh(MakeTurn(inner, outer, steps, rise, a0, false), "__StairTurn"), subs = new[] { "Stair" } };
             dict["__StairRamp"] = new MeshEntry { mesh = SaveMesh(MakeTurn(inner, outer, steps, rise, a0, true), "__StairRamp"), subs = new[] { "Stair" } };
-            // the landing among the stars, with a stairwell left open over the last 18 treads so you can climb up through it
-            // (a full ring would sit on your head for the last turn): pole collar, outer ring, and the tread band minus the well
-            float well = 18f / steps * Mathf.PI * 2f, w0 = inner - 0.6f, w1 = outer + 0.6f;
-            dict["__Landing"] = new MeshEntry { mesh = SaveMesh(Combine(MakeSector(1.0f, w0, 0f, Mathf.PI * 2f, 0.35f, 48),
-                                                                        MakeSector(w1, 8.5f, 0f, Mathf.PI * 2f, 0.35f, 96),
-                                                                        MakeSector(w0, w1, a0, a0 + Mathf.PI * 2f - well, 0.35f, 60)), "__Landing"),
+            // the stair simply ends on one broad platform step (no landing ring): it carries on from the last tread, round
+            // ~75 degrees of the spiral and a little wider than the treads, and Astra's phone booth stands on it
+            dict["__Landing"] = new MeshEntry { mesh = SaveMesh(MakeSector(inner - 0.2f, outer + 0.8f, a0, a0 + 1.3f, 0.35f, 20), "__Landing"),
                                                 subs = new[] { "Landing" } };
             dict["__Wedge"] = new MeshEntry { mesh = SaveMesh(MakeSector(1.4f, outer, a0 - 0.5f, a0 + 0.04f, 0.2f, 12), "__Wedge"), subs = new[] { "Landing" } };
             dict["__WarpTube"] = new MeshEntry { mesh = SaveMesh(MakeTube(6f, 90f, 48), "__WarpTube"), subs = new[] { "Warp" } };
@@ -713,7 +710,7 @@ namespace Piranesi.EditorTools
             var wedge = MeshChild(stair.transform, "Step off the palm onto the stair", meshes["__Wedge"].mesh, mats["Landing"], true);
             wedge.transform.localPosition = new Vector3(0f, S.@base, 0f);
             float topY = S.@base + S.topTurns * S.pitch;
-            var land = MeshChild(stair.transform, "Landing among the stars", meshes["__Landing"].mesh, mats["Landing"], true);
+            var land = MeshChild(stair.transform, "Top step (platform among the stars)", meshes["__Landing"].mesh, mats["Landing"], true);
             land.transform.localPosition = new Vector3(0f, topY, 0f);
 
             // Astra's phone booth, a little way round from the top of the stair, its open door toward you

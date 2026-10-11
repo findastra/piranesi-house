@@ -30,6 +30,9 @@ def normalise(mesh, e):
         n['cutoff'] = float(e.get('cutoff', 0.45))
         n['wind'] = float(e.get('wind', 0.4)); n['windScale'] = float(e.get('windScale', 2.0))
         n['translucency'] = float(e.get('translucency', 0.6)); n['vertexTint'] = float(e.get('vertexTint', 0.0))
+    elif sh == 'ivymat':
+        n['smooth'] = float(e.get('smooth', 0.75)); n['metal'] = 0.0
+        n['cutoff'] = float(e.get('cutoff', 0.5)); n['translucency'] = float(e.get('translucency', 0.7))
     elif sh == 'coral':
         P = read_pms(mesh)[0]
         n['base'] = list(e.get('base', [0.55, 0.35, 0.45])); n['tip'] = list(e.get('tip', [0.95, 0.65, 0.75]))

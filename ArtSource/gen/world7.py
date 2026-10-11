@@ -623,7 +623,9 @@ def build(L, info):
                 if abs(abs(x) - 7.4) < 2.2 and (abs(z - 9) < 2.4 or abs(z - 24) < 2.4): continue
                 if abs(x) < 3.2 and z > 27: continue
                 q = Hp(x, 0, z)
-                obj('WaterLily', [q[0], 0.0, q[2]], rng.uniform(0, 360), s=rng.uniform(0.8, 1.7), stat=False, noshadow=True, name='Water lily', floats=0.02)
+                lily_n = globals().setdefault('_lily_n', [0]); lily_n[0] += 1
+                lm = ('WaterLily_Pads', 'WaterLily', 'WaterLily_Pads', 'WaterLily_Pink', 'WaterLily_Pads')[lily_n[0] % 5]
+                obj(lm, [q[0], 0.0, q[2]], rng.uniform(0, 360), s=rng.uniform(0.8, 1.7), stat=False, noshadow=True, name='Water lily', floats=0.02)
             for k, fz in enumerate((12.0, 20.0)):
                 q = Hp(rng.uniform(-3, 3), 0, fz); obj(FISH[k], [q[0], -0.7, q[2]], rng.uniform(0, 360), noshadow=True, stat=False, tag='reef', name='Fish school')
             SO.append(dict(clip='Ocean_Near_Loop', p=R3(Hp(0, 1, 17)), vol=0.45, minD=4, maxD=30, spatial=1))
@@ -897,6 +899,20 @@ def build(L, info):
         follow(vn(tuple(e['cell']), ryg), 'Ivy_HangLine_L', extra_r=180, local_off=(0, 12.5, 13.15))
     for n in [(PL.N // 2, PL.N // 2), (0, 0), (6, 6), (0, 6), (6, 0), (2, 4), (4, 2)]:
         v = vpos(n); obj('Ivy_HangRing', [v[0], 26.35, v[2]], rng.uniform(0, 360), name='Ivy (oculus)')
+    # ---- vine-bloomer: the ivy mantle over every roof and outer wall (gen/real/mantle.py)
+    MANTLES = {'Vest_Dome': [('Dome', 3), ('CoreTop', 1)], 'ArcadeExt': [('Arcade', 2)], 'NaveExt': [('Nave', 2)],
+               'Arcade': [('GalArcade', 2)], 'Arcade_Win': [('GalArcadeWin', 2)], 'Nave': [('GalNave', 2)],
+               'Vest_SideWindow': [('SideWindow', 2)], 'Vest_SideWindow_CutL': [('SideWindow_CutL', 1)], 'Vest_SideWindow_CutR': [('SideWindow_CutR', 1)],
+               'Vest_SideBlind': [('SideBlind', 2)], 'Vest_SideOpen': [('SideOpen', 2)], 'Vest_SideGate': [('SideGate', 1)],
+               'SeaHall': [('SeaHall', 1)], 'IsleHall': [('IsleHall', 1)]}
+    for k_ in ('Window', 'Window_CutL', 'Window_CutR', 'Blind', 'Gallery', 'Gate', 'Tower', 'Cascade'):
+        MANTLES['VestExt_' + k_] = [('Ext' + k_, 1 if k_ in ('Gate', 'Tower', 'Cascade', 'Window_CutL', 'Window_CutR') else 2)]
+    mantle_src = [o_ for o_ in O if o_.get('mesh') in MANTLES]
+    for i_, o_ in enumerate(mantle_src):
+        for (mn, nv) in MANTLES[o_['mesh']]:
+            if not os.path.exists(os.path.join(HERE, '..', 'out', 'Meshes', f'IvyMantle_{mn}_0.bytes')): continue
+            obj(f'IvyMantle_{mn}_{(i_ * 7 + len(o_.get("name", ""))) % nv}', o_['p'], o_['r'], s=o_.get('s', 1.0), noshadow=True,
+                name=f"Ivy mantle ({o_.get('name', o_['mesh'])})")
     for k, c_ in enumerate([o_ for o_ in O if o_.get('mesh') == 'Column' and o_.get('name') == 'Column']):
         if k % 4 == 0:
             obj(f'Ivy_Column_{(k // 4) % 2}', c_['p'], rng.uniform(0, 360), name='Ivy (Nave column)')
