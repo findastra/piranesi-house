@@ -134,11 +134,8 @@ for n in nodes:
                 place('Pedestal_Colossal', local(o, ry, -6.9, 0, 6.9), ry + 135, col='box', name='Colossus_Pedestal')
                 statue(big, local(o, ry, -6.9, 1.75, 6.9), ry + 135, 2.3 if big != 'Statue_SeatedSage' else 2.6)
                 cw = local(o, ry, -6.9, 0, 6.9); occupied_corners.setdefault(n, []).append((cw[0] - o[0], cw[2] - o[2]))
-                # the big arched window: light, and four window seats in the deep bay
+                # Open sea-level arch. No seat or interaction blocks the tidal passage.
                 shafts.append(dict(p=local(o, ry, 0, 11.6, 11.2), radius=3.4, height=11.6, kind='window', face=ry + 180, dim=0.3))
-                for sx in VEST_WIN_SEATS:
-                    seats.append(dict(p=local(o, ry, sx, 0.55, 10.55), r=ry, kind='window', text='Sit in the window',
-                                      exit=local(o, ry, sx, 0.05, 8.9), size=[0.8, 0.5, 1.2]))
             else:
                 place('Pedestal_Colossal', local(o, ry, 0, 0, 9.6), ry + 180, col='box', name='Colossus_Pedestal')
                 big = R.choice(['Statue_WingedFigure', 'Statue_SeatedSage', 'Statue_Beast'])
@@ -202,9 +199,7 @@ for e in sorted(chosen):
                     sc = {'Statue_Dragon': 0.7, 'Statue_Horse': 0.7, 'Statue_Queen': 1.6, 'Statue_SeatedSage': 1.0}.get(st, 1.0)
                     if not (perim and sx > 0):
                         statue(st, local(c, ry, 5.45 * sx, 0.9, z), ry - 90 * sx, sc)
-                if perim and sx > 0:      # window bay with a seat instead of a statue niche
-                    seats.append(dict(p=local(c, ry, 5.6, 1.0, z), r=ry + 90, kind='window', text='Sit in the window',
-                                      exit=local(c, ry, 3.9, 0.05, z), size=[1.2, 0.5, 0.9]))
+                # Exterior arches remain open down to floor level, without bay seats.
                 # free-standing statues on stepped plinths along the corridor (every other bay, staggered)
                 if (k + (sx > 0)) % 2 == 0:
                     zz = z + 2.25
@@ -232,6 +227,8 @@ for e in sorted(chosen):
             place(m, local(c, ry, lx, 0.0, lz), R.uniform(0, 360), (1, 1, 1), name=m, col='box')
     if kind == 'Arcade' and R.random() < 0.5:
         place('SandDrift', local(c, ry, R.choice([-3, 3]), 0, R.choice([-14, 14])), R.uniform(0, 360), (0.7, 0.8, 0.9), name='SandDrift')
+        if objects[-1]['p'] == [63.0, 0, 16.0]:
+            objects[-1]['p'][0] = 60.0  # keep the eastern open tidal arches clear
 
 # ---------------------------------------------------------------- distant wings of the House across the sea
 for k, (dist, ang, w) in enumerate([(380, 200, 'Wing_1'), (520, 250, 'Wing_2'), (450, 300, 'Wing_3'), (650, 160, 'Wing_1'), (700, 320, 'Wing_2'), (600, 20, 'Wing_3'), (560, 110, 'Wing_2')]):

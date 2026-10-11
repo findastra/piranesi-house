@@ -449,9 +449,25 @@ def export_bytes(ob, fname):
     tris = inv[tl][:, [0, 2, 1]]
     names = [m.name if m else 'Default' for m in me.materials] or ['Default']
     subs = []
-    for mi, nm in enumerate(names):
-        sel = tris[tm == mi]
-        if len(sel): subs.append((nm, sel.ravel().astype(np.int32)))
+    # Retain existing Unity material indices when removing glazing and bars.
+    # Empty slots contain no geometry and prevent later materials shifting.
+    contracts = {
+        'Nave': ['Floor', 'Wall', 'Marble', 'Gold', 'Glass', 'Iron'],
+        'Vest_SideOpen': ['Wall', 'Marble', 'Gold', 'Iron'],
+        'Vest_SideBlind': ['Wall', 'Marble', 'Gold', 'Iron'],
+        'Vest_SideWindow': ['Wall', 'Marble', 'Gold', 'Iron', 'Glass2'],
+        'Arcade_Win': ['Floor', 'Wall', 'Stone', 'Marble', 'Iron', 'Glass2'],
+    }
+    contract = contracts.get(ob.name)
+    if contract:
+        if set(names) - set(contract): raise RuntimeError('Unexpected masonry material: ' + ob.name)
+        for nm in contract:
+            sel = tris[tm == names.index(nm)] if nm in names else np.empty((0, 3), np.int32)
+            subs.append((nm, sel.ravel().astype(np.int32)))
+    else:
+        for mi, nm in enumerate(names):
+            sel = tris[tm == mi]
+            if len(sel): subs.append((nm, sel.ravel().astype(np.int32)))
     C8 = (np.clip(C, 0, 1) * 255).astype(np.uint8)
     with open(os.path.join(OUT_MESH, fname + '.bytes'), 'wb') as f:
         f.write(b'PMS2'); f.write(struct.pack('<iii', len(P), len(subs), 1))
@@ -732,14 +748,8 @@ def make_vestibule_side(open_=True):
     """Wall on +Y side: inner face y=10, outer y=12, x in [-12,12], z 0..24."""
     wall = box(-12, 12, 10, 12, 0, 24, 'Wall', 'wall')
     cut = [arch_prism(10, 7, 0, 9.9 if open_ else 9.9, 12.1 if open_ else 11.3, name='arch')]
-    # lunette window
-    th = np.linspace(0, 2 * pi, 40, endpoint=False)
-    rw = 2.2; zw = 18.2
-    pts = [(rw * cos(t), zw + rw * sin(t)) for t in th]
-    n = len(pts)
-    Vc = [(p[0], 9.9, p[1]) for p in pts] + [(p[0], 12.1, p[1]) for p in pts]
-    Fc = [tuple(range(n - 1, -1, -1)), tuple(range(n, 2 * n))] + [(i, (i + 1) % n, (i + 1) % n + n, i + n) for i in range(n)]
-    cut.append(round_prism_uv(obj_from(Vc, Fc, 'Wall', name='win'), 0, zw))
+    # High open arch: no glazing, crossbars or circular window surround.
+    cut.append(arch_prism(4.4, 18.2, 0, 9.9, 12.1, z0=16.0, name='high_open_arch'))
     boolean(wall, cut)
     parts = [wall]
     parts.append(arch_molding(10, 7, 0, 10.0, 0.25, 0.55, m='Marble', name='archivolt_in'))
@@ -748,15 +758,8 @@ def make_vestibule_side(open_=True):
         parts.append(box(-0.5, 0.5, 9.7, 12.3, 11.7, 12.9, 'Gold', 'keystone'))
     else:
         parts.append(box(-0.5, 0.5, 9.7, 10.05, 11.7, 12.9, 'Gold', 'keystone'))
-    # window ring
-    ring = lathe([(2.2, -0.0), (2.55, 0.0), (2.6, 0.15), (2.2, 0.15)], 48, 'Marble', name='winring', cap_top=False, cap_bottom=False)
-    ring.rotation_euler.x = pi / 2; ring.location = (0, 10.0, zw)
-    with bpy.context.temp_override(active_object=ring, selected_editable_objects=[ring], object=ring):
-        bpy.ops.object.transform_apply(location=True, rotation=True)
-    parts.append(ring)
-    # mullion cross in window
-    parts.append(box(-0.06, 0.06, 10.8, 11.0, zw - 2.2, zw + 2.2, 'Iron', 'mull1'))
-    parts.append(box(-2.2, 2.2, 10.8, 11.0, zw - 0.06, zw + 0.06, 'Iron', 'mull2'))
+    parts.append(arch_molding(4.4, 18.2, 0, 10.0, 0.15, 0.35,
+                              m='Marble', name='high_arch_surround', legs_to=16.0))
     # pilasters flanking arch
     for sx in (-1, 1):
         x0 = sx * 7.2
@@ -775,16 +778,9 @@ def end_caps(half_w, top, opening_w=10, spring=7, name='caps', m='Wall', clerest
         cuts = [arch_prism(opening_w, spring, 0, y0 - 0.1, y1 + 0.1, name='capcut')]
         if clerestory is not None:
             radius, height = clerestory
-            # The Nave's high end cap abuts a vestibule wall. Continue that
-            # wall's circular opening through the cap instead of sealing it
-            # again with the neighboring module's otherwise solid masonry.
-            count = 40
-            ring = [(radius * cos(2 * pi * i / count), height + radius * sin(2 * pi * i / count))
-                    for i in range(count)]
-            verts = [(x, y0 - 0.1, z) for x, z in ring] + [(x, y1 + 0.1, z) for x, z in ring]
-            faces = [tuple(range(count - 1, -1, -1)), tuple(range(count, count * 2))]
-            faces += [(i, (i + 1) % count, (i + 1) % count + count, i + count) for i in range(count)]
-            cuts.append(round_prism_uv(obj_from(verts, faces, m, name='clerestory_cut'), 0, height))
+            # Continue the neighboring vestibule's high open arch through this cap.
+            cuts.append(arch_prism(radius * 2, height, 0, y0 - 0.1, y1 + 0.1,
+                                   z0=height - radius, name='high_arch_cap_cut'))
         boolean(c, cuts)
         # The longitudinal walls supply the cap's outer side planes. In the
         # narrow Arcade their inner faces also supply the straight doorway
@@ -812,6 +808,9 @@ def make_nave():
             yc = (COL_Y[k] + COL_Y[k + 1]) / 2
             c = arch_prism(2.0, 4.0, yc, 7.9 if sx > 0 else -8.9, 8.9 if sx > 0 else -7.9, z0=0.6, axis='y', name='niche')
             cuts.append(c)
+            # Continue each high aisle arch through the exterior wall as well.
+            cuts.append(arch_prism(2.6, 12.95, yc, 7.9 if sx > 0 else -10.1,
+                                   10.1 if sx > 0 else -7.9, z0=12.8, axis='y', name='open_air_arch'))
         boolean(w, cuts)
         parts.append(w)
         for k in range(7):
@@ -832,21 +831,15 @@ def make_nave():
         parts.append(bx(5.2, 6.55, 11.85, 12.0, 'Marble', 'corn1'))
         parts.append(bx(4.95, 6.55, 12.0, 12.25, 'Marble', 'corn2'))
         parts.append(bx(4.85, 6.55, 12.25, 12.4, 'Gold', 'corn3'))
-        # attic with clerestory windows (glass)
+        # Attic open arches: no fake sky panes or iron bars.
         att = bx(6.0, 6.55, 12.4, 14.6, 'Wall', 'attic')
         wcuts = []
         for k in range(7):
             yc = (COL_Y[k] + COL_Y[k + 1]) / 2
-            wcuts.append(box(5.9 if sx > 0 else -6.65, 6.65 if sx > 0 else -5.9, yc - 1.3, yc + 1.3, 12.8, 14.25, 'Wall', 'wcut'))
+            wcuts.append(arch_prism(2.6, 12.95, yc, 5.9 if sx > 0 else -6.65,
+                                    6.65 if sx > 0 else -5.9, z0=12.8, axis='y', name='attic_open_arch'))
         boolean(att, wcuts)
         parts.append(att)
-        for k in range(7):
-            yc = (COL_Y[k] + COL_Y[k + 1]) / 2
-            parts.append(bx(6.4, 6.45, 12.8, 14.25, 'Glass', 'glass') if False else None)
-            lo, hi = (6.35, 6.4) if sx > 0 else (-6.4, -6.35)
-            parts.append(box(lo, hi, yc - 1.3, yc + 1.3, 12.8, 14.25, 'Glass', 'glass'))
-            # mullions
-            parts.append(box(lo - 0.03, hi + 0.03, yc - 0.05, yc + 0.05, 12.8, 14.25, 'Iron', 'm'))
         parts.append(bx(5.85, 6.55, 14.4, 14.6, 'Marble', 'springcourse'))
     ribs = [(y, 0.7) for y in COL_Y]
     parts.append(barrel_vault(6.0, 14.6, -18, 18, 'Marble', coffer=True, ribs=ribs, oculi=[(-9.0, 1.6), (9.0, 1.6)], name='vault'))

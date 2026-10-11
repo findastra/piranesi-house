@@ -17,7 +17,7 @@ Built for PC VRChat (Unity 2022.3.22f1, VRChat Worlds SDK 3.10, UdonSharp).
   leaves, winter snow and frost). Everything is driven from VRChat server time, so everyone in an
   instance sees the same sky.
 - **Atmosphere:** volumetric-style light shafts that follow the sun, dust sparkles, a cascade
-  pouring from a high window, mica glints in the marble, bloom and ACES grading, reverb per hall.
+  pouring through a high open arch, mica glints in the marble, bloom and ACES grading, reverb per hall.
 - **Sound:** marble, sand, and water footsteps, surf, wind in the oculi, the House's low drone.
 
 ## What's new in v2
@@ -25,8 +25,8 @@ Built for PC VRChat (Unity 2022.3.22f1, VRChat Worlds SDK 3.10, UdonSharp).
 - **The Colossus:** a 13 m robed figure stands in the north-central hall with one enormous hand raised palm-up
   under the oculus. A spotlight from the oculus always falls on the palm, and sparkles drift around it.
   *Rest in the Colossus' palm* (interact at the pedestal) seats you in the hand, in the light.
-- **Window seats:** every outward-facing wall now has a great arched window. Each window bay holds a marble
-  seat between mullioned panes, with 80 seats in total across the vestibules and the six perimeter arcades.
+- **Open arches:** exterior openings have no glazing, bars or raised window seats. Low openings reach the floor
+  so the sea passes freely through the House; high wall openings are arched and open to the air.
 - **Islands instead of the 'show' wings:**
   - **South Beach:** coconut palms, hibiscus, beach grass, shells and starfish, crabs that scuttle away
     from you, a hammock, a dock and a gondola.
@@ -63,6 +63,8 @@ Built for PC VRChat (Unity 2022.3.22f1, VRChat Worlds SDK 3.10, UdonSharp).
 The [2026-10-11 masonry audit](docs/masonry-structural-audit-20261011.md) documents repairs to directional courses, arch openings, overlapping surfaces and texture seams. The reusable checker and execution-history library live in [Unity Unicorn](https://github.com/findastra/unity-unicorn).
 
 For an existing assembled scene, **Piranesi ▸ Refresh Masonry and Capture Audit** updates its existing masonry mesh assets in place and captures inspection views without rebuilding the scene layout. It writes a dated validation report and a Unity Unicorn usage receipt to an ignored local audit folder. The receipt records the actual completion time; it does not certify a VRChat client test.
+
+The [open-arches audit](docs/open-arches-audit-20261011.md) records the removal of windows and verifies the saved scene. **Piranesi → Apply Open Arches and Capture Audit** applies these changes after the no-windows tool exports its probes.
 
 ## Layout
 

@@ -69,79 +69,58 @@ def export_stone(ob, name):
 
 # ================================================================== window-seat walls
 def vest_side_window():
-    """Outward-facing vestibule wall: a grand arched window with a deep window seat inside the 2 m wall."""
+    """Outward-facing vestibule wall: open arches with an unobstructed sea-level passage.
+
+    The legacy asset name is retained for existing Unity GUID/layout references.
+    """
     reset()
     wall = K.box(-12, 12, 10, 12, 0, 24, 'Wall', 'wall')
-    cuts = [K.arch_prism(8, 7.2, 0, 9.9, 12.1, z0=0.55, name='win')]
-    th = np.linspace(0, 2 * pi, 40, endpoint=False); rw = 2.2; zw = 18.2
-    pts = [(rw * cos(t), zw + rw * sin(t)) for t in th]; n = len(pts)
-    Vc = [(p[0], 9.9, p[1]) for p in pts] + [(p[0], 12.1, p[1]) for p in pts]
-    Fc = [tuple(range(n - 1, -1, -1)), tuple(range(n, 2 * n))] + [(i, (i + 1) % n, (i + 1) % n + n, i + n) for i in range(n)]
-    cuts.append(K.round_prism_uv(K.obj_from(Vc, Fc, 'Wall', name='lun'), 0, zw))
+    cuts = [K.arch_prism(8, 7.2, 0, 9.9, 12.1, z0=0, name='sea_level_arch')]
+    cuts.append(K.arch_prism(4.4, 18.2, 0, 9.9, 12.1, z0=16.0, name='high_open_arch'))
     K.boolean(wall, cuts)
     parts = [wall]
-    parts.append(K.arch_molding(8, 7.2, 0, 10.0, 0.25, 0.5, m='Marble', name='av', legs_to=0.55))
-    parts.append(K.box(-0.45, 0.45, 9.75, 10.05, 10.7, 11.9, 'Gold', 'key'))
-    # window seat: marble bench filling the bay floor, with a raised back step toward the glass
-    parts.append(K.box(-4.0, 4.0, 10.0, 12.0, 0.0, 0.55, 'Marble', 'seat'))
-    parts.append(K.box(-4.0, 4.0, 11.55, 11.95, 0.55, 0.85, 'Marble', 'sill'))
-    # mullioned glazing at the outer face: iron grid + glass
-    for x in np.linspace(-4, 4, 6)[1:-1]:
-        parts.append(K.box(x - 0.05, x + 0.05, 11.8, 11.9, 0.85, 7.2 + sqrt(max(0, 16 - x * x)), 'Iron', 'mv'))
-    for z in (2.6, 4.6, 6.6, 8.6, 10.2):
-        hw = 4 if z <= 7.2 else sqrt(max(0, 16 - (z - 7.2) ** 2))
-        parts.append(K.box(-hw, hw, 11.8, 11.9, z - 0.05, z + 0.05, 'Iron', 'mh'))
-    gl = K.arch_prism(8, 7.2, 0, 11.84, 11.86, z0=0.85, name='glass')
-    gl.data.materials.clear(); gl.data.materials.append(K.mat('Glass2'))
-    parts.append(gl)
-    # pilasters & window ring as on the other sides
-    ring = K.lathe([(2.2, 0.0), (2.55, 0.0), (2.6, 0.15), (2.2, 0.15)], 48, 'Marble', name='winring', cap_top=False, cap_bottom=False)
-    ring.rotation_euler.x = pi / 2; ring.location = (0, 10.0, zw)
-    with bpy.context.temp_override(active_object=ring, selected_editable_objects=[ring], object=ring):
-        bpy.ops.object.transform_apply(location=True, rotation=True)
-    parts.append(ring)
+    parts.append(K.arch_molding(8, 7.2, 0, 10.0, 0.25, 0.5, m='Marble', name='av', legs_to=0))
+    parts.append(K.box(-0.45, 0.45, 9.75, 10.05, 11.2, 12.2, 'Gold', 'key'))
+    # No bench, raised sill, glazing or bars span the passage.
+    parts.append(K.arch_molding(4.4, 18.2, 0, 10.0, 0.15, 0.35,
+                                m='Marble', name='high_arch_surround', legs_to=16.0))
     for sx in (-1, 1):
         x0 = sx * 7.2
         parts.append(K.box(x0 - 0.7, x0 + 0.7, 9.65, 10.0, 0, 11.8, 'Marble', 'pil'))
         parts.append(K.box(x0 - 0.85, x0 + 0.85, 9.5, 10.0, 11.8, 12.3, 'Marble', 'pilcap'))
     ob = K.join(parts, 'Vest_SideWindow')
     export_stone(ob, 'Vest_SideWindow')
-    EXTRA['Vest_SideWindow_seats'] = [[x, 0.55, 11.0] for x in (-2.6, -0.9, 0.9, 2.6)]
+    EXTRA['Vest_SideWindow_seats'] = []
 
 def arcade_window():
-    """Arcade whose +X wall has 8 window bays (seat + glass) instead of statue niches."""
+    """Arcade whose +X wall has eight open, sill-free arches to the sea."""
     reset()
     parts = [K.box(-7, 7, -18, 18, -8, 0, 'Floor', 'floor')]
     bays = [-15.75 + 4.5 * k for k in range(8)]
     for sx in (-1, 1):
         w = K.box(5 if sx > 0 else -7, 7 if sx > 0 else -5, -18, 18, 0, 15.5, 'Wall', 'wall')
         if sx > 0:
-            cuts = [K.arch_prism(2.4, 4.2, yc, 4.9, 7.1, z0=0.9, axis='y', name='bay') for yc in bays]
+            cuts = [K.arch_prism(2.4, 4.2, yc, 4.9, 7.1, z0=0, axis='y', name='open_bay') for yc in bays]
         else:
             cuts = [K.arch_prism(2.4, 4.2, yc, -6.0, -4.9, z0=0.9, axis='y', name='niche') for yc in bays]
         K.boolean(w, cuts); parts.append(w)
         def bx(a, b, y0, y1, z0, z1, m, nm):
             lo, hi = (a, b) if sx > 0 else (-b, -a)
             return K.box(lo, hi, y0, y1, z0, z1, m, nm)
-        parts.append(bx(4.35, 5.0, -18, 18, 0, 0.75, 'Stone', 'ledge'))
-        parts.append(bx(4.25, 5.0, -18, 18, 0.75, 0.9, 'Stone', 'ledgecap'))
+        ledges = [(-18, 18)] if sx < 0 else list(zip([-18] + [c + 1.2 for c in bays], [c - 1.2 for c in bays] + [18]))
+        for a, b in ledges:
+            parts.append(bx(4.35, 5.0, a, b, 0, 0.75, 'Stone', 'ledge'))
+            parts.append(bx(4.25, 5.0, a, b, 0.75, 0.9, 'Stone', 'ledgecap'))
         for k in range(1, 8):
             yp = -18 + 4.5 * k
             parts.append(bx(4.6, 5.0, yp - 0.45, yp + 0.45, 0.9, 8.5, 'Stone', 'pil'))
             parts.append(bx(4.45, 5.0, yp - 0.6, yp + 0.6, 8.5, 8.85, 'Stone', 'pilcap'))
         for yc in bays:
-            mo = K.arch_molding(2.4, 4.2, 0, 0.0, 0.12, 0.22, m='Stone', name='nm', legs_to=0.9, bury_back=0.004)
+            mo = K.arch_molding(2.4, 4.2, 0, 0.0, 0.12, 0.22, m='Stone', name='nm', legs_to=0 if sx > 0 else 0.9, bury_back=0.004)
             mo.rotation_euler.z = (-pi / 2 if sx > 0 else pi / 2); mo.location = (5.0 * sx, yc, 0)
             with bpy.context.temp_override(active_object=mo, selected_editable_objects=[mo], object=mo):
                 bpy.ops.object.transform_apply(location=True, rotation=True)
             parts.append(mo)
-            if sx > 0:
-                parts.append(K.box(5.0, 7.0, yc - 1.2, yc + 1.2, 0.9, 1.0, 'Marble', 'bayseat'))
-                for z in (2.4, 3.9):
-                    parts.append(K.box(6.85, 6.95, yc - 1.2, yc + 1.2, z - 0.04, z + 0.04, 'Iron', 'mh'))
-                parts.append(K.box(6.85, 6.95, yc - 0.04, yc + 0.04, 1.0, 5.4, 'Iron', 'mv'))
-                gl = K.arch_prism(2.4, 4.2, yc, 6.89, 6.91, z0=1.0, axis='y', name='glass')
-                gl.data.materials.clear(); gl.data.materials.append(K.mat('Glass2')); parts.append(gl)
         parts.append(bx(4.4, 5.0, -18, 18, 8.85, 9.3, 'Stone', 'cornice'))
     ribs = [(-13.5, 0.9), (-4.5, 0.9), (4.5, 0.9), (13.5, 0.9)]
     parts.append(K.barrel_vault(5.0, 9.3, -18, 18, 'Wall', coffer=False, ribs=ribs, sky_holes=[(-9.0, 0.8), (9.0, 0.8)], base_step=0.3, name='vault'))
@@ -149,7 +128,7 @@ def arcade_window():
     parts += K.end_caps(7, 15.5)
     ob = K.join(parts, 'Arcade_Win')
     export_stone(ob, 'Arcade_Win')
-    EXTRA['Arcade_Win_seats'] = [[5.9, 1.0, yc] for yc in bays]   # unity local (x, y, z)
+    EXTRA['Arcade_Win_seats'] = []
 
 # ================================================================== islands & seabed (Unity-space heightfields)
 ISLANDS = [  # name, centre (x, z), radii, crest height, interior height, seed
@@ -365,6 +344,12 @@ def make_aqueduct(L=29.0):
     W = 3.0; bays = 4; bw = L / bays
     parts = []
     body = K.box(-W / 2, W / 2, 0, L, -6, 17.0, 'Wall', 'body')
+    # Support the existing sloping water ribbon below its surface, including
+    # the outlet; a flat 17 m cap previously buried the low end of the water.
+    for vertex in body.data.vertices:
+        if abs(vertex.co.z - 17.0) < 1e-6:
+            vertex.co.z = 16.85 + 0.5 * vertex.co.y / L
+    body.data.update()
     cuts = []
     for b in range(bays):
         yc = (b + 0.5) * bw
@@ -382,11 +367,18 @@ def make_aqueduct(L=29.0):
             parts.append(K.masonry_surround(bw - 3.2, 12.6, yc, sx * W / 2, axis='y',
                                            outward=sx, legs_to=9.5, thick=0.35, name='upper_voussoirs'))
     # channel walls on top + string courses
-    parts.append(K.box(-W / 2 - 0.15, -W / 2 + 0.35, 0, L, 17.0, 18.0, 'Stone', 'cw1'))
-    parts.append(K.box(W / 2 - 0.35, W / 2 + 0.15, 0, L, 17.0, 18.0, 'Stone', 'cw2'))
+    for xmin, xmax, name in ((-W / 2 - 0.15, -W / 2 + 0.35, 'cw1'),
+                             (W / 2 - 0.35, W / 2 + 0.15, 'cw2')):
+        channel_wall = K.box(xmin, xmax, 0, L, 16.6, 18.0, 'Stone', name)
+        # Rest on the sloped bed instead of overlapping its exposed end caps.
+        for vertex in channel_wall.data.vertices:
+            if abs(vertex.co.z - 16.6) < 1e-6:
+                vertex.co.z = 16.85 + 0.5 * vertex.co.y / L
+        channel_wall.data.update()
+        parts.append(channel_wall)
     parts.append(K.box(-W / 2 - 0.2, W / 2 + 0.2, 0, L, 9.2, 9.5, 'Marble', 'course'))
-    # spout reaching into the lunette window
-    parts.append(K.box(-0.6, 0.6, -2.2, 0, 16.85, 17.15, 'Stone', 'spout'))
+    # Open spout reaches through the high arch, below the flowing water ribbon.
+    parts.append(K.box(-0.6, 0.6, -2.2, 0, 16.6, 16.85, 'Stone', 'spout'))
     ob = K.join(parts, 'Aqueduct'); export_stone(ob, 'Aqueduct')
     # flowing water ribbon in the channel and pouring off the spout
     B = NA.Builder()
@@ -449,7 +441,8 @@ def make_noria(axle_h=8.2):
         parts.append(K.box(x0 - 0.65, x0 + 0.65, -1.0, 1.0, 0.3, 1.2, 'Marble', 'bearing'))
     parts.append(K.box(-wid / 2 - 3.2, wid / 2 + 0.3, -0.9, 0.9, R + 0.35, R + 0.55, 'Stone', 'trough'))
     for y0 in (-0.9, 0.75):
-        parts.append(K.box(-wid / 2 - 3.2, wid / 2 + 0.3, y0, y0 + 0.15, R + 0.55, R + 0.85, 'Stone', 'troughwall'))
+        # Leave the aqueduct mouth open at the trough's left-hand outlet.
+        parts.append(K.box(-2.1, wid / 2 + 0.3, y0, y0 + 0.15, R + 0.55, R + 0.85, 'Stone', 'troughwall'))
     for x in (-wid / 2 - 1.1, wid / 2 + 0.6):
         parts.append(K.box(x - 0.25, x + 0.25, -0.25, 0.25, 1.2, R + 0.35, 'Stone', 'post'))
     ob = K.join(parts, 'NoriaFrame'); export_stone(ob, 'NoriaFrame')
@@ -474,11 +467,12 @@ def make_tower():
     shell = K.box(-s, s, 0, 2 * s, -8, H, 'Wall', 'shell')
     inner = K.box(-s + t, s - t, t, 2 * s - t, 0, H - 0.6, 'Wall', 'inner')
     cuts = [inner, K.arch_prism(3.0, 2.6, 0, -0.1, t + 0.1, z0=0, name='door')]
-    for z in (6.0, 12.0, 18.0, 23.0):          # slit windows on three faces
+    cuts.append(K.arch_prism(4.4, 18.2, 0, -0.1, t + 0.1, z0=16.0, name='vestibule_high_arch'))
+    for z in (6.0, 12.0, 18.0, 23.0):          # small open arches on three faces
         for (ax, a0, a1) in (('x', s - t - 0.1, s + 0.1), ('x', -s - 0.1, -s + t + 0.1)):
             v = [(a0, s - 0.35, z), (a1, s - 0.35, z), (a1, s + 0.35, z), (a0, s - 0.35 + 0.7, z)]
-            cuts.append(K.box(a0, a1, s - 0.35, s + 0.35, z, z + 2.2, 'Wall', 'slit'))
-        cuts.append(K.box(-0.35, 0.35, 2 * s - t - 0.1, 2 * s + 0.1, z, z + 2.2, 'Wall', 'slit'))
+            cuts.append(K.arch_prism(0.7, z + 1.85, s, a0, a1, z0=z, axis='y', name='tower_open_arch'))
+        cuts.append(K.arch_prism(0.7, z + 1.85, 0, 2 * s - t - 0.1, 2 * s + 0.1, z0=z, name='tower_open_arch'))
     # roof hatch over the stair top
     cuts.append(K.box(-1.1, 4.15, 2.2, 9.2, H - 1.0, H + 0.2, 'Wall', 'hatch'))
     K.boolean(shell, cuts)
@@ -496,6 +490,10 @@ def make_tower():
         F = [(0, 3, 2, 1), (4, 5, 6, 7), (0, 1, 5, 4), (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)]
         parts.append(K.obj_from(V, F, 'Marble', name='step'))
     parts.append(K.lathe([(1.0, 0), (1.0, H - 1.2)], 24, 'Marble', name='newel'))
+    # The stair winds around (0, s), not the doorway at (0, 0).
+    parts[-1].location.y = s
+    with bpy.context.temp_override(active_object=parts[-1], selected_editable_objects=[parts[-1]], object=parts[-1]):
+        bpy.ops.object.transform_apply(location=True)
     # roof platform parapet + slide pavilion columns
     parts.append(K.box(-s, s, 0, 0.4, H, H + 1.1, 'Marble', 'par1')); parts.append(K.box(-s, s, 2 * s - 0.4, 2 * s, H, H + 1.1, 'Marble', 'par2'))
     parts.append(K.box(-s, -s + 0.4, 0, 2.6, H, H + 1.1, 'Marble', 'par3a'))

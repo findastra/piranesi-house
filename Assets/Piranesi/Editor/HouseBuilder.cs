@@ -175,6 +175,17 @@ namespace Piranesi.EditorTools
         [MenuItem("Piranesi/Refresh Masonry and Capture Audit", priority = 19)]
         public static void RefreshMasonryAudit()
         {
+            RefreshMasonryCore(false);
+        }
+
+        [MenuItem("Piranesi/Apply Open Arches and Capture Audit", priority = 18)]
+        public static void ApplyOpenArchesAndCaptureAudit()
+        {
+            RefreshMasonryCore(true);
+        }
+
+        static void RefreshMasonryCore(bool applyOpenArches)
+        {
             if (!Application.isBatchMode && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
             string output = Path.GetFullPath("local-audit-" + MasonryDateStamp());
             Directory.CreateDirectory(output);
@@ -222,8 +233,9 @@ namespace Piranesi.EditorTools
                 var shader = Shader.Find("Piranesi/Stone");
                 if (shader == null || ShaderUtil.ShaderHasError(shader))
                     throw new InvalidOperationException("Piranesi/Stone failed shader compilation");
-                // Do not replace or save the assembled scene. Only render its current references.
+                // Refresh mode only renders; open-arches mode explicitly updates and saves the scene.
                 EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Single);
+                if (applyOpenArches) ApplyOpenArchesScene(output, refreshed);
                 HousePreviewWindow.ApplyState(0.32f, 1.3f, 0.25f, false);
                 CaptureMasonry(output, "masonry-spawn", new Vector3(-2, 1.7f, 0), new Vector3(-16, 6, 0));
                 CaptureMasonry(output, "masonry-arcade-vault", new Vector3(0, 2.4f, 23), new Vector3(0, 6.2f, 36));
@@ -238,24 +250,124 @@ namespace Piranesi.EditorTools
                 CaptureMasonry(output, "masonry-aqueduct", aq.center + new Vector3(1, .2f, .15f).normalized * aq.extents.magnitude * 1.9f, aq.center);
                 CaptureMasonry(output, "masonry-sea-gate", new Vector3(-67, 2.5f, 0), new Vector3(-77, 5, 0));
                 CaptureMasonry(output, "masonry-tower-door", new Vector3(3, 2, -67), new Vector3(0, 3, -74));
+                if (applyOpenArches)
+                {
+                    CaptureLocalArch(output, "open-arch-sea-passage", "Vest_SideWindow", new Vector3(0, 2.2f, 6), new Vector3(0, 2.2f, 14));
+                    CaptureLocalArch(output, "open-arch-arcade-passage", "Arcade_Win", new Vector3(1, 1.8f, -15.75f), new Vector3(8, 1.8f, -15.75f));
+                    CaptureLocalArch(output, "open-arch-nave-airway", "Nave", new Vector3(3, 13.4f, 0), new Vector3(11, 13.4f, 0));
+                }
                 if (ShaderUtil.ShaderHasError(shader))
                     throw new InvalidOperationException("Piranesi/Stone failed a rendered shader variant");
                 string stamp = DateTime.UtcNow.ToString("o");
                 string reportPath = Path.Combine(output, "unity-masonry-validation-" + MasonryDateStamp() + ".txt");
                 File.WriteAllText(reportPath,
                     "Completed UTC: " + stamp + "\nExisting meshes refreshed: " + refreshed.Count +
-                    "\nPiranesi/Stone shader errors: 0\nScene opened and ten camera renders captured.\n" +
+                    "\nPiranesi/Stone shader errors: 0\nScene camera renders captured: " + (applyOpenArches ? 13 : 10) + "\n" +
                     "Editor rendering only; VRChat client and headset not tested.\n" + string.Join("\n", refreshed));
                 WriteMasonryReceipt(output, "completed", "Refreshed " + refreshed.Count +
-                    " existing masonry meshes; shader compiled and ten saved-scene camera views rendered.", reportPath);
+                    " existing masonry meshes; shader compiled and " + (applyOpenArches ? 13 : 10) + " saved-scene camera views rendered.", reportPath);
                 Debug.Log("[Piranesi] Masonry refreshed and rendered: " + output);
             }
             catch (Exception error)
             {
                 WriteMasonryReceipt(output, "failed", "Masonry refresh failed: " + error.Message, "");
+                if (applyOpenArches)
+                {
+                    var failed = new MasonryRunReceipt { tool_id = "no-windows-scene-refresh", completed_at = DateTime.UtcNow.ToString("o"), status = "failed", evidence = error.Message };
+                    File.WriteAllText(Path.Combine(output, "no-windows-scene-usage-" + MasonryDateStamp() + ".json"), JsonUtility.ToJson(failed, true));
+                }
                 throw;
             }
             finally { EditorUtility.ClearProgressBar(); }
+        }
+
+        [Serializable] class OpenArchProbe { public string name; public float[] start, end; public bool tidal; }
+        [Serializable] class OpenArchMeshEvidence { public string name, sha256; }
+        [Serializable] class OpenArchProbeSet { public string schema; public OpenArchProbe[] probes; public OpenArchMeshEvidence[] meshes; }
+        [Serializable] class OpenArchSceneReport
+        {
+            public string completed_at;
+            public int removed_window_seats, remaining_window_seats, relocated_sand_drifts, recooked_colliders, tested_segments, blocked_segments, glass_triangles;
+            public string[] blockers;
+            public OpenArchMeshEvidence[] meshes;
+        }
+
+        static void ApplyOpenArchesScene(string output, List<string> refreshed)
+        {
+            string probePath = Path.Combine(output, "open-arch-probes-" + MasonryDateStamp() + ".json");
+            var probes = JsonUtility.FromJson<OpenArchProbeSet>(File.ReadAllText(probePath));
+            if (probes.schema != "unity-unicorn.open-arch-probes/v1" || probes.probes == null || probes.probes.Length == 0 || probes.meshes == null || probes.meshes.Length != refreshed.Count)
+                throw new InvalidDataException("Run the no-windows audit to produce current arch probes first.");
+            foreach (var entry in probes.meshes)
+            {
+                using (var sha = System.Security.Cryptography.SHA256.Create())
+                {
+                    string hash = BitConverter.ToString(sha.ComputeHash(File.ReadAllBytes(Root + "/Meshes/" + entry.name + ".bytes"))).Replace("-", "").ToLowerInvariant();
+                    if (hash != entry.sha256) throw new InvalidDataException("Stale arch probes for " + entry.name);
+                }
+            }
+            string backup = Path.Combine(output, "before-open-arches-scene-" + MasonryDateStamp() + ".unity");
+            if (!File.Exists(backup)) File.Copy(ScenePath, backup);
+            var report = new OpenArchSceneReport { meshes = probes.meshes };
+            foreach (var t in Object.FindObjectsOfType<Transform>(true))
+            {
+                if (t == null) continue;
+                if (t.name == "Seat (window)") { Object.DestroyImmediate(t.gameObject); report.removed_window_seats++; }
+                else if (t.name == "Seats (window seats, benches, hammocks, the palm)") t.name = "Seats (benches, hammocks, the palm)";
+                else if (t.name == "SandDrift" && Vector3.Distance(t.position, new Vector3(63, 0, 16)) < .01f)
+                {
+                    t.position = new Vector3(60, 0, 16); report.relocated_sand_drifts++;
+                }
+            }
+            foreach (var collider in Object.FindObjectsOfType<MeshCollider>(true))
+            {
+                if (collider.sharedMesh == null || !refreshed.Contains(AssetDatabase.GetAssetPath(collider.sharedMesh))) continue;
+                var mesh = collider.sharedMesh; collider.sharedMesh = null; collider.sharedMesh = mesh;
+                EditorUtility.SetDirty(collider); report.recooked_colliders++;
+            }
+            foreach (var filter in Object.FindObjectsOfType<MeshFilter>(true))
+            {
+                if (filter.sharedMesh == null || !refreshed.Contains(AssetDatabase.GetAssetPath(filter.sharedMesh))) continue;
+                var renderer = filter.GetComponent<MeshRenderer>();
+                if (renderer == null) continue;
+                var materials = renderer.sharedMaterials;
+                for (int i = 0; i < Math.Min(materials.Length, filter.sharedMesh.subMeshCount); i++)
+                    if (materials[i] != null && (materials[i].name.IndexOf("Glass", StringComparison.OrdinalIgnoreCase) >= 0 || materials[i].name == "M_SkyWindow"))
+                        report.glass_triangles += (int)filter.sharedMesh.GetIndexCount(i) / 3;
+            }
+            Physics.SyncTransforms();
+            var blockers = new List<string>();
+            foreach (var p in probes.probes)
+            {
+                Vector3 start = V(p.start), end = V(p.end), delta = end - start;
+                var hits = Physics.RaycastAll(start, delta.normalized, delta.magnitude, ~0, QueryTriggerInteraction.Ignore)
+                    .Concat(Physics.RaycastAll(end, -delta.normalized, delta.magnitude, ~0, QueryTriggerInteraction.Ignore));
+                var hit = hits.FirstOrDefault();
+                report.tested_segments++;
+                if (hit.collider != null)
+                {
+                    report.blocked_segments++;
+                    if (blockers.Count < 40) blockers.Add(p.name + " -> " + hit.collider.name + " at " + hit.point);
+                }
+            }
+            report.remaining_window_seats = Object.FindObjectsOfType<Transform>(true).Count(t => t.name == "Seat (window)");
+            report.blockers = blockers.ToArray(); report.completed_at = DateTime.UtcNow.ToString("o");
+            string reportPath = Path.Combine(output, "no-windows-scene-audit-" + MasonryDateStamp() + ".json");
+            File.WriteAllText(reportPath, JsonUtility.ToJson(report, true));
+            EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+            if (!EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(), ScenePath)) throw new IOException("Open-arch scene could not be saved.");
+            var receipt = new MasonryRunReceipt { tool_id = "no-windows-scene-refresh", completed_at = report.completed_at,
+                status = report.blocked_segments == 0 && report.glass_triangles == 0 && report.remaining_window_seats == 0 ? "completed" : "failed",
+                evidence = "Saved open-arch scene; " + report.removed_window_seats + " old window seats removed, " + report.recooked_colliders +
+                    " masonry colliders refreshed; " + report.blocked_segments + "/" + report.tested_segments + " blocked collider segments; " + report.glass_triangles + " glass triangles.", evidence_path = reportPath };
+            File.WriteAllText(Path.Combine(output, "no-windows-scene-usage-" + MasonryDateStamp() + ".json"), JsonUtility.ToJson(receipt, true));
+            Debug.Log("[Piranesi] Open-arch collider audit: " + receipt.evidence);
+        }
+
+        static void CaptureLocalArch(string output, string name, string mesh, Vector3 from, Vector3 to)
+        {
+            var filter = Object.FindObjectsOfType<MeshFilter>().Where(f => f.sharedMesh != null && f.sharedMesh.name == mesh).OrderBy(f => f.name).First();
+            CaptureMasonry(output, name, filter.transform.TransformPoint(from), filter.transform.TransformPoint(to));
         }
 
         static string MasonryDateStamp()
@@ -1306,7 +1418,7 @@ namespace Piranesi.EditorTools
             var res = new V2Result();
             var water = Clips("Step_Water_");
             AudioClip WaterClip(int i) => water.Length > 0 ? water[i % water.Length] : null;
-            var tSeats = Child(root, "Seats (window seats, benches, hammocks, the palm)").transform;
+            var tSeats = Child(root, "Seats (benches, hammocks, the palm)").transform;
             var immobile = VRC.SDKBase.VRCStation.Mobility.Immobilize;
             var vehicle = VRC.SDKBase.VRCStation.Mobility.ImmobilizeForVehicle;
 
@@ -1315,6 +1427,7 @@ namespace Piranesi.EditorTools
             foreach (var s in L.seats ?? new LSeat[0])
             {
                 if (s == null || s.p == null || s.p.Length < 3) continue;
+                if (s.kind == "window") continue; // obsolete bay seats must not return on rebuild
                 Progress("Seats", 0.62f + 0.04f * n++ / Mathf.Max(1, L.seats.Length));
                 var size = s.size != null && s.size.Length == 3 ? V(s.size) : new Vector3(0.8f, 0.5f, 0.8f);
                 var seat = MakeSeat(tSeats, "Seat (" + s.kind + ")", V(s.p), s.r, s.exit != null && s.exit.Length == 3 ? V(s.exit) : V(s.p) + Vector3.up * 0.2f,

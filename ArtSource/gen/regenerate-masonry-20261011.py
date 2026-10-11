@@ -127,7 +127,7 @@ def verify_openings(staged):
             cases.append(('Nave', (s * 7, 3, z), (s * 8.8, 3, z), True, 'recess before blind-niche back'))
     cases.append(('PumpHouse', (-4, 1.5, 0), (-2, 1.5, 0), True, 'door aperture'))
     for name in ('Vest_SideOpen', 'Vest_SideBlind', 'Vest_SideWindow'):
-        cases.append((name, (0.5, 18.7, 9), (0.5, 18.7, 13), True, 'circular clerestory aperture away from mullions'))
+        cases.append((name, (0.5, 18.7, 9), (0.5, 18.7, 13), True, 'open clerestory arch'))
     for side in (-1, 1):
         cases.append(('Nave', (0.5, 18.7, side * 16), (0.5, 18.7, side * 19),
                       True, 'end-cap clerestory continues vestibule opening'))
@@ -310,8 +310,8 @@ def main():
         'All 15 Wall/Stone mesh modules now use authored per-corner metric UVs exported as PMS2.',
         'Flat courses follow height; vaults follow arc length; dome meridians and arch radial joints stay continuous.',
         'Reflected axis-y arch cutters now retain outward winding, restoring real holes and recessed niches instead of filled duplicate caps.',
-        'Closed Boolean cutter signed volumes are checked and inward winding corrected, restoring all three circular clerestory window modules.',
-        'High Nave end caps continue the adjoining vestibule circular apertures; assembled layout rays guard both east/west junctions.',
+        'Closed Boolean cutter signed volumes are checked and inward winding corrected, preserving open clerestory arches in all three legacy vestibule modules.',
+        'High Nave end caps continue the adjoining vestibule open arches; assembled layout rays guard both east/west junctions.',
         'Arcade archivolts face the corridor; their backs are embedded in the wall.',
         'Previously unframed load-bearing openings have shallow bonded voussoir and jamb surrounds.',
         'Gallery end faces are clipped where the cap already supplies the visible surface; cap side faces covered by longitudinal walls are removed.',
@@ -324,7 +324,15 @@ def main():
             report['failures'].append(name + ': material-slot contract changed')
         for key in ('bounds_min', 'bounds_max'):
             if not np.allclose(after[key], originals[name][key], atol=1e-5, rtol=0):
-                report['failures'].append(name + ': module bounding box changed')
+                # Moving the misplaced stair newel into its actual stair centre
+                # removes its erroneous 1 m projection through the doorway.
+                tower_newel_fix = (name == 'StairTower' and key == 'bounds_min'
+                    and np.allclose(after[key][:2], originals[name][key][:2], atol=1e-5, rtol=0)
+                    and abs(after[key][2] + 0.06) < 1e-5)
+                if tower_newel_fix:
+                    report['meshes'][name]['intentional_bounds_change'] = 'Newel moved from doorway into stair centre; front bound now follows the doorway molding.'
+                else:
+                    report['failures'].append(name + ': module bounding box changed')
         if not after['finite']: report['failures'].append(name + ': non-finite geometry')
         for matname, stats in after['masonry'].items():
             if not stats['finite_uv'] or stats['collapsed_uv_triangles']:
