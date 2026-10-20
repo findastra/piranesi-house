@@ -29,7 +29,7 @@ Built for PC VRChat (Unity 2022.3.22f1, VRChat Worlds SDK 3.10, UdonSharp).
 - **Calm water inside the House**, with waves only out at sea.
 
 Details and the to-do list: [docs/v3-status-20261011.md](docs/v3-status-20261011.md). The statue and ivy processes are
-recorded as the marble-carver and vine-bloomer tools in [Unity Unicorn](https://github.com/findastra/unity-unicorn).
+recorded as the marble-carver and vine-bloomer tools in Unity Unicorn (private repo).
 
 ## What's new in v2
 
