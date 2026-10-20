@@ -20,3 +20,17 @@ The tower newel now sits at its stair center. This intentionally changes the tow
 Reusable source: `scripts/no-windows-audit-tool-20261011.py` in [Unity Unicorn](https://github.com/findastra/unity-unicorn). Supply project, dated report and usage-receipt paths; add `--unity-probes` before running **Piranesi → Apply Open Arches and Capture Audit**. Reports and execution evidence stay in the ignored local audit directory and private Unicorn inventory.
 
 Checks use declared geometry profiles, sampled rays and Unity collider evidence. They do not simulate fluid dynamics or certify every possible player path. Existing tide and stream animation is retained. No VRChat upload or headset test is claimed. Prepared with Codex (GPT-6).
+
+## Chat closeout — 2026-10-20
+
+State: READY_FOR_REVIEW. Implementer: Codex, GPT-6; implementation ownership released. Reviewer: unassigned. No recipient receipt or independent review is claimed.
+
+### What I did
+
+The masonry/open-arches implementation is preserved at `2440bddb1717903f518e9aa55013958b95c5ed8a` on `codex/masonry-audit-20261011`, in [pull request #1](https://github.com/findastra/piranesi-house/pull/1). Unity Unicorn's tool release is the immutable `v0.3.0-20261011` tag at `ce0d2eb811569ecdaedfc087b42ae8a387ada6f1`. The validation above was performed October 11; this closeout does not claim a new Unity run or change tool-use dates.
+
+The later vine-tool installation and generated editor/settings changes are separate work, described by its October 19 handoff. They were preserved and excluded from this closeout commit. No new Unity process was started for this closeout.
+
+### Next action and acceptance
+
+Review the delivered implementation against the open-arch requirements and recorded validation, then record receipt and review findings here or on PR #1. Merge and VRChat publication remain separate actions. Photo-specific edits still require the promised ZIP. This record is delivery evidence, not reviewer acceptance or an uploaded world.
