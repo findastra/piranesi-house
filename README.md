@@ -88,6 +88,11 @@ ArtSource/
   ART_PIPELINE.md, STATUE_REGISTRY.md
 ```
 
+## Tests
+
+The save code (Far Hall Quests and dead ends) has headless tests that run without Unity:
+`cd Tests/HouseSave && dotnet run -c Release` (.NET 8). They compile the real scripts against stand-ins in `Shims.cs`.
+
 ## Regenerating art
 
 ```

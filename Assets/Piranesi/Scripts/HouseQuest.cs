@@ -28,14 +28,20 @@ public class HouseQuest : UdonSharpBehaviour
 
     private const string Key = "piranesi.quests";
     private int got;
+    private bool restored;             // the player's save has arrived (OnPlayerRestored); nothing is saved before it
 
     void Start() { Apply(); }
 
+    // Prizes taken before the save arrives are merged with it here, never lost, and the save never loses an earlier
+    // visit's prizes to an early write (VRChat: PlayerData set too early may be overwritten when the save arrives).
     public override void OnPlayerRestored(VRCPlayerApi p)
     {
         if (!Utilities.IsValid(p) || !p.isLocal) return;
         int v;
-        if (PlayerData.TryGetInt(p, Key, out v)) got = v & 63;
+        if (!PlayerData.TryGetInt(p, Key, out v)) v = 0;
+        got = (got | v) & 63;
+        restored = true;
+        if (got != v) PlayerData.SetInt(Key, got);
         Apply();
     }
 
@@ -45,7 +51,7 @@ public class HouseQuest : UdonSharpBehaviour
         int bit = 1 << i;
         if ((got & bit) != 0) return;
         got |= bit;
-        PlayerData.SetInt(Key, got);
+        if (restored) PlayerData.SetInt(Key, got);
         if (chime != null) chime.Play();
         if (glints != null && i < glints.Length && glints[i] != null) glints[i].Play();
         Apply();

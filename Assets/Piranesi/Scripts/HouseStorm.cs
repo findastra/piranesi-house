@@ -68,6 +68,7 @@ public class HouseStorm : UdonSharpBehaviour
 
     private const string Key = "piranesi.deadends";
     private int found;                         // bit mask of the five dead ends
+    private bool restored;                     // the player's save has arrived (OnPlayerRestored); nothing is saved before it
     private int phase;                         // 0 calm, 1 storm, 2 meteors, 3 dive, 4 blackout
     private float level, phaseStart, stormStart;
     private bool raining, stairShown, domeIsOpen, homed;
@@ -98,8 +99,14 @@ public class HouseStorm : UdonSharpBehaviour
     {
         if (!Utilities.IsValid(p) || !p.isLocal) return;
         int v;
-        if (PlayerData.TryGetInt(p, Key, out v)) found = v & 31;
+        if (!PlayerData.TryGetInt(p, Key, out v)) v = 0;
+        bool wasAll = Count() == 5;
+        found = (found | v) & 31;              // dead ends found before the save arrived are merged in, never lost
+        restored = true;
+        if (found != v) PlayerData.SetInt(Key, found);
         ShowTally();
+        // an early find that makes five brings the storm, as Found would have; a returning 5 / 5 does not
+        if (!wasAll && (v & 31) != 31 && Count() == 5 && phase == 0) SendCustomEventDelayedSeconds(nameof(BeginStorm), stormDelay);
     }
 
     public void Found(int i)
@@ -108,7 +115,7 @@ public class HouseStorm : UdonSharpBehaviour
         int bit = 1 << i;
         if ((found & bit) != 0) return;
         found |= bit;
-        PlayerData.SetInt(Key, found);
+        if (restored) PlayerData.SetInt(Key, found);
         if (chime != null) chime.Play();
         if (bursts != null && i < bursts.Length && bursts[i] != null) bursts[i].Play();
         ShowTally();

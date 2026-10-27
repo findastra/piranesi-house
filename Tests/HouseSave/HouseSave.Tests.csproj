@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Piranesi House save tests: the real HouseQuest and HouseStorm scripts (and their links) compiled against the
+       stand-ins in Shims.cs, with a runner that needs no packages, so `dotnet run -c Release` works offline.
+       Outside Assets/, so Unity never compiles it. Claude Opus 5.5 (claude-opus-5-5), 2026-10-26. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- the Unity scripts leave inspector fields unassigned on purpose (CS0649) -->
+    <NoWarn>$(NoWarn);CS0649;CS0414;CS0169</NoWarn>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <AssemblyName>HouseSave.Tests</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- the real scripts, exactly as the world has them -->
+    <Compile Include="../../Assets/Piranesi/Scripts/HouseQuest.cs" Link="Scripts/HouseQuest.cs" />
+    <Compile Include="../../Assets/Piranesi/Scripts/HouseQuestLink.cs" Link="Scripts/HouseQuestLink.cs" />
+    <Compile Include="../../Assets/Piranesi/Scripts/HouseStorm.cs" Link="Scripts/HouseStorm.cs" />
+    <Compile Include="../../Assets/Piranesi/Scripts/HouseStormLink.cs" Link="Scripts/HouseStormLink.cs" />
+  </ItemGroup>
+</Project>
